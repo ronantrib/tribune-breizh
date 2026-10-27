@@ -1,0 +1,19 @@
+# Tribune Breizh (breizh.tribuneouest.fr)
+# HTTPS obligatoire
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Le dépôt Git et les fichiers techniques ne sont jamais servis
+RedirectMatch 404 /\.git
+<FilesMatch "^(build\.py|README\.md|deploy\.sh)$">
+  Require all denied
+</FilesMatch>
+
+# La page change chaque jour : le navigateur doit toujours vérifier la dernière version
+<FilesMatch "\.html$">
+  Header set Cache-Control "no-cache"
+</FilesMatch>
+
+DirectoryIndex index.html
+ErrorDocument 404 /index.html

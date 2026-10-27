@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Tribune Breizh : tout le sport breton, club par club. Résultats, classements, agenda TV, foot amateur, Route du Rhum et fiches de tous les clubs de Bretagne, mis à jour chaque jour.">
+<meta property="og:title" content="Tribune Breizh · le sport breton, club par club">
+<meta property="og:description" content="Résultats, classements, agenda TV et fiches clubs : tout le sport breton, mis à jour chaque jour.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://breizh.tribuneouest.fr/">
+<meta property="og:locale" content="fr_FR">
+<link rel="canonical" href="https://breizh.tribuneouest.fr/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 60'%3E%3Crect width='90' height='60' fill='%23121417'/%3E%3Crect y='6.67' width='90' height='6.67' fill='%23fff'/%3E%3Crect y='20' width='90' height='6.67' fill='%23fff'/%3E%3Crect y='33.33' width='90' height='6.67' fill='%23fff'/%3E%3Crect y='46.67' width='90' height='6.67' fill='%23fff'/%3E%3Crect width='40' height='33.33' fill='%23fff'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Tribune Breizh · le sport breton, club par club</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Archivo:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<style>
+/* Layout: bandeau noir et blanc façon Gwenn ha Du, onglets par sport, cartes de clubs bretons, classements où les clubs bretons sont surlignés */
+:root{
+  --bg:#f5f6f4; --surface:#ffffff; --ink:#121417; --muted:#5d636b; --line:#dfe2e0;
+  --brand:#121417; --accent:#c8102e; --ermine:#121417; --sea:#0b6e8a;
+  --foot:#1f8a4c; --hand:#e0631b; --rugby:#8a1c3b; --basket:#a3480f; --voile:#0b6e8a; --velo:#b08600; --amateur:#2f6b3a; --run:#6a3fb5; --ailleurs:#c8102e;
+  --chip:#eef0ee; --hl:#fff4cc;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1013; --surface:#171a1f; --ink:#eceef1; --muted:#9aa1ab; --line:#2a2f37;
+  --brand:#eceef1; --accent:#ff5a6e; --ermine:#eceef1; --sea:#4fc0dd;
+  --foot:#3fc27a; --hand:#ff8a45; --rugby:#e0628a; --basket:#f59e5b; --voile:#4fc0dd; --velo:#f2c230; --amateur:#6fcf86; --run:#b393f0; --ailleurs:#ff5a6e;
+  --chip:#222730; --hl:#3a3418; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1013; --surface:#171a1f; --ink:#eceef1; --muted:#9aa1ab; --line:#2a2f37;
+  --brand:#eceef1; --accent:#ff5a6e; --ermine:#eceef1; --sea:#4fc0dd;
+  --foot:#3fc27a; --hand:#ff8a45; --rugby:#e0628a; --basket:#f59e5b; --voile:#4fc0dd; --velo:#f2c230; --amateur:#6fcf86; --run:#b393f0; --ailleurs:#ff5a6e;
+  --chip:#222730; --hl:#3a3418; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.mast{background:var(--surface);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+header.mast::after{content:"";position:absolute;inset:auto 0 0 0;height:10px;background:repeating-linear-gradient(180deg,var(--ink) 0 2px,transparent 2px 4px);opacity:.85}
+header.mast .wrap{padding-block:22px 26px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
+.brand{font-family:var(--display);font-weight:900;font-size:clamp(2.2rem,6vw,3.4rem);line-height:.9;text-transform:uppercase;margin:0;color:var(--brand);display:flex;align-items:center;gap:14px}
+.brand svg.flag{width:1.35em;height:.9em;flex:none;border-radius:2px}
+.brand span{display:block}
+.brand em{font-style:normal;color:var(--accent)}
+.dateline{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:right}
+.dateline b{color:var(--ink)}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px}
+.tab{font:inherit;font-weight:600;border:0;background:transparent;color:var(--muted);padding:8px 14px;border-radius:999px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.tab i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--c)}
+.tab:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main .wrap{padding-block:24px 48px}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;border-left:6px solid var(--c);padding-left:14px;margin-bottom:20px}
+.head h2{font-family:var(--display);font-weight:800;font-size:2.3rem;line-height:1;text-transform:uppercase;margin:0}
+.head .round{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+h3{font-family:var(--display);font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.03em;margin:0 0 12px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+@media (max-width:820px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.block{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;min-width:0}
+.wide{grid-column:1/-1}
+.ai{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--c);margin-bottom:8px}
+.ai::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--c)}
+.recit{border-top:3px solid var(--c)}
+.recit h4{font-size:1.15rem;margin:0 0 8px;text-wrap:balance;line-height:1.3}
+.recit p,.lead p{margin:0 0 10px;max-width:65ch}
+.daylbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:12px 0 2px}
+.match{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.match:last-child{border-bottom:0}
+.match .t{min-width:0;overflow-wrap:anywhere}
+.match .t.h{text-align:right}
+.match .t.w{font-weight:700}
+.match .t.bzh::after,.bzhn::after{content:"";display:inline-block;flex:none;width:15px;height:10px;margin-left:6px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 12'%3E%3Crect y='0.000' width='18' height='1.333' fill='%23121417'/%3E%3Crect y='1.333' width='18' height='1.333' fill='%23fff'/%3E%3Crect y='2.667' width='18' height='1.333' fill='%23121417'/%3E%3Crect y='4.000' width='18' height='1.333' fill='%23fff'/%3E%3Crect y='5.333' width='18' height='1.333' fill='%23121417'/%3E%3Crect y='6.667' width='18' height='1.333' fill='%23fff'/%3E%3Crect y='8.000' width='18' height='1.333' fill='%23121417'/%3E%3Crect y='9.333' width='18' height='1.333' fill='%23fff'/%3E%3Crect y='10.667' width='18' height='1.333' fill='%23121417'/%3E%3Crect width='8.5' height='6.667' fill='%23fff'/%3E%3Ccircle cx='2' cy='1.8' r='.75' fill='%23121417'/%3E%3Ccircle cx='4.5' cy='1.8' r='.75' fill='%23121417'/%3E%3Ccircle cx='7' cy='1.8' r='.75' fill='%23121417'/%3E%3Ccircle cx='3.2' cy='4.2' r='.75' fill='%23121417'/%3E%3Ccircle cx='5.8' cy='4.2' r='.75' fill='%23121417'/%3E%3Crect x='.25' y='.25' width='17.5' height='11.5' fill='none' stroke='%238b93a3' stroke-width='.5'/%3E%3C/svg%3E") center/100% 100% no-repeat;border-radius:1px;vertical-align:-1px}
+.match .t.h.bzh::after{margin-left:0;margin-right:6px}
+.match .t.h.bzh{display:flex;justify-content:flex-end;align-items:center;flex-direction:row-reverse;gap:0}
+.score{font-family:var(--display);font-weight:800;font-size:1.35rem;font-variant-numeric:tabular-nums;background:var(--chip);border-radius:6px;padding:2px 10px;min-width:74px;text-align:center}
+.score.next{font-family:var(--body);font-size:.78rem;font-weight:600;color:var(--muted);line-height:1.25;padding:5px 8px}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.9rem}
+th{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;text-align:right;padding:6px;border-bottom:1px solid var(--line)}
+td{padding:7px 6px;text-align:right;border-bottom:1px solid var(--line)}
+th:nth-child(2),td:nth-child(2){text-align:left}
+td:first-child{color:var(--muted);width:2.2em}
+td.pts{font-weight:700}
+tr.bzh td{background:var(--hl);font-weight:700}
+tr.bzh td:first-child{box-shadow:inset 3px 0 0 var(--ink);color:var(--ink)}
+.note{font-size:.78rem;color:var(--muted);margin-top:10px}
+.legend{font-size:.75rem;color:var(--muted);margin-top:8px}
+.legend .sw{display:inline-block;width:10px;height:10px;background:var(--hl);border-left:3px solid var(--ink);margin-right:6px;vertical-align:-1px}
+.clubs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.club{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.club:hover{border-color:var(--c)}
+.club-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--c)}
+.club-top .city{color:var(--muted);font-weight:600}
+.club b.n{font-family:var(--display);font-size:1.5rem;font-weight:800;text-transform:uppercase;line-height:1}
+.rank{display:flex;align-items:baseline;gap:8px}
+.rank .r{font-family:var(--display);font-weight:900;font-size:2.2rem;line-height:1;font-variant-numeric:tabular-nums}
+.rank small{color:var(--muted);font-size:.8rem}
+.club .line{font-size:.85rem;border-top:1px solid var(--line);padding-top:6px;display:flex;justify-content:space-between;gap:8px}
+.club .line span:first-child{color:var(--muted)}
+.club .line span:last-child{text-align:right;font-weight:600}
+.lead{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:24px;border-top:5px solid var(--ink)}
+.lead h3.big{font-size:clamp(1.8rem,5vw,2.6rem);line-height:1;margin:6px 0 12px;text-wrap:balance}
+.kicker{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.hl3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;border-top:1px solid var(--line);padding-top:14px;margin-top:6px}
+.hl3 b{display:block;font-family:var(--display);font-size:1.5rem;font-weight:800;line-height:1.05;text-transform:uppercase}
+.hl3 small{color:var(--muted);font-size:.82rem}
+.sec-title{font-size:1.4rem;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-top:8px}
+.facts .fact{display:grid;grid-template-columns:5.6em 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.facts .fact:last-child{border-bottom:0}
+.fact .d{font-family:var(--display);font-weight:800;font-size:1.05rem;text-transform:uppercase;color:var(--c);line-height:1.2}
+.fact b{display:block}.fact small{color:var(--muted);font-size:.85rem}
+.ev{display:grid;grid-template-columns:4.6em minmax(0,1fr) auto;gap:4px 14px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}
+.ev .dd{font-family:var(--display);font-weight:800;line-height:1;text-transform:uppercase}
+.ev .dd b{display:block;font-size:1.9rem;font-variant-numeric:tabular-nums}
+.ev .dd span{font-size:.8rem;color:var(--muted)}
+.ev .what b{display:block;font-size:1.02rem}
+.ev .what small{color:var(--muted);font-size:.85rem}
+.ev .hr{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:.8rem;font-weight:600}
+.tv{background:var(--chip);border-radius:4px;padding:2px 7px;font-size:.75rem}
+.tv.tbc{color:var(--muted);font-style:italic}
+.tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--c);border:1.5px solid var(--c);border-radius:4px;padding:2px 6px;white-space:nowrap}
+.ev.big .what b::after{content:"★";color:var(--accent);margin-left:6px;font-size:.85em}
+@media (max-width:520px){.ev{grid-template-columns:3.6em minmax(0,1fr)}.ev .tag{grid-column:2;justify-self:start}}
+.classes{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:12px 0}
+.classes div{border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center}
+.classes b{display:block;font-family:var(--display);font-size:1.8rem;font-weight:900;line-height:1;color:var(--voile)}
+.classes small{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.countdown{font-family:var(--display);font-weight:900;font-size:clamp(2rem,6vw,3rem);color:var(--voile);line-height:1;font-variant-numeric:tabular-nums}
+.stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.stage{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;border-left:4px solid var(--velo);padding-left:12px}
+.stage-n b{display:block;font-family:var(--display);font-weight:900;font-size:2.6rem;line-height:.9;color:var(--velo)}
+.stage-n small{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;display:block;max-width:7em}
+.stage-r{display:block;font-family:var(--display);font-weight:800;font-size:1.4rem;text-transform:uppercase;line-height:1.1}
+.stage-km{font-size:.8rem;font-weight:700;color:var(--muted)}
+.stage p{margin:6px 0 0;font-size:.9rem}
+.lead-row{display:grid;grid-template-columns:1.6em 1fr auto;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line)}
+.lead-row:last-child{border-bottom:0}
+.lead-row .pos{font-family:var(--display);font-weight:900;font-size:1.3rem;color:var(--run)}
+.lead-row small{color:var(--muted)}
+.lead-row .time{font-family:var(--display);font-weight:800;font-size:1.2rem;font-variant-numeric:tabular-nums}
+.brz{font-family:var(--body);font-style:italic;font-size:.85rem;color:var(--muted);margin-right:6px}
+.histbtn{font:inherit;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:8px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:4px 10px;cursor:pointer}
+.sister{display:inline-block;margin:8px 0 0 10px;font-size:.78rem;font-weight:700;color:var(--accent);text-decoration:none;text-transform:none;letter-spacing:0}
+.sister:hover{text-decoration:underline}
+.histbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.hint{border-left:4px solid var(--accent)}
+.rl{display:inline-flex;align-items:center;gap:6px}
+.f{font-style:normal;font-size:.62rem;font-weight:700;width:17px;height:17px;border-radius:4px;display:inline-grid;place-items:center;color:#fff}
+.f-V{background:var(--foot)} .f-N{background:#8b93a3} .f-D{background:var(--accent)}
+.back{font:inherit;font-weight:600;background:none;border:0;color:var(--muted);cursor:pointer;padding:0;margin-bottom:12px}
+.fiche-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.favbtn{font:inherit;font-weight:700;font-size:.85rem;border:1.5px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:7px 14px;cursor:pointer}
+.favbtn.on{background:var(--accent);color:#fff}
+.picks{display:flex;flex-wrap:wrap;gap:8px}
+.pick{font:inherit;font-weight:600;font-size:.88rem;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer;display:flex;align-items:center;gap:8px;text-align:left}
+.pick i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
+.pick small{color:var(--muted);font-weight:500;font-size:.75rem}
+.pick.on{border-color:var(--c);box-shadow:inset 0 0 0 1.5px var(--c)}
+.pick.on::after{content:"★";color:var(--accent)}
+.mapwrap{overflow-x:auto}
+.map{width:100%;min-width:480px;height:auto;display:block}
+.map .land{fill:var(--chip);stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round}
+.map .land.hist{fill:var(--bg);stroke-dasharray:4 3}
+.map .dep{font-size:11px;fill:var(--muted);font-style:italic;letter-spacing:.04em}
+.map .pin{cursor:pointer}
+.map .pin circle{stroke:var(--surface);stroke-width:2}
+.map .pin text{font-size:11.5px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--chip);stroke-width:3px}
+.map .pin:hover circle,.map .pin:focus circle{stroke:var(--ink)}
+.map .pin:focus{outline:none}
+.maplegend{display:flex;flex-wrap:wrap;gap:14px;font-size:.78rem;color:var(--muted);margin-bottom:8px}
+.maplegend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.live{background:var(--surface);border:2px solid var(--ailleurs);border-radius:10px;padding:16px 18px;margin-bottom:24px}
+.live .lk{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ailleurs)}
+.live .lk i{width:9px;height:9px;border-radius:50%;background:var(--ailleurs);animation:pulse 1.4s infinite}
+.live.done .lk i{animation:none;opacity:.5}
+@keyframes pulse{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.live .lk i{animation:none}}
+.live .sc{font-family:var(--display);font-weight:900;font-size:clamp(2.2rem,8vw,3.4rem);line-height:1;font-variant-numeric:tabular-nums}
+.live ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:4px;font-size:.92rem}
+.live li b{display:inline-block;min-width:3.2em;font-variant-numeric:tabular-nums}
+.live .upd{font-size:.8rem;color:var(--muted);margin-top:10px}
+.illu{display:block;width:calc(100% + 36px);max-width:none;height:auto;aspect-ratio:16/5;margin:-18px -18px 16px;border-bottom:1px solid var(--line);border-radius:7px 7px 0 0;stroke-width:3}
+.illu .bg{fill:var(--chip)}
+.illu .ln{fill:none;stroke:var(--ink)}
+.illu .ink{fill:var(--ink)}
+.illu .sf{fill:var(--surface);stroke:var(--ink)}
+.illu .sf-s{stroke:var(--surface)}
+.illu .ac{fill:var(--c)}
+.illu .ac-s{stroke:var(--c)}
+.breves{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:14px 18px 6px;margin-bottom:24px}
+.breves h3{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px}
+.breves h3 small{font-family:var(--body);font-size:.72rem;font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0}
+.breve{display:grid;grid-template-columns:12.5em minmax(0,1fr);gap:4px 12px;padding:9px 0;border-top:1px solid var(--line);align-items:baseline}
+.breve:first-of-type{border-top:0}
+.breve .w{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--c);white-space:nowrap;display:flex;align-items:center;gap:6px}
+.breve .w::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c)}
+.breve .w time{color:var(--muted);font-weight:600}
+.breve p{margin:0;font-size:.95rem}
+@media (max-width:520px){.breve{grid-template-columns:minmax(0,1fr)}}
+.formd{display:inline-flex;gap:3px;vertical-align:middle}
+.formd .f{width:15px;height:15px;font-size:.58rem}
+td .formd{margin-left:8px}
+.src{font-size:.78rem;color:var(--muted);margin:6px 0 0;max-width:none}
+.src a{color:var(--sea)}
+.buteur{display:grid;grid-template-columns:2.2em minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line)}
+.buteur:last-of-type{border-bottom:0}
+.buteur .g{font-family:var(--display);font-weight:900;font-size:1.5rem;line-height:1;color:var(--foot)}
+.face-tally{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;text-align:center;margin:4px 0 10px;padding:10px 0;border-block:1px solid var(--line)}
+.face-tally b{display:block;font-family:var(--display);font-weight:900;font-size:2rem;line-height:1}
+.face-tally small{color:var(--muted);font-size:.78rem}
+.mer-club{padding:8px 0;border-bottom:1px solid var(--line)}
+.mer-club:last-of-type{border-bottom:0}
+.mer-club h4{margin:0 0 4px;font-size:.95rem}
+.mer-l{display:grid;grid-template-columns:1.2em minmax(0,1fr);gap:6px;font-size:.86rem;margin:3px 0}
+.mer-l .in{color:var(--foot);font-weight:900}
+.mer-l .out{color:var(--accent);font-weight:900}
+.mer-l small{color:var(--muted)}
+.autres{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.autres .kicker{margin-bottom:4px}
+.autres h4{margin:0 0 6px;font-size:1.1rem;text-wrap:balance}
+.autres .who{color:var(--muted);font-size:.82rem;margin:0 0 8px}
+.rhum{border:2px solid var(--voile);border-radius:12px;padding:16px;margin:0 0 24px;display:grid;gap:10px;background:var(--surface)}
+.rhum .kicker{color:var(--voile)}
+.rhum .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.rhum .cd{font-family:var(--display);font-weight:900;font-size:2.4rem;line-height:1;color:var(--voile)}
+.rhum h3{margin:0;font-size:1.15rem;text-wrap:balance}
+.rhum .names{display:flex;flex-wrap:wrap;gap:6px}
+.rhum .names span{border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:.82rem}
+.rhum .go{justify-self:start;background:none;border:1.5px solid var(--voile);color:var(--voile);border-radius:999px;padding:7px 14px;font:inherit;font-weight:700;cursor:pointer}
+.rh-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line)}
+.rh-row:last-of-type{border-bottom:0}
+.rh-row small{display:block;color:var(--muted);font-size:.8rem}
+.rh-row .tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--voile);font-weight:700;white-space:nowrap}
+.rh-row .pos{font-family:var(--display);font-weight:900;font-size:1.4rem;color:var(--voile)}
+.buteur small{display:block;color:var(--muted);font-size:.8rem}
+.cplink{font:inherit;font-size:.75rem;font-weight:700;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:4px 10px;cursor:pointer;margin-left:auto}
+.cplink:hover{color:var(--ink);border-color:var(--ink)}
+.cpfield{font:inherit;font-size:.78rem;width:min(100%,420px);padding:4px 8px;border:1.5px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);margin-left:auto}
+.saviez{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:16px 18px;margin-bottom:24px}
+.saviez .q{font-family:var(--display);font-weight:900;font-size:2.4rem;line-height:.8;color:var(--accent)}
+.saviez h3{margin:0 0 4px}
+.saviez p{margin:0;max-width:70ch}
+.derby{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:16px 18px;margin-bottom:24px}
+.derby-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin:8px 0}
+.derby-row b{font-family:var(--display);font-weight:900;font-size:clamp(1.6rem,5vw,2.4rem);text-transform:uppercase}
+.derby-row b:first-child{text-align:right}
+.derby-row .vs{text-align:center;font-weight:700;font-size:.85rem}
+.derby-row .vs small{color:var(--muted);font-weight:500}
+.derby p{margin:0;max-width:65ch}
+.lvl{font-size:.72rem;font-weight:800;border-radius:4px;padding:2px 6px;background:var(--chip)}
+.lvl-R3,.lvl-R2{background:var(--accent);color:#fff}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.searchbar{position:relative;flex-basis:100%}
+.searchbar input{width:100%;font:inherit;font-size:.95rem;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.searchbar input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.qres{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:20;max-height:320px;overflow:auto}
+.qhit{display:flex;flex-direction:column;align-items:flex-start;width:100%;text-align:left;font:inherit;background:none;border:0;border-bottom:1px solid var(--line);padding:10px 14px;cursor:pointer;color:var(--ink)}
+.qhit:hover,.qhit:focus{background:var(--chip)}
+.qhit small{color:var(--muted);font-size:.78rem}
+.qnone{padding:12px 14px;color:var(--muted)}
+.depts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.dchip{font:inherit;font-size:.85rem;font-weight:600;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:6px 12px;cursor:pointer}
+.dchip small{opacity:.7}
+.dchip[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.recap-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:10px}
+.visgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.vis{width:100%;height:auto;aspect-ratio:1;max-width:100%;border-radius:8px;display:block;background:#121417}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+footer .wrap{padding-block:20px 32px}
+footer a{color:var(--sea)}
+@media (prefers-reduced-motion:no-preference){.view{animation:fade .25s ease-out}@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}}
+</style>
+
+<header class="mast"><div class="wrap">
+  <h1 class="brand"><svg class="flag" viewBox="0 0 90 60" role="img" aria-label="Gwenn ha du, drapeau breton"><rect y="0.00" width="90" height="6.67" fill="#121417"/><rect y="6.67" width="90" height="6.67" fill="#ffffff"/><rect y="13.33" width="90" height="6.67" fill="#121417"/><rect y="20.00" width="90" height="6.67" fill="#ffffff"/><rect y="26.67" width="90" height="6.67" fill="#121417"/><rect y="33.33" width="90" height="6.67" fill="#ffffff"/><rect y="40.00" width="90" height="6.67" fill="#121417"/><rect y="46.67" width="90" height="6.67" fill="#ffffff"/><rect y="53.33" width="90" height="6.67" fill="#121417"/><rect width="40" height="33.33" fill="#ffffff"/><g fill="#121417"><defs><g id="hm"><circle cx="-1.6" cy="-2.4" r="1.05"/><circle cx="0" cy="-3.3" r="1.05"/><circle cx="1.6" cy="-2.4" r="1.05"/><path d="M0-1.8L2.1 3.6 0 2.6-2.1 3.6Z"/></g></defs><use href="#hm" x="6.5" y="8"/><use href="#hm" x="15.5" y="8"/><use href="#hm" x="24.5" y="8"/><use href="#hm" x="33.5" y="8"/><use href="#hm" x="11" y="17.5"/><use href="#hm" x="20" y="17.5"/><use href="#hm" x="29" y="17.5"/><use href="#hm" x="6.5" y="27"/><use href="#hm" x="15.5" y="27"/><use href="#hm" x="24.5" y="27"/><use href="#hm" x="33.5" y="27"/></g><rect x=".5" y=".5" width="89" height="59" fill="none" stroke="#8b93a3" stroke-width="1"/></svg><span>Tribune<br><em>Breizh</em></span></h1>
+  <div class="dateline"><span class="brz" style="margin:0">Degemer mat</span> · le sport breton, club par club<br><b>Mis à jour le mardi 27 octobre 2026</b><br><button id="histbtn" class="histbtn" aria-pressed="false">Bretagne historique : non</button></div>
+  <div class="searchbar"><label for="q" class="sr">Rechercher un club</label><input id="q" type="search" placeholder="Rechercher un club : Vannes, Plabennec…" autocomplete="off"><div id="qres" class="qres" hidden></div></div>
+</div></header>
+<nav class="tabs" aria-label="Rubriques"><div class="wrap" id="tabs" role="tablist"></div></nav>
+<main><div class="wrap" id="view"></div></main>
+<footer><div class="wrap">Scores et classements issus des sources officielles (LFP, LNR, LNH, LFH, LFB) et de la presse sportive, avec les sources indiquées sous chaque résumé. Résumés rédigés par IA et mis à jour chaque jour. Les clubs bretons sont signalés par un petit drapeau breton et surlignés dans les classements. <b>Kenavo !</b><p id="mlink" hidden style="margin:10px 0 0"><a href="/mentions-legales.html">Mentions légales</a></p><p id="vislink" hidden style="margin:10px 0 0;font-size:.78rem"><a href="#visuels" style="color:inherit;opacity:.7">Espace visuels (réservé)</a></p></div></footer>
+
+<script>
+const BZH=new Set(["Dinan Léhon","Lorient II","Stade Briochin","Locminé","GSI Pontivy","Cesson","Guingamp II","St-P. Milizac","Rennes II","TA Rennes","Ginglin-Cesson","Brest II","Lannion","Vitré","Rennes","Brest","Lorient","Guingamp","Concarneau","Cesson-Rennes","Vannes","Landerneau","Brest BH","Saint-Malo","Rennes (basket)"]);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const SECTIONS=[
+  {k:"une",name:"À la une",br:"Keleier",c:"var(--accent)"},
+  {k:"monclub",name:"Mon club",br:"Ma c'hlub",c:"var(--accent)"},
+  {k:"visuels",name:"Visuels",c:"var(--sea)"},
+  {k:"foot",name:"Football",br:"Mell-droad",c:"var(--foot)"},
+  {k:"amateur",name:"Foot amateur",c:"var(--amateur)"},
+  {k:"hand",name:"Handball",c:"var(--hand)"},
+  {k:"rugby",name:"Rugby",c:"var(--rugby)"},
+  {k:"basket",name:"Basket",c:"var(--basket)"},
+  {k:"velo",name:"Cyclisme",c:"var(--velo)"},
+  {k:"voile",name:"Voile",c:"var(--voile)"},
+  {k:"autres",name:"Autres sports",c:"var(--run)"},
+  {k:"feminines",name:"Féminines",c:"var(--hand)"},
+  {k:"ailleurs",name:"Bretons ailleurs",c:"var(--ailleurs)"},
+  {k:"agenda",name:"Agenda",br:"Deiziataer",c:"var(--ink)"}
+];
+
+/* Fiches clubs */
+// res : [domicile, score dom., score ext., extérieur, mention] ; nxt : [domicile, extérieur, quand]
+const ALLCLUBS=[
+  {id:"rennes",n:"Stade Rennais",wiki:"https://en.wikipedia.org/wiki/Stade_Rennais_FC",coach:"Franck Haise",cap:"29 778",short:"Rennes",city:"Rennes",dept:"Ille-et-Vilaine",lat:48.11,lon:-1.68,sport:"foot",lg:"Ligue 1",r:"2e",pts:"16 pts",venue:"Roazhon Park",founded:"1901",palm:"Coupe de France 1965, 1971 et 2019",fem:false,
+    res:[["Rennes",3,0,"Strasbourg","L1 · J8"],["Paris FC",4,3,"Rennes","L1 · J7"],["Juventus",2,2,"Rennes","Europa · J3"],["Rennes",4,1,"Auxerre","L1 · J6"],["Lyon",4,0,"Rennes","L1 · J5"]],
+    nxt:[["Nice","Rennes","ven. 30 oct., 19h (avancé du sam. 31 oct.)"],["Rennes","Olympiakos","Europa, mer. 4 nov., 16h30 (avancé du jeu. 5 nov.)"]], tbl:["foot",0], note:"Estéban Lepaul, meilleur buteur de Ligue 1 avec 7 buts. Rennes a cédé la tête au PSG, vainqueur de Lyon lundi soir."},
+  {id:"brest",n:"Stade Brestois",wiki:"https://en.wikipedia.org/wiki/Stade_Brestois_29",coach:"Julien Lachuer",cap:"15 220",short:"Brest",city:"Brest",dept:"Finistère",lat:48.40,lon:-4.47,sport:"foot",lg:"Ligue 1",r:"13e",pts:"9 pts",venue:"Stade Francis-Le Blé",founded:"1950",palm:"Champion de Ligue 2 1981 · Ligue des champions 2024-2025",
+    res:[["Brest",1,2,"Nice","L1 · J8"],["Lille",1,1,"Brest","L1 · J7"],["Brest",5,1,"Angers","L1 · J6"],["Auxerre",2,1,"Brest","L1 · J5"]],
+    nxt:[["Lorient","Brest","lun. 2 nov., 20h45 (reporté du sam. 31 oct.)"]], tbl:["foot",0]},
+  {id:"lorient",n:"FC Lorient",wiki:"https://en.wikipedia.org/wiki/FC_Lorient",coach:"Alexandre Dujeux",cap:"18 110",short:"Lorient",city:"Lorient",dept:"Morbihan",lat:47.75,lon:-3.37,sport:"foot",lg:"Ligue 1",r:"9e",pts:"12 pts",venue:"Stade du Moustoir",founded:"1926",palm:"Coupe de France 2002 · champion de Ligue 2 2025",
+    res:[["Angers",0,0,"Lorient","L1 · J8"],["Lorient",1,0,"Monaco","L1 · J7"],["Lorient",1,0,"Paris FC","L1 · J6"],["Le Mans",2,1,"Lorient","L1 · J5"]],
+    nxt:[["Lorient","Brest","lun. 2 nov., 20h45 (reporté du sam. 31 oct.)"]], tbl:["foot",0]},
+  {id:"guingamp",n:"En Avant Guingamp",wiki:"https://en.wikipedia.org/wiki/En_Avant_Guingamp",coach:"Sylvain Ripoll",short:"Guingamp",city:"Guingamp",dept:"Côtes-d'Armor",lat:48.56,lon:-3.15,sport:"foot",lg:"Ligue 2",r:"11e",pts:"11 pts",venue:"Stade du Roudourou",founded:"1912",palm:"Coupe de France 2009 et 2014 · Coupe Intertoto 1996",
+    res:[["Clermont",0,2,"Guingamp","L2 · J10"]],
+    nxt:[["Guingamp","Saint-Étienne","sam. 31 oct., 20h"],["Dunkerque","Guingamp","6 nov."],["Guingamp","Rodez","20 nov."]], tbl:["foot",1]},
+  {id:"concarneau",n:"US Concarneau",wiki:"https://en.wikipedia.org/wiki/US_Concarneau",palm:"Champion de National 2023",coach:"Stéphane Rossi",cap:"5 800",founded:"1911",short:"Concarneau",city:"Concarneau",dept:"Finistère",lat:47.87,lon:-3.92,sport:"foot",lg:"Ligue 3",r:"5e",pts:"17 pts",venue:"Stade Guy-Piriou",
+    res:[["Concarneau",1,1,"Bastia","L3 · J10"],["OC Cesson",2,4,"Concarneau","Coupe de France · 6e tour"]],
+    nxt:[["Rouen","Concarneau","sam. 31 oct., 14h45"]], tbl:["foot",2]},
+  {id:"cesson",n:"Cesson-Rennes MHB",wiki:"https://en.wikipedia.org/wiki/Cesson_Rennes_MHB",coach:"Sébastien Leriche",cap:"4 500",founded:"1968",short:"Cesson-Rennes",city:"Cesson-Sévigné",dept:"Ille-et-Vilaine",lat:48.12,lon:-1.60,sport:"hand",lg:"StarLigue",r:"15e",pts:"2 pts",venue:"Glaz Arena",
+    res:[["Tremblay",34,29,"Cesson-Rennes","J8"],["Cesson-Rennes",33,36,"Sélestat","J7"],["Saint-Raphaël",37,34,"Cesson-Rennes","J6"],["Cesson-Rennes",29,31,"Limoges","J5"]],
+    nxt:[["Cesson-Rennes","Nantes","sam. 31 oct., 19h"]], tbl:["hand",0]},
+  {id:"brestbh",n:"Brest Bretagne Handball",wiki:"https://en.wikipedia.org/wiki/Brest_Bretagne_Handball",coach:"Raphaëlle Tervel",cap:"4 077",founded:"2004",short:"Brest BH",city:"Brest",dept:"Finistère",lat:48.37,lon:-4.40,sport:"hand",lg:"Ligue Butagaz Énergie",r:"3e",pts:"14 pts",venue:"Brest Arena",palm:"Champion de France 2012 et 2021 · finaliste de la Ligue des champions 2021",fem:true,
+    res:[["Metz",33,31,"Brest BH","LBE · 7 oct."]],
+    nxt:[["Nice","Brest BH","ven. 30 oct., 20h"]], tbl:["hand",1], note:"Lourde défaite à Esbjerg en Ligue des champions le 17 octobre."},
+  {id:"vannes",n:"RC Vannes",wiki:"https://en.wikipedia.org/wiki/Rugby_Club_Vannes",coach:"Jean-Noël Spitzer",cap:"11 303",founded:"1950",short:"Vannes",city:"Vannes",dept:"Morbihan",lat:47.66,lon:-2.76,sport:"rugby",lg:"Top 14",r:"14e",pts:"5 pts",venue:"Stade de la Rabine",palm:"Première saison en Top 14 en 2024-2025",
+    res:[["Vannes",27,26,"Clermont","J7"],["Harlequins",57,19,"Vannes","Challenge Cup"],["Perpignan",21,12,"Vannes","J6"],["Vannes",40,43,"Pau","J5"],["Toulon",28,10,"Vannes","J4"]],
+    nxt:[["Lyon","Vannes","sam. 31 oct., 16h35"]], tbl:["rugby",0]},
+  {id:"landerneau",n:"Landerneau Bretagne Basket",wiki:"https://en.wikipedia.org/wiki/Landerneau_Bretagne_Basket",coach:"Wani Muganguzi",cap:"2 300",venue:"La Cimenterie",founded:"2011",short:"Landerneau",city:"Landerneau",dept:"Finistère",lat:48.45,lon:-4.25,sport:"basket",lg:"La Boulangère Wonderligue",r:"7e",pts:"3 V – 3 D",fem:true,
+    res:[["Landerneau",87,85,"Charnay","J6 · a.p."],["Poznan",77,65,"Landerneau","EuroCup"]],
+    nxt:[], tbl:["basket",0], note:"EuroCup féminine, groupe H."},
+  {id:"saintmalo",n:"US Saint-Malo",short:"Saint-Malo",city:"Saint-Malo",dept:"Ille-et-Vilaine",lat:48.65,lon:-2.01,sport:"foot",lg:"Arkema Première Ligue",r:"—",pts:"",palm:"Promu en Première Ligue en 2026",fem:true,
+    res:[["Le Havre",2,0,"Saint-Malo","J4"]],
+    nxt:[["Saint-Malo","Paris FC","J6 reportée (tempête)"]], note:"Classement complet non disponible dans nos sources."},
+  /* Bretagne historique */
+  {id:"fcnantes",hist:true,n:"FC Nantes",short:"Nantes",city:"Nantes",dept:"Loire-Atlantique",lat:47.22,lon:-1.55,sport:"foot",lg:"Ligue 2",r:"15e",pts:"8 pts",venue:"Stade de la Beaujoire",founded:"1943",palm:"8 titres de champion de France",
+    res:[["Saint-Étienne",1,0,"Nantes","L2 · J10"],["Nantes",0,0,"Reims","L2 · J8"]], nxt:[], tbl:["foot",1]},
+  {id:"hbcnantes",hist:true,n:"HBC Nantes",short:"Nantes (hand)",nm:"Nantes",city:"Nantes",dept:"Loire-Atlantique",lat:47.20,lon:-1.50,sport:"hand",lg:"StarLigue",r:"2e",pts:"14 pts",venue:"H Arena",
+    res:[["Nantes",41,29,"Chambéry","J8"],["Nantes",27,33,"Vardar","Ligue des champions"],["Saran",31,34,"Nantes","J7"]],
+    nxt:[["Cesson-Rennes","Nantes","sam. 31 oct., 19h"]], tbl:["hand",0]},
+  {id:"stnazaire",hist:true,n:"Saint-Nazaire Volley",short:"Saint-Nazaire",city:"Saint-Nazaire",dept:"Loire-Atlantique",lat:47.27,lon:-2.21,sport:"volley",lg:"Ligue A masculine",r:"12e",pts:"2 pts",
+    res:[["Poitiers",2,3,"Saint-Nazaire","J3"]], nxt:[["Saint-Nazaire","Tourcoing","ven. 30 oct., 20h"]]},
+  {id:"nantesf",hist:true,n:"FC Nantes (F)",short:"Nantes (F)",nm:"Nantes",city:"Nantes",dept:"Loire-Atlantique",lat:47.24,lon:-1.60,sport:"foot",lg:"Arkema Première Ligue",r:"5e",pts:"8 pts",fem:true,
+    res:[["Nantes",3,2,"Strasbourg","J6"],["Nantes",1,1,"Montpellier","J4"]], nxt:[]}
+];
+let HIST=false; try{HIST=localStorage.getItem("tb-hist")==="1"}catch(e){}
+let FAV=new Set(); try{FAV=new Set(JSON.parse(localStorage.getItem("tb-fav")||"[]"))}catch(e){}
+const saveFav=()=>{try{localStorage.setItem("tb-fav",JSON.stringify([...FAV]))}catch(e){}};
+const clubsNow=()=>ALLCLUBS.filter(c=>HIST||!c.hist);
+const HISTNAMES=new Set(["Nantes","Saint-Nazaire"]);
+
+const DATA={
+  foot:{title:"Football", round:"Ligue 1 · Ligue 2 · Ligue 3 · féminines",
+    recit:{t:"Le derby Lorient–Brest repoussé au lundi, Rennes joue dès vendredi",p:[
+      "La journée de mobilisation sociale du samedi 31 octobre bouscule le programme breton. À la demande des préfectures, la LFP a avancé Nice–Rennes au vendredi 30 octobre à 19h et repoussé le derby Lorient–Brest au lundi 2 novembre à 20h45, toujours sur Ligue 1+. Les Rennais abordent ce déplacement au 2e rang : le PSG, vainqueur de Lyon (2-0) lundi soir, leur a pris la première place avec un point d'avance.",
+      "Estéban Lepaul reste le meilleur buteur du championnat avec 7 buts. Au Moustoir, Lorient (9e) attendra donc lundi pour accueillir Brest (13e). En Ligue 2, Guingamp reçoit le leader stéphanois samedi à 20h, et Concarneau, 5e de Ligue 3, va défier Rouen, son dauphin, l'après-midi. En Ligue Europa, la réception de l'Olympiakos est avancée au mercredi 4 novembre à 16h30 : la préfecture d'Ille-et-Vilaine a interdit le match du jeudi en raison des mouvements sociaux annoncés."]},
+    results:[{day:"Ligue 1 · 8e journée", games:[["Rennes",3,0,"Strasbourg"],["Brest",1,2,"Nice"],["Angers",0,0,"Lorient"]]},
+             {day:"Ligue 2 · 10e journée", games:[["Clermont",0,2,"Guingamp"]]},
+             {day:"Ligue 3 · 10e journée", games:[["Concarneau",1,1,"Bastia"]]},
+             {day:"Arkema Première Ligue · 4e journée", games:[["Le Havre",2,0,"Saint-Malo"]]}],
+    next:[{day:"Vendredi 30 octobre", games:[["Nice","Rennes","19h00 · avancé du 31 oct."]]},
+          {day:"Samedi 31 octobre", games:[["Rouen","Concarneau","14h45"],["Guingamp","Saint-Étienne","20h00"]]},
+          {day:"Lundi 2 novembre", games:[["Lorient","Brest","20h45 · reporté du 31 oct."]]},
+          {day:"Ligue Europa · 4e journée", games:[["Rennes","Olympiakos","mer. 4 nov. 16h30 · avancé du 5 nov."]]}],
+    tables:[
+      {name:"Ligue 1", head:["J","Pts"], rows:[["Paris SG",8,17],["Rennes",8,16],["Lille",8,15],["Monaco",8,15],["Paris FC",8,14],["Lyon",8,14],["Lens",8,13],["Marseille",8,12],["Lorient",8,12],["Nice",8,11],["Toulouse",8,10],["Auxerre",8,10],["Brest",8,9],["Angers",8,8],["Le Mans",8,7],["Strasbourg",8,7],["Troyes",8,5],["Le Havre",8,2]], note:"Après la 8e journée (PSG–Lyon 2-0 lundi). Ordre des ex aequo indicatif."},
+      {name:"Ligue 2", head:["J","Pts"], rows:[["Saint-Étienne",10,25],["Montpellier",10,21],["Nancy",10,19],["Reims",10,18],["Pau",10,17],["Red Star",10,17],["Annecy",10,16],["Metz",10,14],["Dijon",10,12],["Dunkerque",10,12],["Guingamp",10,11],["Sochaux",10,11],["Boulogne",10,10],["Rodez",10,10],["Nantes",10,8],["Grenoble",10,8],["Clermont",10,7],["Laval",10,6]], note:"Après la 10e journée (Montpellier–Red Star 2-1 et Boulogne–Reims 1-1 lundi). Ordre des ex aequo indicatif."},
+      {name:"Ligue 3", head:["J","Pts"], rows:[["La Roche-sur-Yon",10,21],["Rouen",10,20],["Versailles",10,19],["Caen",10,18],["Concarneau",10,17],["Amiens",10,16],["Le Puy",10,16],["Cannes",10,15],["Fleury",10,15],["Paris 13",10,15],["Quevilly-Rouen",10,13],["Thionville",10,12],["Bastia",10,12],["Valenciennes",10,9],["Orléans",10,9],["Aubagne",10,7],["Villefranche",10,7],["Bourg-Péronnas",10,5]], note:"Prochaine journée : jeudi 29 et samedi 31 octobre."}
+    ],
+    extra:{title:"Rennes en Europe", items:[
+      {d:"J1",t:"Sturm Graz – Rennes : 0-0",s:"Ligue Europa"},{d:"J2",t:"Rennes – OFI Crète : 2-1",s:""},{d:"J3",t:"Juventus – Rennes : 2-2",s:"13e après 3 journées, 5 pts."},
+      {d:"Buteur",t:"Estéban Lepaul · 7 buts",s:"Meilleur buteur de Ligue 1."}]}
+  },
+  hand:{title:"Handball", round:"StarLigue · Ligue Butagaz Énergie",
+    recit:{t:"Brest jongle entre Europe et championnat, Cesson en souffrance",p:[
+      "Chez les femmes, Brest Bretagne Handball est 3e de la Ligue Butagaz Énergie avec 14 points, à quatre longueurs de Metz qui l'a battu dans le choc du début d'octobre (33-31). En Ligue des champions, les Brestoises ont subi une lourde défaite à Esbjerg le 17 octobre. Elles se déplacent à Nice vendredi.",
+      "Chez les hommes, Cesson-Rennes vit un début de saison très difficile : une seule victoire en huit matchs et l'avant-dernière place de StarLigue après la défaite à Tremblay (34-29). Samedi, les Irréductibles reçoivent Nantes, 2e du championnat."]},
+    results:[{day:"StarLigue · 8e journée", games:[["Tremblay",34,29,"Cesson-Rennes"]]},
+             {day:"Ligue Butagaz Énergie · début octobre", games:[["Metz",33,31,"Brest BH"]]}],
+    next:[{day:"Vendredi 30 octobre", games:[["Nice","Brest BH","20h00"]]},{day:"Samedi 31 octobre", games:[["Cesson-Rennes","Nantes","19h00"]]}],
+    tables:[
+      {name:"StarLigue", head:["J","Pts"], rows:[["Paris SG",8,16],["Nantes",8,14],["Montpellier",8,12],["Nîmes",8,12],["Limoges",8,10],["Tremblay",8,9],["Aix",8,8],["Caen",8,8],["Chartres",8,7],["Sélestat",8,6],["Toulouse",8,6],["Chambéry",8,6],["Saran",8,6],["Saint-Raphaël",8,4],["Cesson-Rennes",8,2],["Dunkerque",8,2]], note:"Ordre des ex aequo indicatif."},
+      {name:"Ligue Butagaz Énergie (F)", head:["J","Pts"], rows:[["Metz",6,18],["Besançon",6,14],["Brest BH",6,14],["Dijon",6,14],["Saint-Amand",6,14],["Chambray",6,14],["Strasbourg-Achenheim",6,13],["Plan-de-Cuques",6,12],["Stella Saint-Maur",6,9],["Nice",6,8],["Toulon",6,7],["Paris 92",6,7]], note:"Classement provisoire de la LFH."}
+    ]
+  },
+  rugby:{title:"Rugby", round:"Top 14 · Challenge Cup",
+    recit:{t:"Vannes tient enfin sa première victoire",p:[
+      "Le RC Vannes a attendu la 7e journée pour gagner en Top 14, et de quelle manière : mené 23-6 après la pause contre Clermont, il l'a emporté 27-26 grâce à une transformation d'Anthony Bouthier dans les dernières secondes, à quatorze contre quinze. Les Bretons restent derniers avec 5 points, à six longueurs du Racing.",
+      "Le déplacement de samedi à Lyon, qui s'est relancé à Bayonne, sera un test. En Challenge Cup, Vannes a lourdement perdu chez les Harlequins (57-19) en ouverture."]},
+    results:[{day:"Top 14 · 7e journée", games:[["Vannes",27,26,"Clermont"]]},{day:"Challenge Cup · 1re journée", games:[["Harlequins",57,19,"Vannes"]]}],
+    next:[{day:"Samedi 31 octobre", games:[["Lyon","Vannes","16h35"]]}],
+    tables:[{name:"Top 14", head:["J","Pts"], rows:[["Toulouse",7,28],["Bordeaux-Bègles",7,23],["Pau",7,"—"],["La Rochelle",7,18],["Lyon",7,18],["Bayonne",7,18],["Montpellier",7,18],["Toulon",7,17],["Stade Français",7,14],["Perpignan",7,14],["Castres",7,"—"],["Clermont",7,12],["Racing 92",7,11],["Vannes",7,5]], note:"« — » : total non confirmé. Le dernier est relégué en Pro D2."}]
+  },
+  basket:{title:"Basket", round:"La Boulangère Wonderligue · Coupe de France",
+    recit:{t:"Landerneau gagne sur le fil",p:[
+      "Landerneau Bretagne Basket a remporté le match le plus fou de la 6e journée : Harmoni Turner, auteure de 27 points, a donné la victoire en prolongation contre Charnay (87-85) avec un panier à un dixième de seconde de la fin. Les Finistériennes sont 7e avec trois victoires et trois défaites. En EuroCup, elles jouent dans le groupe H, où elles se sont inclinées à Poznan (77-65) le 14 octobre.",
+      "En Coupe de France masculine, Rennes a passé le 1er tour en battant Quimper (89-73) et se déplacera à Boulogne-sur-Mer au 3e tour, le 9 novembre."]},
+    results:[{day:"LFB · 6e journée", games:[["Landerneau",87,85,"Charnay","a.p."]]},{day:"EuroCup F · 14 octobre", games:[["Poznan",77,65,"Landerneau"]]},{day:"Coupe de France H · 1er tour", games:[["Rennes (basket)",89,73,"Quimper"]]}],
+    next:[{day:"Coupe de France H · 3e tour", games:[["Boulogne-sur-Mer","Rennes (basket)","9 nov. 19h"]]}],
+    tables:[{name:"La Boulangère Wonderligue", head:["J","V","D"], rows:[["Basket Landes",6,6,0],["Lattes-Montpellier",6,5,1],["Charleville",6,4,2],["Charnay",6,3,3],["Villeneuve d'Ascq",6,3,3],["ASVEL",6,3,3],["Landerneau",6,3,3],["Bourges",5,3,2],["Angers",5,2,3],["La Tronche-Meylan",6,1,5],["Toulouse",6,0,6],["Chartres",4,1,3]], note:"Classement de la LFB."}]
+  }
+};
+
+const AGENDA=[
+  ["2026-10-30","foot","Nice – Rennes","Ligue 1, 9e journée · avancé du sam. 31 oct. à la demande de la préfecture des Alpes-Maritimes","19h00",1,"Ligue 1+","35"],
+  ["2026-10-30","hand","Nice – Brest BH","Ligue Butagaz Énergie, 7e journée","20h00",0,"","29"],
+  ["2026-10-31","rugby","Lyon – Vannes","Top 14, 8e journée","16h35",0,"Canal+","56"],
+  ["2026-10-31","hand","Cesson-Rennes – Nantes","StarLigue, 9e journée","19h00",0,"beIN Sports Max 3","35,44"],
+  ["2026-10-31","foot","Guingamp – Saint-Étienne","Ligue 2, 11e journée · le leader au Roudourou","20h00",0,"","22"],
+  ["2026-10-31","foot","Rouen – Concarneau","Ligue 3, 11e journée · choc du haut de tableau","14h45",0,"","29"],
+  ["2026-11-01","voile","Départ de la Route du Rhum","Saint-Malo, pointe du Grouin · 118 skippers","13h02",1,"France 3","35"],
+  ["2026-11-02","foot","Lorient – Brest","Ligue 1, 9e journée · derby breton · reporté du sam. 31 oct. à la demande de la préfecture du Morbihan","20h45",1,"Ligue 1+","56,29"],
+  ["2026-11-04","foot","Rennes – Olympiakos","Ligue Europa, 4e journée · avancé du jeu. 5 nov. (mouvements sociaux)","16h30",1,"","35"],
+  ["2026-11-06","foot","Dunkerque – Guingamp","Ligue 2","",0,"","22"],
+  ["2026-11-14","amateur","Coupe de France, 7e tour","14-15 nov. · entrée de Guingamp et des clubs de Ligue 2","",1,"",""],
+  ["2026-11-09","basket","Boulogne-sur-Mer – Rennes","Coupe de France, 3e tour","19h00",0,"","35"],
+  ["2026-11-20","foot","Guingamp – Rodez","Ligue 2","",0,"","22"],
+  ["2026-11-28","amateur","Coupe de France, 8e tour","28-29 nov. · dernier tour avant l'entrée des clubs de Ligue 1","",0,"",""]
+];
+const COLORS={foot:"var(--foot)",amateur:"var(--amateur)",hand:"var(--hand)",rugby:"var(--rugby)",basket:"var(--basket)",velo:"var(--velo)",voile:"var(--voile)",run:"var(--run)"};
+const NAMES={foot:"Football",amateur:"Foot amateur",hand:"Handball",rugby:"Rugby",basket:"Basket",velo:"Cyclisme",voile:"Voile",run:"Course à pied"};
+
+const isB=n=>BZH.has(n)||(HIST&&HISTNAMES.has(n));
+const disp=n=>n==="Rennes (basket)"?"Rennes":n;
+function matchRow(g){
+  const [h,sh,sa,a,x]=g;
+  if(sh===null||sh===undefined) return `<div class="match"><div class="t h ${isB(h)?"bzh":""}">${esc(disp(h))}</div><div class="score next">${esc(x||"")}</div><div class="t ${isB(a)?"bzh":""}">${esc(disp(a))}</div></div>`;
+  return `<div class="match"><div class="t h ${sh>sa?"w":""} ${isB(h)?"bzh":""}">${esc(disp(h))}</div><div class="score">${sh}–${sa}${x?` <small style="font-size:.6em;opacity:.7">${esc(x)}</small>`:""}</div><div class="t ${sa>sh?"w":""} ${isB(a)?"bzh":""}">${esc(disp(a))}</div></div>`;
+}
+const nextRow=g=>matchRow([g[0],null,null,g[1],g[2]]);
+function tableHTML(t){
+  return `<section class="block"><h3>${esc(t.name)}</h3><div class="tbl"><table><thead><tr><th>#</th><th>Club</th>${t.head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${t.rows.map((r,i)=>`<tr class="${isB(r[0])?"bzh":""}"><td>${i+1}</td><td>${esc(r[0])}${(()=>{const c=isB(r[0])&&clubForRow(t,r[0]);return c&&c.res.length>1?formHTML(c):"";})()}</td>${r.slice(1).map((v,j,a)=>`<td class="${j===a.length-1?"pts":""}">${esc(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div><div class="legend"><span class="sw"></span>Club breton</div>${t.note?`<div class="note">${esc(t.note)}</div>`:""}</section>`;
+}
+const factsHTML=arr=>`<div class="facts">${arr.map(f=>`<div class="fact"><div class="d">${esc(f.d)}</div><div><b>${esc(f.t)}</b>${f.s?`<small>${esc(f.s)}</small>`:""}</div></div>`).join("")}</div>`;
+
+function renderSport(k){
+  const d=DATA[k];
+  const res=d.results.map(x=>`<div class="daylbl">${esc(x.day)}</div>${x.games.map(matchRow).join("")}`).join("");
+  const nxt=d.next.map(x=>`<div class="daylbl">${esc(x.day)}</div>${x.games.map(nextRow).join("")}`).join("");
+  return `<div class="grid2">
+    <section class="block recit wide">${ILLU(k)}<div class="ai">Résumé IA</div><h4>${esc(d.recit.t)}</h4>${d.recit.p.map(p=>`<p>${esc(p)}</p>`).join("")}${srcHTML(k)}</section>
+    <section class="block"><h3>Résultats des Bretons</h3>${res}</section>
+    <section class="block"><h3>À venir</h3>${nxt}</section>
+    ${d.tables.map(tableHTML).join("")}
+    ${d.extra?`<section class="block"><h3>${esc(d.extra.title)}</h3>${factsHTML(d.extra.items)}</section>`:""}
+  </div>`;
+}
+
+const DEPTS=[["29","Finistère"],["22","Côtes-d'Armor"],["56","Morbihan"],["35","Ille-et-Vilaine"],["44","Loire-Atlantique"]];
+const DEPTCODE=Object.fromEntries(DEPTS.map(([c,n])=>[n,c]));
+let DEPT=""; try{DEPT=localStorage.getItem("tb-dept")||""}catch(e){}
+const inDept=c=>!DEPT||DEPTCODE[c.dept]===DEPT;
+function deptChips(){
+  const list=DEPTS.filter(([c])=>HIST||c!=="44");
+  return `<div class="depts" role="group" aria-label="Filtrer par département"><button class="dchip" data-dept="" aria-pressed="${!DEPT}">Toute la Bretagne</button>${list.map(([c,n])=>`<button class="dchip" data-dept="${c}" aria-pressed="${DEPT===c}">${esc(n)} <small>${c}</small></button>`).join("")}</div>`;
+}
+
+/* ---------- Visuels ---------- */
+/* BILAN_NUIT : bilan interne de la dernière mise à jour, lu par la tâche du bilan du matin (non affiché sur le site) */
+const BILAN_NUIT={date:"",faits:[],affiche:"",manques:[],a_decider:[]};
+/* AFFICHE : l'affiche de la semaine pour les visuels « affiche » et « story » ; score:[buts dom, buts ext] une fois le match joué, sinon null */
+const AFFICHE={kicker:"Derby breton · Ligue 1",a:"Lorient",b:"Brest",l1:"Lundi 2 novembre · 20h45",l2:"Stade du Moustoir · Ligue 1+",score:null};
+const VIS=[
+  {id:"derby",title:"L'affiche de la semaine",file:"tribune-breizh-affiche.png"},
+  {id:"classement",title:"Les Bretons au classement",file:"tribune-breizh-classement.png"},
+  {id:"resultats",title:"Les résultats du week-end",file:"tribune-breizh-resultats.png"},
+  {id:"buteurs",title:"Les buteurs bretons",file:"tribune-breizh-buteurs.png"},
+  {id:"face",title:"Le face-à-face",file:"tribune-breizh-face-a-face.png"},
+  {id:"rhum",title:"Route du Rhum : les Bretons",file:"tribune-breizh-route-du-rhum.png"},
+  {id:"story",title:"Story : l'affiche de la semaine",file:"tribune-breizh-story-affiche.png",h:1920}
+];
+function renderVisuels(){
+  return `<p class="note" style="margin-top:0">Des images carrées (1080 × 1080) et une story verticale (1080 × 1920), prêtes à publier sur Instagram, Facebook ou WhatsApp, régénérées à chaque mise à jour.</p><div class="visgrid">${VIS.map(v=>`<section class="block"><h3>${esc(v.title)}</h3><canvas id="cv-${v.id}" width="1080" height="${v.h||1080}" class="vis"${v.h?` style="aspect-ratio:1080/${v.h}"`:""} role="img" aria-label="${esc(v.title)}"></canvas><div class="recap-actions"><button class="favbtn" data-dl="${v.id}">Enregistrer l'image</button><span class="note" id="dlmsg-${v.id}" role="status"></span></div></section>`).join("")}</div>`;
+}
+async function drawVisuels(){
+  try{await Promise.all([document.fonts.load("900 120px 'Big Shoulders Display'"),document.fonts.load("700 40px Archivo"),document.fonts.load("400 40px Archivo")]);}catch(e){}
+  const D="'Big Shoulders Display', Impact, sans-serif", B="Archivo, system-ui, sans-serif";
+  const base=(ctx,kicker)=>{ctx.fillStyle="#121417";ctx.fillRect(0,0,1080,1080);ctx.fillStyle="#f5f6f4";for(let i=0;i<9;i++){ctx.fillRect(0,40+i*14,1080,6);} ctx.fillStyle="#121417";ctx.fillRect(60,20,560,170);ctx.fillStyle="#f5f6f4";ctx.font=`900 64px ${D}`;ctx.fillText("TRIBUNE BREIZH",80,110);ctx.font=`700 26px ${B}`;ctx.fillStyle="#ff5a6e";ctx.fillText(kicker.toUpperCase(),80,160);ctx.fillStyle="#9aa1ab";ctx.font=`400 24px ${B}`;ctx.fillText("Le sport breton, club par club · Kenavo !",60,1040);};
+  const fit=(x,t,max,size,w,fam)=>{let z=size;x.font=`${w} ${z}px ${fam}`;while(x.measureText(t).width>max&&z>20){z-=4;x.font=`${w} ${z}px ${fam}`;}return z;};
+  const ctr=(x,t,y,size,w,fam,col,max)=>{x.textAlign="center";x.fillStyle=col;fit(x,t,max||960,size,w,fam);x.fillText(t,540,y);x.textAlign="left";};
+  const c1=document.getElementById("cv-derby"); if(c1){const x=c1.getContext("2d");const A=AFFICHE;base(x,A.kicker);ctr(x,A.a.toUpperCase(),470,170,900,D,"#f5f6f4");if(A.score){ctr(x,`${A.score[0]} – ${A.score[1]}`,590,110,900,D,"#ff5a6e");}else ctr(x,"CONTRE",570,70,800,D,"#ff5a6e");ctr(x,A.b.toUpperCase(),740,170,900,D,"#f5f6f4");ctr(x,A.score?"Score final":A.l1,840,40,700,B,"#f5f6f4");ctr(x,A.l2,895,32,400,B,"#9aa1ab");}
+  const c2=document.getElementById("cv-classement"); if(c2){const x=c2.getContext("2d");base(x,"Les Bretons au classement");const rows=ALLCLUBS.filter(c=>!c.hist&&c.r!=="—").slice(0,9);rows.forEach((c,i)=>{const y=300+i*76;x.fillStyle=i%2?"#1b1f25":"#171a1f";x.fillRect(60,y-50,960,68);x.fillStyle="#f5f6f4";x.font=`900 52px ${D}`;x.fillText(c.r,84,y);x.font=`700 34px ${B}`;x.fillText(c.short,230,y-6);x.fillStyle="#9aa1ab";x.font=`400 24px ${B}`;x.fillText(c.lg,230,y+18);x.textAlign="right";x.fillStyle="#f5f6f4";x.font=`700 30px ${B}`;x.fillText(c.pts,996,y-2);x.textAlign="left";});}
+  const c3=document.getElementById("cv-resultats"); if(c3){const x=c3.getContext("2d");base(x,"Résultats du week-end");const rs=[["Rennes",3,0,"Strasbourg"],["Brest",1,2,"Nice"],["Angers",0,0,"Lorient"],["Clermont",0,2,"Guingamp"],["Concarneau",1,1,"Bastia"],["Vannes",27,26,"Clermont"],["Tremblay",34,29,"Cesson-R."],["Landerneau",87,85,"Charnay"]];rs.forEach((r,i)=>{const y=300+i*84;x.fillStyle=i%2?"#1b1f25":"#171a1f";x.fillRect(60,y-54,960,72);x.fillStyle="#f5f6f4";x.font=`700 36px ${B}`;x.textAlign="right";x.fillText(r[0],440,y);x.textAlign="center";x.font=`900 54px ${D}`;x.fillStyle="#ff5a6e";x.fillText(`${r[1]}-${r[2]}`,540,y+4);x.textAlign="left";x.fillStyle="#f5f6f4";x.font=`700 36px ${B}`;x.fillText(r[3],640,y);});}
+  const c4=document.getElementById("cv-buteurs"); if(c4){const x=c4.getContext("2d");base(x,"Les buteurs bretons");const l=[...BUTEURS].sort((a,b)=>b[3]-a[3]).slice(0,8);l.forEach((b,i)=>{const y=300+i*84;x.fillStyle=i%2?"#1b1f25":"#171a1f";x.fillRect(60,y-54,960,72);x.textAlign="center";x.fillStyle="#ff5a6e";x.font=`900 58px ${D}`;x.fillText(String(b[3]),130,y+6);x.textAlign="left";x.fillStyle="#f5f6f4";x.font=`700 36px ${B}`;x.fillText(b[0],210,y-4);x.fillStyle="#9aa1ab";x.font=`400 24px ${B}`;x.fillText(b[1]+" · "+b[2],210,y+24);});x.fillStyle="#9aa1ab";x.font=`400 22px ${B}`;x.fillText("Buts en championnat",60,990);}
+  const c5=document.getElementById("cv-face"); if(c5&&typeof FACE!=="undefined"&&FACE&&FACE.m&&FACE.m.length){const x=c5.getContext("2d");base(x,"Le face-à-face");let va=0,vb=0,n=0;FACE.m.forEach(([h,sh,sa,a])=>{const w=sh>sa?h:sa>sh?a:null;if(!w)n++;else if(w===FACE.a)va++;else if(w===FACE.b)vb++;});
+    ctr(x,`${FACE.a.toUpperCase()} – ${FACE.b.toUpperCase()}`,300,96,900,D,"#f5f6f4");[[va,"victoire"+(va>1?"s":"")+" "+FACE.a,250],[n,"nul"+(n>1?"s":""),540],[vb,"victoire"+(vb>1?"s":"")+" "+FACE.b,830]].forEach(([v,l,cx])=>{x.textAlign="center";x.fillStyle="#ff5a6e";x.font=`900 120px ${D}`;x.fillText(String(v),cx,450);x.fillStyle="#9aa1ab";fit(x,l,260,26,400,B);x.fillText(l,cx,492);});x.textAlign="left";
+    FACE.m.slice(0,5).forEach((g,i)=>{const y=600+i*80;x.fillStyle=i%2?"#1b1f25":"#171a1f";x.fillRect(60,y-50,960,68);x.fillStyle="#f5f6f4";x.font=`700 32px ${B}`;x.textAlign="right";x.fillText(g[0],420,y);x.textAlign="center";x.font=`900 50px ${D}`;x.fillStyle="#ff5a6e";x.fillText(`${g[1]}-${g[2]}`,500,y+2);x.textAlign="left";x.fillStyle="#f5f6f4";x.font=`700 32px ${B}`;x.fillText(g[3],580,y);x.textAlign="right";x.fillStyle="#9aa1ab";x.font=`400 22px ${B}`;x.fillText((g[4]||"").split(" · ")[0],1004,y);x.textAlign="left";});}
+  const c6=document.getElementById("cv-rhum"); if(c6&&typeof RHUM!=="undefined"){const x=c6.getContext("2d");base(x,"Route du Rhum 2026");const st=new Date(RHUM.start),now=new Date(),cl=RHUM.classement||[];
+    if(now>=st&&cl.length){ctr(x,"LES BRETONS EN COURSE",290,90,900,D,"#f5f6f4");cl.slice(0,8).forEach((r,i)=>{const y=400+i*76;x.fillStyle=i%2?"#1b1f25":"#171a1f";x.fillRect(60,y-50,960,68);x.textAlign="center";x.fillStyle="#ff5a6e";x.font=`900 50px ${D}`;x.fillText(String(r[1])+"e",130,y+2);x.textAlign="left";x.fillStyle="#f5f6f4";x.font=`700 32px ${B}`;x.fillText(r[2],210,y-6);x.fillStyle="#9aa1ab";x.font=`400 22px ${B}`;x.fillText(r[0]+(r[3]?" · "+r[3]:""),210,y+20);});if(RHUM.maj){x.fillStyle="#9aa1ab";x.font=`400 22px ${B}`;x.fillText(RHUM.maj,60,1000);}}
+    else{const d=Math.max(0,Math.ceil((st-now)/86400000));ctr(x,now>=st?"LES BRETONS SONT EN MER":`${RHUM.skippers.length} BRETONS AU DÉPART`,290,90,900,D,"#f5f6f4");RHUM.skippers.slice(0,12).forEach((b,i)=>{const col=i<6?0:1,row=i<6?i:i-6,X=col?560:80,y=390+row*80;x.fillStyle=i%2?"#1b1f25":"#171a1f";x.fillRect(X-16,y-46,456,66);x.fillStyle="#f5f6f4";fit(x,b[0],300,30,700,B);x.fillText(b[0],X,y-4);x.fillStyle="#ff5a6e";x.font=`700 20px ${B}`;x.fillText(b[1].toUpperCase(),X,y+18);});ctr(x,now>=st?"Premier classement au prochain pointage":(d?`J−${d} · `:"")+"Dimanche 1er novembre · 13h02 · Saint-Malo",920,34,700,B,"#f5f6f4");}}
+  const c7=document.getElementById("cv-story"); if(c7){const x=c7.getContext("2d");const A=AFFICHE;x.fillStyle="#121417";x.fillRect(0,0,1080,1920);x.fillStyle="#f5f6f4";for(let i=0;i<9;i++)x.fillRect(0,40+i*14,1080,6);x.fillStyle="#121417";x.fillRect(60,20,560,170);x.fillStyle="#f5f6f4";x.font=`900 64px ${D}`;x.fillText("TRIBUNE BREIZH",80,110);x.font=`700 26px ${B}`;x.fillStyle="#ff5a6e";x.fillText(A.kicker.toUpperCase(),80,160);
+    ctr(x,A.score?"SCORE FINAL":A.l1.toUpperCase(),640,A.score?100:64,900,D,"#ff5a6e");ctr(x,A.a.toUpperCase(),900,240,900,D,"#f5f6f4");if(A.score)ctr(x,`${A.score[0]} – ${A.score[1]}`,1080,170,900,D,"#ff5a6e");else ctr(x,"CONTRE",1030,80,800,D,"#ff5a6e");ctr(x,A.b.toUpperCase(),A.score?1300:1250,240,900,D,"#f5f6f4");ctr(x,A.l2,1420,40,400,B,"#9aa1ab");x.fillStyle="#9aa1ab";x.font=`400 24px ${B}`;x.fillText("Tout le sport breton sur Tribune Breizh · lien en bio",60,1880);}
+}
+async function saveVisual(id){
+  const v=VIS.find(x=>x.id===id), cv=document.getElementById("cv-"+id), m=document.getElementById("dlmsg-"+id); if(!v||!cv)return;
+  const blob=await new Promise(r=>cv.toBlob(r,"image/png")); if(!blob){if(m)m.textContent="L'image n'a pas pu être préparée.";return;}
+  let dl=null; try{dl=window.claude&&window.claude.use?await window.claude.use("downloads"):null}catch(e){}
+  if(dl){try{await dl.save({filename:v.file,data:blob}); if(m)m.textContent="Image enregistrée.";}catch(e){if(m)m.textContent=e&&e.code==="declined"?"Enregistrement annulé.":"L'enregistrement n'est pas disponible ici.";} return;}
+  try{const u=URL.createObjectURL(blob); const a=document.createElement("a"); a.href=u; a.download=v.file; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(u),4000); if(m)m.textContent="Téléchargement lancé.";}catch(e){if(m)m.textContent="L'enregistrement n'est pas disponible ici.";}
+}
+
+/* ---------- Recherche ---------- */
+function searchIndex(){
+  const pro=clubsNow().map(c=>({label:c.n,sub:`${SNAME[c.sport]} · ${c.lg} · ${c.city}`,go:"club-"+c.id,key:(c.n+" "+c.city+" "+c.short).toLowerCase()}));
+  const am=[...new Set([...POUCETS.map(p=>p[0]),...AMATEUR.n2.map(r=>r[0]),...R1.flatMap(r=>[...r.top.map(t=>t[0]),...r.low.map(t=>t[0])]),...R2B.map(r=>r[0]),...R2A.map(r=>r[0]),...R2C.map(r=>r[0]),...R2D.map(r=>r[0]),...AMATEUR.n1.map(r=>r[0])])].map(n=>({label:n,sub:"Foot amateur",go:"amateur",key:n.toLowerCase()}));
+  return [...pro,...am];
+}
+const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+function runSearch(q){
+  const box=document.getElementById("qres"); if(!box)return;
+  const t=norm(q.trim()); if(t.length<2){box.hidden=true;box.innerHTML="";return;}
+  const hits=searchIndex().filter(x=>norm(x.key).includes(t)).slice(0,8);
+  box.innerHTML=hits.length?hits.map(h=>`<button class="qhit" data-q="${esc(h.go)}"><b>${esc(h.label)}</b><small>${esc(h.sub)}</small></button>`).join(""):`<div class="qnone">Aucun club trouvé.</div>`;
+  box.hidden=false;
+}
+const SCOL={...COLORS,volley:"var(--sea)"};
+const SNAME={...NAMES,volley:"Volley"};
+function resLine(c,g){const [h,sh,sa,a]=g;const home=h===(c.nm||c.short);const my=home?sh:sa, op=home?sa:sh;const o=home?a:h;const r=my>op?"V":my<op?"D":"N";return `<span class="rl"><i class="f f-${r}">${r}</i>${my}-${op} ${home?"contre "+esc(o):(o.startsWith("Le ")?"au "+esc(o.slice(3)):"à "+esc(o))}</span>`;}
+function clubCard(c){
+  const last=c.res[0], nx=c.nxt[0];
+  return `<button class="club" style="--c:${SCOL[c.sport]}" data-club="${c.id}"><div class="club-top"><span>${esc(SNAME[c.sport])} · ${esc(c.lg)}</span><span class="city">${FAV.has(c.id)?"★ ":""}${esc(c.city)}</span></div><b class="n">${esc(c.n)}</b><div class="rank"><span class="r">${esc(c.r)}</span><small>${esc(c.pts)}</small></div>${c.res&&c.res.length>1?`<div class="line"><span>Forme</span><span>${formHTML(c)}</span></div>`:""}<div class="line"><span>Dernier match</span><span>${last?resLine(c,last):"—"}</span></div><div class="line"><span>Prochain</span><span>${nx?esc((nx[0]===(c.nm||c.short)?"contre "+nx[1]:"à "+nx[0]))+" · "+esc(nx[2]):"À venir"}</span></div></button>`;
+}
+function renderClub(id){
+  const c=ALLCLUBS.find(x=>x.id===id); if(!c) return "<p>Club introuvable.</p>";
+  const fav=FAV.has(c.id);
+  const meta=[c.venue&&["Enceinte",c.venue+(c.cap?" · "+c.cap+" places":"")],c.founded&&["Fondation",c.founded],c.coach&&["Entraîneur",c.coach],c.palm&&["Palmarès",c.palm],["Département",c.dept]].filter(Boolean);
+  const res=c.res.map(g=>`<div class="daylbl">${esc(g[4]||"")}</div>${matchRow(g.slice(0,4))}`).join("");
+  const nx=c.nxt.length?c.nxt.map(g=>nextRow(g)).join(""):`<p class="note">Calendrier à venir.</p>`;
+  const tbl=c.tbl?tableHTML({...DATA[c.tbl[0]].tables[c.tbl[1]]}):"";
+  return `<button class="back" data-go="une">← Retour</button>
+  <section class="lead" style="border-top-color:${SCOL[c.sport]}"><div class="kicker" style="color:${SCOL[c.sport]}">${esc(SNAME[c.sport])} · ${esc(c.lg)}</div>
+    <div class="fiche-top"><h3 class="big">${esc(c.n)}</h3>${cpBtn("club-"+c.id)}<button class="favbtn ${fav?"on":""}" data-fav="${c.id}" aria-pressed="${fav}">${fav?"★ Dans mes clubs":"☆ Ajouter à mes clubs"}</button></div>
+    <div class="rank"><span class="r" style="font-size:3rem">${esc(c.r)}</span><small>${esc(c.pts)}</small>${c.res&&c.res.length>1?`<span style="margin-left:10px">${formHTML(c)}</span>`:""}</div>
+    <div class="hl3">${meta.map(([k,v])=>`<div><small>${esc(k)}</small><b style="font-size:1.15rem">${esc(v)}</b></div>`).join("")}</div>
+    ${c.note?`<p class="note">${esc(c.note)}</p>`:""}${c.wiki?`<p class="src">Repères du club : <a href="${esc(c.wiki)}" target="_blank" rel="noopener">Wikipédia</a></p>`:""}</section>
+  <div class="grid2"><section class="block"><h3>Derniers résultats</h3>${res}</section><section class="block"><h3>Prochains matchs</h3>${nx}</section>${tbl}</div>`;
+}
+function renderMonClub(){
+  const list=clubsNow();
+  const chips=list.map(c=>`<button class="pick ${FAV.has(c.id)?"on":""}" data-fav="${c.id}" aria-pressed="${FAV.has(c.id)}" style="--c:${SCOL[c.sport]}"><i></i>${esc(c.n)}<small>${esc(c.lg)}</small></button>`).join("");
+  const favs=list.filter(c=>FAV.has(c.id));
+  return `<section class="block"><h3>Choisissez vos clubs</h3><p class="note" style="margin-top:0">Touchez un club pour l'ajouter ou le retirer. Vos choix sont gardés sur cet appareil et vos clubs passent en tête de la page d'accueil.</p><div class="picks">${chips}</div></section>
+  ${favs.length?`<h3 class="sec-title">Mes clubs</h3><div class="clubs">${favs.map(clubCard).join("")}</div>`:`<p class="note">Aucun club choisi pour l'instant.</p>`}`;
+}
+/* Carte */
+const BZH_POLY=[[-1.51,48.63],[-1.07,48.53],[-1.05,48.30],[-1.07,48.05],[-1.25,47.78],[-1.70,47.70],[-2.08,47.65],[-2.47,47.50],[-2.85,47.55],[-3.12,47.48],[-3.20,47.62],[-3.40,47.70],[-3.65,47.77],[-3.92,47.86],[-4.20,47.80],[-4.37,47.80],[-4.53,48.02],[-4.74,48.04],[-4.33,48.10],[-4.55,48.25],[-4.45,48.30],[-4.78,48.33],[-4.79,48.40],[-4.65,48.55],[-4.30,48.66],[-3.98,48.72],[-3.85,48.68],[-3.45,48.83],[-3.05,48.78],[-2.75,48.53],[-2.32,48.68],[-2.02,48.65],[-1.85,48.68]];
+const LA_POLY=[[-2.47,47.50],[-2.55,47.29],[-2.21,47.27],[-2.10,47.11],[-2.05,47.00],[-1.60,46.95],[-1.30,47.05],[-1.00,47.25],[-1.05,47.55],[-1.25,47.78],[-1.70,47.70],[-2.08,47.65]];
+const PX=(lon,lat)=>[((lon+4.95)*134).toFixed(1),((48.95-lat)*200).toFixed(1)];
+function renderCarte(){
+  const poly=p=>p.map(([lo,la])=>PX(lo,la).join(",")).join(" ");
+  const OFF={landerneau:-9,brest:4,brestbh:16,rennes:-8,cesson:14,hbcnantes:14,nantesf:-12};
+  const pins=clubsNow().map(c=>{const [x,y]=PX(c.lon,c.lat);const lx=c.lon>-1.9?-10:10;const anchor=c.lon>-1.9?"end":"start";const dy=OFF[c.id]!==undefined?OFF[c.id]:4;
+    return `<g class="pin" data-club="${c.id}" tabindex="0" role="button" aria-label="${esc(c.n)}"><circle cx="${x}" cy="${y}" r="${FAV.has(c.id)?8:6.5}" style="fill:${SCOL[c.sport]}"/><text x="${(+x+lx).toFixed(1)}" y="${(+y+dy).toFixed(1)}" text-anchor="${anchor}">${esc(c.short)}${FAV.has(c.id)?" ★":""}</text></g>`;}).join("");
+  const deps=[["Finistère",-4.15,48.25],["Côtes-d'Armor",-2.95,48.36],["Morbihan",-2.95,47.86],["Ille-et-Vilaine",-1.75,48.32]].concat(HIST?[["Loire-Atlantique",-1.75,47.38]]:[]).map(([n,lo,la])=>{const [x,y]=PX(lo,la);return `<text class="dep" x="${x}" y="${y}" text-anchor="middle">${esc(n)}</text>`}).join("");
+  const legend=[...new Set(clubsNow().map(c=>c.sport))].map(s=>`<span><i style="background:${SCOL[s]}"></i>${esc(SNAME[s])}</span>`).join("");
+  return `<section class="block"><div class="maplegend">${legend}</div><div class="mapwrap"><svg viewBox="0 0 540 ${HIST?410:330}" class="map" role="img" aria-label="Carte des clubs bretons">
+    <polygon points="${poly(BZH_POLY)}" class="land"/>${HIST?`<polygon points="${poly(LA_POLY)}" class="land hist"/>`:""}${deps}${pins}</svg></div>
+    <p class="note">Touchez un club pour ouvrir sa fiche. Tracé simplifié de la région. ${HIST?"La Loire-Atlantique est affichée (Bretagne historique).":"Activez « Bretagne historique » en haut de page pour inclure Nantes et Saint-Nazaire."}</p></section>`;
+}
+/* Petits poucets et derbies */
+const POUCETS=[["Perros-Louannec","R3","a sorti Fougères (R1) aux tirs au but"],["US Grégorienne","R2","a sorti Pontivy (N1) aux tirs au but"],["Plabennec","R1","a sorti le Stade Briochin (N1) aux tirs au but"],["Châteaubourg","R1","a sorti Locminé (N1) aux tirs au but"],["Saint-Renan","R1","vainqueur à Moréac (1-0)"],["Tinténiac Saint-Domineuc","R1","vainqueur à Concarneau (0-2)"],["Bréquigny Rennes","R1","vainqueur de Saint-Jacques (2-1)"],["Stade Pontivyen","R1","vainqueur à Janzé (0-2)"],["COB Saint-Brieuc","R1","vainqueur de Plaintel (3-1)"],["TA Rennes","N2","vainqueur à Ginglin-Cesson (1-2)"],["Saint-Pierre Milizac","N2","vainqueur d'Ergué-Gabéric (2-1)"],["Vitré","N2","vainqueur à la Montagnarde (0-1)"],["Lannion","N2","vainqueur à Landerneau (1-4)"],["Vannes OC","N2","vainqueur de Vignoc-Hédé-Guipel (1-0)"],["Concarneau","L3","vainqueur à l'OC Cesson (2-4)"]];
+function renderPoucets(){
+  return `<section class="block wide"><h3>Le suivi des petits poucets</h3><p class="note" style="margin-top:0">Les clubs bretons qualifiés pour le 7e tour (14-15 novembre), du plus petit au plus grand. Tirage à venir.</p>
+    <div class="tbl"><table><thead><tr><th>Club</th><th style="text-align:left">Niveau</th><th style="text-align:left">6e tour</th></tr></thead><tbody>${POUCETS.map(([n,l,t])=>`<tr><td style="text-align:left;color:var(--ink);font-weight:600">${esc(n)}</td><td style="text-align:left"><span class="lvl lvl-${l}">${l}</span></td><td style="text-align:left">${esc(t)}</td></tr>`).join("")}</tbody></table></div>
+    <p class="note">Liste tirée des résultats publiés ; d'autres clubs bretons peuvent être qualifiés. Guingamp entre au 7e tour, Rennes, Brest et Lorient aux 32es de finale le 20 décembre.</p></section>`;
+}
+function renderDerbyMini(){
+  return `<section class="derby"><div class="kicker">Derby breton</div><div class="derby-row"><b>Lorient</b><span class="vs">lun. 2 nov. · 20h45<br><small>Stade du Moustoir · Ligue 1+</small></span><b>Brest</b></div>
+    <p>Premier derby breton de la saison en Ligue 1. Lorient (9e, 12 pts) reçoit Brest (13e, 9 pts), battu par Nice le week-end dernier.</p>
+    <p style="margin-top:8px;font-weight:700;color:var(--ailleurs)">Reporté du sam. 31 oct. : la LFP a décalé le match au lundi soir à la demande de la préfecture du Morbihan, en raison de la journée de mobilisation sociale.</p>
+    <div class="note" style="margin-top:4px">À suivre aussi : Rennes–Brest et Rennes–Lorient plus tard dans la saison${HIST?", Cesson-Rennes–Nantes en hand ce samedi":""}.</div></section>`;
+}
+/* ---------- Derbies bretons (Ligue 1) ---------- */
+// DERBIES : à venir {comp,a,b,when (AAAA-MM-JJ),lbl,venue,tv} ; DERBYRES : joués {comp,d,g:[dom,b,b,ext],s (buteurs)}
+const DERBIES=[
+  {comp:"Ligue 1 · 9e journée",a:"Lorient",b:"Brest",when:"2026-11-02",lbl:"Lundi 2 novembre, 20h45",venue:"Stade du Moustoir",tv:"Ligue 1+",note:"Reporté du samedi 31 octobre à la demande de la préfecture du Morbihan."},
+  {comp:"Ligue 1 · 11e journée",a:"Lorient",b:"Rennes",when:"2026-11-22",lbl:"Week-end du 21-22 novembre",venue:"Stade du Moustoir",tv:"",note:"Date et horaire précis fixés par la LFP."},
+  {comp:"Ligue 1 · 13e journée",a:"Rennes",b:"Brest",when:"2026-12-06",lbl:"Week-end du 5-6 décembre",venue:"Roazhon Park",tv:"",note:"Date et horaire précis fixés par la LFP."},
+  {comp:"Ligue 1 · 18e journée",a:"Rennes",b:"Lorient",when:"2027-01-31",lbl:"Week-end du 30-31 janvier 2027",venue:"Roazhon Park",tv:"",note:""},
+  {comp:"Ligue 1 · 20e journée",a:"Brest",b:"Rennes",when:"2027-02-13",lbl:"Week-end du 13-14 février 2027",venue:"Stade Francis-Le Blé",tv:"",note:""},
+  {comp:"Ligue 1",a:"Brest",b:"Lorient",when:"2027-04-03",lbl:"Week-end du 3-4 avril 2027",venue:"Stade Francis-Le Blé",tv:"",note:""}];
+const DERBYRES=[];
+function renderDerbies(){
+  const now=new Date();
+  const up=DERBIES.filter(x=>new Date(x.when+"T23:59:00")>=now);
+  const nx=up[0];
+  const days=nx?Math.max(0,Math.ceil((new Date(nx.when+"T12:00:00")-now)/86400000)):0;
+  const tally={};DERBYRES.forEach(r=>{const[h,sh,sa,a]=r.g;const w=sh>sa?h:sa>sh?a:null;if(w)tally[w]=(tally[w]||0)+1;});
+  const nuls=DERBYRES.filter(r=>r.g[1]===r.g[2]).length;
+  const played=DERBYRES.length?DERBYRES.map(r=>`${matchRow(r.g)}<p class="note" style="margin:2px 0 8px">${esc(r.comp)}, ${esc(r.d)}.${r.s?" "+esc(r.s):""}</p>`).join(""):`<p class="note" style="margin-top:4px">Aucun derby breton disputé pour l'instant cette saison en Ligue 1.</p>`;
+  const counter=Object.keys(tally).length||nuls?[...Object.entries(tally).sort((a,b)=>b[1]-a[1]).map(([k,v])=>({d:String(v),t:k,s:v>1?"victoires en derby":"victoire en derby"})),...(nuls?[{d:String(nuls),t:"Match"+(nuls>1?"s":"")+" nul"+(nuls>1?"s":""),s:""}]:[])]:[{d:"0",t:"Aucun derby joué",s:"Le compteur démarre avec le premier derby de la saison."}];
+  return `<div class="grid2" style="margin-bottom:24px">
+    ${nx&&days<=7?`<section class="derby wide"><div class="kicker">Derby breton cette semaine · ${esc(nx.comp)}</div><div class="derby-row"><b>${esc(nx.a)}</b><span class="vs">${esc(nx.lbl)}<br><small>${esc(nx.venue)}${nx.tv?" · "+esc(nx.tv):""}${days?" · J−"+days:" · ce soir"}</small></span><b>${esc(nx.b)}</b></div>${nx.note?`<p>${esc(nx.note)}</p>`:""}</section>`:""}
+    <section class="block"><h3>Les derbies bretons de la saison</h3>${nx&&days>7?`<p class="note" style="margin-top:0">Prochain derby : <b>${esc(nx.a)} – ${esc(nx.b)}</b>, ${esc(nx.lbl.charAt(0).toLowerCase()+nx.lbl.slice(1))}, dans ${days} jours.</p>`:""}<div class="daylbl">Déjà joués</div>${played}
+      <div class="daylbl">À venir</div>${factsHTML(up.map(x=>({d:x.comp.replace(/ · .*/,""),t:`${x.a} – ${x.b}`,s:x.lbl+(x.note&&x.note.startsWith("Reporté")?" · reporté du 31 oct.":"")})))}</section>
+    <section class="block"><h3>Le compteur 2026-2027</h3>${factsHTML(counter)}<p class="note">Derbies de Ligue 1 entre Rennes, Brest et Lorient. Six rendez-vous cette saison.</p></section>
+  </div>`;
+}
+/* Féminines */
+function renderFeminines(){
+  const fem=clubsNow().filter(c=>c.fem);
+  return `<div class="grid2"><section class="block recit wide" style="--c:var(--hand)">${ILLU("fem")}<div class="ai">Résumé IA</div><h4>Brest, Landerneau et Saint-Malo portent le sport féminin breton</h4>
+    <p>Brest Bretagne Handball est 3e de la Ligue Butagaz Énergie, à quatre points de Metz, tout en disputant la Ligue des champions. En basket, Landerneau s'est imposé au buzzer contre Charnay et pointe au 7e rang de la Wonderligue. En football, l'US Saint-Malo découvre l'Arkema Première Ligue après sa montée ; son match contre le Paris FC a été reporté à cause de la tempête. Guingamp, relégué, joue désormais en D3.</p>${srcHTML("feminines")}</section>
+    <div class="wide"><div class="clubs">${fem.map(clubCard).join("")}</div></div>
+    ${tableHTML(DATA.hand.tables[1])}${tableHTML(DATA.basket.tables[0])}</div>`;
+}
+/* ---------- Illustrations des résumés ---------- */
+function ILLU(k){
+  const S='class="ln"', A='class="ac"', I='class="ink"', W='class="sf"';
+  const stripes=Array.from({length:9},(_,i)=>i%2?"":`<rect x="500" y="${i*200/9}" width="140" height="${200/9}" class="ink" opacity=".07"/>`).join("");
+  const art={
+    foot:`<rect x="40" y="28" width="560" height="144" ${S}/><line x1="320" y1="28" x2="320" y2="172" ${S}/><circle cx="320" cy="100" r="34" ${S}/><circle cx="320" cy="100" r="3" ${I}/><rect x="40" y="62" width="70" height="76" ${S}/><rect x="530" y="62" width="70" height="76" ${S}/><rect x="28" y="84" width="12" height="32" ${S}/><rect x="600" y="84" width="12" height="32" ${S}/><g transform="translate(430 128)"><circle r="20" ${W} stroke-width="3"/><path d="M0-8l7.6 5.5-2.9 9h-9.4l-2.9-9z" ${I}/><path d="M0-8V-20M7.6-2.5l11.4-3.7M4.7 6.5l7 9.7M-4.7 6.5l-7 9.7M-7.6-2.5l-11.4-3.7" ${S} stroke-width="2"/></g><path d="M330 100q50-40 82 14" class="ac-s" fill="none" stroke-dasharray="6 6" stroke-width="3"/>`,
+    amateur:`<path d="M0 172H640" ${S}/><path d="M40 172a48 48 0 0 1 48-48" ${S}/><line x1="40" y1="172" x2="40" y2="44" class="ln" stroke-width="5"/><path d="M42 46l58 16-58 18z" ${A}/><g transform="translate(150 150)"><circle r="20" ${W} stroke-width="3"/><path d="M0-8l7.6 5.5-2.9 9h-9.4l-2.9-9z" ${I}/></g><g ${I} opacity=".85">${Array.from({length:6},(_,i)=>`<rect x="${250+i*38}" y="${150-i*14}" width="34" height="${22+i*14}"/>`).join("")}</g><g ${A}>${Array.from({length:12},(_,i)=>`<circle cx="${262+(i%6)*38}" cy="${140-(i%6)*14-(i>5?16:0)}" r="5"/>`).join("")}</g>`,
+    hand:`<path d="M0 172H640" ${S}/><g>${Array.from({length:7},(_,i)=>`<rect x="40" y="${64+i*15}" width="10" height="15" class="${i%2?"sf":"ac"}" stroke="none"/>`).join("")}<rect x="40" y="56" width="10" height="116" ${S} fill="none"/><rect x="40" y="56" width="70" height="10" ${A}/><path d="M50 66l60 0v106" ${S}/></g><path d="M110 28a150 150 0 0 1 0 144" ${S}/><path d="M110 8a190 190 0 0 1 0 184" ${S} stroke-dasharray="10 8"/><g transform="translate(380 92)"><circle r="24" ${W} stroke-width="3"/><path d="M-24 0q24-12 48 0M0-24q-12 24 0 48M-17-17q12 6 6 22" ${S} stroke-width="2.5"/></g><path d="M372 106q-90 40-150 28" class="ac-s" fill="none" stroke-dasharray="6 6" stroke-width="3"/>`,
+    rugby:`<path d="M0 172H640" ${S}/><line x1="250" y1="16" x2="250" y2="172" class="ln" stroke-width="6"/><line x1="340" y1="16" x2="340" y2="172" class="ln" stroke-width="6"/><line x1="250" y1="112" x2="340" y2="112" class="ln" stroke-width="6"/><rect x="244" y="132" width="12" height="40" ${A}/><rect x="334" y="132" width="12" height="40" ${A}/><g transform="translate(470 120) rotate(-28)"><ellipse rx="46" ry="26" ${W} stroke-width="3"/><path d="M-40 0H40" ${S} stroke-width="2"/><path d="M-12-6v12M-4-6v12M4-6v12M12-6v12" class="ln" stroke-width="3"/></g><path d="M430 96q-60-80-120-40" class="ac-s" fill="none" stroke-dasharray="6 6" stroke-width="3"/>`,
+    basket:`<path d="M0 172H640" ${S}/><rect x="468" y="22" width="100" height="66" ${W} stroke-width="3"/><rect x="498" y="48" width="40" height="30" ${S}/><line x1="568" y1="55" x2="620" y2="55" class="ln" stroke-width="5"/><line x1="620" y1="55" x2="620" y2="172" class="ln" stroke-width="5"/><ellipse cx="518" cy="92" rx="30" ry="7" fill="none" class="ac-s" stroke-width="5"/><path d="M490 94l10 34M502 98l6 30M518 99v29M534 98l-6 30M546 94l-10 34M500 128h36" ${S} stroke-width="2"/><g transform="translate(300 70)"><circle r="26" class="ac" stroke="var(--ink)" stroke-width="3"/><path d="M-26 0H26M0-26V26M-18-18q10 18 0 36M18-18q-10 18 0 36" ${S} stroke-width="2.5"/></g><path d="M120 160Q260-10 510 86" fill="none" ${S} stroke-dasharray="8 8" opacity=".5"/>`,
+    velo:`<path d="M0 172H640" ${S}/><path d="M0 186H640" ${S} stroke-dasharray="40 30"/><g transform="translate(250 0)"><circle cx="0" cy="128" r="38" ${S} stroke-width="5"/><circle cx="130" cy="128" r="38" ${S} stroke-width="5"/><path d="M0 128L42 66H112L130 128M42 66L66 128H0M66 128L112 66" class="ac-s" fill="none" stroke-width="6" stroke-linejoin="round"/><path d="M36 56h18M106 66l-6-18h18" ${S} stroke-width="5" stroke-linecap="round"/></g><g ${S} stroke-width="4" stroke-linecap="round"><line x1="70" y1="100" x2="190" y2="100"/><line x1="110" y1="124" x2="200" y2="124"/><line x1="60" y1="148" x2="180" y2="148"/></g>`,
+    voile:`<path d="M0 150q40-14 80 0t80 0 80 0 80 0 80 0 80 0 80 0 80 0V200H0z" class="ink" opacity=".9"/><path d="M0 170q40-14 80 0t80 0 80 0 80 0 80 0 80 0 80 0 80 0" class="sf-s" fill="none" stroke-width="3"/><path d="M250 140h170l-24 22H272z" ${I}/><line x1="330" y1="18" x2="330" y2="140" class="ln" stroke-width="4"/><path d="M334 22v112h80z" ${W} stroke-width="3"/><path d="M326 30v104h-66z" ${A}/><g transform="translate(90 40)"><rect x="-10" y="20" width="20" height="90" ${W} stroke-width="3"/><rect x="-10" y="38" width="20" height="16" ${I}/><rect x="-10" y="72" width="20" height="16" ${I}/><rect x="-14" y="6" width="28" height="14" ${A}/><path d="M-16 6h32l-16-14z" ${I}/></g>`,
+    fem:`<path d="M0 172H640" ${S}/><g transform="translate(200 100)"><circle r="40" ${W} stroke-width="3"/><path d="M-40 0q40-20 80 0M0-40q-20 40 0 80M-28-28q20 10 10 36" ${S} stroke-width="3"/></g><g transform="translate(320 100)"><circle r="40" class="ac" stroke="var(--ink)" stroke-width="3"/><path d="M-40 0H40M0-40V40M-28-28q16 28 0 56M28-28q-16 28 0 56" ${S} stroke-width="3"/></g><g transform="translate(440 100)"><circle r="40" ${W} stroke-width="3"/><path d="M0-15l14.3 10.4-5.5 16.9H-8.8l-5.5-16.9z" ${I}/></g>`
+  }[k];
+  if(!art) return "";
+  return `<svg class="illu" viewBox="0 0 640 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="640" height="200" class="bg"/>${stripes}${art}</svg>`;
+}
+const BREVES=[
+  ["2026-10-26","foot","Lorient–Brest est reporté au lundi 2 novembre à 20h45, à la demande de la préfecture du Morbihan."],
+  ["2026-10-26","foot","Nice–Rennes est avancé au vendredi 30 octobre à 19h."],
+  ["2026-10-26","foot","Le PSG bat Lyon (2-0) et double Rennes en tête de la Ligue 1, avec un point d'avance."],
+  ["2026-10-27","foot","Ligue Europa : Rennes–Olympiakos est officiellement avancé au mercredi 4 novembre à 16h30, au Roazhon Park, la préfecture ayant interdit le match du jeudi 5 en raison des mouvements sociaux."],
+  ["2026-10-27","voile","Route du Rhum : J-5. Départ dimanche à 13h02 de la pointe du Grouin, avec 118 skippers."]
+];
+/* ---------- Brèves : [date ISO (avec heure si connue), sport, texte] ; elles disparaissent après 48 h ---------- */
+function renderBreves(){
+  const J=["dim.","lun.","mar.","mer.","jeu.","ven.","sam."],M=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
+  const now=Date.now();
+  const list=BREVES.map(b=>({b,t:new Date(b[0].length>10?b[0]:b[0]+"T23:59:00")})).filter(x=>now-x.t<48*3600e3).sort((x,y)=>y.t-x.t).slice(0,6);
+  if(!list.length)return "";
+  const lbl=x=>{const d=x.t;return `${J[d.getDay()]} ${d.getDate()} ${M[d.getMonth()]}${x.b[0].length>10?" · "+d.getHours()+"h"+(d.getMinutes()?String(d.getMinutes()).padStart(2,"0"):""):""}`;};
+  return `<section class="breves" aria-label="Les brèves"><h3>Les brèves <small>Au fil de l'actualité</small></h3>${list.map(x=>`<div class="breve" style="--c:${COLORS[x.b[1]]||"var(--accent)"}"><span class="w">${esc(NAMES[x.b[1]]||"")} <time>${esc(lbl(x))}</time></span><p>${esc(x.b[2])}</p></div>`).join("")}</section>`;
+}
+const SRC={
+  une:[["Report de Lorient–Brest (Le Tribunal du Net)", "https://www.letribunaldunet.fr/sport/lorient-brest-report-demande-prefecture-derby-risque.html"], ["Route du Rhum 2026 : 118 skippers (Breizh-Info)", "https://www.breizh-info.com/2026/04/21/259143/route-du-rhum-2026-118-skippers-au-depart-de-saint-malo-pour-une-edition-danthologie/"], ["Top 14 : première victoire pour Vannes (Le Courrier)", "https://lecourrier.vn/top-14-toulouse-se-detache-premiere-victoire-pour-vannes/1358111.html"]],
+  hand:[["Metz–Brest en Ligue Butagaz Énergie (Handnews)", "https://handnews.fr/2026/lbe-metz-simpose-au-bout-du-suspense-face-a-brest/"], ["Esbjerg–Brest en Ligue des champions (Eurosport)", "https://www.eurosport.fr/handball/ehf-ligue-des-champions-feminine/2026-2027/live-team-esbjerg-brest-bretagne-handball_mtc21924679/live.shtml"], ["Tremblay–Cesson-Rennes (LNH)", "https://www.lnh.fr/daikin-starligue/calendriers/20262027/dsl/j08/tremblay/cesson-rennes"]],
+  rugby:[["Top 14 : première victoire pour Vannes (Le Courrier)", "https://lecourrier.vn/top-14-toulouse-se-detache-premiere-victoire-pour-vannes/1358111.html"], ["Lyon–Vannes, feuille de match (LNR)", "https://top14.lnr.fr/feuille-de-match/2026-2027/j8/11871-lyon-vannes"]],
+  basket:[["Landerneau Bretagne Basket (LFB)", "https://basketlfb.com/laboulangerewonderligue/saison-reguliere/equipe/13330-landerneau"], ["Classement de la Wonderligue (LFB)", "https://basketlfb.com/laboulangerewonderligue/classement"]],
+  velo:[["Tour de France 2027 : deux étapes en Bretagne (J'aime Radio)", "https://www.jaimeradio.fr/2026/10/22/tour-de-france-2027-deux-etapes-en-bretagne-avec-une-arrivee-a-plumelec/"], ["Tro Bro Léon : Fiorelli devant Renard (Orange Sports)", "https://sports.orange.fr/cyclisme/article/tro-bro-leon-fiorelli-en-costaud-devant-renard-exclu-CNT000002p7zEa.html"], ["Valentin Madouas (DirectVelo)", "https://www.directvelo.com/actualite/128706/valentin-madouas-je-veux-leur-montrer-qu-ils-peuvent-compter-sur-moi"]],
+  voile:[["Route du Rhum 2026 : 118 skippers (Breizh-Info)", "https://www.breizh-info.com/2026/04/21/259143/route-du-rhum-2026-118-skippers-au-depart-de-saint-malo-pour-une-edition-danthologie/"], ["Le village de Saint-Malo ouvre le 20 octobre (Figaro Nautisme)", "https://figaronautisme.meteoconsult.fr/actus-courses/2026-10-20/93098-route-du-rhum-destination-guadeloupe-2026-le-village-de-saint-malo-ouvre-ses-portes-le-20-octobre-tout-ce-qu-il-faut-savoir"]],
+  feminines:[["Metz–Brest en Ligue Butagaz Énergie (Handnews)", "https://handnews.fr/2026/lbe-metz-simpose-au-bout-du-suspense-face-a-brest/"], ["Classement de la Wonderligue (LFB)", "https://basketlfb.com/laboulangerewonderligue/classement"]],
+  foot:[["Report de Lorient–Brest (Le Tribunal du Net)","https://www.letribunaldunet.fr/sport/lorient-brest-report-demande-prefecture-derby-risque.html"],["Lorient–Brest et Nice–Rennes en sursis (PenseBet)","https://pensebet.com/ligue-1-lorient-brest-nice-rennes-report-mobilisation/"],["Classement des buteurs (Foot Mercato)","https://www.footmercato.net/france/ligue-1/buteur"]],
+  amateur:[["Classement de National 1 (Foot Mercato)","https://www.footmercato.net/club/stade-briochin/classement"]]
+};
+const BUT_TITLE="Les buteurs bretons";
+const BUT_NOTE="Buts en championnat (Ligue 1 et Ligue 2) au 26 octobre. Les buteurs de Lorient et de Concarneau seront ajoutés dès que les sources les publient.";
+const BUTEURS=[["Estéban Lepaul","Rennes","Ligue 1",7],["Kamory Doumbia","Brest","Ligue 1",4],["Ludovic Ajorque","Brest","Ligue 1",3],["Bamba Dia","Rennes","Ligue 1",3],["Sebastian Szymański","Rennes","Ligue 1",3],["Samir Ben Brahim","Guingamp","Ligue 2",3],["Mama Baldé","Brest","Ligue 1",2],["Donatien Gomis","Guingamp","Ligue 2",2],["Stanislas Kielt","Guingamp","Ligue 2",2]];
+/* ---------- Forme, sources et buteurs ---------- */
+// Forme : les 5 derniers matchs de la fiche club (res), du plus ancien au plus récent
+function formOf(c){return c.res.slice(0,5).map(g=>{const [h,sh,sa]=g;const home=h===(c.nm||c.short);const my=home?sh:sa,op=home?sa:sh;return my>op?"V":my<op?"D":"N";}).reverse();}
+const formHTML=c=>c&&c.res&&c.res.length?`<span class="formd" aria-label="Forme : ${formOf(c).join(" ")}">${formOf(c).map(r=>`<i class="f f-${r}">${r}</i>`).join("")}</span>`:"";
+const clubForRow=(t,n)=>ALLCLUBS.find(c=>c.tbl&&(c.nm||c.short)===n&&DATA[c.tbl[0]]&&DATA[c.tbl[0]].tables[c.tbl[1]]&&DATA[c.tbl[0]].tables[c.tbl[1]].name===t.name&&(HIST||!c.hist));
+// Sources des résumés IA : SRC[rubrique] = [[libellé, url], …] (liens vérifiés uniquement)
+function srcHTML(k){const l=SRC[k];return l&&l.length?`<p class="src">Sources : ${l.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}</p>`:"";}
+// Buteurs : [joueur, club, championnat, buts]
+function renderButeurs(){
+  if(!BUTEURS.length)return "";
+  const l=[...BUTEURS].sort((a,b)=>b[3]-a[3]);
+  return `<section class="block"><h3>${esc(BUT_TITLE)}</h3>${l.map((b,i)=>`<div class="buteur"><span class="g">${b[3]}</span><div><b>${esc(b[0])}</b><small>${esc(b[1])} · ${esc(b[2])}</small></div><span class="note" style="margin:0">${i===0||l[i-1][3]!==b[3]?(i+1)+(i?"e":"er"):""}</span></div>`).join("")}<p class="note">${esc(BUT_NOTE)}</p></section>`;
+}
+const SAVIEZ={t:"98 secondes.",txt:"C'est l'écart qui a séparé les deux premiers de la toute première Route du Rhum, partie de Saint-Malo le 5 novembre 1978 : le Canadien Mike Birch, sur un petit trimaran de 11,50 m, a devancé Michel Malinovsky et son monocoque de 21 m après plus de 23 jours de course.",src:["Figaro Nautisme","https://figaronautisme.meteoconsult.fr/actus-courses/2026-10-17/92940-1978-mike-birch-michel-malinovsky-et-les-98-secondes-qui-ont-fait-entrer-la-route-du-rhum-dans-la-legende"]};
+/* ---------- Le saviez-vous ? et liens directs ---------- */
+/* Sur le site autonome (tribuneouest.fr), les liens partagés et les mentions légales pointent vers le vrai domaine */
+const OWN_SITE=/(^|\.)tribuneouest\.fr$/.test(location.hostname);
+const ART_URL=OWN_SITE?"https://breizh.tribuneouest.fr/":"https://claude.ai/artifact/WXvNyWF5ypo7PuAsgFRJp6";
+if(OWN_SITE){const ml=document.getElementById("mlink");if(ml)ml.hidden=false;}
+const FACE={"a": "Lorient", "b": "Brest", "titre": "Face-à-face : Lorient – Brest", "per": "Les quatre derniers derbies en Ligue 1", "m": [["Brest", 2, 0, "Lorient", "7 février 2026 · Ligue 1, 21e journée · Labeau Lascary, Ajorque"], ["Lorient", 3, 3, "Brest", "19 octobre 2025 · Ligue 1, 8e journée"], ["Lorient", 0, 1, "Brest", "31 mars 2024 · Ligue 1 · Del Castillo (86e)"], ["Brest", 4, 0, "Lorient", "20 décembre 2023 · Ligue 1 · quadruplé de Kamory Doumbia"]], "note": "Brest reste sur quatre derbies sans défaite face à Lorient.", "src": [["Brest–Lorient, février 2026 (Foot Mercato)", "https://www.footmercato.net/live/115388724639609781-brest-vs-lorient"], ["Lorient–Brest, octobre 2025 (Maxifoot)", "https://www.maxifoot.fr/match/lorient-brest-20251019.htm"], ["Del Castillo décisif, mars 2024 (Ligue 1)", "https://www.ligue1.com/Articles/News/2024/03/31/romain-del-castillo-decisive-in-brest-breton-derby-win-over-lorient"]]};
+const MERCATO={"titre": "Le mercato des clubs bretons", "per": "Été 2026 · les principaux mouvements officiels", "clubs": [{"club": "Stade Rennais", "in": [["Eliezer Mayenda", "Sunderland", "22 M€"], ["Bryan Reynolds", "Westerlo", "4,6 M€"], ["Adrien Thomasson", "Lens", "libre"]], "out": [["Jérémy Jacquet", "Liverpool", "63,6 M€"], ["Breel Embolo", "Atlanta United", "17 M€"], ["Lilian Brassier", "Eintracht Francfort", "9,2 M€"]]}, {"club": "Stade Brestois", "in": [["G. Versini", "Pau FC", "2 M€"], ["M. Diambou", "RB Salzbourg", ""], ["G. Lloris", "Le Havre", "libre"]], "out": [["G. Coudert", "Burnley", "2,9 M€"], ["Romain Del Castillo", "Osasuna", "1 M€"]]}, {"club": "FC Lorient", "in": [["S. Kuzmic", "Viborg", "3 M€"], ["G. Bernardeau", "Nice", "1 M€"], ["I. Baldé", "Rodez", "prêt"]], "out": [["Pablo Pagis", "Paris FC", "15 M€"], ["S. Soumano", "Reims", "libre"]]}, {"club": "En Avant Guingamp", "in": [], "out": [["Louis Mafouta", "Le Mans", ""]]}], "note": "Le marché d'hiver rouvre en janvier : les arrivées et les départs y seront ajoutés au fil des officialisations.", "src": [["Transferts de Rennes (Foot Mercato)", "https://www.footmercato.net/club/stade-rennais-fc/tableau/"], ["Transferts de Brest (Maxifoot)", "https://m.maxifoot.fr/mercato/transfert-brest.php"], ["Transferts de Lorient (Maxifoot)", "https://m.maxifoot.fr/mercato/transfert-lorient.php"], ["Mafouta signe au Mans (Ligue 1)", "https://ligue1.com/en/articles/l1_article_5560-promoted-pair-troyes-and-le-mans-prepare-for-the-ligue-1-challenge"]]};
+/* ---------- Face-à-face de l'affiche (FACE) et mercato (MERCATO) ---------- */
+// FACE : {a,b (les deux clubs de l'affiche),titre,per,m:[[dom,buts,buts,ext,"date · compétition · buteurs"]] du plus récent au plus ancien,note,src:[[libellé,url]]} ; null pour masquer
+function renderFace(){
+  if(!FACE||!FACE.m||!FACE.m.length)return "";
+  let va=0,vb=0,n=0;FACE.m.forEach(([h,sh,sa,a])=>{const w=sh>sa?h:sa>sh?a:null;if(!w)n++;else if(w===FACE.a)va++;else if(w===FACE.b)vb++;});
+  const src=FACE.src&&FACE.src.length?`<p class="src">Sources : ${FACE.src.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}</p>`:"";
+  return `<section class="block" style="margin-top:24px"><h3>${esc(FACE.titre)}</h3><p class="note" style="margin-top:0">${esc(FACE.per)}</p>
+    <div class="face-tally"><div><b>${va}</b><small>victoire${va>1?"s":""} ${esc(FACE.a)}</small></div><div><b>${n}</b><small>nul${n>1?"s":""}</small></div><div><b>${vb}</b><small>victoire${vb>1?"s":""} ${esc(FACE.b)}</small></div></div>
+    ${FACE.m.map(g=>`${matchRow(g.slice(0,4))}<p class="note" style="margin:2px 0 8px">${esc(g[4]||"")}</p>`).join("")}
+    ${FACE.note?`<p style="margin:6px 0 0;font-weight:600">${esc(FACE.note)}</p>`:""}${src}</section>`;
+}
+// MERCATO : {titre,per,clubs:[{club,in:[[joueur,provenance,montant]],out:[[joueur,destination,montant]]}],note,src:[[libellé,url]]}
+function renderMercato(){
+  if(!MERCATO||!MERCATO.clubs||!MERCATO.clubs.length)return "";
+  const line=(cls,sym,p,dir)=>`<div class="mer-l"><span class="${cls}" aria-label="${cls==="in"?"Arrivée":"Départ"}">${sym}</span><span><b>${esc(p[0])}</b> <small>${[p[1]?dir+" "+esc(p[1]):"",p[2]?esc(p[2]):""].filter(Boolean).join(" · ")}</small></span></div>`;
+  const src=MERCATO.src&&MERCATO.src.length?`<p class="src">Sources : ${MERCATO.src.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}</p>`:"";
+  return `<section class="block"><h3>${esc(MERCATO.titre)}</h3><p class="note" style="margin-top:0">${esc(MERCATO.per)}</p>${MERCATO.clubs.map(c=>`<div class="mer-club"><h4>${esc(c.club)}</h4>${(c.in||[]).map(p=>line("in","+",p,"de")).join("")}${(c.out||[]).map(p=>line("out","−",p,"vers")).join("")}</div>`).join("")}${MERCATO.note?`<p class="note">${esc(MERCATO.note)}</p>`:""}${src}</section>`;
+}
+const AUTRES=[{"sport": "Tennis de table", "club": "GV Hennebont TT", "lieu": "Hennebont (56)", "titre": "Hennebont, la place forte du ping breton", "txt": "Premier de la saison régulière 2025-2026 de Pro A, avec 15 victoires en 18 journées, le club morbihannais s'est incliné de justesse en finale face à Rouen (3-2), le 29 mai 2026. Il compte quatre titres de champion de France depuis son arrivée dans l'élite en 2003-2004.", "src": [["Hennebont leader de Pro A (info.fr)", "https://info.fr/hennebont-tt-leader-pro-a-demi-finales-nimes-montpellier/"], ["Rouen champion face à Hennebont (info.fr)", "https://info.fr/spo-rouen-champion-france-pro-a-premier-titre/"]]}, {"sport": "Hockey sur glace", "club": "Albatros de Brest", "lieu": "Brest (29)", "titre": "Les Albatros, deux fois champions de France", "txt": "Le club brestois a remporté la Ligue Magnus en 1996 puis en 1997. Il joue au Rinkla Stadium.", "src": [["Brest Albatros Hockey (Wikipédia)", "https://en.wikipedia.org/wiki/Brest_Albatros_Hockey"]]}, {"sport": "Foot jeunes", "club": "Coupe Gambardella", "lieu": "Bretagne", "titre": "La Gambardella, la Coupe de France des jeunes", "txt": "Le Stade Rennais l'a gagnée pour la quatrième fois en 2025, après 1973, 2003 et 2008. L'édition 2026-2027 entre dans sa phase nationale le 13 décembre, après les finales régionales du 22 novembre. La finale est prévue le 15 mai 2027, en lever de rideau de la finale de la Coupe de France.", "src": [["Calendrier 2026-2027 des compétitions jeunes (FFF)", "https://www.fff.fr/article/16875-le-calendrier-2026-2027-des-competitions-jeunes-masculines.html"], ["Palmarès du Stade Rennais (Wikipédia)", "https://en.wikipedia.org/wiki/Stade_Rennais_FC"]]}];
+/* ---------- Autres sports (rubrique test) : AUTRES = [{sport,club,lieu,titre,txt,src:[[libellé,url]]}] ---------- */
+function renderAutres(){
+  const intro=`<p class="note" style="margin-top:0">Rubrique en test : les sports et les compétitions qu'on voit moins, mis à jour au fil de l'actualité.</p>`;
+  if(!AUTRES.length)return intro;
+  return intro+`<div class="autres">${AUTRES.map(a=>`<section class="block"><div class="kicker" style="color:var(--c)">${esc(a.sport)}</div><h4>${esc(a.titre)}</h4><p class="who">${esc(a.club)} · ${esc(a.lieu)}</p><p>${esc(a.txt)}</p>${a.src&&a.src.length?`<p class="src">Sources : ${a.src.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}</p>`:""}</section>`).join("")}</div>`;
+}
+const RHUM={"start": "2026-11-01T13:02:00+01:00", "fin": "2026-11-30", "skippers": [["Charles Caudrelier", "Ultim", "Maxi Edmond de Rothschild", "Grandi à Beg-Meil (29) · vainqueur en 2022"], ["Armel Le Cléac'h", "Ultim", "Maxi Banque Populaire XI", "Né à Saint-Pol-de-Léon (29)"], ["Thomas Coville", "Ultim", "Sodebo Ultim 3", "Né à Rennes (35)"], ["Tom Laperche", "Ultim", "SVR-Lazartigue", "Concarneau (29)"], ["Anthony Marchand", "Ultim", "Actual Ultim 4", "Formé à Plérin (22)"], ["Louis Burton", "Ultim", "Armand Thiery", "Skipper malouin (35)"], ["Luke Berry", "Ocean Fifty", "Le Rire Médecin Lamotte", "Saint-Malo (35)"], ["Jérémie Beyou", "Imoca", "Charal", "Né à Landivisiau (29)"], ["Élodie Bonafous", "Imoca", "Association Petits Princes Queguiner", "Grandie dans le Nord-Finistère (29)"], ["Jean Le Cam", "Vintage mono", "Alegria CC", "Né à Quimper (29)"], ["François Guiffant", "Vintage multi", "We Explore", "Le Guilvinec (29) · remplace Roland Jourdain"]], "classement": [], "maj": "", "src": [["La liste des 118 engagés (Bateaux.com)", "https://www.bateaux.com/article/52376/route-du-rhum-2026-la-liste-complete-des-118-skippers-engages-par-classe"], ["Fiche d'Armel Le Cléac'h (Route du Rhum)", "https://routedurhum.com/en/skipper/228"], ["Jourdain renonce, Guiffant le remplace (Figaro Nautisme)", "https://figaronautisme.meteoconsult.fr/actus-nautisme-flash/2026-09-22/92545-route-du-rhum-2026-roland-jourdain-contraint-de-renoncer-francois-guiffant-prendra-la-barre-de-we-explore"]]};
+/* ---------- Spécial Route du Rhum : RHUM = {start,fin,skippers:[[nom,classe,bateau,attache]],classement:[[classe,rang,nom,écart ou info]],maj,src} ---------- */
+function rhumState(){const now=new Date(),st=new Date(RHUM.start),fin=new Date(RHUM.fin+"T23:59:00");
+  return {now,st,fin,on:now>=new Date(st-10*86400000)&&now<=fin,started:now>=st,days:Math.max(0,Math.ceil((st-now)/86400000)),jour:Math.floor((now-st)/86400000)+1};}
+function renderRhumBanner(){
+  if(typeof RHUM==="undefined")return "";const r=rhumState();if(!r.on)return "";
+  const cl=RHUM.classement||[];
+  const body=r.started&&cl.length?`<div>${cl.slice(0,5).map(x=>`<div class="rh-row"><div><b>${esc(x[2])}</b><small>${esc(x[0])}${x[3]?" · "+esc(x[3]):""}</small></div><span class="pos">${esc(String(x[1]))}e</span></div>`).join("")}</div>`
+    :`<div class="names">${RHUM.skippers.map(s=>`<span>${esc(s[0])}</span>`).join("")}</div>`;
+  return `<section class="rhum" aria-label="Spécial Route du Rhum"><div class="kicker">Spécial Route du Rhum</div>
+    <div class="top"><span class="cd">${r.started?"Jour "+r.jour:r.days?"J−"+r.days:"Aujourd'hui"}</span><h3>${r.started?(cl.length?"Les Bretons en tête de leur classe":"Les Bretons sont en mer"):"Départ le dimanche 1er novembre, 13h02, au large de Saint-Malo"}</h3></div>
+    ${r.started?"":`<p class="note" style="margin:0">${RHUM.skippers.length} skippers bretons à suivre sur 3 542 milles jusqu'à Pointe-à-Pitre.</p>`}
+    ${body}${RHUM.maj?`<p class="note" style="margin:0">${esc(RHUM.maj)}</p>`:""}<button class="go" data-go="voile">Tout le spécial Route du Rhum →</button></section>`;
+}
+function renderRhumDetail(){
+  const r=rhumState(),cl=RHUM.classement||[];
+  const src=RHUM.src&&RHUM.src.length?`<p class="src">Sources : ${RHUM.src.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}</p>`:"";
+  return `<div class="grid2" style="margin-top:24px">
+    <section class="block"><h3>Les Bretons en course</h3>${RHUM.skippers.map(s=>`<div class="rh-row"><div><b>${esc(s[0])}</b><small>${esc(s[2])} · ${esc(s[3])}</small></div><span class="tag">${esc(s[1])}</span></div>`).join("")}${src}</section>
+    <section class="block"><h3>Le classement des Bretons</h3>${cl.length?cl.map(x=>`<div class="rh-row"><div><b>${esc(x[2])}</b><small>${esc(x[0])}${x[3]?" · "+esc(x[3]):""}</small></div><span class="pos">${esc(String(x[1]))}e</span></div>`).join("")+(RHUM.maj?`<p class="note">${esc(RHUM.maj)}</p>`:"")
+      :`<p class="note" style="margin-top:0">${r.started?"Premier classement attendu au prochain pointage.":"Le classement s'affichera après le départ, avec le rang de chaque Breton dans sa classe."} Il est mis à jour chaque nuit, puis à 13h et à 19h.</p>`}</section>
+  </div>`;
+}
+function renderSaviez(){
+  if(!SAVIEZ||!SAVIEZ.txt)return "";
+  return `<section class="saviez"><span class="q" aria-hidden="true">?</span><div><h3>Le saviez-vous ?</h3><p><b>${esc(SAVIEZ.t)}</b> ${esc(SAVIEZ.txt)}</p>${SAVIEZ.src&&SAVIEZ.src.length?`<p class="src">Source : <a href="${esc(SAVIEZ.src[1])}" target="_blank" rel="noopener">${esc(SAVIEZ.src[0])}</a></p>`:""}</div></section>`;
+}
+const cpBtn=k=>`<button class="cplink" data-copy="${esc(k)}" title="Copier le lien direct vers cette page">Copier le lien</button>`;
+function copyLink(btn){
+  const url=ART_URL+"#"+btn.dataset.copy;
+  const fallback=()=>{const f=document.createElement("input");f.className="cpfield";f.readOnly=true;f.value=url;f.setAttribute("aria-label","Lien direct");btn.replaceWith(f);f.focus();f.select();};
+  try{navigator.clipboard.writeText(url).then(()=>{btn.textContent="Lien copié ✓";setTimeout(()=>{btn.textContent="Copier le lien"},2200);},fallback);}catch(e){fallback();}
+}
+/* ---------- Live (mis à jour pendant les matchs) ---------- */
+const LIVE={on:false,comp:"Ligue 1 · 9e journée · derby breton",venue:"Stade du Moustoir",h:"Lorient",a:"Brest",kick:"20h45",tv:"Ligue 1+",status:"avant-match",min:"",sh:0,sa:0,ev:[],txt:"",maj:""};
+// ev : [minute, "but"|"csc"|"pen"|"rouge", équipe, joueur]
+function renderLive(){
+  if(!LIVE.on)return "";
+  const pre=LIVE.status==="avant-match", done=LIVE.status==="terminé";
+  const ico={but:"⚽",csc:"⚽ csc",pen:"⚽ pen.",rouge:"🟥"};
+  return `<section class="live ${done?"done":""}" aria-live="polite"><div class="lk"><i></i>${done?"Score final":pre?"Live ce soir":"En direct"} · ${esc(LIVE.comp)}</div>
+    <div class="derby-row"><b>${esc(LIVE.h)}</b><span class="vs">${pre?`<span class="sc" style="font-size:1.6rem">${esc(LIVE.kick)}</span><br><small>${esc(LIVE.venue)} · ${esc(LIVE.tv)}</small>`:`<span class="sc">${LIVE.sh}–${LIVE.sa}</span><br><small>${esc(LIVE.status)}${LIVE.min?" · "+esc(LIVE.min):""}</small>`}</span><b>${esc(LIVE.a)}</b></div>
+    ${LIVE.ev.length?`<ul>${LIVE.ev.map(e=>`<li><b>${esc(e[0])}</b> ${ico[e[1]]||""} ${esc(e[3])} <small style="color:var(--muted)">(${esc(e[2])})</small></li>`).join("")}</ul>`:""}
+    ${LIVE.txt?`<p style="margin:10px 0 0">${esc(LIVE.txt)}</p>`:""}
+    <div class="upd">${pre?"Score mis à jour environ tous les quarts d'heure pendant le match.":`Mis à jour à ${esc(LIVE.maj)} · rechargez la page pour la dernière version.`}</div></section>`;
+}
+function renderUne(){
+  const lead=`<section class="lead"><div class="kicker">Le week-end breton</div><h3 class="big">Rennes ouvre le bal vendredi, derby lundi, et la Route du Rhum largue les amarres</h3>
+    <div class="ai" style="--c:var(--accent)">Résumé IA</div>
+    <p>La mobilisation sociale du 31 octobre redessine le week-end : Nice–Rennes est avancé au vendredi 19h, et le derby breton Lorient–Brest est reporté au lundi 2 novembre à 20h45. Les Rennais, dépassés lundi soir par le PSG, y jouent la reconquête de la première place, avec Estéban Lepaul, meilleur buteur du championnat. Dimanche 1er novembre à 13h02, 118 skippers s'élancent de Saint-Malo pour la Route du Rhum, sous une météo annoncée clémente.</p>
+    <p>Ailleurs, Vannes a enfin gagné en Top 14, Landerneau s'est offert un succès au buzzer en basket, et Brest Bretagne Handball reste dans le peloton de tête de la Ligue Butagaz Énergie.</p>
+    ${srcHTML("une")}<div class="hl3"><div><b>2e</b><small>Rennes en Ligue 1, à 1 pt du PSG</small></div><div><b>Lorient – Brest</b><small>lun. 2 nov., 20h45 · reporté du sam. 31 oct.</small></div><div><b>Dim. 13h02</b><small>départ de la Route du Rhum</small></div></div></section>`;
+  const favs=clubsNow().filter(c=>FAV.has(c.id));
+  const mine=favs.length?`<h3 class="sec-title">Mes clubs</h3><div class="clubs" style="margin-bottom:28px">${favs.map(clubCard).join("")}</div>`:`<div class="block hint" style="margin-bottom:24px"><b>Suivez vos clubs.</b> Ouvrez l'onglet « Mon club » et choisissez vos favoris : ils apparaîtront ici en premier.</div>`;
+  const others=clubsNow().filter(c=>!FAV.has(c.id)&&inDept(c));
+  const hist="";
+  return `${renderLive()}${renderBreves()}${lead}${renderRhumBanner()}${renderSaviez()}${hist}${mine}${renderDerbyMini()}${renderFace()}<h3 class="sec-title">Les clubs bretons en un coup d'œil</h3>${deptChips()}<div class="clubs">${others.length?others.map(clubCard).join(""):`<p class="note">Aucun club suivi dans ce département pour l'instant.</p>`}</div>`;
+}
+
+function renderVelo(){
+  const stage=(n,date,route,km,txt)=>`<div class="stage"><div class="stage-n"><b>${n}</b><small>${esc(date)}</small></div><div><b class="stage-r">${esc(route)}</b><span class="stage-km">${esc(km)}</span><p>${esc(txt)}</p></div></div>`;
+  return `<div class="grid2">
+    <section class="block recit wide" style="--c:var(--velo)">${ILLU("velo")}<div class="ai">Résumé IA</div><h4>Le Tour de France revient en Bretagne en 2027, avec une arrivée à Plumelec</h4>
+      <p>Le parcours dévoilé le 22 octobre offre deux étapes à la Bretagne. Le mercredi 7 juillet, la 5e étape relie Pontorson à Plumelec en traversant l'Ille-et-Vilaine, avec une arrivée jugée au sommet de la côte de Cadoudal, gravie deux fois dans une boucle finale de 13 km. Le lendemain, le peloton repart de Vannes vers Angers pour une étape promise aux sprinteurs.</p>
+      <p>Côté coureurs, la saison 2026 a été difficile pour le Brestois Valentin Madouas, privé de résultats après une maladie hivernale. Sur les classiques bretonnes, le Tro Bro Léon est revenu à l'Italien Filippo Fiorelli devant Alexis Renard, et la Bretagne Classic à Plouay à l'Espagnol Alex Aranburu. Place maintenant à l'hiver et au cyclo-cross.</p>${srcHTML("velo")}</section>
+    <section class="block wide"><h3>Le Tour de France 2027 en Bretagne</h3><div class="stages">
+      ${stage(5,"Mer. 7 juillet 2027","Pontorson → Plumelec","178 km","Baie du Mont-Saint-Michel, Combourg, Bécherel, sprint intermédiaire à Saint-Méen-le-Grand, puis Ploërmel et Sérent. Final sur la côte de Cadoudal, montée deux fois.")}
+      ${stage(6,"Jeu. 8 juillet 2027","Vannes → Angers","193 km","Départ du parc Chorus, passage par Questembert, Rochefort-en-Terre et Redon avant de quitter la région. Une étape pour les sprinteurs.")}
+    </div></section>
+    <section class="block"><h3>Les courses bretonnes 2026</h3>${factsHTML([
+      {d:"3 avril",t:"Route Adélie de Vitré",s:"1. Marc Brustenga · 2. Iúri Leitão · 3. Louis Hardouin. Pierre Gautherat, premier sur la ligne, a été déclassé."},
+      {d:"25 avril-1er mai",t:"Tour de Bretagne",s:"Victoire finale d'Aubin Sparfel."},
+      {d:"9 mai",t:"Grand Prix du Morbihan, Plumelec",s:"Hommes : 1. Benoît Cosnefroy, 4e victoire, un record · 2. Noa Isidore · 3. Paul Lapeira. Femmes : 1. Eline Jansen · 2. Sidney Swierenga · 3. Émilie Morier"},
+      {d:"10 mai",t:"Tro Bro Léon",s:"1. Filippo Fiorelli · 2. Alexis Renard · 3. Lewis Askey"},
+      {d:"16-17 mai",t:"Tour du Finistère et Boucles de l'Aulne",s:"Doublé de Jon Barrenetxea. À Châteaulin : 1. Barrenetxea · 2. Clément Venturini · 3. Maxime Vezie, David Gaudu 5e."},
+      {d:"29 août",t:"Classic Lorient Agglomération (femmes), Plouay",s:"1. Elisa Balsamo · 2. Mischa Bredewold · 3. Franziska Koch"},
+      {d:"30 août",t:"Bretagne Classic, Plouay",s:"1. Alex Aranburu · 2. Alexander Kamp · 3. Alessandro Borgo. Meilleur Français : Paul Lapeira, 6e."}])}</section>
+    <section class="block"><h3>Cet hiver : place au cyclo-cross</h3>${factsHTML([
+      {d:"Saison",t:"Coupe de Bretagne de cyclo-cross",s:"Calendrier validé par le comité de Bretagne, à retrouver sur cyclisme.bzh."},
+      {d:"Hiver",t:"Championnats de Bretagne",s:"Date à confirmer."},
+      {d:"29 déc.",t:"Coupe du monde à Besançon",s:"La manche française de la Coupe du monde, la plus proche pour les crossmen bretons."},
+      {d:"Janv. 2027",t:"Championnats de France à Quelneuc (56)",s:"Le Morbihan accueille les championnats de France de cyclo-cross."}])}
+      <p class="note">Les dates des courses bretonnes seront ajoutées dès leur publication.</p></section>
+  </div>`;
+}
+/* ---------- Foot amateur ---------- */
+const AMATEUR={
+  n1:[["Angoulême",6,"+6",14],["Bayonne",6,"+4",13],["Granville",6,"+1",11],["Avranches",6,"+5",11],["Dinan Léhon",6,"+2",11],["Saint-Malo",6,"+5",11],["Tarbes",6,"+1",9],["Vendée Poiré-sur-Vie",6,"0",9],["Lorient II",6,"+4",9],["Stade Briochin",6,"+2",9],["Les Herbiers",6,"−2",7],["Locminé",6,"−2",5],["Saumur",6,"−6",4],["GSI Pontivy",6,"−5",3],["Châteaubriant",6,"−7",3],["Chauray",6,"−8",1]],
+  cdf:[["Moréac",0,1,"Saint-Renan"],["Hermine Concarnoise",0,2,"Tinténiac Saint-Domineuc"],["Ginglin-Cesson",1,2,"TA Rennes"],["Saint-Pierre Milizac",2,1,"Ergué-Gabéric"],["OC Cesson",2,4,"Concarneau"],["US Montagnarde",0,1,"Vitré"],["Bréquigny Rennes",2,1,"Saint-Jacques"],["Plabennec",1,1,"Stade Briochin","tab 4-3"],["Landerneau FC",1,4,"Lannion"],["Vannes OC",1,0,"Vignoc-Hédé-Guipel"],["US Grégorienne",1,1,"Pontivy","tab 4-5"],["Janzé",0,2,"Stade Pontivyen"],["Châteaubourg",1,1,"Locminé","tab 4-3"],["Perros-Louannec",1,1,"Fougères","tab 4-3"],["COB Saint-Brieuc",3,1,"Plaintel"]],
+  n2:[["Cesson",5,"+9",13],["Vire",5,"+6",13],["Guingamp II",5,"+9",11],["St-P. Milizac",5,"+7",10],["Caen II",5,"+3",8],["Vitré",5,"+3",8],["Rennes II",4,"+4",8],["TA Rennes",5,"0",6],["Ginglin-Cesson",5,"−4",5],["Saint-Lô",5,"−2",4],["Caen PTT",4,"−3",4],["Vannes",5,"−7",2],["Brest II",5,"−12",0],["Lannion",5,"−13",0]]
+};
+function renderAmateur(){
+  const cdf=AMATEUR.cdf.map(g=>{const [h,sh,sa,a,x]=g;const w=sh>sa||(x&&+x.split("-")[0].slice(-1)>+x.split("-")[1]);return `<div class="match"><div class="t h ${w?"w":""}">${esc(h)}</div><div class="score">${sh}–${sa}${x?` <small style="font-size:.55em;opacity:.7">${esc(x)}</small>`:""}</div><div class="t ${!w?"w":""}">${esc(a)}</div></div>`}).join("");
+  return `<div class="grid2">
+    <section class="block recit wide" style="--c:var(--amateur)">${ILLU("amateur")}<div class="ai">Résumé IA</div><h4>Coupe de France : trois clubs de National 1 tombent aux tirs au but</h4>
+      <p>Le 6e tour a été cruel pour les clubs de National 1 bretons. Le Stade Briochin a été éliminé par Plabennec, pensionnaire de Régional 1. Pontivy est tombé face à l'US Grégorienne (R2) et Locminé contre Châteaubourg (R1), à chaque fois au terme de la séance de tirs au but. Concarneau, seul club breton de Ligue 3, a tenu son rang en s'imposant chez l'OC Cesson (2-4).</p>
+      <p>Le 7e tour, les 14 et 15 novembre, verra l'entrée de Guingamp. Rennes, Brest et Lorient attendront les 32es de finale du 20 décembre. En National 1, Dinan Léhon et Saint-Malo sont dans le wagon de tête (11 pts), quand Locminé et Pontivy luttent en bas du classement. En National 2, Cesson mène la poule bretonne et normande, à égalité de points avec Vire.</p>${srcHTML("amateur")}</section>
+    <section class="block"><h3>Coupe de France · 6e tour</h3><div class="daylbl">24-25 octobre · clubs de la Ligue de Bretagne</div>${cdf}<p class="note">Le vainqueur est en gras. tab = tirs au but.</p></section>
+    <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+      ${tableHTML({name:"National 2 · poule Bretagne-Normandie", head:["J","Diff","Pts"], rows:AMATEUR.n2, note:"Après 4 à 5 journées. Les réserves de Rennes, Guingamp et Brest y évoluent."})}
+      ${tableHTML({name:"National 1 · poule Ouest", head:["J","Diff","Pts"], rows:AMATEUR.n1, note:"Après 6 journées. Six clubs bretons dans cette poule."})}
+      <section class="block"><h3>La suite de la Coupe</h3>${factsHTML([
+        {d:"14-15 nov.",t:"7e tour",s:"Entrée de Guingamp."},
+        {d:"28-29 nov.",t:"8e tour",s:""},
+        {d:"20 déc.",t:"32es de finale",s:"Entrée de Rennes, Brest et Lorient."}])}</section>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:24px">${renderPoucets()}</div>
+  ${renderRegional()}`;
+}
+const R1=[
+  {g:"R1 · groupe A", zone:"Finistère, Morbihan, Côtes-d'Armor", top:[["Kériolets Pluvigner",6,"5-1-0",16],["AG Plouvorn",7,"5-1-1",16],["Concarneau (B)","—","—",13]], low:[["Stade Pontivyen",5],["Plougastel",4],["Saint-Brandan Quintin",2]], scorers:"Mathieu Le Han (Plouvorn), Julian Dano (Pluvigner) et Orélien Pasco (Plaintel), 6 buts", last:"Plouvorn – Guipavas 1-1 ; plusieurs matchs reportés."},
+  {g:"R1 · groupe B", zone:"Ille-et-Vilaine, Morbihan, Côtes-d'Armor", top:[["FCAV Redon",7,"4-3-0",15],["Dinard",6,"5-0-1",15],["Cadets Bains-sur-Oust",7,"4-2-1",14]], low:[["Lamballe",5],["US Quessoy",0]], scorers:"Meven Rouge (Redon), 5 buts", last:"Séné – Ploërmel 3-1 ; Bains-sur-Oust – TA Rennes (B) 0-0 ; Quessoy – Redon 1-4."}
+];
+const R2A=[["Plouzané",5,15],["Bourg-Blanc",5,10],["Sizun-Le Tréhou",5,8],["Coataudon",4,7],["Morlaix",5,7],["AS Brest",5,7],["Milizac (B)",5,7],["Lesneven",5,7],["Guiclan Plouénan",5,6],["Landerneau FC",4,2],["ESL Brest",5,2],["Saint-Renan (B)",5,2]];
+const R2C=[["Vannes OC (B)",5,11],["Auray FC",5,10],["AS Ménimur",5,8],["FC Naizin",5,8],["Avenir Theix",5,8],["Baud FC",5,7],["Ruffiac Malestroit",5,7],["US Montagnarde (B)",5,6],["Plouhinec FC",5,6],["ES Saint-Avé",5,6],["CS Bignan",5,4],["Elvinoise Football",5,3]];
+const R2D=[["GSI Pontivy (B)",5,10],["Stade Paimpolais",5,10],["AS Uzel Merléac",5,9],["Stade Briochin (B)",5,8],["US Langueux",5,8],["Lannion FC (B)",5,7],["Loudéac OSC",5,7],["COB Saint-Brieuc (B)",5,7],["Pordic Binic FC",5,4],["RC Ploumagoar",5,4],["Ploufragan FC",5,3],["Stade Pontivyen (B)",5,3]];
+const R2B=[["Ploemeur",5,15],["Larmor-Plage",5,12],["Pont-l'Abbé",5,10],["Quimper Ergué-Armel",5,9],["Trégunc",5,7],["Concarneau (C)",5,7],["Quimper Italia",5,6],["CEP Lorient",5,5],["Stade Quimperlois",5,4],["Paotred Dispount (B)",5,4],["Moëlan",5,3],["Scaër",5,3]];
+function renderRegional(){
+  const r1=R1.map(r=>`<section class="block"><h3>${esc(r.g)}</h3><div class="daylbl" style="margin-top:0">${esc(r.zone)} · 7e journée, 25 octobre</div>
+    <div class="tbl"><table><thead><tr><th>#</th><th>Club</th><th>J</th><th>G-N-P</th><th>Pts</th></tr></thead><tbody>${r.top.map((x,i)=>`<tr><td>${i+1}</td><td>${esc(x[0])}</td><td>${x[1]}</td><td>${x[2]}</td><td class="pts">${x[3]}</td></tr>`).join("")}<tr><td colspan="5" style="text-align:center;color:var(--muted)">…</td></tr>${r.low.map((x,i)=>`<tr><td>${14-r.low.length+1+i}</td><td>${esc(x[0])}</td><td></td><td></td><td class="pts">${x[1]}</td></tr>`).join("")}</tbody></table></div>
+    ${factsHTML([{d:"Buteurs",t:r.scorers,s:""},{d:"Derniers",t:r.last,s:""}])}</section>`).join("");
+  return `<h3 class="sec-title" style="margin-top:32px">Le foot régional</h3>
+  <div class="grid2">${r1}
+    ${tableHTML({name:"R2 · groupe A (Nord-Finistère)", head:["J","Pts"], rows:R2A, note:"Après la 5e journée, 25 octobre. Coataudon et Landerneau ont un match en retard."}).replace(/<div class="legend">.*?<\/div>/,"")}
+    ${tableHTML({name:"R2 · groupe B (Finistère-Sud, Morbihan)", head:["J","Pts"], rows:R2B, note:"Après la 5e journée, 25 octobre."}).replace(/<div class="legend">.*?<\/div>/,"")}
+    ${tableHTML({name:"R2 · groupe C (Morbihan)", head:["J","Pts"], rows:R2C, note:"Après la 5e journée, 25 octobre. Source : live.newsouest.fr."}).replace(/<div class="legend">.*?<\/div>/,"")}
+    ${tableHTML({name:"R2 · groupe D (Côtes-d'Armor, centre Bretagne)", head:["J","Pts"], rows:R2D, note:"Après la 5e journée, 25 octobre. Source : live.newsouest.fr."}).replace(/<div class="legend">.*?<\/div>/,"")}
+    <section class="block"><h3>R2 et R3 : les autres groupes</h3>${factsHTML([
+      {d:"R2",t:"Groupes E et F à venir",s:"Ille-et-Vilaine (deux groupes)."},
+      {d:"R3",t:"Une douzaine de groupes",s:"Découpés par secteur géographique, du Nord-Finistère au pays malouin."}])}
+      <p class="note">Classements complets ajoutés progressivement, groupe par groupe, avec la mise à jour automatique.</p></section>
+  </div>`;
+}
+
+/* ---------- Course à pied ---------- */
+function renderRun(){
+  const pod=(rows)=>rows.map(([n,club,t],i)=>`<div class="lead-row"><span class="pos">${i+1}</span><span><b>${esc(n)}</b> <small>${esc(club)}</small></span><span class="time">${esc(t)}</span></div>`).join("");
+  return `<div class="grid2">
+    <section class="block recit wide" style="--c:var(--run)"><div class="ai">Résumé IA</div><h4>Marathon Vert de Rennes : Florian Caro en solitaire, record de participation</h4>
+      <p>Le Brestois Florian Caro a couru seul en tête du premier au dernier kilomètre pour s'imposer en 2h16'04 le 18 octobre et décrocher le titre de champion de Bretagne. Chez les femmes, Marie Lohéac-Bouchard (Iroise Athlétisme) l'emporte en 2h38'39 et améliore son record de près de trois minutes. Neuf des dix premiers hommes courent pour un club breton.</p>
+      <p>Le week-end a battu un record avec plus de 20 000 inscrits. Les courses de l'après-midi (5 km, 10 km et mile) ont toutefois été annulées par la préfecture en raison d'appels à manifester dans le centre-ville ; un report doit être proposé.</p></section>
+    <section class="block"><h3>Podium hommes</h3>${pod([["Florian Caro","Stade Brestois","2h16'04"],["Menad Lamrani","Amiens UC","2h19'38"],["Quentin Olivier","EA Pays de Brocéliande","2h19'49"]])}</section>
+    <section class="block"><h3>Podium femmes</h3>${pod([["Marie Lohéac-Bouchard","Iroise Athlétisme","2h38'39"],["Lauriane Closier","Penthièvre Athlé","2h42'27"],["Astrid Moreau","Athlé Provence Clubs","2h43'00"]])}</section>
+    <section class="block wide"><h3>Prochaines courses en Bretagne</h3>${factsHTML([
+      {d:"8 nov.",t:"Trail de Brech (Morbihan)",s:"9,5 km, 16 km et 24 km, plus une marche."},
+      {d:"14 nov.",t:"Gregam Noz Trail, Grand-Champ (Morbihan)",s:"13 km et 25 km."},
+      {d:"Fin nov.",t:"Florian Caro au marathon de Florence",s:"Le vainqueur de Rennes y prépare un chrono."}])}
+      <p class="note">Calendrier partiel, complété au fil des publications des organisateurs.</p></section>
+  </div>`;
+}
+
+/* ---------- Bretons ailleurs ---------- */
+const AILLEURS=[
+  {who:"Étienne Oliviero",from:"Né à Vannes · formé à l'OC Locminé",sport:"Cyclisme sur piste",big:"Vice-champion du monde",txt:"Le sprinteur de 20 ans a décroché l'argent du kilomètre contre-la-montre aux Mondiaux de Shanghai le 16 octobre. Il avait déjà été sacré champion d'Europe de vitesse par équipes en février et conservé son titre national du kilomètre en janvier."},
+  {who:"Valentin Madouas",from:"Brestois · Groupama-FDJ United",sport:"Cyclisme sur route",big:"Une saison à oublier",txt:"Privé de résultats après une maladie hivernale et un stage en altitude manqué, le Finistérien veut rebondir en 2027."}
+];
+function renderAilleurs(){
+  const [h,...rest]=AILLEURS;
+  return `<section class="lead" style="border-top-color:var(--ailleurs)"><div class="kicker">${esc(h.sport)}</div><h3 class="big">${esc(h.who)}</h3><div class="stage-km" style="margin:-6px 0 10px">${esc(h.from)}</div><div class="countdown" style="color:var(--ailleurs);font-size:clamp(1.6rem,4vw,2.2rem)">${esc(h.big)}</div><p style="margin-top:10px">${esc(h.txt)}</p></section>
+    <div class="clubs">${rest.map(p=>`<div class="club" style="--c:var(--ailleurs);cursor:default"><div class="club-top"><span>${esc(p.sport)}</span></div><b class="n">${esc(p.who)}</b><small style="color:var(--muted)">${esc(p.from)}</small><div class="rank"><span class="r" style="font-size:1.4rem">${esc(p.big)}</span></div><p style="margin:0;font-size:.9rem;color:var(--muted)">${esc(p.txt)}</p></div>`).join("")}</div>
+    <p class="note">Rubrique enrichie à chaque mise à jour : les sportifs bretons qui se distinguent hors de la région, en équipe de France ou à l'étranger.</p>`;
+}
+function renderVoile(){
+  const start=new Date("2026-11-01T13:02:00+01:00");
+  const days=Math.max(0,Math.ceil((start-new Date())/86400000));
+  return `<div class="grid2">
+    <section class="block recit wide" style="--c:var(--voile)">${ILLU("voile")}<div class="ai">Résumé IA</div><h4>La Route du Rhum part de Saint-Malo dimanche</h4>
+      <p>La 13e édition de la Route du Rhum s'élance le dimanche 1er novembre à 13h02 au large de la pointe du Grouin, pour 3 542 milles en solitaire et sans escale jusqu'à Pointe-à-Pitre. Le village est ouvert depuis le 20 octobre au bassin Vauban. Le record à battre est celui de Charles Caudrelier, vainqueur il y a quatre ans en 6 jours, 19 heures et 47 minutes. Les premières prévisions annoncent un départ sous anticyclone, avec un petit vent de nord.</p>
+      <p>Les Malouins Louis Burton et Luke Berry seront au départ. Chez les Ultim, Caudrelier défend son titre sur son nouveau trimaran face à Armel Le Cléac'h et Thomas Coville. En Imoca, Jérémie Beyou et Sam Goodchild font figure de favoris en l'absence du tenant Thomas Ruyant. Tanguy Caradec court en Vintage, quarante ans après la disparition de son père Loïc sur cette même course.</p>${srcHTML("voile")}</section>
+    <section class="block"><h3>Le départ</h3><div class="countdown">${days?`J-${days}`:"C'est parti"}</div><p class="note" style="margin-top:6px">Dimanche 1er novembre, 13h02 · Saint-Malo</p>
+      <div class="classes"><div><b>118</b><small>skippers</small></div><div><b>6</b><small>classes</small></div><div><b>3 542</b><small>milles</small></div></div>
+      <p class="note">Suivi sur France 3 et franceinfo, cartographie sur routedurhum.com.</p></section>
+    <section class="block"><h3>Les flottes</h3>${factsHTML([
+      {d:"Ultim",t:"6 bateaux",s:"Caudrelier, Le Cléac'h, Coville."},{d:"Ocean Fifty",t:"11 bateaux",s:"Sans Erwan Le Roux, vainqueur 2022."},
+      {d:"Imoca",t:"26 bateaux",s:"Beyou et Goodchild favoris."},{d:"Class40",t:"49 bateaux",s:"Corentin Douguet favori."},
+      {d:"Vintage",t:"26 bateaux",s:"Joyon, Le Cam, Caradec."}])}</section>
+  </div>`;
+}
+
+function renderAgenda(){
+  const J=["dim.","lun.","mar.","mer.","jeu.","ven.","sam."],M=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
+  return `${deptChips()}<section class="block">${[...AGENDA].filter(e=>!DEPT||!e[7]||e[7].split(",").includes(DEPT)).filter(e=>HIST||e[7]!=="44").sort((a,b)=>a[0].localeCompare(b[0])).map(e=>{const d=new Date(e[0]+"T12:00:00");return `<div class="ev ${e[5]?"big":""}" style="--c:${COLORS[e[1]]}"><div class="dd"><span>${J[d.getDay()]}</span><b>${d.getDate()}</b><span>${M[d.getMonth()]}</span></div><div class="what"><b>${esc(e[2])}</b><small>${esc(e[3])}</small><div class="hr">${e[4]?`<span>${esc(e[4])}</span>`:""}${e[6]==="-"?"":`<span class="tv ${e[6]?"":"tbc"}">${e[6]?esc(e[6]):"Diffuseur à confirmer"}</span>`}</div></div><span class="tag">${esc(NAMES[e[1]])}</span></div>`}).join("")}<p class="note">★ = affiche à ne pas manquer. Horaires non communiqués laissés vides.</p></section>`;
+}
+
+const tabs=document.getElementById("tabs"), view=document.getElementById("view");
+/* L'onglet Visuels n'est visible que par le propriétaire du site (vérifié par Claude) ; les visiteurs ne le voient pas. */
+let OWNER=false;
+function renderTabs(){tabs.innerHTML=SECTIONS.filter(s=>s.k!=="visuels").map(s=>`<button class="tab" role="tab" data-k="${s.k}" style="--c:${s.c}"><i></i>${s.name}</button>`).join("");}
+renderTabs();
+function show(k){
+  if(k&&k.startsWith("club-")){
+    const id=k.slice(5), c=ALLCLUBS.find(x=>x.id===id);
+    if(c){tabs.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected","false"));
+      view.innerHTML=`<div class="view" style="--c:${SCOL[c.sport]}">${renderClub(id)}</div>`;
+      try{history.replaceState(null,"","#"+k)}catch(e){} return;}
+    k="une";
+  }
+  if(k==="visuels"&&!OWNER)k="une";
+  const s=SECTIONS.find(x=>x.k===k)||SECTIONS[0]; k=s.k;
+  tabs.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.k===k));
+  let head,body;
+  const br=s.br?`<span class="brz">${esc(s.br)}</span>`:"";
+  if(k==="une"){head=`<h2>À la une</h2>${br}<span class="round">Semaine du 26 octobre</span>`;body=renderUne();}
+  else if(k==="visuels"){head=`<h2>Visuels</h2><span class="round">Des images prêtes à partager</span>`;body=renderVisuels();}
+  else if(k==="monclub"){head=`<h2>Mon club</h2>${br}<span class="round">Vos clubs favoris</span>`;body=renderMonClub();}
+  else if(k==="feminines"){head=`<h2>Féminines</h2><span class="round">Le sport féminin breton</span>`;body=renderFeminines();}
+  else if(k==="amateur"){head=`<h2>Foot amateur</h2><span class="round">Coupe de France · National 1 · National 2</span>`;body=renderAmateur();}
+  else if(k==="autres"){head=`<h2>Autres sports</h2><span class="round">Le sport breton qu'on voit moins</span>`;body=renderAutres();}
+  else if(k==="ailleurs"){head=`<h2>Bretons ailleurs</h2><span class="round">Ils portent la Bretagne loin de chez elle</span>`;body=renderAilleurs();}
+  else if(k==="velo"){head=`<h2>Cyclisme</h2><span class="round">Coureurs, courses et Tour de France en Bretagne</span>`;body=renderVelo();}
+  else if(k==="voile"){head=`<h2>Voile</h2><span class="round">Route du Rhum 2026</span>`;body=renderVoile()+renderRhumDetail();}
+  else if(k==="agenda"){head=`<h2>Agenda</h2>${br}<span class="round">Les rendez-vous des clubs bretons</span>`;body=renderAgenda();}
+  else {head=`<h2>${esc(DATA[k].title)}</h2>${br}<span class="round">${esc(DATA[k].round)}</span>`;body=renderSport(k);if(k==="foot")body=renderLive()+renderDerbies()+body.replace(/<\/div>\s*$/,`<div class="wide" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px">${renderButeurs()}${renderMercato()}</div></div>`);}
+  view.innerHTML=`<div class="view" style="--c:${s.c}"><div class="head">${head}${cpBtn(k)}</div>${body}</div>`;
+  if(k==="visuels")drawVisuels();
+  try{localStorage.setItem("tb-tab",k)}catch(e){}
+  try{history.replaceState(null,"","#"+k)}catch(e){}
+}
+tabs.addEventListener("click",e=>{const b=e.target.closest(".tab");if(b)show(b.dataset.k)});
+let current="une";
+const go=k=>{current=k;show(k);};
+const refresh=k=>{if(current===k)show(k);};
+view.addEventListener("click",e=>{
+  const dp=e.target.closest("[data-dept]"); if(dp){DEPT=dp.dataset.dept;try{localStorage.setItem("tb-dept",DEPT)}catch(e){}show(current);return;}
+  const dl=e.target.closest("[data-dl]"); if(dl){saveVisual(dl.dataset.dl);return;}
+  const cp=e.target.closest("[data-copy]"); if(cp){copyLink(cp);return;}
+  const f=e.target.closest("[data-fav]");
+  if(f){const id=f.dataset.fav;FAV.has(id)?FAV.delete(id):FAV.add(id);saveFav();show(current);return;}
+  const c=e.target.closest("[data-club]");
+  if(c){go("club-"+c.dataset.club);window.scrollTo({top:0,behavior:"smooth"});return;}
+  const b=e.target.closest("[data-go]");
+  if(b){go(b.dataset.go);}
+});
+view.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.closest(".pin")){e.preventDefault();go("club-"+e.target.closest(".pin").dataset.club);}});
+tabs.addEventListener("click",e=>{const b=e.target.closest(".tab");if(b)current=b.dataset.k;});
+const histBtn=document.getElementById("histbtn");
+const syncHist=()=>{if(histBtn){histBtn.setAttribute("aria-pressed",HIST);histBtn.textContent=HIST?"Bretagne historique : oui":"Bretagne historique : non";}};
+if(histBtn){syncHist();histBtn.addEventListener("click",()=>{HIST=!HIST;try{localStorage.setItem("tb-hist",HIST?"1":"0")}catch(e){}syncHist();show(current);});}
+let start=(location.hash||"").slice(1);
+if(!SECTIONS.some(s=>s.k===start)&&!start.startsWith("club-")){try{start=localStorage.getItem("tb-tab")||"une"}catch(e){start="une"}}
+current=start;
+const qin=document.getElementById("q"), qres=document.getElementById("qres");
+if(qin){qin.addEventListener("input",()=>runSearch(qin.value));qin.addEventListener("keydown",e=>{if(e.key==="Escape"){qin.value="";runSearch("");}if(e.key==="Enter"){const h=qres&&qres.querySelector(".qhit");if(h)h.click();}});}
+if(qres){qres.addEventListener("click",e=>{const h=e.target.closest(".qhit");if(!h)return;go(h.dataset.q);qin.value="";runSearch("");window.scrollTo({top:0,behavior:"smooth"});});}
+document.addEventListener("click",e=>{if(qres&&!e.target.closest(".searchbar")){qres.hidden=true;}});
+show(start);
+(async()=>{try{const u=window.claude&&window.claude.use?await window.claude.use("user"):null;OWNER=!!(u&&await u.isOwner());}catch(e){OWNER=false;}
+  if(OWNER){const vl=document.getElementById("vislink");if(vl){vl.hidden=false;vl.querySelector("a").addEventListener("click",e=>{e.preventDefault();go("visuels");window.scrollTo({top:0,behavior:"smooth"});});}if(start==="visuels")show("visuels");}})();
+</script>
+</body>
+</html>

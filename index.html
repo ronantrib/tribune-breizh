@@ -209,6 +209,7 @@ tr.bzh td:first-child{box-shadow:inset 3px 0 0 var(--ink);color:var(--ink)}
 td .formd{margin-left:8px}
 .src{font-size:.78rem;color:var(--muted);margin:6px 0 0;max-width:none}
 .src a{color:var(--sea)}
+.src a.report{color:var(--accent);font-weight:600;white-space:nowrap}
 .buteur{display:grid;grid-template-columns:2.2em minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line)}
 .buteur:last-of-type{border-bottom:0}
 .buteur .g{font-family:var(--display);font-weight:900;font-size:1.5rem;line-height:1;color:var(--foot)}
@@ -665,7 +666,11 @@ function formOf(c){return c.res.slice(0,5).map(g=>{const [h,sh,sa]=g;const home=
 const formHTML=c=>c&&c.res&&c.res.length?`<span class="formd" aria-label="Forme : ${formOf(c).join(" ")}">${formOf(c).map(r=>`<i class="f f-${r}">${r}</i>`).join("")}</span>`:"";
 const clubForRow=(t,n)=>ALLCLUBS.find(c=>c.tbl&&(c.nm||c.short)===n&&DATA[c.tbl[0]]&&DATA[c.tbl[0]].tables[c.tbl[1]]&&DATA[c.tbl[0]].tables[c.tbl[1]].name===t.name&&(HIST||!c.hist));
 // Sources des résumés IA : SRC[rubrique] = [[libellé, url], …] (liens vérifiés uniquement)
-function srcHTML(k){const l=SRC[k];return l&&l.length?`<p class="src">Sources : ${l.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}</p>`:"";}
+function srcHTML(k){const l=SRC[k];const s=l&&l.length?`Sources : ${l.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}`:"";
+  /* Bouton « Signaler une erreur » : seulement sur le site public (les liens mail ne fonctionnent pas dans Claude) */
+  const own=/(^|\.)tribuneouest\.fr$/.test(location.hostname);const sec=(SECTIONS.find(x=>x.k===k)||{}).name||k;
+  const r=own?`<a class="report" href="mailto:admin@tribuneouest.fr?subject=${encodeURIComponent("Erreur sur Tribune Breizh · "+sec)}&body=${encodeURIComponent("Bonjour,\n\nJ'ai repéré une erreur dans la rubrique « "+sec+" » :\n\n")}">Signaler une erreur</a>`:"";
+  return s||r?`<p class="src">${s}${s&&r?" · ":""}${r}</p>`:"";}
 // Buteurs : [joueur, club, championnat, buts]
 function renderButeurs(){
   if(!BUTEURS.length)return "";

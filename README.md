@@ -12,4 +12,4 @@ Chaque nuit, la tâche de mise à jour publie la page sur Claude, régénère `i
 
 - `bot/render.js` : `node bot/render.js . /tmp/vis [ids]` dessine les visuels du site en JPEG 1080×1080 (story 1080×1920).
 - `bot/queue.py` : ajoute, annule ou nettoie les posts de `insta/queue.json` ; les images vont dans `insta/img/`.
-- `bot/publish.php` : lancé par le cron d’o2switch, publie chaque post à son heure via l’API Instagram, et sur la page Facebook si elle est reliée (`fbinit`). Le jeton et l'historique sont dans `~/insta/` sur le serveur, jamais dans ce dépôt. Le dossier `bot/` n'est pas servi sur le web.
+- `bot/publish.php` : lancé par le cron d'o2switch, publie chaque post à son heure via l'API Instagram. Le jeton et l'historique sont dans `~/insta/` sur le serveur, jamais dans ce dépôt. Le dossier `bot/` n'est pas servi sur le web.

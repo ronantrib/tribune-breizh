@@ -31,3 +31,12 @@ dans `src/index.html` (outil Artifact, `out_dir` = dossier `src` du dépôt), pu
 Sur le serveur, `gate.php` fabrique la page du site à partir de `src/index.html` (fonction de `bot/build.php`,
 même transformation que `build.py`) et la garde dans `cache/` (ignoré par Git, inaccessible depuis le web).
 `index.html` à la racine n'est plus qu'une page de secours. `build.py` reste disponible pour un usage manuel.
+
+## Instagram sans script côté Claude (depuis le 28 octobre 2026)
+
+Les tâches automatiques n'exécutent plus `bot/*.js` ni `bot/queue.py` (bloqués par le contrôle de sécurité des tâches).
+Elles écrivent directement dans `insta/queue.json` des posts décrits par des cartes :
+`{"id","at","type","caption","cards":[{…}]}` (voir l'en-tête de `bot/card.php` pour le format des cartes, dont l'affiche de match).
+Au moment de publier, `bot/publish.php` dessine les cartes sur le serveur (`bot/card.php`, GD, polices `bot/fonts/`)
+dans `insta/gen/` (ignoré par Git), puis les envoie à Instagram. Les posts avec `images` (JPEG déjà prêts) restent possibles.
+Aperçu d'un post : `php ~/repositories/tribune-breizh/bot/publish.php apercu ID` dans le terminal de cPanel.

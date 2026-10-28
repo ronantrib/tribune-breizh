@@ -7,6 +7,7 @@
  * Commandes (dans le terminal de cPanel) :
  *   php publish.php init LE_JETON   enregistre le jeton d'accès (une seule fois)
  *   php publish.php check           vérifie le jeton et montre la file, sans rien publier
+ *   php publish.php apercu ID       dessine tout de suite les cartes du post ID (insta/gen/) et donne leurs adresses
  *   php publish.php                 publication normale (c'est ce que lance le cron)
  *
  * Le jeton et l'historique sont rangés dans ~/insta/, hors du site et hors de GitHub.
@@ -23,6 +24,23 @@ $STATE = $home . '/insta';
 $REPO = dirname(__DIR__);
 @mkdir($STATE, 0700, true);
 date_default_timezone_set('Europe/Paris');
+
+require_once __DIR__ . '/card.php';
+
+/* Images d'un post : « images » (JPEG déjà prêts dans insta/img/) ou « cards » (cartes décrites en JSON,
+   dessinées ici dans insta/gen/ par bot/card.php). Renvoie les adresses publiques ; lance une exception si une carte échoue. */
+function post_images($p, $REPO) {
+  if (!empty($p['cards']) && is_array($p['cards'])) {
+    $rel = [];
+    foreach (array_values($p['cards']) as $k => $spec) {
+      if (($p['type'] ?? '') === 'story') $spec['format'] = 'story';
+      $f = 'insta/gen/' . preg_replace('/[^a-z0-9-]/', '', $p['id']) . '-' . ($k + 1) . '-' . substr(md5(json_encode($spec)), 0, 8) . '.jpg';
+      if (!is_file("$REPO/$f")) tb_render($spec, "$REPO/$f");
+      $rel[] = $f;
+    }
+  } else $rel = $p['images'] ?? [];
+  return array_map(fn($f) => SITE . ltrim($f, '/') . '?v=' . rawurlencode($p['id']), $rel);
+}
 
 function logline($m) { global $STATE; file_put_contents("$STATE/log.txt", date('Y-m-d H:i:s') . " $m\n", FILE_APPEND); if (PHP_SAPI === 'cli') echo "$m\n"; }
 function jread($f, $def) { if (!is_file($f)) return $def; $j = json_decode(file_get_contents($f), true); return is_array($j) ? $j : $def; }
@@ -94,7 +112,16 @@ $Q = jread("$REPO/insta/queue.json", ['posts' => []]);
 $D = jread("$STATE/done.json", []);
 $now = time();
 
+if ($cmd === 'apercu') {
+  foreach ($Q['posts'] as $p) if (($p['id'] ?? '') === ($argv[2] ?? '')) {
+    try { foreach (post_images($p, $REPO) as $u) echo "$u\n"; } catch (Exception $e) { echo "Carte impossible : " . $e->getMessage() . "\n"; }
+    exit(0);
+  }
+  echo "Aucun post " . ($argv[2] ?? '') . " dans la file.\n"; exit(1);
+}
+
 if ($cmd === 'check') {
+  echo function_exists('imagettftext') ? "Dessin des cartes : OK (GD + FreeType).\n" : "Dessin des cartes : IMPOSSIBLE, GD avec FreeType manque sur ce serveur.\n";
   try { $me = http('GET', API . '/me', ['fields' => 'username', 'access_token' => $T['access_token']]); echo "Jeton valide pour @{$me['username']} jusqu'au " . date('d/m/Y', $T['expires_at']) . ".\n"; }
   catch (Exception $e) { echo "Jeton refusé : " . $e->getMessage() . "\n"; }
   foreach ($Q['posts'] as $p) {
@@ -125,11 +152,11 @@ foreach ($Q['posts'] as $p) {
     $D[$id] = ['status' => 'abandonné', 'tries' => $d['tries'], 'note' => 'trop en retard', 'time' => date('c')];
     jwrite("$STATE/done.json", $D); logline("$id : abandonné (plus de 6 h de retard)."); continue;
   }
-  $urls = array_map(fn($f) => SITE . ltrim($f, '/') . '?v=' . rawurlencode($id), $p['images'] ?? []);
-  if (!$urls) continue;
-  foreach ($urls as $u) if (!head_ok($u)) { logline("$id : image pas encore en ligne ($u), nouvel essai au prochain passage."); continue 2; }
-
   try {
+    $urls = post_images($p, $REPO);
+    if (!$urls) throw new Exception('aucune image ni carte');
+    foreach ($urls as $u) if (!head_ok($u)) { logline("$id : image pas encore en ligne ($u), nouvel essai au prochain passage."); continue 2; }
+
     $type = $p['type'] ?? 'feed';
     if ($type === 'story') {
       $cid = container($T, ['image_url' => $urls[0], 'media_type' => 'STORIES']);

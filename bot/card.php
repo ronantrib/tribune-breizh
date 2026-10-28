@@ -79,7 +79,8 @@ function tb_brand($im, $x, $y) {                                  // drapeau bre
 }
 function tb_footer($im, $H, $bottom, $left) {
   $y = $H - $bottom;
-  tb_text($im, 24, tb_font('archivo-500'), tb_rgb($im, '8b93a3'), 90, $y, tb_clip(24, tb_font('archivo-500'), $left, 540));
+  $f = tb_font('archivo-500'); $px = max(18, tb_fit(24, $f, $left, 560));   // mention en bas : réduite si besoin, coupée en dernier recours
+  tb_text($im, $px, $f, tb_rgb($im, '8b93a3'), 90, $y, tb_clip($px, $f, $left, 560));
   $u = 'breizh.tribuneouest.fr'; $f = tb_font('archivo-700');
   tb_text($im, 28, $f, tb_rgb($im, 'ff4d63'), 990 - tb_w(28, $f, $u), $y, $u);
 }

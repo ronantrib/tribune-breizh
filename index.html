@@ -244,6 +244,7 @@ td .formd{margin-left:8px}
 .rhum .kicker{color:var(--voile)}
 .rhum .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
 .rhum .cd{font-family:var(--display);font-weight:900;font-size:2.4rem;line-height:1;color:var(--voile)}
+.rhum .rhlive{font-family:var(--display);font-weight:800;font-size:1.5rem;line-height:1.1;letter-spacing:.02em;font-variant-numeric:tabular-nums}
 .rhum h3{margin:0;font-size:1.15rem;text-wrap:balance}
 .rhum .names{display:flex;flex-wrap:wrap;gap:6px}
 .rhum .names span{border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:.82rem}
@@ -335,10 +336,10 @@ const ALLCLUBS=[
     nxt:[["Lorient","Brest","lun. 2 nov., 20h45 (reporté du sam. 31 oct.)"]], tbl:["foot",0]},
   {id:"guingamp",n:"En Avant Guingamp",wiki:"https://en.wikipedia.org/wiki/En_Avant_Guingamp",coach:"Sylvain Ripoll",short:"Guingamp",city:"Guingamp",dept:"Côtes-d'Armor",lat:48.56,lon:-3.15,sport:"foot",lg:"Ligue 2",r:"11e",pts:"11 pts",venue:"Stade du Roudourou",founded:"1912",palm:"Coupe de France 2009 et 2014 · Coupe Intertoto 1996",
     res:[["Clermont",0,2,"Guingamp","L2 · J10"]],
-    nxt:[["Guingamp","Saint-Étienne","sam. 31 oct., 20h"],["Dunkerque","Guingamp","6 nov."],["Guingamp","Rodez","20 nov."]], tbl:["foot",1]},
+    nxt:[["Guingamp","Saint-Étienne","sam. 31 oct., 20h"],["Dunkerque","Guingamp","6 nov."],["Lannion","Guingamp","Coupe de France, 7e tour · 14-15 nov."],["Guingamp","Rodez","20 nov."]], tbl:["foot",1]},
   {id:"concarneau",n:"US Concarneau",wiki:"https://en.wikipedia.org/wiki/US_Concarneau",palm:"Champion de National 2023",coach:"Stéphane Rossi",cap:"5 800",founded:"1911",short:"Concarneau",city:"Concarneau",dept:"Finistère",lat:47.87,lon:-3.92,sport:"foot",lg:"Ligue 3",r:"5e",pts:"17 pts",venue:"Stade Guy-Piriou",
     res:[["Concarneau",1,1,"Bastia","L3 · J10"],["OC Cesson",2,4,"Concarneau","Coupe de France · 6e tour"]],
-    nxt:[["Rouen","Concarneau","sam. 31 oct., 14h45"]], tbl:["foot",2]},
+    nxt:[["Rouen","Concarneau","sam. 31 oct., 14h45"],["Tinténiac Saint-Domineuc","Concarneau","Coupe de France, 7e tour · 14-15 nov."]], tbl:["foot",2]},
   {id:"cesson",n:"Cesson-Rennes MHB",wiki:"https://en.wikipedia.org/wiki/Cesson_Rennes_MHB",coach:"Sébastien Leriche",cap:"4 500",founded:"1968",short:"Cesson-Rennes",city:"Cesson-Sévigné",dept:"Ille-et-Vilaine",lat:48.12,lon:-1.60,sport:"hand",lg:"StarLigue",r:"15e",pts:"2 pts",venue:"Glaz Arena",
     res:[["Tremblay",34,29,"Cesson-Rennes","J8"],["Cesson-Rennes",33,36,"Sélestat","J7"],["Saint-Raphaël",37,34,"Cesson-Rennes","J6"],["Cesson-Rennes",29,31,"Limoges","J5"]],
     nxt:[["Cesson-Rennes","Nantes","sam. 31 oct., 19h"]], tbl:["hand",0]},
@@ -356,7 +357,7 @@ const ALLCLUBS=[
     nxt:[["Saint-Malo","Paris FC","J6 reportée (tempête)"]], note:"Classement complet non disponible dans nos sources."},
   /* Bretagne historique */
   {id:"fcnantes",hist:true,n:"FC Nantes",short:"Nantes",city:"Nantes",dept:"Loire-Atlantique",lat:47.22,lon:-1.55,sport:"foot",lg:"Ligue 2",r:"15e",pts:"8 pts",venue:"Stade de la Beaujoire",founded:"1943",palm:"8 titres de champion de France",
-    res:[["Saint-Étienne",1,0,"Nantes","L2 · J10"],["Nantes",0,0,"Reims","L2 · J8"]], nxt:[], tbl:["foot",1]},
+    res:[["Saint-Étienne",1,0,"Nantes","L2 · J10"],["Nantes",0,0,"Reims","L2 · J8"]], nxt:[["Châteaubourg","Nantes","Coupe de France, 7e tour · 14-15 nov."]], tbl:["foot",1]},
   {id:"hbcnantes",hist:true,n:"HBC Nantes",short:"Nantes (hand)",nm:"Nantes",city:"Nantes",dept:"Loire-Atlantique",lat:47.20,lon:-1.50,sport:"hand",lg:"StarLigue",r:"2e",pts:"14 pts",venue:"H Arena",
     res:[["Nantes",41,29,"Chambéry","J8"],["Nantes",27,33,"Vardar","Ligue des champions"],["Saran",31,34,"Nantes","J7"]],
     nxt:[["Cesson-Rennes","Nantes","sam. 31 oct., 19h"]], tbl:["hand",0]},
@@ -383,7 +384,8 @@ const DATA={
     next:[{day:"Vendredi 30 octobre", games:[["Nice","Rennes","19h00 · avancé du 31 oct."]]},
           {day:"Samedi 31 octobre", games:[["Rouen","Concarneau","14h45"],["Guingamp","Saint-Étienne","20h00"]]},
           {day:"Lundi 2 novembre", games:[["Lorient","Brest","20h45 · reporté du 31 oct."]]},
-          {day:"Ligue Europa · 4e journée", games:[["Rennes","Olympiakos","mer. 4 nov. 16h30 · avancé du 5 nov."]]}],
+          {day:"Ligue Europa · 4e journée", games:[["Rennes","Olympiakos","mer. 4 nov. 16h30 · avancé du 5 nov."]]},
+          {day:"Coupe de France · 7e tour", games:[["Lannion","Guingamp","14-15 nov."],["Tinténiac St-Domineuc","Concarneau","14-15 nov."]]}],
     tables:[
       {name:"Ligue 1", head:["J","Pts"], rows:[["Paris SG",8,17],["Rennes",8,16],["Lille",8,15],["Monaco",8,15],["Paris FC",8,14],["Lyon",8,14],["Lens",8,13],["Marseille",8,12],["Lorient",8,12],["Nice",8,11],["Toulouse",8,10],["Auxerre",8,10],["Brest",8,9],["Angers",8,8],["Le Mans",8,7],["Strasbourg",8,7],["Troyes",8,5],["Le Havre",8,2]], note:"Après la 8e journée (PSG–Lyon 2-0 lundi). Ordre des ex aequo indicatif."},
       {name:"Ligue 2", head:["J","Pts"], rows:[["Saint-Étienne",10,25],["Montpellier",10,21],["Nancy",10,19],["Reims",10,18],["Pau",10,17],["Red Star",10,17],["Annecy",10,16],["Metz",10,14],["Dijon",10,12],["Dunkerque",10,12],["Guingamp",10,11],["Sochaux",10,11],["Boulogne",10,10],["Rodez",10,10],["Nantes",10,8],["Grenoble",10,8],["Clermont",10,7],["Laval",10,6]], note:"Après la 10e journée (Montpellier–Red Star 2-1 et Boulogne–Reims 1-1 lundi). Ordre des ex aequo indicatif."},
@@ -434,7 +436,7 @@ const AGENDA=[
   ["2026-11-02","foot","Lorient – Brest","Ligue 1, 9e journée · derby breton · reporté du sam. 31 oct. à la demande de la préfecture du Morbihan","20h45",1,"Ligue 1+","56,29"],
   ["2026-11-04","foot","Rennes – Olympiakos","Ligue Europa, 4e journée · avancé du jeu. 5 nov. (mouvements sociaux)","16h30",1,"Canal+","35"],
   ["2026-11-06","foot","Dunkerque – Guingamp","Ligue 2","",0,"","22"],
-  ["2026-11-14","amateur","Coupe de France, 7e tour","14-15 nov. · entrée de Guingamp et des clubs de Ligue 2","",1,"",""],
+  ["2026-11-14","amateur","Coupe de France, 7e tour","14-15 nov. · Lannion – Guingamp, Châteaubourg – FC Nantes, Saint-Renan – Laval, Tinténiac – Concarneau","",1,"",""],
   ["2026-11-09","basket","Boulogne-sur-Mer – Rennes","Coupe de France, 3e tour","19h00",0,"","35"],
   ["2026-11-20","foot","Guingamp – Rodez","Ligue 2","",0,"","22"],
   ["2026-11-28","amateur","Coupe de France, 8e tour","28-29 nov. · dernier tour avant l'entrée des clubs de Ligue 1","",0,"",""]
@@ -580,11 +582,11 @@ function renderCarte(){
     <p class="note">Touchez un club pour ouvrir sa fiche. Tracé simplifié de la région. ${HIST?"La Loire-Atlantique est affichée (Bretagne historique).":"Activez « Bretagne historique » en haut de page pour inclure Nantes et Saint-Nazaire."}</p></section>`;
 }
 /* Petits poucets et derbys */
-const POUCETS=[["Perros-Louannec","R3","a sorti Fougères (R1) aux tirs au but"],["US Grégorienne","R2","a sorti Pontivy (N1) aux tirs au but"],["Plabennec","R1","a sorti le Stade Briochin (N1) aux tirs au but"],["Châteaubourg","R1","a sorti Locminé (N1) aux tirs au but"],["Saint-Renan","R1","vainqueur à Moréac (1-0)"],["Tinténiac Saint-Domineuc","R1","vainqueur à Concarneau (0-2)"],["Bréquigny Rennes","R1","vainqueur de Saint-Jacques (2-1)"],["Stade Pontivyen","R1","vainqueur à Janzé (0-2)"],["COB Saint-Brieuc","R1","vainqueur de Plaintel (3-1)"],["TA Rennes","N2","vainqueur à Ginglin-Cesson (1-2)"],["Saint-Pierre Milizac","N2","vainqueur d'Ergué-Gabéric (2-1)"],["Vitré","N2","vainqueur à la Montagnarde (0-1)"],["Lannion","N2","vainqueur à Landerneau (1-4)"],["Vannes OC","N2","vainqueur de Vignoc-Hédé-Guipel (1-0)"],["Concarneau","L3","vainqueur à l'OC Cesson (2-4)"]];
+const POUCETS=[["Perros-Louannec","R3","recevra Vannes OC (N2) · avait sorti Fougères (R1) aux tirs au but"],["Plabennec","R1","ira au Stade Pontivyen (R1) · avait sorti le Stade Briochin (N1) aux tirs au but"],["Châteaubourg","R1","recevra le FC Nantes (L2) · avait sorti Locminé (N1) aux tirs au but"],["Saint-Renan","R1","recevra Laval (L2)"],["Tinténiac Saint-Domineuc","R1","recevra Concarneau (L3)"],["Bréquigny Rennes","R1","recevra Montluçon (R1)"],["Stade Pontivyen","R1","recevra Plabennec (R1)"],["COB Saint-Brieuc","R1","recevra Rouen (L3)"],["TA Rennes","N2","ira à la GSI Pontivy (N1)"],["Saint-Pierre Milizac","N2","ira à Vitré (N2)"],["Vitré","N2","recevra Milizac (N2)"],["Lannion","N2","recevra Guingamp (L2)"],["Vannes OC","N2","ira à Perros-Louannec (R3)"],["GSI Pontivy","N1","recevra le TA Rennes (N2) · s'est qualifiée aux tirs au but contre l'US Grégorienne (R2)"],["Concarneau","L3","ira à Tinténiac Saint-Domineuc (R1)"]];
 function renderPoucets(){
-  return `<section class="block wide"><h3>Le suivi des petits poucets</h3><p class="note" style="margin-top:0">Les clubs bretons qualifiés pour le 7e tour (14-15 novembre), du plus petit au plus grand. Tirage à venir.</p>
-    <div class="tbl"><table><thead><tr><th>Club</th><th style="text-align:left">Niveau</th><th style="text-align:left">6e tour</th></tr></thead><tbody>${POUCETS.map(([n,l,t])=>`<tr><td style="text-align:left;color:var(--ink);font-weight:600">${esc(n)}</td><td style="text-align:left"><span class="lvl lvl-${l}">${l}</span></td><td style="text-align:left">${esc(t)}</td></tr>`).join("")}</tbody></table></div>
-    <p class="note">Liste tirée des résultats publiés ; d'autres clubs bretons peuvent être qualifiés. Guingamp entre au 7e tour, Rennes, Brest et Lorient aux 32es de finale le 20 décembre.</p></section>`;
+  return `<section class="block wide"><h3>Le suivi des petits poucets</h3><p class="note" style="margin-top:0">Les clubs bretons qualifiés pour le 7e tour (14-15 novembre), du plus petit au plus grand. Tirage effectué le mercredi 28 octobre : le premier nommé reçoit.</p>
+    <div class="tbl"><table><thead><tr><th>Club</th><th style="text-align:left">Niveau</th><th style="text-align:left">7e tour (14-15 nov.)</th></tr></thead><tbody>${POUCETS.map(([n,l,t])=>`<tr><td style="text-align:left;color:var(--ink);font-weight:600">${esc(n)}</td><td style="text-align:left"><span class="lvl lvl-${l}">${l}</span></td><td style="text-align:left">${esc(t)}</td></tr>`).join("")}</tbody></table></div>
+    <p class="note">Liste tirée des résultats publiés ; d'autres clubs bretons peuvent être qualifiés. Guingamp entre au 7e tour à Lannion, le FC Nantes à Châteaubourg ; Rennes, Brest et Lorient aux 32es de finale le 20 décembre.</p></section>`;
 }
 function renderDerbyMini(){
   return `<section class="derby"><div class="kicker">Derby breton</div><div class="derby-row"><b>Lorient</b><span class="vs">lun. 2 nov. · 20h45<br><small>Stade du Moustoir · Ligue 1+</small></span><b>Brest</b></div>
@@ -644,6 +646,7 @@ function ILLU(k){
   return `<svg class="illu" viewBox="0 0 640 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="640" height="200" class="bg"/>${stripes}${art}</svg>`;
 }
 const BREVES=[
+  ["2026-10-28T12:30","amateur","Coupe de France, 7e tour (14-15 novembre) : Lannion (N2) recevra Guingamp (L2), Châteaubourg (R1) le FC Nantes (L2) et Saint-Renan (R1) Laval (L2). Duels bretons : Perros-Louannec – Vannes, Tinténiac – Concarneau, Stade Pontivyen – Plabennec, Vitré – Milizac et GSI Pontivy – TA Rennes."],
   ["2026-10-27","foot","Ligue Europa : Rennes–Olympiakos est officiellement avancé au mercredi 4 novembre à 16h30, au Roazhon Park, la préfecture ayant interdit le match du jeudi 5 en raison des mouvements sociaux."],
   ["2026-10-28","voile","Route du Rhum : le départ est prévu dimanche 1er novembre à 13h02 de la pointe du Grouin, avec 118 skippers."]
 ];
@@ -725,6 +728,12 @@ const RHUM={"start": "2026-11-01T13:02:00+01:00", "fin": "2026-11-30", "skippers
 function rhumState(){const now=new Date(),st=new Date(RHUM.start),fin=new Date(RHUM.fin+"T23:59:00");
   const cal=x=>new Date(x.getFullYear(),x.getMonth(),x.getDate()), gap=Math.round((cal(st)-cal(now))/86400000);
   return {now,st,fin,on:now>=new Date(st-10*86400000)&&now<=fin,started:now>=st,days:Math.max(0,gap),jour:Math.max(1,1-gap)};}
+// Compte à rebours en direct jusqu'au départ (RHUM.start), mis à jour chaque seconde tant que le bandeau est affiché
+function rhumTick(){const el=document.getElementById("rhlive");if(!el)return;const l=Math.ceil((new Date(RHUM.start)-new Date())/1000);
+  if(l<=0){el.textContent="Le départ est donné !";return;}
+  const d=Math.floor(l/86400),h=Math.floor(l%86400/3600),m=Math.floor(l%3600/60),x=l%60,z=n=>String(n).padStart(2,"0");
+  el.textContent="Départ dans "+(d?d+" j ":"")+z(h)+" h "+z(m)+" min "+z(x)+" s";}
+setInterval(rhumTick,1000);
 function renderRhumBanner(){
   if(typeof RHUM==="undefined")return "";const r=rhumState();if(!r.on)return "";
   const cl=RHUM.classement||[];
@@ -732,6 +741,7 @@ function renderRhumBanner(){
     :`<div class="names">${RHUM.skippers.map(s=>`<span>${esc(s[0])}</span>`).join("")}</div>`;
   return `<section class="rhum" aria-label="Spécial Route du Rhum"><div class="kicker">Spécial Route du Rhum</div>
     <div class="top"><span class="cd">${r.started?"Jour "+r.jour:r.days?"J−"+r.days:"Aujourd'hui"}</span><h3>${r.started?(cl.length?"Les Bretons en tête de leur classe":"Les Bretons sont en mer"):"Départ le dimanche 1er novembre, 13h02, au large de Saint-Malo"}</h3></div>
+    ${r.started?"":`<div class="rhlive" id="rhlive" aria-label="Temps avant le départ"></div>`}
     ${r.started?"":`<p class="note" style="margin:0">${RHUM.skippers.length} skippers bretons à suivre sur 3 542 milles jusqu'à Pointe-à-Pitre.</p>`}
     ${body}${RHUM.maj?`<p class="note" style="margin:0">${esc(RHUM.maj)}</p>`:""}<button class="go" data-go="voile">Tout le spécial Route du Rhum →</button></section>`;
 }
@@ -815,9 +825,9 @@ const AMATEUR={
 function renderAmateur(){
   const cdf=AMATEUR.cdf.map(g=>{const [h,sh,sa,a,x]=g;const w=sh>sa||(x&&+x.split("-")[0].slice(-1)>+x.split("-")[1]);return `<div class="match"><div class="t h ${w?"w":""}">${esc(h)}</div><div class="score">${sh}–${sa}${x?` <small style="font-size:.55em;opacity:.7">${esc(x)}</small>`:""}</div><div class="t ${!w?"w":""}">${esc(a)}</div></div>`}).join("");
   return `<div class="grid2">
-    <section class="block recit wide" style="--c:var(--amateur)">${ILLU("amateur")}<div class="ai">Résumé IA</div><h4>Coupe de France : trois clubs de National 1 tombent aux tirs au but</h4>
-      <p>Le 6e tour a été cruel pour les clubs de National 1 bretons. Le Stade Briochin a été éliminé par Plabennec, pensionnaire de Régional 1. Pontivy est tombé face à l'US Grégorienne (R2) et Locminé contre Châteaubourg (R1), à chaque fois au terme de la séance de tirs au but. Concarneau, seul club breton de Ligue 3, a tenu son rang en s'imposant chez l'OC Cesson (2-4).</p>
-      <p>Le 7e tour, les 14 et 15 novembre, verra l'entrée de Guingamp. Rennes, Brest et Lorient attendront les 32es de finale du 20 décembre. En National 1, Dinan Léhon et Saint-Malo sont dans le wagon de tête (11 pts), quand Locminé et Pontivy luttent en bas du classement. En National 2, Cesson mène la poule bretonne et normande, à égalité de points avec Vire.</p>${srcHTML("amateur")}</section>
+    <section class="block recit wide" style="--c:var(--amateur)">${ILLU("amateur")}<div class="ai">Résumé IA</div><h4>Coupe de France : deux clubs de National 1 tombent aux tirs au but</h4>
+      <p>Le 6e tour a été cruel pour les clubs de National 1 bretons. Le Stade Briochin a été éliminé par Plabennec, pensionnaire de Régional 1. Locminé est tombé contre Châteaubourg (R1), lui aussi aux tirs au but, tandis que la GSI Pontivy s'en est sortie de justesse face à l'US Grégorienne (R2), aux tirs au but également. Concarneau, seul club breton de Ligue 3, a tenu son rang en s'imposant chez l'OC Cesson (2-4).</p>
+      <p>Le 7e tour, les 14 et 15 novembre, verra l'entrée de Guingamp, qui ira à Lannion (N2), et du FC Nantes, attendu à Châteaubourg (R1). Rennes, Brest et Lorient attendront les 32es de finale du 20 décembre. En National 1, Dinan Léhon et Saint-Malo sont dans le wagon de tête (11 pts), quand Locminé et Pontivy luttent en bas du classement. En National 2, Cesson mène la poule bretonne et normande, à égalité de points avec Vire.</p>${srcHTML("amateur")}</section>
     <section class="block"><h3>Coupe de France · 6e tour</h3><div class="daylbl">24-25 octobre · clubs de la Ligue de Bretagne</div>${cdf}<p class="note">Le vainqueur est en gras. tab = tirs au but.</p></section>
     <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
       ${tableHTML({name:"National 2 · poule Bretagne-Normandie", head:["J","Diff","Pts"], rows:AMATEUR.n2, note:"Après 4 à 5 journées. Les réserves de Rennes, Guingamp et Brest y évoluent."})}

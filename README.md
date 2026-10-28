@@ -15,3 +15,11 @@ Chaque nuit, la tâche de mise à jour publie la page sur Claude, régénère `i
 - `bot/publish.php` : lancé par le cron d'o2switch, publie chaque post à son heure via l'API Instagram. Le jeton et l'historique sont dans `~/insta/` sur le serveur, jamais dans ce dépôt. Le dossier `bot/` n'est pas servi sur le web.
 - `bot/card.js` : `node bot/card.js carte.json sortie.jpg` met en forme une carte 1080×1350 (titre, texte, petit tableau) aux couleurs du site, pour les posts des jours libres.
 - `bot/data.js` : `node bot/data.js` affiche en JSON l'essentiel des données du site (affiche, Rhum, agenda 7 jours, brèves…), pour que la tâche Instagram n'ait pas à lire toute la page.
+
+## Ouverture du site (page d'attente)
+
+Jusqu'au vendredi 30 octobre 2026 à 12h00 (Paris), `gate.php` affiche `attente.html` (compte à rebours) à la place du site ;
+ensuite il sert `index.html` tel quel. Aperçu du vrai site avant l'ouverture : `https://breizh.tribuneouest.fr/?apercu=CLE`
+(la clé est dans `gate.php`). Les fichiers `index.html`, `build.py` et la chaîne de mise à jour ne changent pas.
+Pour retirer le mécanisme après l'ouverture : dans `.htaccess`, remettre `DirectoryIndex index.html` et `ErrorDocument 404 /index.html`,
+et supprimer la règle `RewriteRule ^index\.html$ / …`.

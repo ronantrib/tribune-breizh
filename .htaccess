@@ -4,6 +4,9 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Ouverture : tout passe par gate.php (page d'attente avant l'heure, vrai site ensuite), jamais d'accès direct à index.html
+RewriteRule ^index\.html$ / [R=302,L]
+
 # Le dépôt Git et les fichiers techniques ne sont jamais servis
 RedirectMatch 404 /\.git
 RedirectMatch 404 ^/bot/
@@ -16,8 +19,8 @@ RedirectMatch 404 ^/bot/
   Header set Cache-Control "no-cache"
 </FilesMatch>
 
-DirectoryIndex index.html
-ErrorDocument 404 /index.html
+DirectoryIndex gate.php index.html
+ErrorDocument 404 /gate.php
 
 # Polices : mises en cache un an
 AddType font/woff .woff

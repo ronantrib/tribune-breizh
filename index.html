@@ -293,7 +293,7 @@ footer a{color:var(--sea)}
 
 <header class="mast"><div class="wrap">
   <h1 class="brand"><svg class="flag" viewBox="0 0 90 60" role="img" aria-label="Gwenn ha du, drapeau breton"><rect y="0.00" width="90" height="6.67" fill="#121417"/><rect y="6.67" width="90" height="6.67" fill="#ffffff"/><rect y="13.33" width="90" height="6.67" fill="#121417"/><rect y="20.00" width="90" height="6.67" fill="#ffffff"/><rect y="26.67" width="90" height="6.67" fill="#121417"/><rect y="33.33" width="90" height="6.67" fill="#ffffff"/><rect y="40.00" width="90" height="6.67" fill="#121417"/><rect y="46.67" width="90" height="6.67" fill="#ffffff"/><rect y="53.33" width="90" height="6.67" fill="#121417"/><rect width="40" height="33.33" fill="#ffffff"/><g fill="#121417"><defs><g id="hm"><circle cx="-1.6" cy="-2.4" r="1.05"/><circle cx="0" cy="-3.3" r="1.05"/><circle cx="1.6" cy="-2.4" r="1.05"/><path d="M0-1.8L2.1 3.6 0 2.6-2.1 3.6Z"/></g></defs><use href="#hm" x="6.5" y="8"/><use href="#hm" x="15.5" y="8"/><use href="#hm" x="24.5" y="8"/><use href="#hm" x="33.5" y="8"/><use href="#hm" x="11" y="17.5"/><use href="#hm" x="20" y="17.5"/><use href="#hm" x="29" y="17.5"/><use href="#hm" x="6.5" y="27"/><use href="#hm" x="15.5" y="27"/><use href="#hm" x="24.5" y="27"/><use href="#hm" x="33.5" y="27"/></g><rect x=".5" y=".5" width="89" height="59" fill="none" stroke="#8b93a3" stroke-width="1"/></svg><span>Tribune<br><em>Breizh</em></span></h1>
-  <div class="dateline"><span class="brz" style="margin:0">Degemer mat</span> · le sport breton, club par club<br><b>Mis à jour le mardi 27 octobre 2026</b><br><button id="histbtn" class="histbtn" aria-pressed="false">Bretagne historique : non</button></div>
+  <div class="dateline"><span class="brz" style="margin:0">Degemer mat</span> · le sport breton, club par club<br><b>Mis à jour le mercredi 28 octobre 2026</b><br><button id="histbtn" class="histbtn" aria-pressed="false">Bretagne historique : non</button></div>
   <div class="searchbar"><label for="q" class="sr">Rechercher un club</label><input id="q" type="search" placeholder="Rechercher un club : Vannes, Plabennec…" autocomplete="off"><div id="qres" class="qres" hidden></div></div>
 </div></header>
 <nav class="tabs" aria-label="Rubriques"><div class="wrap" id="tabs" role="tablist"></div></nav>
@@ -478,7 +478,7 @@ function deptChips(){
 
 /* ---------- Visuels ---------- */
 /* BILAN_NUIT : bilan interne de la dernière mise à jour, lu par la tâche du bilan du matin (non affiché sur le site) */
-const BILAN_NUIT={date:"",faits:[],affiche:"",manques:[],a_decider:[]};
+const BILAN_NUIT={date:"2026-10-28",faits:["Mise à jour légère du mercredi : aucun match breton joué depuis la veille ; programme inchangé (Nice–Rennes vendredi 30 octobre à 19h, Lorient–Brest lundi 2 novembre à 20h45).","Brèves du 26 octobre retirées ; la brève Route du Rhum est mise à jour (départ dimanche 1er novembre à 13h02).","Village de la Route du Rhum : ouverture corrigée au mercredi 21 octobre (retardée par la météo).","Le tirage du 7e tour de la Coupe de France n'a pas pu être vérifié (date 2026 non confirmée par les sources trouvées)."],affiche:"Lorient – Brest, derby breton, lundi 2 novembre 2026 à 20h45 (Stade du Moustoir, Ligue 1+)",manques:["Tirage du 7e tour de Coupe de France : date et résultats non trouvés dans les sources ouvertes.","Moteur de recherche peu productif aujourd'hui : aucune actualité nouvelle vérifiée sur les clubs bretons."],a_decider:[]};
 /* AFFICHE : l'affiche de la semaine pour les visuels « affiche » et « story » ; score:[buts dom, buts ext] une fois le match joué, sinon null */
 const AFFICHE={kicker:"Derby breton · Ligue 1",a:"Lorient",b:"Brest",l1:"Lundi 2 novembre · 20h45",l2:"Stade du Moustoir · Ligue 1+",score:null};
 const VIS=[
@@ -643,11 +643,8 @@ function ILLU(k){
   return `<svg class="illu" viewBox="0 0 640 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="640" height="200" class="bg"/>${stripes}${art}</svg>`;
 }
 const BREVES=[
-  ["2026-10-26","foot","Lorient–Brest est reporté au lundi 2 novembre à 20h45, à la demande de la préfecture du Morbihan."],
-  ["2026-10-26","foot","Nice–Rennes est avancé au vendredi 30 octobre à 19h."],
-  ["2026-10-26","foot","Le PSG bat Lyon (2-0) et double Rennes en tête de la Ligue 1, avec un point d'avance."],
   ["2026-10-27","foot","Ligue Europa : Rennes–Olympiakos est officiellement avancé au mercredi 4 novembre à 16h30, au Roazhon Park, la préfecture ayant interdit le match du jeudi 5 en raison des mouvements sociaux."],
-  ["2026-10-27","voile","Route du Rhum : J-5. Départ dimanche à 13h02 de la pointe du Grouin, avec 118 skippers."]
+  ["2026-10-28","voile","Route du Rhum : le départ est prévu dimanche 1er novembre à 13h02 de la pointe du Grouin, avec 118 skippers."]
 ];
 /* ---------- Brèves : [date ISO (avec heure si connue), sport, texte] ; elles disparaissent après 48 h ---------- */
 function renderBreves(){
@@ -664,7 +661,7 @@ const SRC={
   rugby:[["Top 14 : première victoire pour Vannes (Le Courrier)", "https://lecourrier.vn/top-14-toulouse-se-detache-premiere-victoire-pour-vannes/1358111.html"], ["Lyon–Vannes, feuille de match (LNR)", "https://top14.lnr.fr/feuille-de-match/2026-2027/j8/11871-lyon-vannes"]],
   basket:[["Landerneau Bretagne Basket (LFB)", "https://basketlfb.com/laboulangerewonderligue/saison-reguliere/equipe/13330-landerneau"], ["Classement de la Wonderligue (LFB)", "https://basketlfb.com/laboulangerewonderligue/classement"]],
   velo:[["Tour de France 2027 : deux étapes en Bretagne (J'aime Radio)", "https://www.jaimeradio.fr/2026/10/22/tour-de-france-2027-deux-etapes-en-bretagne-avec-une-arrivee-a-plumelec/"], ["Tro Bro Léon : Fiorelli devant Renard (Orange Sports)", "https://sports.orange.fr/cyclisme/article/tro-bro-leon-fiorelli-en-costaud-devant-renard-exclu-CNT000002p7zEa.html"], ["Valentin Madouas (DirectVelo)", "https://www.directvelo.com/actualite/128706/valentin-madouas-je-veux-leur-montrer-qu-ils-peuvent-compter-sur-moi"]],
-  voile:[["Route du Rhum 2026 : 118 skippers (Breizh-Info)", "https://www.breizh-info.com/2026/04/21/259143/route-du-rhum-2026-118-skippers-au-depart-de-saint-malo-pour-une-edition-danthologie/"], ["Le village de Saint-Malo ouvre le 20 octobre (Figaro Nautisme)", "https://figaronautisme.meteoconsult.fr/actus-courses/2026-10-20/93098-route-du-rhum-destination-guadeloupe-2026-le-village-de-saint-malo-ouvre-ses-portes-le-20-octobre-tout-ce-qu-il-faut-savoir"]],
+  voile:[["Route du Rhum 2026 : 118 skippers (Breizh-Info)", "https://www.breizh-info.com/2026/04/21/259143/route-du-rhum-2026-118-skippers-au-depart-de-saint-malo-pour-une-edition-danthologie/"], ["Le village ouvre ses portes le mercredi 21 octobre (Figaro Nautisme)", "https://figaronautisme.meteoconsult.fr/actus-nautisme-flash/2026-10-21/93407-route-du-rhum-2026-le-village-ouvre-ses-portes-ce-mercredi-a-14h30"]],
   feminines:[["Metz–Brest en Ligue Butagaz Énergie (Handnews)", "https://handnews.fr/2026/lbe-metz-simpose-au-bout-du-suspense-face-a-brest/"], ["Classement de la Wonderligue (LFB)", "https://basketlfb.com/laboulangerewonderligue/classement"]],
   foot:[["Report de Lorient–Brest (Le Tribunal du Net)","https://www.letribunaldunet.fr/sport/lorient-brest-report-demande-prefecture-derby-risque.html"],["Lorient–Brest et Nice–Rennes en sursis (PenseBet)","https://pensebet.com/ligue-1-lorient-brest-nice-rennes-report-mobilisation/"],["Classement des buteurs (Foot Mercato)","https://www.footmercato.net/france/ligue-1/buteur"]],
   amateur:[["Classement de National 1 (Foot Mercato)","https://www.footmercato.net/club/stade-briochin/classement"]]
@@ -890,7 +887,7 @@ function renderVoile(){
   const days=Math.max(0,Math.ceil((start-new Date())/86400000));
   return `<div class="grid2">
     <section class="block recit wide" style="--c:var(--voile)">${ILLU("voile")}<div class="ai">Résumé IA</div><h4>La Route du Rhum part de Saint-Malo dimanche</h4>
-      <p>La 13e édition de la Route du Rhum s'élance le dimanche 1er novembre à 13h02 au large de la pointe du Grouin, pour 3 542 milles en solitaire et sans escale jusqu'à Pointe-à-Pitre. Le village est ouvert depuis le 20 octobre au bassin Vauban. Le record à battre est celui de Charles Caudrelier, vainqueur il y a quatre ans en 6 jours, 19 heures et 47 minutes. Les premières prévisions annoncent un départ sous anticyclone, avec un petit vent de nord.</p>
+      <p>La 13e édition de la Route du Rhum s'élance le dimanche 1er novembre à 13h02 au large de la pointe du Grouin, pour 3 542 milles en solitaire et sans escale jusqu'à Pointe-à-Pitre. Le village, dont l'ouverture avait été retardée par la météo, est ouvert depuis le mercredi 21 octobre au bassin Vauban. Le record à battre est celui de Charles Caudrelier, vainqueur il y a quatre ans en 6 jours, 19 heures et 47 minutes. Les premières prévisions annoncent un départ sous anticyclone, avec un petit vent de nord.</p>
       <p>Les Malouins Louis Burton et Luke Berry seront au départ. Chez les Ultim, Caudrelier défend son titre sur son nouveau trimaran face à Armel Le Cléac'h et Thomas Coville. En Imoca, Jérémie Beyou et Sam Goodchild font figure de favoris en l'absence du tenant Thomas Ruyant. Tanguy Caradec court en Vintage, quarante ans après la disparition de son père Loïc sur cette même course.</p>${srcHTML("voile")}</section>
     <section class="block"><h3>Le départ</h3><div class="countdown">${days?`J-${days}`:"C'est parti"}</div><p class="note" style="margin-top:6px">Dimanche 1er novembre, 13h02 · Saint-Malo</p>
       <div class="classes"><div><b>118</b><small>skippers</small></div><div><b>6</b><small>classes</small></div><div><b>3 542</b><small>milles</small></div></div>

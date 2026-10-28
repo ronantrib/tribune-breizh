@@ -1,4 +1,4 @@
-// Tribune Breizh · fabrique une « carte » Instagram (JPEG 1080×1350) aux couleurs du site.
+// Tribune Breizh · fabrique une « carte » Instagram (JPEG 1080×1350, ou 1080×1920 pour une story) aux couleurs du site.
 // Usage : node bot/card.js carte.json sortie.jpg
 // carte.json : {
 //   "kicker": "Le saviez-vous ?",            petit titre en couleur (court)
@@ -7,6 +7,7 @@
 //   "rows":   [["Sam. 31 · 19h", "Rennes – Nice", "Ligue 1+"], …]   (facultatif) tableau de 2 ou 3 colonnes, 8 lignes au plus
 //   "color":  "foot|hand|rugby|basket|voile|velo|amateur|accent",   (facultatif) couleur du thème
 //   "foot":   "Source : …"                   (facultatif) petite ligne en bas
+//   "format": "story"                        (facultatif) 1080×1920 pour une story, marges adaptées à l'interface d'Instagram
 // }
 // Le texte vient des données du site : la carte ne fait que les mettre en forme.
 const { chromium } = require("playwright");
@@ -17,6 +18,7 @@ if (!src || !out) { console.error("Usage : node bot/card.js carte.json sortie.jp
 const c = JSON.parse(fs.readFileSync(src, "utf8"));
 const COL = { accent: "#ff4d63", foot: "#3ecf6e", hand: "#f2a33a", rugby: "#b38cff", basket: "#ff8a3d", voile: "#4fc0dd", velo: "#f2d33a", amateur: "#7fd6a4" };
 const col = COL[c.color] || COL.accent;
+const STORY = c.format === "story", H = STORY ? 1920 : 1350;
 const esc = s => String(s ?? "").replace(/[&<>"]/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
 const fonts = path.resolve(__dirname, "..", "fonts");
 if (!c.title || !Array.isArray(c.lines) || !c.lines.length) { console.error("Il faut au moins title et lines."); process.exit(2); }
@@ -27,15 +29,15 @@ const FLAG = `<svg viewBox="0 0 90 60" width="84" height="56"><rect width="90" h
 const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:"BSD";src:url("file://${fonts}/big-shoulders-display.woff");font-weight:600 900}
 @font-face{font-family:"Arc";src:url("file://${fonts}/archivo.woff");font-weight:400 700}
-html,body{margin:0;width:1080px;height:1350px;overflow:hidden}
+html,body{margin:0;width:1080px;height:${H}px;overflow:hidden}
 body{background:#121417;color:#f5f6f4;font-family:"Arc",sans-serif;position:relative}
 .str{position:absolute;right:0;top:0;width:300px;height:100%;background:repeating-linear-gradient(180deg,#f5f6f4 0 56px,#121417 56px 112px);opacity:.06}
 .bar{position:absolute;left:0;top:0;bottom:0;width:18px;background:${col}}
-.w{position:absolute;left:90px;right:90px;top:80px;bottom:80px;display:flex;flex-direction:column}
+.w{position:absolute;left:90px;right:90px;top:${STORY ? 240 : 80}px;bottom:${STORY ? 280 : 80}px;display:flex;flex-direction:column}
 .brand{display:flex;align-items:center;gap:20px;font-family:"BSD";font-weight:900;font-size:48px;text-transform:uppercase}
 .brand em{font-style:normal;color:#ff4d63}
-.k{margin-top:70px;font-size:30px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:${col}}
-h1{margin:14px 0 0;font-family:"BSD";font-weight:900;font-size:${c.title.length > 26 ? 92 : 116}px;line-height:.92;text-transform:uppercase;text-wrap:balance}
+.k{margin-top:${STORY ? 150 : 70}px;font-size:30px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:${col}}
+h1{margin:14px 0 0;font-family:"BSD";font-weight:900;font-size:${c.title.length > 26 ? 92 : STORY ? 130 : 116}px;line-height:.92;text-transform:uppercase;text-wrap:balance}
 .l{margin-top:36px;display:flex;flex-direction:column;gap:18px}
 .l p{margin:0;font-size:${c.rows ? 32 : 38}px;line-height:1.35;font-weight:500}
 table{margin-top:34px;border-collapse:collapse;width:100%}
@@ -53,7 +55,7 @@ ${c.rows ? `<table>${c.rows.map(r => `<tr>${r.map(x => `<td>${esc(x)}</td>`).joi
 
 (async () => {
   const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 1080, height: 1350 } });
+  const p = await b.newPage({ viewport: { width: 1080, height: H } });
   const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "tb-card-")), "carte.html");
   fs.writeFileSync(tmp, html);
   await p.goto("file://" + tmp, { waitUntil: "load" });

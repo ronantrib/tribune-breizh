@@ -6,6 +6,7 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Le dépôt Git et les fichiers techniques ne sont jamais servis
 RedirectMatch 404 /\.git
+RedirectMatch 404 ^/bot/
 <FilesMatch "^(build\.py|README\.md|deploy\.sh)$">
   Require all denied
 </FilesMatch>
@@ -23,3 +24,6 @@ AddType font/woff .woff
 <FilesMatch "\.(woff|png)$">
   Header set Cache-Control "public, max-age=31536000"
 </FilesMatch>
+
+# Images Instagram : servies telles quelles (JPEG)
+AddType image/jpeg .jpg

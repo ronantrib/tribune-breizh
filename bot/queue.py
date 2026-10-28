@@ -5,7 +5,8 @@ Utilisé par les tâches automatiques, depuis la racine du dépôt :
   python3 bot/queue.py add ID QUAND TYPE LEGENDE.txt image1.jpg [image2.jpg ...]
       ID     : identifiant unique, ex. 2026-11-02-resultats (réutiliser un ID remplace le post)
       QUAND  : date et heure de Paris, ex. 2026-11-02T12:30
-      TYPE   : feed (une image), carousel (2 à 10 images) ou story (une image 1080x1920)
+      TYPE   : feed (une image), carousel (2 à 10 images de même taille) ou story (une image 1080x1920)
+      Images : 1080x1080 ou 1080x1350 (cartes de bot/card.js) ; 1080x1920 pour une story
       LEGENDE.txt : fichier texte de la légende (ignoré pour une story : mettre -)
   python3 bot/queue.py cancel ID      annule un post pas encore publié
   python3 bot/queue.py prune          retire les posts de plus de 7 jours et leurs images
@@ -74,11 +75,15 @@ def add(pid, at, typ, capf, imgs):
     n = len(imgs)
     if (typ == "carousel" and not 2 <= n <= 10) or (typ != "carousel" and n != 1):
         raise SystemExit("Nombre d'images incorrect pour ce type.")
+    sizes = []
     for p in imgs:
         w, h = jpeg_size(p)
-        want = (1080, 1920) if typ == "story" else (1080, 1080)
-        if (w, h) != want:
-            raise SystemExit(f"{p} fait {w}x{h}, attendu {want[0]}x{want[1]}.")
+        ok = [(1080, 1920)] if typ == "story" else [(1080, 1080), (1080, 1350)]
+        if (w, h) not in ok:
+            raise SystemExit(f"{p} fait {w}x{h}, attendu " + " ou ".join(f"{a}x{b}" for a, b in ok) + ".")
+        sizes.append((w, h))
+    if len(set(sizes)) > 1:
+        raise SystemExit("Toutes les images d'un carrousel doivent avoir la même taille.")
     cap = ""
     if typ != "story":
         with open(capf, encoding="utf-8") as f:

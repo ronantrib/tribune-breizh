@@ -1,3 +1,12 @@
 {
- "posts": []
+ "posts": [
+  {
+   "id": "2026-10-28-test-story",
+   "at": "2026-10-28T17:45+01:00",
+   "type": "story",
+   "images": [
+    "insta/img/2026-10-28-test-story.jpg"
+   ]
+  }
+ ]
 }

@@ -6,14 +6,15 @@
 const { chromium } = require("playwright");
 const http = require("http"), fs = require("fs"), path = require("path");
 
-const [root, out, ...want] = process.argv.slice(2);
-if (!root || !out) { console.error("Usage : node bot/render.js <site> <sortie> [id ...]"); process.exit(2); }
+const [rootArg, out, ...want] = process.argv.slice(2);
+if (!rootArg || !out) { console.error("Usage : node bot/render.js <site> <sortie> [id ...]"); process.exit(2); }
+const root = path.resolve(rootArg);
 fs.mkdirSync(out, { recursive: true });
 const TYPES = { ".html": "text/html; charset=utf-8", ".woff": "font/woff", ".png": "image/png", ".svg": "image/svg+xml" };
 
 const srv = http.createServer((q, r) => {
   let p = path.join(root, decodeURIComponent(q.url.split("?")[0]));
-  if (!p.startsWith(path.resolve(root))) { r.writeHead(403); return r.end(); }
+  if (!p.startsWith(root)) { r.writeHead(403); return r.end(); }
   if (p.endsWith("/")) p += "index.html";
   fs.readFile(p, (e, d) => {
     if (e) { r.writeHead(404); return r.end(); }

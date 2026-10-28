@@ -40,3 +40,7 @@ Elles écrivent directement dans `insta/queue.json` des posts décrits par des c
 Au moment de publier, `bot/publish.php` dessine les cartes sur le serveur (`bot/card.php`, GD, polices `bot/fonts/`)
 dans `insta/gen/` (ignoré par Git), puis les envoie à Instagram. Les posts avec `images` (JPEG déjà prêts) restent possibles.
 Aperçu d'un post : `php ~/repositories/tribune-breizh/bot/publish.php apercu ID` dans le terminal de cPanel.
+
+Visuels d'origine du site : un post peut aussi être décrit par `"visuels": ["resultats", "classement"]` (derby, classement,
+resultats, buteurs, face, rhum, story). `bot/visuels.php` les redessine à l'identique de l'onglet Visuels, avec les données
+de `src/index.html` au moment de publier. Test à la main : `php bot/visuels.php derby /tmp/derby.jpg`.

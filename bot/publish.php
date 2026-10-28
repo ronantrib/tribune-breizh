@@ -26,11 +26,21 @@ $REPO = dirname(__DIR__);
 date_default_timezone_set('Europe/Paris');
 
 require_once __DIR__ . '/card.php';
+require_once __DIR__ . '/visuels.php';
 
-/* Images d'un post : « images » (JPEG déjà prêts dans insta/img/) ou « cards » (cartes décrites en JSON,
-   dessinées ici dans insta/gen/ par bot/card.php). Renvoie les adresses publiques ; lance une exception si une carte échoue. */
+/* Images d'un post : « visuels » (visuels d'origine du site : derby, classement, resultats, buteurs, face, rhum, story,
+   redessinés ici avec les données de src/index.html au moment de publier), « images » (JPEG déjà prêts dans insta/img/)
+   ou « cards » (cartes décrites en JSON, dessinées ici dans insta/gen/ par bot/card.php). Renvoie les adresses publiques ; lance une exception si une carte échoue. */
 function post_images($p, $REPO) {
-  if (!empty($p['cards']) && is_array($p['cards'])) {
+  if (!empty($p['visuels']) && is_array($p['visuels'])) {          // visuels d'origine du site, redessinés ici (bot/visuels.php)
+    $page = "$REPO/src/index.html"; $sum = substr(md5((string)@file_get_contents($page)), 0, 8); $rel = [];
+    foreach (array_values($p['visuels']) as $k => $v) {
+      $v = preg_replace('/[^a-z]/', '', (string)$v);
+      $f = 'insta/gen/' . preg_replace('/[^a-z0-9-]/', '', $p['id']) . '-' . ($k + 1) . "-$v-$sum.jpg";
+      if (!is_file("$REPO/$f")) tb_render_visuel($v, $page, "$REPO/$f");
+      $rel[] = $f;
+    }
+  } elseif (!empty($p['cards']) && is_array($p['cards'])) {
     $rel = [];
     foreach (array_values($p['cards']) as $k => $spec) {
       if (($p['type'] ?? '') === 'story') $spec['format'] = 'story';

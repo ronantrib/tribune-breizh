@@ -6,6 +6,9 @@
  *
  * Commandes (dans le terminal de cPanel) :
  *   php publish.php init LE_JETON   enregistre le jeton d'accès (une seule fois)
+ *   php publish.php fbinit JETON_UTILISATEUR ID_APP CLE_SECRETE_APP
+ *                                   relie la page Facebook (une seule fois) : le jeton est échangé
+ *                                   contre une autorisation permanente de la page, la clé n'est pas gardée
  *   php publish.php check           vérifie le jeton et montre la file, sans rien publier
  *   php publish.php                 publication normale (c'est ce que lance le cron)
  *
@@ -13,6 +16,7 @@
  */
 
 define('API', getenv('TB_API') ?: 'https://graph.instagram.com/v26.0');   // TB_API/TB_SITE : seulement pour les tests
+define('FBAPI', getenv('TB_FBAPI') ?: 'https://graph.facebook.com/v26.0');
 define('SITE', getenv('TB_SITE') ?: 'https://breizh.tribuneouest.fr/');
 const ALERT_TO = 'admin@tribuneouest.fr';
 const WINDOW = 6 * 3600;        // un post en retard de plus de 6 h n'est plus publié
@@ -70,6 +74,25 @@ if ($cmd === 'init') {
   exit(0);
 }
 
+
+/* ---------- fbinit : relie la page Facebook ---------- */
+if ($cmd === 'fbinit') {
+  [$ut, $app, $sec] = [trim($argv[2] ?? ''), trim($argv[3] ?? ''), trim($argv[4] ?? '')];
+  if ($ut === '' || $app === '' || $sec === '') { echo "Usage : php publish.php fbinit JETON_UTILISATEUR ID_APP CLE_SECRETE_APP\n"; exit(1); }
+  try {
+    $long = http('GET', FBAPI . '/oauth/access_token', ['grant_type' => 'fb_exchange_token', 'client_id' => $app, 'client_secret' => $sec, 'fb_exchange_token' => $ut]);
+    $pages = http('GET', FBAPI . '/me/accounts', ['fields' => 'id,name,access_token,tasks', 'access_token' => $long['access_token']]);
+  } catch (Exception $e) { echo "Refusé par Facebook : " . $e->getMessage() . "\n"; exit(1); }
+  $list = $pages['data'] ?? [];
+  $pick = null;
+  foreach ($list as $pg) if (stripos($pg['name'], 'tribune') !== false) { $pick = $pg; break; }
+  if (!$pick && count($list) === 1) $pick = $list[0];
+  if (!$pick) { echo "Page introuvable. Pages vues : " . implode(', ', array_map(fn($x) => $x['name'], $list)) . "\n"; exit(1); }
+  jwrite("$STATE/fb.json", ['page_id' => $pick['id'], 'page_name' => $pick['name'], 'access_token' => $pick['access_token'], 'since' => time()]);
+  logline("Page Facebook « {$pick['name']} » reliée (page {$pick['id']}).");
+  exit(0);
+}
+
 /* ---------- un seul passage à la fois ---------- */
 $lock = fopen("$STATE/lock", 'c');
 if (!flock($lock, LOCK_EX | LOCK_NB)) exit(0);
@@ -92,14 +115,21 @@ if (time() - $T['refreshed_at'] > 5 * 86400) {
 
 $Q = jread("$REPO/insta/queue.json", ['posts' => []]);
 $D = jread("$STATE/done.json", []);
+$F = jread("$STATE/fb.json", null);
+$DF = jread("$STATE/fbdone.json", []);
 $now = time();
 
 if ($cmd === 'check') {
   try { $me = http('GET', API . '/me', ['fields' => 'username', 'access_token' => $T['access_token']]); echo "Jeton valide pour @{$me['username']} jusqu'au " . date('d/m/Y', $T['expires_at']) . ".\n"; }
   catch (Exception $e) { echo "Jeton refusé : " . $e->getMessage() . "\n"; }
+  if ($F) {
+    try { $pg = http('GET', FBAPI . "/{$F['page_id']}", ['fields' => 'name', 'access_token' => $F['access_token']]); echo "Page Facebook reliée : {$pg['name']}.\n"; }
+    catch (Exception $e) { echo "Page Facebook : autorisation refusée (" . $e->getMessage() . ").\n"; }
+  } else echo "Page Facebook : pas encore reliée.\n";
   foreach ($Q['posts'] as $p) {
     $st = $D[$p['id']]['status'] ?? (!empty($p['cancel']) ? 'annulé' : (strtotime($p['at']) > $now ? 'prévu' : 'en attente'));
-    echo "- {$p['at']}  {$p['type']}  {$p['id']}  : $st\n";
+    $fs = $F ? ' · Facebook : ' . ($DF[$p['id']]['status'] ?? (strtotime($p['at']) < $F['since'] ? 'non concerné' : '—')) : '';
+    echo "- {$p['at']}  {$p['type']}  {$p['id']}  : Instagram : $st$fs\n";
   }
   exit(0);
 }
@@ -116,21 +146,46 @@ function container($T, $params) {
   throw new Exception("conteneur pas prêt après 5 minutes");
 }
 
+function fb_publish($F, $type, $urls, $caption) {
+  $tok = ['access_token' => $F['access_token']];
+  if ($type === 'story') {
+    $ph = http('POST', FBAPI . "/{$F['page_id']}/photos", ['url' => $urls[0], 'published' => 'false'] + $tok);
+    $r = http('POST', FBAPI . "/{$F['page_id']}/photo_stories", ['photo_id' => $ph['id']] + $tok);
+    return $r['post_id'] ?? ($r['id'] ?? $ph['id']);
+  }
+  if (count($urls) === 1) {
+    $r = http('POST', FBAPI . "/{$F['page_id']}/photos", ['url' => $urls[0], 'message' => $caption] + $tok);
+    return $r['post_id'] ?? $r['id'];
+  }
+  $att = [];
+  foreach ($urls as $k => $u) {
+    $ph = http('POST', FBAPI . "/{$F['page_id']}/photos", ['url' => $u, 'published' => 'false'] + $tok);
+    $att["attached_media[$k]"] = json_encode(['media_fbid' => $ph['id']]);
+  }
+  $r = http('POST', FBAPI . "/{$F['page_id']}/feed", ['message' => $caption] + $att + $tok);
+  return $r['id'];
+}
+
 foreach ($Q['posts'] as $p) {
   $id = $p['id'] ?? ''; if ($id === '' || !empty($p['cancel'])) continue;
   $at = strtotime($p['at'] ?? ''); if (!$at || $at > $now) continue;
+  $type = $p['type'] ?? 'feed';
   $d = $D[$id] ?? ['status' => 'en attente', 'tries' => 0];
-  if (in_array($d['status'], ['publié', 'abandonné', 'à vérifier'])) continue;
+  $igTodo = !in_array($d['status'], ['publié', 'abandonné', 'à vérifier']);
+  $f = $DF[$id] ?? ['status' => 'en attente', 'tries' => 0];
+  $fbTodo = $F && $at >= $F['since'] - 600 && !in_array($f['status'], ['publié', 'abandonné', 'à vérifier']);
+  if (!$igTodo && !$fbTodo) continue;
   if ($now - $at > WINDOW) {
-    $D[$id] = ['status' => 'abandonné', 'tries' => $d['tries'], 'note' => 'trop en retard', 'time' => date('c')];
-    jwrite("$STATE/done.json", $D); logline("$id : abandonné (plus de 6 h de retard)."); continue;
+    if ($igTodo) { $D[$id] = ['status' => 'abandonné', 'tries' => $d['tries'], 'note' => 'trop en retard', 'time' => date('c')]; jwrite("$STATE/done.json", $D); }
+    if ($fbTodo) { $DF[$id] = ['status' => 'abandonné', 'tries' => $f['tries'], 'note' => 'trop en retard', 'time' => date('c')]; jwrite("$STATE/fbdone.json", $DF); }
+    logline("$id : abandonné (plus de 6 h de retard)."); continue;
   }
-  $urls = array_map(fn($f) => SITE . ltrim($f, '/') . '?v=' . rawurlencode($id), $p['images'] ?? []);
+  $urls = array_map(fn($x) => SITE . ltrim($x, '/') . '?v=' . rawurlencode($id), $p['images'] ?? []);
   if (!$urls) continue;
   foreach ($urls as $u) if (!head_ok($u)) { logline("$id : image pas encore en ligne ($u), nouvel essai au prochain passage."); continue 2; }
 
-  try {
-    $type = $p['type'] ?? 'feed';
+  /* Instagram */
+  if ($igTodo) try {
     if ($type === 'story') {
       $cid = container($T, ['image_url' => $urls[0], 'media_type' => 'STORIES']);
     } elseif ($type === 'carousel' && count($urls) > 1) {
@@ -144,12 +199,26 @@ foreach ($Q['posts'] as $p) {
     $D[$id] = ['status' => 'à vérifier', 'tries' => $d['tries'] + 1, 'time' => date('c')]; jwrite("$STATE/done.json", $D);
     $m = http('POST', API . "/{$T['user_id']}/media_publish", ['creation_id' => $cid, 'access_token' => $T['access_token']]);
     $D[$id] = ['status' => 'publié', 'media_id' => $m['id'], 'time' => date('c')]; jwrite("$STATE/done.json", $D);
-    logline("$id : publié ($type, média {$m['id']}).");
+    logline("$id : publié sur Instagram ($type, média {$m['id']}).");
   } catch (Exception $e) {
     $tries = $d['tries'] + 1;
     $D[$id] = ['status' => $tries >= MAX_TRIES ? 'abandonné' : 'en attente', 'tries' => $tries, 'error' => $e->getMessage(), 'time' => date('c')];
     jwrite("$STATE/done.json", $D);
-    logline("$id : échec n°$tries : " . $e->getMessage());
-    if ($tries >= MAX_TRIES) alert("post Instagram non publié", "Le post « $id » prévu le {$p['at']} n'a pas pu être publié après " . MAX_TRIES . " essais.\nDernière erreur : " . $e->getMessage() . "\n\nJournal complet : ~/insta/log.txt sur o2switch.");
+    logline("$id : échec Instagram n°$tries : " . $e->getMessage());
+    if ($tries >= MAX_TRIES) alert("post Instagram non publié", "Le post « $id » prévu le {$p['at']} n'a pas pu être publié sur Instagram après " . MAX_TRIES . " essais.\nDernière erreur : " . $e->getMessage() . "\n\nJournal complet : ~/insta/log.txt sur o2switch.");
+  }
+
+  /* Facebook */
+  if ($fbTodo) try {
+    $DF[$id] = ['status' => 'à vérifier', 'tries' => $f['tries'] + 1, 'time' => date('c')]; jwrite("$STATE/fbdone.json", $DF);
+    $pid = fb_publish($F, $type, $urls, $p['caption'] ?? '');
+    $DF[$id] = ['status' => 'publié', 'post_id' => $pid, 'time' => date('c')]; jwrite("$STATE/fbdone.json", $DF);
+    logline("$id : publié sur Facebook ($type, $pid).");
+  } catch (Exception $e) {
+    $tries = $f['tries'] + 1;
+    $DF[$id] = ['status' => $tries >= MAX_TRIES ? 'abandonné' : 'en attente', 'tries' => $tries, 'error' => $e->getMessage(), 'time' => date('c')];
+    jwrite("$STATE/fbdone.json", $DF);
+    logline("$id : échec Facebook n°$tries : " . $e->getMessage());
+    if ($tries >= MAX_TRIES) alert("post Facebook non publié", "Le post « $id » prévu le {$p['at']} n'a pas pu être publié sur la page Facebook après " . MAX_TRIES . " essais.\nDernière erreur : " . $e->getMessage() . "\n\nJournal complet : ~/insta/log.txt sur o2switch.");
   }
 }

@@ -23,3 +23,11 @@ ensuite il sert `index.html` tel quel. Aperçu du vrai site avant l'ouverture : 
 (la clé est dans `gate.php`). Les fichiers `index.html`, `build.py` et la chaîne de mise à jour ne changent pas.
 Pour retirer le mécanisme après l'ouverture : dans `.htaccess`, remettre `DirectoryIndex index.html` et `ErrorDocument 404 /index.html`,
 et supprimer la règle `RewriteRule ^index\.html$ / …`.
+
+## Envoi du site (depuis le 28 octobre 2026)
+
+Les tâches automatiques n'exécutent plus aucun script : elles déposent la page publiée sur Claude telle quelle
+dans `src/index.html` (outil Artifact, `out_dir` = dossier `src` du dépôt), puis la poussent sur GitHub.
+Sur le serveur, `gate.php` fabrique la page du site à partir de `src/index.html` (fonction de `bot/build.php`,
+même transformation que `build.py`) et la garde dans `cache/` (ignoré par Git, inaccessible depuis le web).
+`index.html` à la racine n'est plus qu'une page de secours. `build.py` reste disponible pour un usage manuel.

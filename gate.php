@@ -5,8 +5,8 @@
  * Après, le vrai site (index.html) est servi, sans autre changement.
  * Aperçu du vrai site avant l'ouverture : https://breizh.tribuneouest.fr/?apercu=CLE
  *
- * Pour supprimer ce mécanisme après l'ouverture : dans .htaccess, remettre « DirectoryIndex index.html »,
- * « ErrorDocument 404 /index.html » et retirer la règle qui renvoie /index.html vers /.
+ * Après l'ouverture, ce fichier reste utile : c'est lui qui fabrique la page du site à partir de src/index.html
+ * (voir bot/build.php). Ne pas le retirer.
  */
 const OPEN = '2026-10-30 12:00:00';      // heure de Paris
 const KEY  = '307dd3be7a';                // clé d'aperçu
@@ -16,7 +16,10 @@ $open = (new DateTime(getenv('TB_OPEN') ?: OPEN, new DateTimeZone('Europe/Paris'
 $now = time();
 $preview = isset($_GET['apercu']) && hash_equals(KEY, (string)$_GET['apercu']);
 $status = (int)($_SERVER['REDIRECT_STATUS'] ?? 200);   // 404 quand on arrive ici depuis ErrorDocument
-$site = __DIR__ . '/index.html';
+// La page du site est fabriquée ici à partir de src/index.html (déposée telle quelle par les tâches automatiques),
+// puis gardée dans cache/index.html. Sans src/index.html, on sert l'ancien index.html.
+require_once __DIR__ . '/bot/build.php';
+$site = tb_refresh(__DIR__ . '/src/index.html', __DIR__ . '/cache/index.html') ?? (__DIR__ . '/index.html');
 
 header('Content-Type: text/html; charset=utf-8');
 

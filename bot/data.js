@@ -1,9 +1,10 @@
 // Tribune Breizh · résumé compact des données du site, pour les posts Instagram.
-// Usage : node bot/data.js [index.html]   (par défaut : index.html à la racine du dépôt)
+// Usage : node bot/data.js [page.html]   (par défaut : src/index.html, sinon index.html à la racine du dépôt)
 // Lit seulement les données (const AFFICHE=…, const RHUM=…, etc.) du <script> de la page, sans exécuter la page,
 // et affiche l'essentiel en JSON : beaucoup plus court à lire que la page entière.
 const fs = require("fs"), path = require("path"), vm = require("vm");
-const file = process.argv[2] || path.join(__dirname, "..", "index.html");
+// Par défaut : src/index.html (page déposée par les tâches, la plus récente), sinon l'ancien index.html.
+const file = process.argv[2] || [path.join(__dirname, "..", "src", "index.html"), path.join(__dirname, "..", "index.html")].find(f => fs.existsSync(f));
 const src = fs.readFileSync(file, "utf8");
 
 // Trouve la valeur littérale de « const NOM= » en suivant les crochets, les chaînes et les gabarits.

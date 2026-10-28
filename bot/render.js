@@ -1,7 +1,7 @@
 // Tribune Breizh · fabrique les visuels Instagram (JPEG) à partir du site.
 // Usage : node bot/render.js <dossier_du_site> <dossier_de_sortie> [id ...]
 //   ids possibles : derby classement resultats buteurs face rhum story (tous par défaut)
-// Le dossier du site doit contenir index.html (généré par build.py) et fonts/.
+// Le dossier du site doit contenir src/index.html (page déposée par les tâches) ou index.html, et fonts/.
 // Les visuels sont dessinés par la page elle-même (onglet Visuels), exactement comme sur le site.
 const { chromium } = require("playwright");
 const http = require("http"), fs = require("fs"), path = require("path");
@@ -12,10 +12,25 @@ const root = path.resolve(rootArg);
 fs.mkdirSync(out, { recursive: true });
 const TYPES = { ".html": "text/html; charset=utf-8", ".woff": "font/woff", ".png": "image/png", ".svg": "image/svg+xml" };
 
+// Même transformation que bot/build.php, réduite à l'essentiel pour dessiner les visuels : enveloppe retirée, polices du site.
+function sitePage(src) {
+  let body = src.replace(/^\s*<!doctype html>[\s\S]*?<body>\s*/i, "").replace(/\s*<\/body>\s*<\/html>\s*$/i, "")
+    .replace(/<link rel="(preconnect|stylesheet)" href="https:\/\/fonts\.googleapis\.com[^>]*>\s*/g, "");
+  return '<!doctype html><html lang="fr"><head><meta charset="utf-8"><style>' +
+    '@font-face{font-family:"Big Shoulders Display";src:url("/fonts/big-shoulders-display.woff") format("woff");font-weight:600 900}' +
+    '@font-face{font-family:"Archivo";src:url("/fonts/archivo.woff") format("woff");font-weight:400 700}' +
+    'body{margin:0}</style></head><body>' + body + "</body></html>";
+}
+
 const srv = http.createServer((q, r) => {
   let p = path.join(root, decodeURIComponent(q.url.split("?")[0]));
   if (!p.startsWith(root)) { r.writeHead(403); return r.end(); }
   if (p.endsWith("/")) p += "index.html";
+  // La page du site : fabriquée à partir de src/index.html (page déposée par les tâches) si elle existe, comme le fait le serveur.
+  if (p === path.join(root, "index.html") && fs.existsSync(path.join(root, "src", "index.html"))) {
+    r.writeHead(200, { "content-type": TYPES[".html"] });
+    return r.end(sitePage(fs.readFileSync(path.join(root, "src", "index.html"), "utf8")));
+  }
   fs.readFile(p, (e, d) => {
     if (e) { r.writeHead(404); return r.end(); }
     r.writeHead(200, { "content-type": TYPES[path.extname(p)] || "application/octet-stream" }); r.end(d);

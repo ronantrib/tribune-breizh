@@ -10,6 +10,7 @@ RewriteRule ^index\.html$ / [R=302,L]
 # Le dépôt Git et les fichiers techniques ne sont jamais servis
 RedirectMatch 404 /\.git
 RedirectMatch 404 ^/bot/
+RedirectMatch 404 ^/(src|cache)/
 <FilesMatch "^(build\.py|README\.md|deploy\.sh)$">
   Require all denied
 </FilesMatch>

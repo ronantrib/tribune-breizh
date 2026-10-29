@@ -92,8 +92,8 @@ def add(pid, at, typ, capf, imgs):
             raise SystemExit("Légende vide.")
         if len(cap) > 2200:
             raise SystemExit("Légende trop longue (2200 caractères au plus).")
-        if len(re.findall(r"#\w", cap)) > 30:
-            raise SystemExit("Trop de hashtags (30 au plus).")
+        if len(re.findall(r"#\w", cap)) > 5:
+            raise SystemExit("Trop de hashtags (5 au plus).")
     q = load()
     old = [p for p in q["posts"] if p["id"] == pid]
     for p in old:

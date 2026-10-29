@@ -78,6 +78,13 @@ function http($method, $url, $params = []) {
   }
   return $j;
 }
+/* Instagram limite les légendes à 5 hashtags : au-delà, les derniers sont retirés (les premiers, #TribuneBreizh #SportBreton, restent). */
+function tb_tags($c) {
+  $c = (string)$c; $n = 0; $cut = false;
+  $o = preg_replace_callback('/(?<![\w#])#[\p{L}\p{N}_]+/u', function ($m) use (&$n, &$cut) { if (++$n <= 5) return $m[0]; $cut = true; return ''; }, $c);
+  return $cut ? rtrim(preg_replace('/[ \t]+(\r?\n|$)/u', '$1', $o)) : $c;
+}
+
 function head_ok($url, $video = false) {
   $ch = curl_init($url);
   curl_setopt_array($ch, [CURLOPT_NOBODY => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20, CURLOPT_FOLLOWLOCATION => true]);
@@ -176,7 +183,7 @@ foreach ($Q['posts'] as $p) {
       $video = SITE . ltrim((string)($p['video'] ?? ''), '/') . '?v=' . rawurlencode($id);
       if (empty($p['video']) || !head_ok($video, true)) { logline("$id : vidéo pas encore en ligne ($video), nouvel essai au prochain passage."); continue; }
       $cover = !empty($p['cover']) ? SITE . ltrim((string)$p['cover'], '/') . '?v=' . rawurlencode($id) : '';
-      $cid = container($T, ['media_type' => 'REELS', 'video_url' => $video, 'caption' => $p['caption'] ?? '', 'share_to_feed' => 'true'] + ($cover !== '' && head_ok($cover) ? ['cover_url' => $cover] : []), 16);
+      $cid = container($T, ['media_type' => 'REELS', 'video_url' => $video, 'caption' => tb_tags($p['caption'] ?? ''), 'share_to_feed' => 'true'] + ($cover !== '' && head_ok($cover) ? ['cover_url' => $cover] : []), 16);
     } else {
     $urls = post_images($p, $REPO);
     if (!$urls) throw new Exception('aucune image ni carte');
@@ -187,9 +194,9 @@ foreach ($Q['posts'] as $p) {
     } elseif ($type === 'carousel' && count($urls) > 1) {
       $kids = [];
       foreach ($urls as $u) $kids[] = container($T, ['image_url' => $u, 'is_carousel_item' => 'true']);
-      $cid = container($T, ['media_type' => 'CAROUSEL', 'children' => implode(',', $kids), 'caption' => $p['caption'] ?? '']);
+      $cid = container($T, ['media_type' => 'CAROUSEL', 'children' => implode(',', $kids), 'caption' => tb_tags($p['caption'] ?? '')]);
     } else {
-      $cid = container($T, ['image_url' => $urls[0], 'caption' => $p['caption'] ?? ''] + (!empty($p['alt']) ? ['alt_text' => $p['alt']] : []));
+      $cid = container($T, ['image_url' => $urls[0], 'caption' => tb_tags($p['caption'] ?? '')] + (!empty($p['alt']) ? ['alt_text' => $p['alt']] : []));
     }
     }
     // On note « à vérifier » avant de publier : si le script s'arrête pile ici, il ne republiera jamais deux fois.

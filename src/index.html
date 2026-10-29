@@ -1,4 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
 <title>Tribune Breizh</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -267,7 +268,7 @@ footer a{color:var(--sea)}
 
 <header class="mast"><div class="wrap">
   <h1 class="brand"><svg class="flag" viewBox="0 0 90 60" role="img" aria-label="Gwenn ha du, drapeau breton"><rect y="0.00" width="90" height="6.67" fill="#121417"/><rect y="6.67" width="90" height="6.67" fill="#ffffff"/><rect y="13.33" width="90" height="6.67" fill="#121417"/><rect y="20.00" width="90" height="6.67" fill="#ffffff"/><rect y="26.67" width="90" height="6.67" fill="#121417"/><rect y="33.33" width="90" height="6.67" fill="#ffffff"/><rect y="40.00" width="90" height="6.67" fill="#121417"/><rect y="46.67" width="90" height="6.67" fill="#ffffff"/><rect y="53.33" width="90" height="6.67" fill="#121417"/><rect width="40" height="33.33" fill="#ffffff"/><g fill="#121417"><defs><g id="hm"><circle cx="-1.6" cy="-2.4" r="1.05"/><circle cx="0" cy="-3.3" r="1.05"/><circle cx="1.6" cy="-2.4" r="1.05"/><path d="M0-1.8L2.1 3.6 0 2.6-2.1 3.6Z"/></g></defs><use href="#hm" x="6.5" y="8"/><use href="#hm" x="15.5" y="8"/><use href="#hm" x="24.5" y="8"/><use href="#hm" x="33.5" y="8"/><use href="#hm" x="11" y="17.5"/><use href="#hm" x="20" y="17.5"/><use href="#hm" x="29" y="17.5"/><use href="#hm" x="6.5" y="27"/><use href="#hm" x="15.5" y="27"/><use href="#hm" x="24.5" y="27"/><use href="#hm" x="33.5" y="27"/></g><rect x=".5" y=".5" width="89" height="59" fill="none" stroke="#8b93a3" stroke-width="1"/></svg><span>Tribune<br><em>Breizh</em></span></h1>
-  <div class="dateline"><span class="brz" style="margin:0">Degemer mat</span> · le sport breton, club par club<br><b>Mis à jour le mercredi 28 octobre 2026</b><br><button id="histbtn" class="histbtn" aria-pressed="false">Bretagne historique : non</button></div>
+  <div class="dateline"><span class="brz" style="margin:0">Degemer mat</span> · le sport breton, club par club<br><b>Mis à jour le jeudi 29 octobre 2026</b><br><button id="histbtn" class="histbtn" aria-pressed="false">Bretagne historique : non</button></div>
   <div class="searchbar"><label for="q" class="sr">Rechercher un club</label><input id="q" type="search" placeholder="Rechercher un club : Vannes, Plabennec…" autocomplete="off"><div id="qres" class="qres" hidden></div></div>
 </div></header>
 <nav class="tabs" aria-label="Rubriques"><div class="wrap" id="tabs" role="tablist"></div></nav>
@@ -453,7 +454,7 @@ function deptChips(){
 
 /* ---------- Visuels ---------- */
 /* BILAN_NUIT : bilan interne de la dernière mise à jour, lu par la tâche du bilan du matin (non affiché sur le site) */
-const BILAN_NUIT={date:"2026-10-28",faits:["Mise à jour légère du mercredi : aucun match breton joué depuis la veille ; programme inchangé (Nice–Rennes vendredi 30 octobre à 19h, Lorient–Brest lundi 2 novembre à 20h45).","Brèves du 26 octobre retirées ; la brève Route du Rhum est mise à jour (départ dimanche 1er novembre à 13h02).","Village de la Route du Rhum : ouverture corrigée au mercredi 21 octobre (retardée par la météo).","Le tirage du 7e tour de la Coupe de France n'a pas pu être vérifié (date 2026 non confirmée par les sources trouvées)."],affiche:"Lorient – Brest, derby breton, lundi 2 novembre 2026 à 20h45 (Stade du Moustoir, Ligue 1+)",manques:["Tirage du 7e tour de Coupe de France : date et résultats non trouvés dans les sources ouvertes.","Moteur de recherche peu productif aujourd'hui : aucune actualité nouvelle vérifiée sur les clubs bretons."],a_decider:[]};
+const BILAN_NUIT={date:"2026-10-29",faits:["Mise à jour légère du jeudi : aucun match breton joué depuis la veille ; programme du week-end inchangé (Nice–Rennes vendredi 30 octobre à 19h, Lorient–Brest lundi 2 novembre à 20h45).","Diffuseur de Guingamp–Saint-Étienne (samedi 31 octobre, 20h) confirmé : beIN Sports 1 (programmation officielle de la Ligue 2).","Route du Rhum : départ toujours prévu dimanche 1er novembre à 13h02 ; prévision de vent de nord-est de 7 à 10 nœuds et temps sec, fiabilité annoncée de 80 %.","Aucun nouveau report ni changement de date constaté pour les clubs bretons."],affiche:"Lorient – Brest, derby breton, lundi 2 novembre 2026 à 20h45 (Stade du Moustoir, Ligue 1+)",manques:["Diffuseurs encore sans source pour Nice–Brest BH (hand), Dunkerque–Guingamp et Boulogne-sur-Mer–Rennes (basket) : champs laissés vides.","Résultats du jeudi 29 octobre (Ligue 3) pas encore joués au moment de la mise à jour."],a_decider:[]};
 /* AFFICHE : l'affiche de la semaine pour les visuels « affiche » et « story » ; score:[buts dom, buts ext] une fois le match joué, sinon null */
 const AFFICHE={kicker:"Derby breton · Ligue 1",a:"Lorient",b:"Brest",l1:"Lundi 2 novembre · 20h45",l2:"Stade du Moustoir · Ligue 1+",score:null};
 const VIS=[
@@ -953,4 +954,5 @@ show(start);
 (async()=>{try{const u=window.claude&&window.claude.use?await window.claude.use("user"):null;OWNER=!!(u&&await u.isOwner());}catch(e){OWNER=false;}
   if(OWNER){const vl=document.getElementById("vislink");if(vl){vl.hidden=false;vl.querySelector("a").addEventListener("click",e=>{e.preventDefault();go("visuels");window.scrollTo({top:0,behavior:"smooth"});});}if(start==="visuels")show("visuels");}})();
 </script>
+
 </body></html>

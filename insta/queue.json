@@ -41,6 +41,22 @@
       ]
     },
     {
+      "id": "2026-10-31-story-cesson-nantes",
+      "at": "2026-10-31T17:00+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "StarLigue · 9e journée",
+          "title": "Cesson-Rennes – Nantes",
+          "lines": [
+            "Ce soir à 19h : Cesson-Rennes, avant-dernier du classement, reçoit Nantes, 2e.",
+            "En direct sur beIN Sports Max 3."
+          ],
+          "color": "hand"
+        }
+      ]
+    },
+    {
       "id": "2026-10-31-lorient-cleansheets",
       "at": "2026-10-31T18:00+01:00",
       "type": "feed",

@@ -9,6 +9,7 @@
  *   php publish.php check           vérifie le jeton et montre la file, sans rien publier
  *   php publish.php apercu ID       dessine tout de suite les cartes du post ID (insta/gen/) et donne leurs adresses
  *   php publish.php                 publication normale (c'est ce que lance le cron)
+ *   php publish.php fbcheck | fbtest | fbapercu ID   canal Facebook (voir facebook.php)
  *
  * Le jeton et l'historique sont rangés dans ~/insta/, hors du site et hors de GitHub.
  */
@@ -98,6 +99,12 @@ if ($cmd === 'init') {
   exit(0);
 }
 
+/* ---------- commandes Facebook (voir bot/facebook.php) ---------- */
+if (in_array($cmd, ['fbcheck', 'fbtest', 'fbapercu'])) {
+  try { require_once __DIR__ . '/facebook.php'; exit(tb_fb_cmd($cmd, $argv, $STATE, $REPO)); }
+  catch (Throwable $e) { echo "Facebook : " . $e->getMessage() . "\n"; exit(1); }
+}
+
 /* ---------- un seul passage à la fois ---------- */
 $lock = fopen("$STATE/lock", 'c');
 if (!flock($lock, LOCK_EX | LOCK_NB)) exit(0);
@@ -154,7 +161,7 @@ function container($T, $params) {
 }
 
 foreach ($Q['posts'] as $p) {
-  $id = $p['id'] ?? ''; if ($id === '' || !empty($p['cancel'])) continue;
+  $id = $p['id'] ?? ''; if ($id === '' || !empty($p['cancel']) || ($p['type'] ?? '') === 'facebook') continue;   // type « facebook » : réservé à Facebook
   $at = strtotime($p['at'] ?? ''); if (!$at || $at > $now) continue;
   $d = $D[$id] ?? ['status' => 'en attente', 'tries' => 0];
   if (in_array($d['status'], ['publié', 'abandonné', 'à vérifier'])) continue;
@@ -189,4 +196,10 @@ foreach ($Q['posts'] as $p) {
     logline("$id : échec n°$tries : " . $e->getMessage());
     if ($tries >= MAX_TRIES) alert("post Instagram non publié", "Le post « $id » prévu le {$p['at']} n'a pas pu être publié après " . MAX_TRIES . " essais.\nDernière erreur : " . $e->getMessage() . "\n\nJournal complet : ~/insta/log.txt sur o2switch.");
   }
+}
+
+/* ---------- Facebook : seulement si ~/insta/facebook.json existe ; une erreur ici ne gêne jamais Instagram ---------- */
+if (is_file("$STATE/facebook.json") && is_file(__DIR__ . '/facebook.php')) {
+  try { require_once __DIR__ . '/facebook.php'; tb_fb_run($Q, $STATE, $REPO, time()); }
+  catch (Throwable $e) { logline('Facebook : ' . $e->getMessage()); }
 }

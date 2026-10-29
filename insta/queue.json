@@ -25,6 +25,22 @@
       ]
     },
     {
+      "id": "2026-10-30-story-nice-rennes",
+      "at": "2026-10-30T17:30+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Ligue 1 · 9e journée",
+          "title": "Nice – Rennes",
+          "lines": [
+            "Ce soir à 19h : Rennes, 2e du classement, joue à Nice (10e).",
+            "Le match a été avancé du samedi à ce vendredi. En direct sur Ligue 1+."
+          ],
+          "color": "foot"
+        }
+      ]
+    },
+    {
       "id": "2026-10-31-lorient-cleansheets",
       "at": "2026-10-31T18:00+01:00",
       "type": "feed",

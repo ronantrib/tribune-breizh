@@ -17,19 +17,6 @@
       ]
     },
     {
-      "id": "2026-10-29-fb-test2",
-      "at": "2026-10-29T14:09+01:00",
-      "type": "facebook",
-      "images": [
-        "insta/img/2026-10-28-test-story.jpg"
-      ],
-      "facebook": {
-        "message": "Test technique du bot Tribune Breizh : ce post va être supprimé dans quelques minutes. 🏴",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "first"
-      }
-    },
-    {
       "id": "2026-10-30-story-teasing",
       "at": "2026-10-30T09:00+01:00",
       "type": "story",

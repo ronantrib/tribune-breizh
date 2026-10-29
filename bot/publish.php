@@ -10,6 +10,7 @@
  *   php publish.php apercu ID       dessine tout de suite les cartes du post ID (insta/gen/) et donne leurs adresses
  *   php publish.php                 publication normale (c'est ce que lance le cron)
  *   php publish.php fbcheck | fbtest | fbapercu ID   canal Facebook (voir facebook.php)
+ * Reel Instagram : {"type":"reel", "video":"insta/reels/xxx.mp4", "cover":"insta/reels/xxx.jpg" (facultatif), "caption":…}
  *
  * Le jeton et l'historique sont rangés dans ~/insta/, hors du site et hors de GitHub.
  */
@@ -77,11 +78,11 @@ function http($method, $url, $params = []) {
   }
   return $j;
 }
-function head_ok($url) {
+function head_ok($url, $video = false) {
   $ch = curl_init($url);
   curl_setopt_array($ch, [CURLOPT_NOBODY => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20, CURLOPT_FOLLOWLOCATION => true]);
   curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); $type = (string)curl_getinfo($ch, CURLINFO_CONTENT_TYPE); curl_close($ch);
-  return $code === 200 && stripos($type, 'image/jpeg') !== false;
+  return $code === 200 && stripos($type, $video ? 'video/mp4' : 'image/jpeg') !== false;
 }
 
 $cmd = $argv[1] ?? 'run';
@@ -149,15 +150,15 @@ if ($cmd === 'check') {
 }
 
 /* ---------- publication ---------- */
-function container($T, $params) {
+function container($T, $params, $tries = 10) {
   $c = http('POST', API . "/{$T['user_id']}/media", $params + ['access_token' => $T['access_token']]);
-  for ($i = 0; $i < 10; $i++) { // jusqu'à 5 minutes
+  for ($i = 0; $i < $tries; $i++) { // 10 essais : jusqu'à 5 minutes (16 pour un Reel : jusqu'à 8 minutes)
     $s = http('GET', API . "/{$c['id']}", ['fields' => 'status_code', 'access_token' => $T['access_token']]);
     if (($s['status_code'] ?? '') === 'FINISHED') return $c['id'];
     if (in_array($s['status_code'] ?? '', ['ERROR', 'EXPIRED'])) throw new Exception("conteneur {$s['status_code']}");
     sleep($i < 3 ? 5 : 30);
   }
-  throw new Exception("conteneur pas prêt après 5 minutes");
+  throw new Exception("conteneur pas prêt après " . ($tries > 10 ? 8 : 5) . " minutes");
 }
 
 foreach ($Q['posts'] as $p) {
@@ -170,11 +171,17 @@ foreach ($Q['posts'] as $p) {
     jwrite("$STATE/done.json", $D); logline("$id : abandonné (plus de 6 h de retard)."); continue;
   }
   try {
+    $type = $p['type'] ?? 'feed';
+    if ($type === 'reel') {   // Reel : une vidéo MP4 déposée dans le dépôt (insta/reels/…), 9:16, 3 à 90 s
+      $video = SITE . ltrim((string)($p['video'] ?? ''), '/') . '?v=' . rawurlencode($id);
+      if (empty($p['video']) || !head_ok($video, true)) { logline("$id : vidéo pas encore en ligne ($video), nouvel essai au prochain passage."); continue; }
+      $cover = !empty($p['cover']) ? SITE . ltrim((string)$p['cover'], '/') . '?v=' . rawurlencode($id) : '';
+      $cid = container($T, ['media_type' => 'REELS', 'video_url' => $video, 'caption' => $p['caption'] ?? '', 'share_to_feed' => 'true'] + ($cover !== '' && head_ok($cover) ? ['cover_url' => $cover] : []), 16);
+    } else {
     $urls = post_images($p, $REPO);
     if (!$urls) throw new Exception('aucune image ni carte');
     foreach ($urls as $u) if (!head_ok($u)) { logline("$id : image pas encore en ligne ($u), nouvel essai au prochain passage."); continue 2; }
 
-    $type = $p['type'] ?? 'feed';
     if ($type === 'story') {
       $cid = container($T, ['image_url' => $urls[0], 'media_type' => 'STORIES']);
     } elseif ($type === 'carousel' && count($urls) > 1) {
@@ -183,6 +190,7 @@ foreach ($Q['posts'] as $p) {
       $cid = container($T, ['media_type' => 'CAROUSEL', 'children' => implode(',', $kids), 'caption' => $p['caption'] ?? '']);
     } else {
       $cid = container($T, ['image_url' => $urls[0], 'caption' => $p['caption'] ?? ''] + (!empty($p['alt']) ? ['alt_text' => $p['alt']] : []));
+    }
     }
     // On note « à vérifier » avant de publier : si le script s'arrête pile ici, il ne republiera jamais deux fois.
     $D[$id] = ['status' => 'à vérifier', 'tries' => $d['tries'] + 1, 'time' => date('c')]; jwrite("$STATE/done.json", $D);

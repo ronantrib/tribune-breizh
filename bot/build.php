@@ -41,6 +41,12 @@ const TB_HEAD = <<<'HTML'
 
 HTML;
 
+/* Mesure d'audience Matomo (stats.tribuneouest.fr, site n° 2) : sans cookie, ajoutée ici et non dans la page,
+   car la page est réécrite chaque nuit. Pour la retirer : vider cette constante. */
+const TB_STATS = <<<'HTML'
+<script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']);_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);(function(){var u="https://stats.tribuneouest.fr/";_paq.push(['setTrackerUrl',u+'matomo.php']);_paq.push(['setSiteId','2']);var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.async=true;g.src=u+'matomo.js';s.parentNode.insertBefore(g,s);})();</script>
+HTML;
+
 /** Transforme la page publiée sur Claude en page du site ; renvoie null si la page n'a pas la forme attendue. */
 function tb_build(string $src): ?string {
   $body = $src;
@@ -57,7 +63,7 @@ function tb_build(string $src): ?string {
   $body = preg_replace('/<link rel="preconnect" href="https:\/\/fonts\.googleapis\.com"[^>]*>\s*/', '', $body);
   $body = preg_replace('/<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com[^>]*>\s*/', '', $body);
   $head = array_map(fn($b) => str_replace('<title>Tribune Breizh</title>', '<title>Tribune Breizh · le sport breton, club par club</title>', $b), $head);
-  $out = TB_HEAD . implode("\n", $head) . "\n</head>\n<body>\n" . trim($body) . "\n</body>\n</html>\n";
+  $out = TB_HEAD . implode("\n", $head) . "\n" . trim(TB_STATS) . "\n</head>\n<body>\n" . trim($body) . "\n</body>\n</html>\n";
   if (strpos($out, 'WXvNyWF5ypo7PuAsgFRJp6') === false || strpos($out, 'const DATA=') === false) return null;
   return $out;
 }
@@ -66,7 +72,7 @@ function tb_build(string $src): ?string {
 function tb_refresh(string $src, string $dst): ?string {
   if (!is_file($src)) return is_file($dst) ? $dst : null;
   $raw = (string)file_get_contents($src);
-  $sum = md5($raw);                                   // empreinte de la source : on ne reconstruit que si elle a changé
+  $sum = md5($raw . TB_HEAD . TB_STATS);                                   // empreinte de la source : on ne reconstruit que si elle a changé
   if (is_file($dst) && @file_get_contents("$dst.md5") === $sum) return $dst;
   $html = tb_build($raw);
   if ($html === null) return is_file($dst) ? $dst : null;   // page reçue anormale : on garde la version précédente

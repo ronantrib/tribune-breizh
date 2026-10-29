@@ -23,6 +23,46 @@
       "images": [
         "insta/img/2026-10-30-story-teasing.jpg"
       ]
+    },
+    {
+      "id": "2026-10-31-lorient-cleansheets",
+      "at": "2026-10-31T12:30+01:00",
+      "type": "feed",
+      "caption": "🏴 Une défense qui tient bon !\nLe FC Lorient n'a pas encaissé de but dans 5 de ses 8 premiers matchs de Ligue 1. Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens.\nLes trois derniers : Paris FC (1-0), Monaco (1-0) et Angers (0-0).\nProchain match : Lorient – Brest, lundi 2 novembre à 20h45.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FCLorient #Ligue1 #Merlus",
+      "cards": [
+        {
+          "kicker": "Ligue 1 · FC Lorient",
+          "title": "5 clean sheets en 8 matchs",
+          "lines": [
+            "Les Merlus n'ont pas encaissé de but dans 5 de leurs 8 premiers matchs de Ligue 1.",
+            "Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens."
+          ],
+          "rows": [
+            [
+              "J6",
+              "Lorient – Paris FC",
+              "1-0"
+            ],
+            [
+              "J7",
+              "Lorient – Monaco",
+              "1-0"
+            ],
+            [
+              "J8",
+              "Angers – Lorient",
+              "0-0"
+            ]
+          ],
+          "color": "foot",
+          "foot": "Source : FC Lorient, 28 octobre"
+        }
+      ],
+      "facebook": {
+        "message": "🏴 Une défense qui tient bon : le FC Lorient n'a pas encaissé de but dans 5 de ses 8 premiers matchs de Ligue 1. Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens.\nLes trois derniers : Paris FC (1-0), Monaco (1-0) et Angers (0-0).\nProchain match : Lorient – Brest, lundi 2 novembre à 20h45.\n#TribuneBreizh",
+        "link": "https://breizh.tribuneouest.fr/",
+        "image": "first"
+      }
     }
   ]
 }

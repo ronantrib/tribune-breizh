@@ -718,7 +718,7 @@ function renderRhumBanner(){
   if(typeof RHUM==="undefined")return "";const r=rhumState();if(!r.on)return "";
   const cl=RHUM.classement||[];
   const body=r.started&&cl.length?`<div>${cl.slice(0,5).map(x=>`<div class="rh-row"><div><b>${esc(x[2])}</b><small>${esc(x[0])}${x[3]?" · "+esc(x[3]):""}</small></div><span class="pos">${esc(String(x[1]))}e</span></div>`).join("")}</div>`
-    :`<div class="names">${RHUM.skippers.map(s=>`<span>${esc(s[0])}</span>`).join("")}</div>`;
+    :`<div class="names">${(()=>{const gros=["Ultim","Ocean Fifty","Imoca"],fav=["Vincent Riou","Jean Le Cam","Marc Guillemot"],sel=RHUM.skippers.filter(s=>gros.includes(s[1])||fav.includes(s[0])),reste=RHUM.skippers.length-sel.length;return sel.map(s=>`<span>${esc(s[0])}</span>`).join("")+(reste>0?`<span>+ ${reste} autres Bretons</span>`:"")})()}</div>`;
   return `<section class="rhum" aria-label="Spécial Route du Rhum"><div class="kicker">Spécial Route du Rhum</div>
     <div class="top"><span class="cd">${r.started?"Jour "+r.jour:r.days?"J−"+r.days:"Aujourd'hui"}</span><h3>${r.started?(cl.length?"Les Bretons en tête de leur classe":"Les Bretons sont en mer"):"Départ le dimanche 1er novembre, 13h02, au large de Saint-Malo"}</h3></div>
     ${r.started?"":`<div class="rhlive" id="rhlive" aria-label="Temps avant le départ"></div>`}

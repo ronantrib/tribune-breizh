@@ -65,14 +65,8 @@ function tb_frame($c, $H) {
   return $im;
 }
 function tb_brand($im, $x, $y) {                                  // drapeau breton + « TRIBUNE BREIZH » ; $y = haut
-  $w = tb_rgb($im, 'ffffff'); $k = tb_rgb($im, '121417');
-  imagefilledrectangle($im, $x, $y, $x + 83, $y + 55, $w);
-  for ($i = 1; $i < 9; $i += 2) imagefilledrectangle($im, $x, $y + (int)round($i * 6.2), $x + 83, $y + (int)round($i * 6.2 + 6.2) - 1, $k);
-  imagefilledrectangle($im, $x, $y, $x + 37, $y + 30, $w);
-  foreach ([[6, 7], [15, 7], [24, 7], [33, 7], [10, 16], [19, 16], [28, 16], [6, 25], [15, 25], [24, 25], [33, 25]] as [$ex, $ey]) {
-    imagefilledellipse($im, $x + $ex, $y + $ey - 2, 3, 3, $k);
-    imagefilledpolygon($im, [$x + $ex, $y + $ey - 1, $x + $ex + 2, $y + $ey + 3, $x + $ex - 2, $y + $ey + 3], $k);
-  }
+  $fl = @imagecreatefrompng(__DIR__ . '/flag.png');                // même drapeau que les visuels préparés (hermines nettes)
+  if ($fl) { imagecopyresampled($im, $fl, $x, $y, 0, 0, 84, 56, imagesx($fl), imagesy($fl)); imagedestroy($fl); }
   $f = tb_font('bsd-900'); $base = $y + 46;
   tb_text($im, 48, $f, tb_rgb($im, 'f5f6f4'), $x + 104, $base, 'TRIBUNE ');
   tb_text($im, 48, $f, tb_rgb($im, 'ff4d63'), $x + 104 + tb_w(48, $f, 'TRIBUNE '), $base, 'BREIZH');

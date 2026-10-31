@@ -310,8 +310,8 @@ const ALLCLUBS=[
     res:[["Clermont",0,2,"Guingamp","L2 · J10"]],
     nxt:[["Guingamp","Saint-Étienne","sam. 31 oct., 20h"],["Dunkerque","Guingamp","ven. 6 nov., 20h · beIN Sports Max 4"],["Lannion","Guingamp","Coupe de France, 7e tour · 14-15 nov."],["Guingamp","Rodez","20 nov."]], tbl:["foot",1]},
   {id:"concarneau",n:"US Concarneau",wiki:"https://en.wikipedia.org/wiki/US_Concarneau",palm:"Champion de National 2023",coach:"Stéphane Rossi",cap:"5 800",founded:"1911",short:"Concarneau",city:"Concarneau",dept:"Finistère",lat:47.87,lon:-3.92,sport:"foot",lg:"Ligue 3",r:"6e",pts:"17 pts",venue:"Stade Guy-Piriou",
-    res:[["Concarneau",1,1,"Bastia","L3 · J10"],["OC Cesson",2,4,"Concarneau","Coupe de France · 6e tour"]],
-    nxt:[["Rouen","Concarneau","sam. 31 oct., 14h45 · Ligue 1+ 3"],["Concarneau","Fleury","sam. 7 nov., 14h45"],["Tinténiac Saint-Domineuc","Concarneau","Coupe de France, 7e tour · 14-15 nov."]], tbl:["foot",2]},
+    res:[["Rouen",2,1,"Concarneau","L3 · J11"],["Concarneau",1,1,"Bastia","L3 · J10"],["OC Cesson",2,4,"Concarneau","Coupe de France · 6e tour"]],
+    nxt:[["Concarneau","Fleury","sam. 7 nov., 14h45"],["Tinténiac Saint-Domineuc","Concarneau","Coupe de France, 7e tour · 14-15 nov."]], tbl:["foot",2]},
   {id:"cesson",n:"Cesson-Rennes MHB",wiki:"https://en.wikipedia.org/wiki/Cesson_Rennes_MHB",coach:"Sébastien Leriche",cap:"4 500",founded:"1968",short:"Cesson-Rennes",city:"Cesson-Sévigné",dept:"Ille-et-Vilaine",lat:48.12,lon:-1.60,sport:"hand",lg:"StarLigue",r:"15e",pts:"2 pts",venue:"Glaz Arena",
     res:[["Tremblay",34,29,"Cesson-Rennes","J8"],["Cesson-Rennes",33,36,"Sélestat","J7"],["Saint-Raphaël",37,34,"Cesson-Rennes","J6"],["Cesson-Rennes",29,31,"Limoges","J5"]],
     nxt:[["Cesson-Rennes","Nantes","sam. 31 oct., 19h"],["Cesson-Rennes","Toulouse","ven. 13 nov. · StarLigue (horaire à confirmer)"]], tbl:["hand",0]},
@@ -319,8 +319,8 @@ const ALLCLUBS=[
     res:[["Nice",36,32,"Brest BH","LBE · 30 oct."],["Metz",33,31,"Brest BH","LBE · 7 oct."]],
     nxt:[["Brest BH","CSM Bucarest","sam. 7 nov., 18h · Ligue des champions"]], tbl:["hand",1], note:"Défaite à Nice (36-32) en championnat vendredi 30 octobre ; lourde défaite à Esbjerg en Ligue des champions le 17 octobre. Rang et points : situation après la 6e journée."},
   {id:"vannes",n:"RC Vannes",wiki:"https://en.wikipedia.org/wiki/Rugby_Club_Vannes",coach:"Jean-Noël Spitzer",cap:"11 303",founded:"1950",short:"Vannes",city:"Vannes",dept:"Morbihan",lat:47.66,lon:-2.76,sport:"rugby",lg:"Top 14",r:"14e",pts:"5 pts",venue:"Stade de la Rabine",palm:"Première saison en Top 14 en 2024-2025",
-    res:[["Vannes",27,26,"Clermont","J7"],["Harlequins",57,19,"Vannes","Challenge Cup"],["Perpignan",21,12,"Vannes","J6"],["Vannes",40,43,"Pau","J5"],["Toulon",28,10,"Vannes","J4"]],
-    nxt:[["Lyon","Vannes","sam. 31 oct., 16h35"],["Vannes","Edinburgh","dim. 13 déc., 14h · Challenge Cup"],["Vannes","Black Lion","dim. 10 janv., 14h · Challenge Cup"],["Ospreys","Vannes","sam. 16 janv., 21h · Challenge Cup"]], tbl:["rugby",0]},
+    res:[["Lyon",48,25,"Vannes","J8"],["Vannes",27,26,"Clermont","J7"],["Harlequins",57,19,"Vannes","Challenge Cup"],["Perpignan",21,12,"Vannes","J6"],["Vannes",40,43,"Pau","J5"]],
+    nxt:[["Vannes","Edinburgh","dim. 13 déc., 14h · Challenge Cup"],["Vannes","Black Lion","dim. 10 janv., 14h · Challenge Cup"],["Ospreys","Vannes","sam. 16 janv., 21h · Challenge Cup"]], tbl:["rugby",0]},
   {id:"landerneau",n:"Landerneau Bretagne Basket",wiki:"https://en.wikipedia.org/wiki/Landerneau_Bretagne_Basket",coach:"Wani Muganguzi",cap:"2 300",venue:"La Cimenterie",founded:"2011",short:"Landerneau",city:"Landerneau",dept:"Finistère",lat:48.45,lon:-4.25,sport:"basket",lg:"La Boulangère Wonderligue",r:"7e",pts:"3 V – 3 D",fem:true,
     res:[["Landerneau",68,73,"Derthona","EuroCup · 29 oct."],["Landerneau",87,85,"Charnay","J6 · a.p."],["Landerneau",88,63,"Fribourg","EuroCup"],["Poznan",77,65,"Landerneau","EuroCup"]],
     nxt:[["Lyon","Landerneau","dim. 1er nov., 16h · LFB"],["Landerneau","Poznan","mer. 4 nov., 19h30 · EuroCup"],["Landerneau","Chartres","sam. 7 nov., 20h · LFB"],["Fribourg","Landerneau","mer. 25 nov., 19h30 · EuroCup (à confirmer)"]], tbl:["basket",0], note:"EuroCup féminine, groupe H : battue à domicile par Derthona (68-73), leader invaincu du groupe."},
@@ -348,14 +348,15 @@ const DATA={
   foot:{title:"Football", round:"Ligue 1 · Ligue 2 · Ligue 3 · féminines",
     recit:{t:"Rennes sombre à Nice, le derby Lorient–Brest attendu lundi",p:[
       "Rennes a vécu une soirée noire vendredi 30 octobre à Nice (5-2). Elye Wahi a ouvert le score sur penalty (12e), Sebastian Szymański a égalisé (15e), mais Wahi, auteur d'un triplé, Jonathan Clauss et Mohamed Amoura ont fait la différence ; Boulaye Dia a réduit l'écart sur penalty (58e). Les Rennais gardent leurs 16 points mais reculent à la 3e place : ils sont à quatre longueurs du PSG, vainqueur au Havre, et à deux de Lille (18 pts), vainqueur de Lens (1-0) le même soir, avec Monaco (15 pts) dans leur dos.",
-      "Le programme se poursuit samedi : Guingamp (12e de Ligue 2) reçoit le leader stéphanois à 20h, et Concarneau (6e de Ligue 3) se rend à Rouen, 2e, à 14h45. Lorient (10e) et Brest (13e) se retrouveront lundi 2 novembre à 20h45 pour le derby breton, reporté à la demande de la préfecture du Morbihan. Mercredi 4 novembre à 16h30, Rennes reçoit l'Olympiakos en Ligue Europa, match avancé du jeudi après l'interdiction de la préfecture d'Ille-et-Vilaine."]},
+      "Samedi 31 octobre, Concarneau (6e de Ligue 3) s'est incliné à Rouen (2-1), et Guingamp (12e de Ligue 2) reçoit le leader stéphanois à 20h. Lorient (10e) et Brest (13e) se retrouveront lundi 2 novembre à 20h45 pour le derby breton, reporté à la demande de la préfecture du Morbihan. Mercredi 4 novembre à 16h30, Rennes reçoit l'Olympiakos en Ligue Europa, match avancé du jeudi après l'interdiction de la préfecture d'Ille-et-Vilaine."]},
     results:[{day:"Ligue 1 · 9e journée", games:[["Nice",5,2,"Rennes"]]},
              {day:"Ligue 1 · 8e journée", games:[["Rennes",3,0,"Strasbourg"],["Brest",1,2,"Nice"],["Angers",0,0,"Lorient"]]},
               {day:"Ligue 2 · 11e journée", games:[["Nantes",1,1,"Clermont"]]},
              {day:"Ligue 2 · 10e journée", games:[["Clermont",0,2,"Guingamp"]]},
+             {day:"Ligue 3 · 11e journée", games:[["Rouen",2,1,"Concarneau"]]},
              {day:"Ligue 3 · 10e journée", games:[["Concarneau",1,1,"Bastia"]]},
              {day:"Arkema Première Ligue · 4e journée", games:[["Le Havre",2,0,"Saint-Malo"]]}],
-    next:[{day:"Samedi 31 octobre", games:[["Rouen","Concarneau","14h45 · Ligue 1+ 3"],["Guingamp","Saint-Étienne","20h00"]]},
+    next:[{day:"Samedi 31 octobre", games:[["Guingamp","Saint-Étienne","20h00"]]},
           {day:"Lundi 2 novembre", games:[["Lorient","Brest","20h45 · reporté du 31 oct."]]},
           {day:"Ligue Europa · 4e journée", games:[["Rennes","Olympiakos","mer. 4 nov. 16h30 · avancé du 5 nov."]]},
           {day:"Coupe de France · 7e tour", games:[["Lannion","Guingamp","14-15 nov."],["Tinténiac St-Domineuc","Concarneau","14-15 nov."]]}],
@@ -384,9 +385,9 @@ const DATA={
   rugby:{title:"Rugby", round:"Top 14 · Challenge Cup",
     recit:{t:"Vannes tient enfin sa première victoire",p:[
       "Le RC Vannes a attendu la 7e journée pour gagner en Top 14, et de quelle manière : mené 23-6 après la pause contre Clermont, il l'a emporté 27-26 grâce à une transformation d'Anthony Bouthier dans les dernières secondes, à quatorze contre quinze. Les Bretons restent derniers avec 5 points, à six longueurs du Racing.",
-      "Le déplacement de samedi à Lyon, qui s'est relancé à Bayonne, sera un test. En Challenge Cup, Vannes a lourdement perdu chez les Harlequins (57-19) en ouverture."]},
-    results:[{day:"Top 14 · 7e journée", games:[["Vannes",27,26,"Clermont"]]},{day:"Challenge Cup · 1re journée", games:[["Harlequins",57,19,"Vannes"]]}],
-    next:[{day:"Samedi 31 octobre", games:[["Lyon","Vannes","16h35"]]},{day:"Challenge Cup", games:[["Vannes","Edinburgh","dim. 13 déc., 14h"],["Vannes","Black Lion","dim. 10 janv., 14h"],["Ospreys","Vannes","sam. 16 janv., 21h"]]}],
+      "Samedi 31 octobre, Vannes s'est incliné à Lyon (48-25) pour la 8e journée, après avoir mené 17-12 à la pause grâce à des essais de Béziat et de Nu'u. En Challenge Cup, Vannes a lourdement perdu chez les Harlequins (57-19) en ouverture."]},
+    results:[{day:"Top 14 · 8e journée", games:[["Lyon",48,25,"Vannes"]]},{day:"Top 14 · 7e journée", games:[["Vannes",27,26,"Clermont"]]},{day:"Challenge Cup · 1re journée", games:[["Harlequins",57,19,"Vannes"]]}],
+    next:[{day:"Challenge Cup", games:[["Vannes","Edinburgh","dim. 13 déc., 14h"],["Vannes","Black Lion","dim. 10 janv., 14h"],["Ospreys","Vannes","sam. 16 janv., 21h"]]}],
     tables:[{name:"Top 14", head:["J","Pts"], rows:[["Toulouse",7,28],["Bordeaux-Bègles",7,23],["Pau",7,"—"],["La Rochelle",7,18],["Lyon",7,18],["Bayonne",7,18],["Montpellier",7,18],["Toulon",7,17],["Stade Français",7,14],["Perpignan",7,14],["Castres",7,"—"],["Clermont",7,12],["Racing 92",7,11],["Vannes",7,5]], note:"« — » : total non confirmé. Le dernier est relégué en Pro D2."}]
   },
   basket:{title:"Basket", round:"La Boulangère Wonderligue · Coupe de France",
@@ -400,10 +401,8 @@ const DATA={
 };
 
 const AGENDA=[
-  ["2026-10-31","rugby","Lyon – Vannes","Top 14, 8e journée","16h35",0,"Canal+","56"],
   ["2026-10-31","hand","Cesson-Rennes – Nantes","StarLigue, 9e journée","19h00",0,"beIN Sports Max 3","35,44"],
   ["2026-10-31","foot","Guingamp – Saint-Étienne","Ligue 2, 11e journée · le leader au Roudourou","20h00",0,"beIN Sports 1","22"],
-  ["2026-10-31","foot","Rouen – Concarneau","Ligue 3, 11e journée · choc du haut de tableau","14h45",0,"Ligue 1+ 3","29"],
   ["2026-11-01","voile","Départ de la Route du Rhum","Saint-Malo, pointe du Grouin · 115 skippers · direct sur France 3 dès 12h50","13h02",1,"France 3","35"],
   ["2026-11-02","foot","Lorient – Brest","Ligue 1, 9e journée · derby breton · reporté du sam. 31 oct. à la demande de la préfecture du Morbihan","20h45",1,"Ligue 1+","56,29"],
   ["2026-11-01","basket","Lyon – Landerneau","Ligue féminine de basket (LFB)","16h00",0,"","29"],
@@ -625,6 +624,8 @@ function ILLU(k){
   return `<svg class="illu" viewBox="0 0 640 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="640" height="200" class="bg"/>${stripes}${art}</svg>`;
 }
 const BREVES=[
+  ["2026-10-31T18:55","rugby","Top 14 : le RC Vannes s'est incliné à Lyon (48-25) samedi 31 octobre, pour la 8e journée, malgré des essais de Béziat, Nu'u et Hulleu. Les Vannetais restent derniers."],
+  ["2026-10-31T18:50","foot","Ligue 3 : Concarneau a perdu à Rouen (2-1) samedi 31 octobre, pour la 11e journée. Sinquin a marqué à la 34e minute."],
   ["2026-10-31T08:00","hand","Ligue Butagaz Énergie : Brest Bretagne Handball s'est incliné à Nice (36-32) vendredi 30 octobre, pour la 7e journée."],
   ["2026-10-31T02:00","foot","Ligue 1 : Rennes s'est incliné à Nice (5-2) vendredi 30 octobre, malgré un but de Sebastian Szymański. Elye Wahi a signé un triplé. Les Rennais gardent 16 points mais reculent à la 3e place, derrière le PSG et Lille."],
   ["2026-10-31T01:00","voile","Route du Rhum : le départ sera donné dimanche 1er novembre à 13h02 au large de la pointe du Grouin, à Saint-Malo, avec 115 skippers."],
@@ -762,7 +763,7 @@ function renderUne(){
   const lead=`<section class="lead"><div class="kicker">Le week-end breton</div><h3 class="big">Rennes sombre à Nice, derby Lorient–Brest lundi, la Route du Rhum part dimanche</h3>
     <div class="ai" style="--c:var(--accent)">Résumé IA</div>
     <p>Vendredi soir, Rennes a chuté à Nice (5-2) : Sebastian Szymański avait égalisé dès la 15e minute et Boulaye Dia avait réduit l'écart sur penalty, mais Elye Wahi a signé un triplé. Les Rennais restent à 16 points mais reculent à la 3e place de Ligue 1 : ils sont à quatre longueurs du PSG, vainqueur au Havre, et à deux de Lille (18 pts), vainqueur de Lens (1-0) le même soir, avec Monaco (15 pts) dans leur dos.</p>
-    <p>Samedi 31 octobre, Concarneau est à Rouen en Ligue 3 (14h45), Vannes à Lyon en Top 14 (16h35), Cesson-Rennes reçoit Nantes en StarLigue (19h) et Guingamp accueille le leader Saint-Étienne en Ligue 2 (20h). Dimanche, Landerneau joue à Lyon en LFB (16h), avant le départ de la Route du Rhum à 13h02 : 115 skippers s'élancent de Saint-Malo. Le derby breton Lorient–Brest, reporté, aura lieu lundi 2 novembre à 20h45.</p>
+    <p>Samedi 31 octobre, Concarneau s'est incliné à Rouen en Ligue 3 (2-1) et Vannes à Lyon en Top 14 (48-25) ; Cesson-Rennes reçoit Nantes en StarLigue (19h) et Guingamp accueille le leader Saint-Étienne en Ligue 2 (20h). Dimanche, Landerneau joue à Lyon en LFB (16h), avant le départ de la Route du Rhum à 13h02 : 115 skippers s'élancent de Saint-Malo. Le derby breton Lorient–Brest, reporté, aura lieu lundi 2 novembre à 20h45.</p>
     ${srcHTML("une")}<div class="hl3"><div><b>3e</b><small>Rennes en Ligue 1, à 4 pts du PSG</small></div><div><b>Lorient – Brest</b><small>lun. 2 nov., 20h45 · reporté du sam. 31 oct.</small></div><div><b>Dim. 13h02</b><small>départ de la Route du Rhum</small></div></div></section>`;
   const favs=clubsNow().filter(c=>FAV.has(c.id));
   const mine=favs.length?`<h3 class="sec-title">Mes clubs</h3><div class="clubs" style="margin-bottom:28px">${favs.map(clubCard).join("")}</div>`:`<div class="block hint" style="margin-bottom:24px"><b>Suivez vos clubs.</b> Ouvrez l'onglet « Mon club » et choisissez vos favoris : ils apparaîtront ici en premier.</div>`;

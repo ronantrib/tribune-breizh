@@ -351,7 +351,8 @@ const DATA={
       "Le programme se poursuit samedi : Guingamp (12e de Ligue 2) reçoit le leader stéphanois à 20h, et Concarneau (6e de Ligue 3) se rend à Rouen, 2e, à 14h45. Lorient (10e) et Brest (13e) se retrouveront lundi 2 novembre à 20h45 pour le derby breton, reporté à la demande de la préfecture du Morbihan. Mercredi 4 novembre à 16h30, Rennes reçoit l'Olympiakos en Ligue Europa, match avancé du jeudi après l'interdiction de la préfecture d'Ille-et-Vilaine."]},
     results:[{day:"Ligue 1 · 9e journée", games:[["Nice",5,2,"Rennes"]]},
              {day:"Ligue 1 · 8e journée", games:[["Rennes",3,0,"Strasbourg"],["Brest",1,2,"Nice"],["Angers",0,0,"Lorient"]]},
-              {day:"Ligue 2 · 10e journée", games:[["Clermont",0,2,"Guingamp"]]},
+              {day:"Ligue 2 · 11e journée", games:[["Nantes",1,1,"Clermont"]]},
+             {day:"Ligue 2 · 10e journée", games:[["Clermont",0,2,"Guingamp"]]},
              {day:"Ligue 3 · 10e journée", games:[["Concarneau",1,1,"Bastia"]]},
              {day:"Arkema Première Ligue · 4e journée", games:[["Le Havre",2,0,"Saint-Malo"]]}],
     next:[{day:"Samedi 31 octobre", games:[["Rouen","Concarneau","14h45 · Ligue 1+ 3"],["Guingamp","Saint-Étienne","20h00"]]},
@@ -436,8 +437,9 @@ const factsHTML=arr=>`<div class="facts">${arr.map(f=>`<div class="fact"><div cl
 
 function renderSport(k){
   const d=DATA[k];
-  const res=d.results.map(x=>`<div class="daylbl">${esc(x.day)}</div>${x.games.map(matchRow).join("")}`).join("");
-  const nxt=d.next.map(x=>`<div class="daylbl">${esc(x.day)}</div>${x.games.map(nextRow).join("")}`).join("");
+  const hv=(h,a)=>HIST||!(HISTNAMES.has(h)||HISTNAMES.has(a))||BZH.has(h)||BZH.has(a);
+  const res=d.results.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[3]))})).filter(x=>x.games.length).map(x=>`<div class="daylbl">${esc(x.day)}</div>${x.games.map(matchRow).join("")}`).join("");
+  const nxt=d.next.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[1]))})).filter(x=>x.games.length).map(x=>`<div class="daylbl">${esc(x.day)}</div>${x.games.map(nextRow).join("")}`).join("");
   return `<div class="grid2">
     <section class="block recit wide">${ILLU(k)}<div class="ai">Résumé IA</div><h4>${esc(d.recit.t)}</h4>${d.recit.p.map(p=>`<p>${esc(p)}</p>`).join("")}${srcHTML(k)}</section>
     <section class="block"><h3>Résultats des Bretons</h3>${res}</section>

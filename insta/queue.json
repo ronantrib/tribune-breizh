@@ -97,6 +97,28 @@
    }
   },
   {
+   "id": "2026-11-01-story-resultats",
+   "at": "2026-11-01T10:00+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Week-end du 31 octobre",
+     "title": "Les résultats",
+     "lines": ["Vendredi 30 et samedi 31 octobre."],
+     "rows": [
+      ["Ligue 1", "Nice – Rennes", "5-2"],
+      ["Ligue 2", "Guingamp – Saint-Étienne", "3-0"],
+      ["Ligue 3", "Rouen – Concarneau", "2-1"],
+      ["Top 14", "Lyon – Vannes", "48-25"],
+      ["StarLigue", "Cesson-Rennes – Nantes", "37-46"],
+      ["Ligue Butagaz Énergie", "Nice – Brest BH", "36-32"]
+     ],
+     "color": "accent",
+     "foot": "Source : breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
    "id": "2026-11-01-reel-rhum",
    "at": "2026-11-01T10:30+01:00",
    "type": "reel",

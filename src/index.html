@@ -275,7 +275,7 @@ footer a{color:var(--sea)}
 <footer><div class="wrap">Scores et classements issus des sources officielles (LFP, LNR, LNH, LFH, LFB) et de la presse sportive, avec les sources indiquées sous chaque résumé. Résumés rédigés par IA et mis à jour chaque jour. Les clubs bretons sont signalés par un petit drapeau breton et surlignés dans les classements. <b>Kenavo !</b><p id="mlink" hidden style="margin:10px 0 0"><a href="/mentions-legales.html">Mentions légales</a></p><p id="vislink" hidden style="margin:10px 0 0;font-size:.78rem"><a href="#visuels" style="color:inherit;opacity:.7">Espace visuels (réservé)</a></p></div></footer>
 
 <script>
-const BZH=new Set(["Dinan Léhon","Lorient II","Stade Briochin","Locminé","GSI Pontivy","Cesson","Guingamp II","St-P. Milizac","Rennes II","TA Rennes","Ginglin-Cesson","Brest II","Lannion","Vitré","Rennes","Brest","Lorient","Guingamp","Concarneau","Cesson-Rennes","Vannes","Landerneau","Brest BH","Saint-Malo","Rennes (basket)"]);
+const BZH=new Set(["Dinan Léhon","Lorient II","Stade Briochin","Locminé","GSI Pontivy","Cesson","Guingamp II","St-P. Milizac","Rennes II","TA Rennes","Ginglin-Cesson","Brest II","Lannion","Vitré","Rennes","Brest","Lorient","Guingamp","Concarneau","Cesson-Rennes","Vannes","Landerneau","Brest BH","Saint-Malo","Rennes (basket)","Quimper"]);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const SECTIONS=[
   {k:"une",name:"À la une",br:"Keleier",c:"var(--accent)"},
@@ -286,6 +286,7 @@ const SECTIONS=[
   {k:"hand",name:"Handball",c:"var(--hand)"},
   {k:"rugby",name:"Rugby",c:"var(--rugby)"},
   {k:"basket",name:"Basket",c:"var(--basket)"},
+  {k:"volley",name:"Volley",c:"var(--sea)"},
   {k:"velo",name:"Cyclisme",c:"var(--velo)"},
   {k:"voile",name:"Voile",c:"var(--voile)"},
   {k:"autres",name:"Autres sports",c:"var(--run)"},
@@ -333,8 +334,16 @@ const ALLCLUBS=[
   {id:"hbcnantes",hist:true,n:"HBC Nantes",short:"Nantes (hand)",nm:"Nantes",city:"Nantes",dept:"Loire-Atlantique",lat:47.20,lon:-1.50,sport:"hand",lg:"StarLigue",r:"2e",pts:"16 pts",venue:"H Arena",
     res:[["Cesson-Rennes",37,46,"Nantes","J9"],["Wisla Plock",33,27,"Nantes","Ligue des champions · 28 oct."],["Nantes",41,29,"Chambéry","J8"],["Nantes",27,33,"Vardar","Ligue des champions · 21 oct."],["Nantes",33,25,"Melsungen","Ligue des champions · 14 oct."]],
     nxt:[["Nantes","Saint-Raphaël","sam. 14 nov., 19h · StarLigue (H Arena)"]], tbl:["hand",0], note:"Ligue des champions : 3 victoires et 3 défaites après six journées, 3e du groupe."},
-  {id:"stnazaire",hist:true,n:"Saint-Nazaire Volley",short:"Saint-Nazaire",city:"Saint-Nazaire",dept:"Loire-Atlantique",lat:47.27,lon:-2.21,sport:"volley",lg:"Ligue A masculine",r:"12e",pts:"2 pts",
-    res:[["Poitiers",2,3,"Saint-Nazaire","J3"]], nxt:[]},
+  {id:"stnazaire",hist:true,n:"Saint-Nazaire Volley",short:"Saint-Nazaire",city:"Saint-Nazaire",dept:"Loire-Atlantique",lat:47.27,lon:-2.21,sport:"volley",lg:"Ligue A masculine",r:"13e",pts:"2 pts · 1 V, 3 D",nm:"Saint-Nazaire",
+    res:[["Saint-Nazaire",0,3,"Tourcoing","J4"],["Poitiers",2,3,"Saint-Nazaire","J3"]], nxt:[["Saint-Nazaire","Montpellier","du 5 au 7 nov., 20h · Ligue A (jour à confirmer)"]], tbl:["volley",1]},
+  {id:"rennesvolley",n:"Rennes Étudiants Club Volley",short:"Rennes Volley",city:"Rennes",dept:"Ille-et-Vilaine",lat:48.12,lon:-1.70,sport:"volley",lg:"Ligue B masculine",r:"—",pts:"3 V, 1 D après 4 journées",
+    res:[["Ajaccio",0,3,"Rennes","Ligue B · J4"],["Rennes",3,1,"Martigues","Ligue B · J3"]],
+    nxt:[["Rennes","Martigues","mar. 3 nov. · Coupe de France, 1/16 (horaire à confirmer)"],["Rennes","Grand Nancy","sam. 7 nov., 19h · Ligue B"],["Fréjus","Rennes","sam. 14 nov., 19h · Ligue B"]], tbl:["volley",0]},
+  {id:"quimpervolley",n:"Quimper Volley 29",short:"Quimper Volley",city:"Quimper",dept:"Finistère",lat:47.99,lon:-4.10,sport:"volley",lg:"Élite féminine",r:"5e",pts:"9 pts · 3 V, 2 D",fem:true,
+    note:"Classement de la poule A de l'Élite féminine d'après la fédération, après cinq matchs.",
+    res:[["Quimper",3,0,"Tremblay","Élite féminine · début de saison"]], nxt:[]},
+  {id:"nantesvolley",hist:true,n:"Neptunes de Nantes",short:"Nantes (volley F)",nm:"Nantes",city:"Nantes",dept:"Loire-Atlantique",lat:47.21,lon:-1.55,sport:"volley",lg:"Ligue A féminine",r:"8e",pts:"6 pts · 2 V, 4 D",fem:true,
+    res:[["Chamalières",3,2,"Nantes","J6"],["Le Cannet",3,0,"Nantes","J4"],["Bordeaux Mérignac",0,3,"Nantes","J2"]], nxt:[["Levallois Paris","Nantes","dim. 8 nov., 17h · Ligue A féminine"],["Nantes","Vandœuvre Nancy","sam. 14 nov., 20h · Ligue A féminine"]], tbl:["volley",2]},
   {id:"nantesf",hist:true,n:"FC Nantes (F)",short:"Nantes (F)",nm:"Nantes",city:"Nantes",dept:"Loire-Atlantique",lat:47.24,lon:-1.60,sport:"foot",lg:"Arkema Première Ligue",r:"5e",pts:"8 pts",fem:true,
     res:[["Nantes",3,2,"Strasbourg","J6"],["Nantes",1,1,"Montpellier","J4"]], nxt:[]}
 ];
@@ -398,10 +407,32 @@ const DATA={
     results:[{day:"LFB · 6e journée", games:[["Landerneau",87,85,"Charnay","a.p."]]},{day:"EuroCup F · groupe H", games:[["Landerneau",68,73,"Derthona","29 oct."],["Landerneau",88,63,"Fribourg","22 oct."],["Poznan",77,65,"Landerneau","14 oct."]]},{day:"Coupe de France H · 1er tour", games:[["Rennes (basket)",89,73,"Quimper"]]}],
     next:[{day:"Dimanche 1er novembre", games:[["Lyon","Landerneau","16h00 · LFB"]]},{day:"EuroCup F · groupe H", games:[["Landerneau","Poznan","mer. 4 nov. 19h30"]]},{day:"Samedi 7 novembre", games:[["Landerneau","Chartres","20h00 · LFB"]]},{day:"Coupe de France H · 3e tour", games:[["Boulogne-sur-Mer","Rennes (basket)","9 nov. 19h"]]}],
     tables:[{name:"La Boulangère Wonderligue", head:["J","V","D"], rows:[["Basket Landes",6,6,0],["Lattes-Montpellier",6,5,1],["Charleville",6,4,2],["Charnay",6,3,3],["Villeneuve d'Ascq",6,3,3],["ASVEL",6,3,3],["Landerneau",6,3,3],["Bourges",5,3,2],["Angers",5,2,3],["La Tronche-Meylan",6,1,5],["Toulouse",6,0,6],["Chartres",4,1,3]], note:"Classement de la LFB."}]
-  }
-};
+  },
+  volley:{title:"Volley", round:"Ligue A · Ligue B · Élite féminine · Coupe de France",
+    recit:{t:"Rennes en tête du peloton breton",p:[
+      "Rennes (Ligue B masculine) a battu Ajaccio 3-0 samedi 31 octobre pour la 4e journée, après son succès 3-1 contre Martigues le 24 octobre. Après trois journées, le REC Volley était 4e avec 6 points (deux victoires, une défaite), derrière Reims, Fréjus et Martigues. Le prochain rendez-vous est en Coupe de France : un 1/16 de finale contre Martigues le mardi 3 novembre (horaire à confirmer), puis la réception de Grand Nancy en championnat le samedi 7 novembre à 19h.",
+      "Quimper Volley 29 (Élite féminine, poule A) est 5e avec 9 points après cinq matchs (trois victoires, deux défaites), d'après le classement de la fédération. Les Quimpéroises avaient ouvert leur saison par une victoire 3-0 contre Tremblay."],
+      ph:["Dans le mode Bretagne historique : Saint-Nazaire (Ligue A masculine) est 13e avec 2 points après sa défaite 3-0 contre Tourcoing le vendredi 30 octobre ; les Neptunes de Nantes (Ligue A féminine) sont 8es avec 6 points, malgré leur défaite 3-2 à Chamalières le samedi 31 octobre."]},
+    results:[{day:"Ligue B masculine · 4e journée", games:[["Ajaccio",0,3,"Rennes"]]},
+             {day:"Ligue B masculine · 3e journée", games:[["Rennes",3,1,"Martigues"]]},
+             {day:"Élite féminine · 1re journée", games:[["Quimper",3,0,"Tremblay"]]},
+             {day:"Ligue A masculine · 4e journée", games:[["Saint-Nazaire",0,3,"Tourcoing"]]},
+             {day:"Ligue A féminine · 6e journée", games:[["Chamalières",3,2,"Nantes"]]}],
+    next:[{day:"Mardi 3 novembre", games:[["Rennes","Martigues","20h00 · Coupe de France, 1/16 (horaire à confirmer)"]]},
+          {day:"Samedi 7 novembre", games:[["Rennes","Grand Nancy","19h00 · Ligue B"]]},
+          {day:"Du 5 au 7 novembre", games:[["Saint-Nazaire","Montpellier","20h00 · Ligue A (jour à confirmer)"]]},
+          {day:"Dimanche 8 novembre", games:[["Levallois Paris","Nantes","17h00 · Ligue A féminine"]]}],
+    tables:[
+      {name:"Ligue B masculine", head:["J","Pts"], rows:[["Reims",3,8],["Fréjus",3,7],["Martigues",3,6],["Rennes",3,6],["Grand Nancy",3,6],["Saint-Quentin",3,6],["Ajaccio",3,5],["Chalon",3,5],["Saint-Jean-d'Illac",3,4],["Cambrai",3,1],["France Avenir",3,0],["Harnes",3,-6]], note:"Après la 3e journée. Rennes a depuis gagné 3-0 à Ajaccio (31 octobre) ; la 4e journée n'est pas encore intégrée. Barème : 3 points pour une victoire 3-0 ou 3-1, 2 points pour 3-2, 1 point pour une défaite 2-3. Harnes a une pénalité de 6 points."},
+      {name:"Ligue A masculine", hist:true, head:["J","Pts"], rows:[["Toulouse",4,12],["Chaumont",4,11],["Tourcoing",4,9],["Tours",4,9],["Cannes",4,8],["Nice",4,7],["Paris",4,6],["Royan",4,6],["Poitiers",4,5],["Plessis-Robinson",4,4],["Montpellier",4,3],["Narbonne",4,2],["Saint-Nazaire",4,2],["Sète",4,0]], note:"Après la 4e journée (29 au 31 octobre). Ordre des ex aequo indicatif."},
+      {name:"Ligue A féminine", hist:true, head:["J","Pts"], rows:[["Mulhouse",6,16],["Béziers",5,15],["Levallois Paris",5,14],["Vandœuvre Nancy",5,14],["Le Cannet",6,12],["Cannes",6,7],["Bordeaux Mérignac",4,6],["Nantes",6,6],["Chamalières",5,4],["Terville Florange",6,4],["Évreux",4,3],["Saint-Dié",5,1],["France Avenir",5,0]], note:"Après la 6e journée (31 octobre) ; Bordeaux Mérignac – Évreux, prévu le 1er novembre, n'est pas encore joué. Ordre des ex aequo indicatif."}
+    ]
+  },};
 
 const AGENDA=[
+  ["2026-11-03","volley","Rennes – Martigues","Coupe de France, 1/16 de finale (horaire à confirmer)","20h00",0,"","35"],
+  ["2026-11-07","volley","Rennes – Grand Nancy","Ligue B masculine, 5e journée","19h00",0,"","35"],
+  ["2026-11-08","volley","Levallois Paris – Nantes","Ligue A féminine, 7e journée","17h00",0,"","44"],
       ["2026-11-01","voile","Départ de la Route du Rhum","Saint-Malo, pointe du Grouin · 115 skippers · direct sur France 3 dès 12h50","13h02",1,"France 3","35"],
   ["2026-11-02","foot","Lorient – Brest","Ligue 1, 9e journée · derby breton · reporté du sam. 31 oct. à la demande de la préfecture du Morbihan","20h45",1,"Ligue 1+","56,29"],
   ["2026-11-01","basket","Lyon – Landerneau","Ligue féminine de basket (LFB)","16h00",0,"","29"],
@@ -417,8 +448,8 @@ const AGENDA=[
   ["2026-11-20","foot","Guingamp – Rodez","Ligue 2","",0,"","22"],
   ["2026-11-28","amateur","Coupe de France, 8e tour","28-29 nov. · dernier tour avant l'entrée des clubs de Ligue 1","",0,"",""]
 ];
-const COLORS={foot:"var(--foot)",amateur:"var(--amateur)",hand:"var(--hand)",rugby:"var(--rugby)",basket:"var(--basket)",velo:"var(--velo)",voile:"var(--voile)",run:"var(--run)"};
-const NAMES={foot:"Football",amateur:"Foot amateur",hand:"Handball",rugby:"Rugby",basket:"Basket",velo:"Cyclisme",voile:"Voile",run:"Course à pied"};
+const COLORS={foot:"var(--foot)",amateur:"var(--amateur)",hand:"var(--hand)",rugby:"var(--rugby)",basket:"var(--basket)",volley:"var(--sea)",velo:"var(--velo)",voile:"var(--voile)",run:"var(--run)"};
+const NAMES={foot:"Football",amateur:"Foot amateur",hand:"Handball",rugby:"Rugby",basket:"Basket",volley:"Volley",velo:"Cyclisme",voile:"Voile",run:"Course à pied"};
 
 const isB=n=>BZH.has(n)||(HIST&&HISTNAMES.has(n));
 const disp=n=>n==="Rennes (basket)"?"Rennes":n;
@@ -439,10 +470,10 @@ function renderSport(k){
   const res=d.results.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[3]))})).filter(x=>x.games.length).map(x=>`<div class="daylbl">${esc(x.day)}</div>${x.games.map(matchRow).join("")}`).join("");
   const nxt=d.next.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[1]))})).filter(x=>x.games.length).map(x=>`<div class="daylbl">${esc(x.day)}</div>${x.games.map(nextRow).join("")}`).join("");
   return `<div class="grid2">
-    <section class="block recit wide">${ILLU(k)}<div class="ai">Résumé IA</div><h4>${esc(d.recit.t)}</h4>${d.recit.p.map(p=>`<p>${esc(p)}</p>`).join("")}${srcHTML(k)}</section>
+    <section class="block recit wide">${ILLU(k)}<div class="ai">Résumé IA</div><h4>${esc(d.recit.t)}</h4>${d.recit.p.concat(HIST?(d.recit.ph||[]):[]).map(p=>`<p>${esc(p)}</p>`).join("")}${srcHTML(k)}</section>
     <section class="block"><h3>Résultats des Bretons</h3>${res}</section>
     <section class="block"><h3>À venir</h3>${nxt}</section>
-    ${d.tables.map(tableHTML).join("")}
+    ${d.tables.filter(t=>HIST||!t.hist).map(tableHTML).join("")}
     ${d.extra?`<section class="block"><h3>${esc(d.extra.title)}</h3>${factsHTML(d.extra.items)}</section>`:""}
   </div>`;
 }
@@ -457,6 +488,7 @@ function deptChips(){
 }
 
 /* NOTE POUR LES MISES À JOUR (demande de l'utilisateur, 1er novembre 2026) : les classements doivent être mis à jour chaque week-end (samedi et dimanche), y compris en passage léger, avec TOUS les matchs de la journée. À PARTIR DU WEEK-END DU 7-8 NOVEMBRE 2026, cela vaut pour TOUS les championnats suivis, sans exception : Ligue 1, Ligue 2, Ligue 3, National 1, National 2, StarLigue, Ligue Butagaz Énergie, Top 14, LFB, Ligue A de volley, Arkema Première Ligue. Si une source complète manque pour l'un d'eux, le noter dans BILAN_NUIT.manques avec le nom du championnat, et chercher une autre source (le compte rendu doit dire quelle page a été lue). Sources lisibles constatées le 1er novembre : Ligue 3, résultats de chaque journée : m.maxifoot.fr/resultat-ligue-3-france.htm ; StarLigue, scores de la journée et classement complet avec matchs joués : handnews.fr/championnat/lidl-starligue/ (ouvrir avec WebFetch après une recherche qui renvoie l'adresse). Les pages liguesdefoot.fr, betexplorer.com et eurosport.fr ne donnent pas les scores récents. Vérifier chaque ligne : points = 3 x victoires + nuls (foot), 2 x victoires + nuls (hand). */
+/* ONGLET VOLLEY (ajout du 1er novembre 2026, demande de l'utilisateur) : DATA.volley suit Rennes (Ligue B masculine), Quimper (Élite féminine), et en mode Bretagne historique Saint-Nazaire (Ligue A masculine) et les Neptunes de Nantes (Ligue A féminine) ; ces quatre clubs jouent aussi la Coupe de France de volley. Sources lisibles : spikelive.fr/ligue/lbm, /lam, /laf (classements et calendriers), ffvbbeach.org (classement de Quimper). Mettre à jour à chaque passage : classements (tableaux de DATA.volley, hist:true = visibles seulement en mode Bretagne historique), résultats, prochains matchs, AGENDA, fiches ALLCLUBS (sport volley), et chercher le tirage et les dates de la Coupe de France (non trouvés au 1er novembre : horaire du 1/16 de Rennes à confirmer). */
 /* ---------- Visuels ---------- */
 /* BILAN_NUIT : bilan interne de la dernière mise à jour, lu par la tâche du bilan du matin (non affiché sur le site) */
 const BILAN_NUIT={date:"2026-11-01",faits:["Classements de Ligue 3 (11e journée complète, d'après maxifoot.fr) et de StarLigue (9e journée, source handnews.fr) corrigés le dimanche 1er novembre ; Concarneau 7e de Ligue 3 (17 pts, ex aequo), HBC Nantes 16 pts.","Passage du dimanche 1er novembre au matin : Guingamp 3-0 Saint-Étienne (31 octobre, 11e journée de Ligue 2) ajouté aux résultats, à la fiche, au classement (Guingamp 10e, 14 pts), aux brèves et au visuel des résultats ; Annecy 0-3 Montpellier intégré au classement de Ligue 2.","Troyes 2-0 Le Mans (31 octobre) intégré au classement de Ligue 1 (Troyes 8 pts, Le Mans 7 pts, 9 matchs chacun).","Cesson-Rennes 37-46 HBC Nantes (31 octobre, 9e journée de StarLigue, score de la page du club HBC Nantes) ajouté aux résultats et aux fiches ; prochain match de Nantes : Saint-Raphaël le 14 novembre, Cesson-Rennes : Toulouse le 13 novembre.","Route du Rhum : départ prévu dimanche 1er novembre à 13h02 de Saint-Malo, pointage à intégrer au prochain passage."],affiche:"Lorient – Brest, derby breton, lundi 2 novembre 2026 à 20h45 (Stade du Moustoir, Ligue 1+)",manques:["StarLigue : PSG – Montpellier (1er novembre) à intégrer au classement.","Classement de Ligue 1 : matchs du dimanche 1er novembre (Strasbourg–Auxerre, Lyon–Angers, Paris FC–Monaco, Marseille–Toulouse) à intégrer ; Lyon–Landerneau (LFB, 16h) à ajouter ; Red Star–Nancy et Reims–Sochaux (L2, lundi 2 novembre).","National 1 et 2, Ligue Butagaz Énergie (7e journée), Top 14 complet : classements non recoupés lors de ce passage.","Pointage du Rhum, résumé de la une, buteurs de Ligue 1, cyclisme, AUTRES, foot régional, jeunes cyclistes bretons non actualisés.","Diffuseurs encore sans source : Lyon–Landerneau, Landerneau–Poznan, Brest BH – CSM Bucarest, Boulogne-sur-Mer–Rennes (basket), Concarneau – Fleury."],a_decider:[]};
@@ -618,12 +650,14 @@ function ILLU(k){
     basket:`<path d="M0 172H640" ${S}/><rect x="468" y="22" width="100" height="66" ${W} stroke-width="3"/><rect x="498" y="48" width="40" height="30" ${S}/><line x1="568" y1="55" x2="620" y2="55" class="ln" stroke-width="5"/><line x1="620" y1="55" x2="620" y2="172" class="ln" stroke-width="5"/><ellipse cx="518" cy="92" rx="30" ry="7" fill="none" class="ac-s" stroke-width="5"/><path d="M490 94l10 34M502 98l6 30M518 99v29M534 98l-6 30M546 94l-10 34M500 128h36" ${S} stroke-width="2"/><g transform="translate(300 70)"><circle r="26" class="ac" stroke="var(--ink)" stroke-width="3"/><path d="M-26 0H26M0-26V26M-18-18q10 18 0 36M18-18q-10 18 0 36" ${S} stroke-width="2.5"/></g><path d="M120 160Q260-10 510 86" fill="none" ${S} stroke-dasharray="8 8" opacity=".5"/>`,
     velo:`<path d="M0 172H640" ${S}/><path d="M0 186H640" ${S} stroke-dasharray="40 30"/><g transform="translate(250 0)"><circle cx="0" cy="128" r="38" ${S} stroke-width="5"/><circle cx="130" cy="128" r="38" ${S} stroke-width="5"/><path d="M0 128L42 66H112L130 128M42 66L66 128H0M66 128L112 66" class="ac-s" fill="none" stroke-width="6" stroke-linejoin="round"/><path d="M36 56h18M106 66l-6-18h18" ${S} stroke-width="5" stroke-linecap="round"/></g><g ${S} stroke-width="4" stroke-linecap="round"><line x1="70" y1="100" x2="190" y2="100"/><line x1="110" y1="124" x2="200" y2="124"/><line x1="60" y1="148" x2="180" y2="148"/></g>`,
     voile:`<path d="M0 150q40-14 80 0t80 0 80 0 80 0 80 0 80 0 80 0 80 0V200H0z" class="ink" opacity=".9"/><path d="M0 170q40-14 80 0t80 0 80 0 80 0 80 0 80 0 80 0 80 0" class="sf-s" fill="none" stroke-width="3"/><path d="M250 140h170l-24 22H272z" ${I}/><line x1="330" y1="18" x2="330" y2="140" class="ln" stroke-width="4"/><path d="M334 22v112h80z" ${W} stroke-width="3"/><path d="M326 30v104h-66z" ${A}/><g transform="translate(90 40)"><rect x="-10" y="20" width="20" height="90" ${W} stroke-width="3"/><rect x="-10" y="38" width="20" height="16" ${I}/><rect x="-10" y="72" width="20" height="16" ${I}/><rect x="-14" y="6" width="28" height="14" ${A}/><path d="M-16 6h32l-16-14z" ${I}/></g>`,
+    volley:`<path d="M0 172H640" ${S}/><line x1="230" y1="60" x2="230" y2="172" class="ln" stroke-width="5"/><line x1="410" y1="60" x2="410" y2="172" class="ln" stroke-width="5"/><path d="M230 70H410M230 90H410M230 110H410M230 130H410" ${S}/><path d="M250 60v70M270 60v70M290 60v70M310 60v70M330 60v70M350 60v70M370 60v70M390 60v70" ${S} opacity=".5"/><circle cx="320" cy="30" r="20" ${W} stroke-width="3"/><path d="M300 30q20-14 40 0M320 10q-12 20 0 40" ${S} stroke-width="3"/>`,
     fem:`<path d="M0 172H640" ${S}/><g transform="translate(200 100)"><circle r="40" ${W} stroke-width="3"/><path d="M-40 0q40-20 80 0M0-40q-20 40 0 80M-28-28q20 10 10 36" ${S} stroke-width="3"/></g><g transform="translate(320 100)"><circle r="40" class="ac" stroke="var(--ink)" stroke-width="3"/><path d="M-40 0H40M0-40V40M-28-28q16 28 0 56M28-28q-16 28 0 56" ${S} stroke-width="3"/></g><g transform="translate(440 100)"><circle r="40" ${W} stroke-width="3"/><path d="M0-15l14.3 10.4-5.5 16.9H-8.8l-5.5-16.9z" ${I}/></g>`
   }[k];
   if(!art) return "";
   return `<svg class="illu" viewBox="0 0 640 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="640" height="200" class="bg"/>${stripes}${art}</svg>`;
 }
 const BREVES=[
+  ["2026-11-01T09:00","volley","Ligue B : Rennes a battu Ajaccio (3-0) samedi 31 octobre, pour la 4e journée. Le REC Volley affronte Martigues en Coupe de France le mardi 3 novembre (horaire à confirmer), puis Grand Nancy le samedi 7 novembre à 19h."],
   ["2026-11-01T07:30","foot","Ligue 2 : Guingamp a battu le leader Saint-Étienne (3-0) samedi 31 octobre, pour la 11e journée, grâce à des buts de Stanislas Kielt, Teddy Averlant et Amadou Samoura. Les Guingampais sont 10es avec 14 points."],
   ["2026-11-01T07:20","hand","StarLigue : Cesson-Rennes s'est incliné à domicile face à Nantes (37-46) samedi 31 octobre, pour la 9e journée."],
   ["2026-10-31T18:55","rugby","Top 14 : le RC Vannes s'est incliné à Lyon (48-25) samedi 31 octobre, pour la 8e journée, malgré des essais de Béziat, Nu'u et Hulleu. Les Vannetais restent derniers."],
@@ -643,6 +677,7 @@ function renderBreves(){
   return `<section class="breves" aria-label="Les brèves"><h3>Les brèves <small>Au fil de l'actualité</small></h3>${list.map(x=>`<div class="breve" style="--c:${COLORS[x.b[1]]||"var(--accent)"}"><span class="w">${esc(NAMES[x.b[1]]||"")} <time>${esc(lbl(x))}</time></span><p>${esc(x.b[2])}</p></div>`).join("")}</section>`;
 }
 const SRC={
+  volley:[["Ligue B masculine (SpikeLive)","https://spikelive.fr/ligue/lbm"],["Ligue A masculine (SpikeLive)","https://spikelive.fr/ligue/lam"],["Ligue A féminine (SpikeLive)","https://spikelive.fr/ligue/laf"],["Quimper Volley 29, classements (FFvolley)","https://www.ffvbbeach.org/ffvbapp/resu/planning_club_class.php?cnclub=0299370&x=12&y=8"]],
   une:[["Nice–Rennes, le débrief (Orange Sports)", "https://sports.orange.fr/football/ligue-1/debrief/ligue-1-j9-nice-fait-sombrer-rennes-pour-le-retour-de-haise-exclu-CNT000002ttwI3.html"], ["Rennes explose à Nice (Footeo)", "https://news.footeo.com/2026/10/30/ligue-1-rennes-explose-a-nice-haise-sombre-face-a-son-ancien-club-16325"]],
   hand:[["Metz–Brest en Ligue Butagaz Énergie (Handnews)", "https://handnews.fr/2026/lbe-metz-simpose-au-bout-du-suspense-face-a-brest/"], ["Esbjerg–Brest en Ligue des champions (Eurosport)", "https://www.eurosport.fr/handball/ehf-ligue-des-champions-feminine/2026-2027/live-team-esbjerg-brest-bretagne-handball_mtc21924679/live.shtml"], ["Tremblay–Cesson-Rennes (LNH)", "https://www.lnh.fr/daikin-starligue/calendriers/20262027/dsl/j08/tremblay/cesson-rennes"]],
   rugby:[["Top 14 : première victoire pour Vannes (Le Courrier)", "https://lecourrier.vn/top-14-toulouse-se-detache-premiere-victoire-pour-vannes/1358111.html"], ["Lyon–Vannes, feuille de match (LNR)", "https://top14.lnr.fr/feuille-de-match/2026-2027/j8/11871-lyon-vannes"]],

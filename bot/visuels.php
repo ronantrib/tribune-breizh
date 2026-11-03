@@ -136,7 +136,10 @@ function tb_visuel(string $id, string $page) {
         vt($im, (string)$b[0], 210, $y - 4, 36, TB_B7, 'f5f6f4');
         vt($im, $b[1] . ' · ' . $b[2], 210, $y + 24, 24, TB_B4, '9aa1ab');
       }
-      vt($im, 'Buts en championnat', 60, 990, 22, TB_B4, '9aa1ab');
+      // Date du classement : lue dans la note des buteurs (« Buts en championnat au 3 novembre (…) »), elle change à chaque mise à jour.
+      $date = '';
+      try { if (preg_match('/\bau (\d{1,2}(?:er)?) (\p{L}+)/u', (string)tb_js_literal($src, 'const BUT_NOTE='), $m)) $date = " au $m[1] $m[2]"; } catch (Exception $e) {}
+      vt($im, 'Buts en championnat' . $date, 60, 990, 22, TB_B4, '9aa1ab');
       return $im;
     }
     case 'face': {

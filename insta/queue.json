@@ -213,6 +213,45 @@
    "visuels": [
     "rhum"
    ]
+  },
+  {
+   "id": "2026-11-03-story-abandons",
+   "at": "2026-11-03T19:22+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Deux abandons bretons",
+     "lines": [
+      "Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) abandonne après une avarie de foil.",
+      "Jérémie Beyou (Charal, Imoca) abandonne pour raisons médicales."
+     ],
+     "color": "voile"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-03-abandons-caudrelier-beyou",
+   "at": "2026-11-03T19:32+01:00",
+   "type": "feed",
+   "caption": "⛵ Route du Rhum : deux skippers bretons abandonnent.\nCharles Caudrelier (Maxi Edmond de Rothschild, Ultim) renonce après une avarie de foil.\nJérémie Beyou (Charal, Imoca) renonce pour raisons médicales.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Deux abandons bretons",
+     "lines": [
+      "Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) abandonne après une avarie de foil.",
+      "Jérémie Beyou (Charal, Imoca) abandonne pour raisons médicales."
+     ],
+     "color": "voile",
+     "foot": "Source : France 3 Bretagne, ICI, Point Marée"
+    }
+   ],
+   "facebook": {
+    "message": "⛵ Route du Rhum : deux skippers bretons abandonnent. Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) renonce après une avarie de foil, et Jérémie Beyou (Charal, Imoca) pour raisons médicales.\n#TribuneBreizh #RouteDuRhum2026 #VoileBretagne",
+    "link": "https://breizh.tribuneouest.fr/",
+    "image": "first"
+   }
   }
  ]
 }

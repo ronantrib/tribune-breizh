@@ -8,6 +8,7 @@
  *   php publish.php init LE_JETON   enregistre le jeton d'accès (une seule fois)
  *   php publish.php check           vérifie le jeton et montre la file, sans rien publier
  *   php publish.php apercu ID       dessine tout de suite les cartes du post ID (insta/gen/) et donne leurs adresses
+ *   (garde.php : jamais deux posts sur un même réseau à moins de 90 minutes d'écart, urgents compris ; `check` l'indique)
  *   php publish.php nettoyage       montre les fichiers de insta/img et insta/reels qui seraient supprimés (rien n'est supprimé ; voir cleanup.php)
  *   php publish.php                 publication normale (c'est ce que lance le cron)
  *   php publish.php fbcheck | fbtest | fbapercu ID   canal Facebook (voir facebook.php)
@@ -31,6 +32,7 @@ date_default_timezone_set('Europe/Paris');
 require_once __DIR__ . '/card.php';
 require_once __DIR__ . '/visuels.php';
 require_once __DIR__ . '/cleanup.php';
+require_once __DIR__ . '/garde.php';
 
 /* Images d'un post : « visuels » (visuels d'origine du site : derby, classement, resultats, buteurs, face, rhum, story,
    redessinés ici avec les données de src/index.html au moment de publier), « images » (JPEG déjà prêts dans insta/img/)
@@ -155,6 +157,7 @@ if ($cmd === 'check') {
     $st = $D[$p['id']]['status'] ?? (!empty($p['cancel']) ? 'annulé' : (strtotime($p['at']) > $now ? 'prévu' : 'en attente'));
     echo "- {$p['at']}  {$p['type']}  {$p['id']}  : $st\n";
   }
+  echo ($w = tb_garde_wait($D, $now)) > 0 ? "Garde : le prochain post Instagram peut partir dans " . ceil($w / 60) . " min.\n" : "Garde : un post Instagram peut partir maintenant.\n";
   exit(0);
 }
 
@@ -177,7 +180,7 @@ function container($T, $params, $tries = 10) {
   throw new Exception("conteneur pas prêt après " . ($tries > 10 ? 8 : 5) . " minutes");
 }
 
-foreach ($Q['posts'] as $p) {
+foreach (tb_by_time($Q['posts']) as $p) {   // dans l'ordre des heures : si deux posts sont dus, le premier part, le second attend 90 minutes
   $id = $p['id'] ?? ''; if ($id === '' || !empty($p['cancel']) || ($p['type'] ?? '') === 'facebook') continue;   // type « facebook » : réservé à Facebook
   $at = strtotime($p['at'] ?? ''); if (!$at || $at > $now) continue;
   $d = $D[$id] ?? ['status' => 'en attente', 'tries' => 0];
@@ -186,6 +189,7 @@ foreach ($Q['posts'] as $p) {
     $D[$id] = ['status' => 'abandonné', 'tries' => $d['tries'], 'note' => 'trop en retard', 'time' => date('c')];
     jwrite("$STATE/done.json", $D); logline("$id : abandonné (plus de 6 h de retard)."); continue;
   }
+  if (($w = tb_garde_wait($D, time())) > 0) { logline("$id : attend, un post est parti il y a moins de 90 minutes (encore " . ceil($w / 60) . " min)."); continue; }   // garde.php
   try {
     $type = $p['type'] ?? 'feed';
     if ($type === 'reel') {   // Reel : une vidéo MP4 déposée dans le dépôt (insta/reels/…), 9:16, 3 à 90 s

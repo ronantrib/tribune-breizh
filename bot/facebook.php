@@ -83,7 +83,7 @@ function fb_publish($C, $plan) {
 function tb_fb_run($Q, $STATE, $REPO, $now) {
   $C = fb_config($STATE); if (!$C) return;
   $D = jread("$STATE/fb_done.json", []);
-  foreach ($Q['posts'] as $p) {
+  foreach (tb_by_time($Q['posts'], true) as $p) {   // dans l'ordre des heures (garde.php)
     $id = $p['id'] ?? ''; $f = $p['facebook'] ?? null;
     if ($id === '' || !is_array($f) || !empty($p['cancel']) || !empty($f['cancel'])) continue;
     $at = strtotime($f['at'] ?? ($p['at'] ?? '')); if (!$at || $at > $now) continue;
@@ -93,6 +93,7 @@ function tb_fb_run($Q, $STATE, $REPO, $now) {
       $D[$id] = ['status' => 'abandonné', 'tries' => $d['tries'], 'note' => 'trop en retard', 'time' => date('c')];
       jwrite("$STATE/fb_done.json", $D); logline("Facebook $id : abandonné (plus de 6 h de retard)."); continue;
     }
+    if (($w = tb_garde_wait($D, time())) > 0) { logline("Facebook $id : attend, un post est parti il y a moins de 90 minutes (encore " . ceil($w / 60) . " min)."); continue; }   // garde.php
     try {
       $plan = fb_plan($p, $REPO);
       foreach ($plan['urls'] as $u) if (!head_ok($u)) { logline("Facebook $id : image pas encore en ligne ($u), nouvel essai au prochain passage."); continue 2; }

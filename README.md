@@ -16,6 +16,20 @@ Chaque nuit, la tâche de mise à jour publie la page sur Claude, régénère `i
 - `bot/card.js` : `node bot/card.js carte.json sortie.jpg` met en forme une carte 1080×1350 (titre, texte, petit tableau) aux couleurs du site, pour les posts des jours libres.
 - `bot/data.js` : `node bot/data.js` affiche en JSON l'essentiel des données du site (affiche, Rhum, agenda 7 jours, brèves…), pour que la tâche Instagram n'ait pas à lire toute la page.
 
+## Nettoyage automatique des fichiers publiés (depuis le 4 novembre 2026)
+
+À la fin de chaque passage, `bot/publish.php` supprime sur le serveur les fichiers de `insta/img/` et `insta/reels/`
+(`images`, `video`, `cover`) des posts terminés (`bot/cleanup.php`). Un post est « terminé » quand :
+- Instagram l'a publié (statut « publié » dans `~/insta/done.json`) : un post « abandonné » ou « à vérifier » garde ses fichiers pour l'enquête ;
+- s'il a un volet Facebook (et que Facebook est configuré), Facebook a fini aussi (« publié » ou « abandonné » dans `fb_done.json`) ;
+- 1 h s'est écoulée depuis (`CLEAN_DELAY`) ;
+- aucun autre post pas encore terminé n'utilise le même fichier.
+
+`insta/queue.json`, `.gitkeep` et les cartes dessinées par le serveur (`insta/gen/`) ne sont jamais touchés. Chaque suppression est notée dans `~/insta/log.txt`.
+Pour voir ce qui serait supprimé sans rien supprimer : `php ~/repositories/tribune-breizh/bot/publish.php nettoyage` (terminal cPanel).
+Côté dépôt GitHub, rien n'est supprimé automatiquement : `python3 bot/queue.py prune` retire les posts de plus de 7 jours
+et leurs fichiers (img et reels). Sur le serveur, un fichier supprimé qui est encore suivi par Git ne gêne pas le `git pull`.
+
 ## Ouverture du site (page d'attente)
 
 Jusqu'au vendredi 30 octobre 2026 à 12h00 (Paris), `gate.php` affiche `attente.html` (compte à rebours) à la place du site ;

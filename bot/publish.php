@@ -8,6 +8,7 @@
  *   php publish.php init LE_JETON   enregistre le jeton d'accès (une seule fois)
  *   php publish.php check           vérifie le jeton et montre la file, sans rien publier
  *   php publish.php apercu ID       dessine tout de suite les cartes du post ID (insta/gen/) et donne leurs adresses
+ *   php publish.php nettoyage       montre les fichiers de insta/img et insta/reels qui seraient supprimés (rien n'est supprimé ; voir cleanup.php)
  *   php publish.php                 publication normale (c'est ce que lance le cron)
  *   php publish.php fbcheck | fbtest | fbapercu ID   canal Facebook (voir facebook.php)
  * Reel Instagram : {"type":"reel", "video":"insta/reels/xxx.mp4", "cover":"insta/reels/xxx.jpg" (facultatif), "caption":…}
@@ -29,6 +30,7 @@ date_default_timezone_set('Europe/Paris');
 
 require_once __DIR__ . '/card.php';
 require_once __DIR__ . '/visuels.php';
+require_once __DIR__ . '/cleanup.php';
 
 /* Images d'un post : « visuels » (visuels d'origine du site : derby, classement, resultats, buteurs, face, rhum, story,
    redessinés ici avec les données de src/index.html au moment de publier), « images » (JPEG déjà prêts dans insta/img/)
@@ -156,6 +158,13 @@ if ($cmd === 'check') {
   exit(0);
 }
 
+if ($cmd === 'nettoyage') {   // simulation : liste ce que le nettoyage supprimerait au prochain passage
+  $fbOn = is_file("$STATE/facebook.json") && is_file(__DIR__ . '/facebook.php');
+  $list = tb_cleanup($Q, $D, jread("$STATE/fb_done.json", []), $fbOn, $REPO, $now, true);
+  echo $list ? "À supprimer (publiés depuis plus d'1 h) :\n- " . implode("\n- ", $list) . "\n" : "Rien à supprimer.\n";
+  exit(0);
+}
+
 /* ---------- publication ---------- */
 function container($T, $params, $tries = 10) {
   $c = http('POST', API . "/{$T['user_id']}/media", $params + ['access_token' => $T['access_token']]);
@@ -218,3 +227,9 @@ if (is_file("$STATE/facebook.json") && is_file(__DIR__ . '/facebook.php')) {
   try { require_once __DIR__ . '/facebook.php'; tb_fb_run($Q, $STATE, $REPO, time()); }
   catch (Throwable $e) { logline('Facebook : ' . $e->getMessage()); }
 }
+
+/* ---------- Nettoyage : fichiers des posts publiés (Instagram et, si besoin, Facebook) ; une erreur ici ne gêne jamais les publications ---------- */
+try {
+  $fbOn = is_file("$STATE/facebook.json") && is_file(__DIR__ . '/facebook.php');
+  foreach (tb_cleanup($Q, $D, jread("$STATE/fb_done.json", []), $fbOn, $REPO, time()) as $f) logline("Nettoyage : $f supprimé.");
+} catch (Throwable $e) { logline('Nettoyage : ' . $e->getMessage()); }

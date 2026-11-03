@@ -9,7 +9,7 @@ Utilisé par les tâches automatiques, depuis la racine du dépôt :
       Images : 1080x1080 ou 1080x1350 (cartes de bot/card.js) ; 1080x1920 pour une story
       LEGENDE.txt : fichier texte de la légende (ignoré pour une story : mettre -)
   python3 bot/queue.py cancel ID      annule un post pas encore publié
-  python3 bot/queue.py prune          retire les posts de plus de 7 jours et leurs images
+  python3 bot/queue.py prune          retire les posts de plus de 7 jours et leurs fichiers (insta/img et insta/reels)
   python3 bot/queue.py list           affiche la file
 La publication elle-même est faite par bot/publish.php sur o2switch.
 """
@@ -20,6 +20,7 @@ from zoneinfo import ZoneInfo
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QF = os.path.join(ROOT, "insta", "queue.json")
 IMG = os.path.join(ROOT, "insta", "img")
+REELS = os.path.join(ROOT, "insta", "reels")
 PARIS = ZoneInfo("Europe/Paris")
 
 
@@ -133,16 +134,19 @@ def prune():
     q = load()
     limit = datetime.now(PARIS) - timedelta(days=7)
     keep = [p for p in q["posts"] if when(p["at"]) >= limit]
-    used = {f for p in keep for f in p.get("images", [])}
+    used = {f for p in keep for f in p.get("images", []) + [p.get("video", ""), p.get("cover", "")]}
     q["posts"] = keep
     save(q)
     gone = 0
-    if os.path.isdir(IMG):
-        for f in os.listdir(IMG):
-            if f.endswith(".jpg") and f"insta/img/{f}" not in used:
-                os.remove(os.path.join(IMG, f))
+    for folder, exts in ((IMG, (".jpg",)), (REELS, (".mp4", ".jpg"))):
+        if not os.path.isdir(folder):
+            continue
+        rel = os.path.relpath(folder, ROOT).replace(os.sep, "/")
+        for f in os.listdir(folder):
+            if f.endswith(exts) and f"{rel}/{f}" not in used:
+                os.remove(os.path.join(folder, f))
                 gone += 1
-    print(f"File : {len(keep)} post(s) gardé(s), {gone} image(s) supprimée(s).")
+    print(f"File : {len(keep)} post(s) gardé(s), {gone} fichier(s) supprimé(s).")
 
 
 def show():

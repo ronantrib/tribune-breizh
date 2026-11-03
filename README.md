@@ -58,3 +58,17 @@ Aperçu d'un post : `php ~/repositories/tribune-breizh/bot/publish.php apercu ID
 Visuels d'origine du site : un post peut aussi être décrit par `"visuels": ["resultats", "classement"]` (derby, classement,
 resultats, buteurs, face, rhum, story). `bot/visuels.php` les redessine à l'identique de l'onglet Visuels, avec les données
 de `src/index.html` au moment de publier. Test à la main : `php bot/visuels.php derby /tmp/derby.jpg`.
+
+## Rythme des posts, garde de 90 minutes et mentions des clubs (depuis le 4 novembre 2026)
+
+- **Garde** (`bot/garde.php`, utilisée par `publish.php` et `facebook.php`) : aucun nouveau post sur un réseau moins de 90 minutes après le
+  précédent, urgents et stories compris. Un post qui attend n'est ni abandonné ni compté comme un essai ; il part au premier passage du cron
+  où les 90 minutes sont écoulées (sinon, abandon au bout de la fenêtre de 6 h). Les posts attendent dans l'ordre de leur heure. Un statut
+  « à vérifier » compte comme une publication. `php bot/publish.php check` affiche l'état de la garde.
+- **Rythme** (consignes des tâches planifiées) : au moins 1 et au plus 2 posts Instagram par jour (les stories sont en plus), 1 post Facebook ;
+  les sujets forts en trop sont reportés aux jours creux ; heures variées par créneaux 8h-10h, 12h-14h et 18h-21h, 3 h au moins entre deux posts.
+- **Facebook et exploits** : un exploit (coupe, titre) repéré par la vérification légère est aussi publié sur Facebook (champ `facebook` du post,
+  ou post `facebook` séparé si l'exploit devient une story), au plus un par jour, en plus du post Facebook habituel (90 min d'écart).
+- **Mentions des clubs** : `insta/comptes.json` liste les clubs avec `instagram` (ex. `@nomducompte`) et `facebook` (nom exact de la page).
+  Les tâches ne recopient que ces valeurs ; **champ vide = aucune mention**. Aucun identifiant n'est jamais deviné.
+  Le fichier est à remplir et à valider par Ronan.

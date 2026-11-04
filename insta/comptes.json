@@ -5,105 +5,105 @@
    "id": "rennes",
    "nom": "Stade Rennais",
    "sport": "football",
-   "instagram": "",
+   "instagram": "@staderennaisfc",
    "facebook": ""
   },
   {
    "id": "brest",
    "nom": "Stade Brestois",
    "sport": "football",
-   "instagram": "",
+   "instagram": "@stadebrestois29",
    "facebook": ""
   },
   {
    "id": "lorient",
    "nom": "FC Lorient",
    "sport": "football",
-   "instagram": "",
+   "instagram": "@fclorient",
    "facebook": ""
   },
   {
    "id": "guingamp",
    "nom": "En Avant Guingamp",
    "sport": "football",
-   "instagram": "",
+   "instagram": "@eaguingamp",
    "facebook": ""
   },
   {
    "id": "concarneau",
    "nom": "US Concarneau",
    "sport": "football",
-   "instagram": "",
+   "instagram": "@usconcarneau",
    "facebook": ""
   },
   {
    "id": "cesson",
    "nom": "Cesson-Rennes MHB",
    "sport": "handball",
-   "instagram": "",
+   "instagram": "@crmhb",
    "facebook": ""
   },
   {
    "id": "brestbh",
    "nom": "Brest Bretagne Handball",
    "sport": "handball",
-   "instagram": "",
+   "instagram": "@bbh_officiel",
    "facebook": ""
   },
   {
    "id": "vannes",
    "nom": "RC Vannes",
    "sport": "rugby",
-   "instagram": "",
+   "instagram": "@rugbyclubvannes",
    "facebook": ""
   },
   {
    "id": "landerneau",
    "nom": "Landerneau Bretagne Basket",
    "sport": "basket",
-   "instagram": "",
+   "instagram": "@lbb_hn",
    "facebook": ""
   },
   {
    "id": "saintmalo",
    "nom": "US Saint-Malo",
    "sport": "football",
-   "instagram": "",
+   "instagram": "@ussaintmalo35",
    "facebook": ""
   },
   {
    "id": "fcnantes",
    "nom": "FC Nantes",
    "sport": "football",
-   "instagram": "",
+   "instagram": "@fcnantes",
    "facebook": ""
   },
   {
    "id": "hbcnantes",
    "nom": "HBC Nantes",
    "sport": "handball",
-   "instagram": "",
+   "instagram": "@hbcnantes",
    "facebook": ""
   },
   {
    "id": "stnazaire",
    "nom": "Saint-Nazaire Volley",
    "sport": "volley",
-   "instagram": "",
+   "instagram": "@snvba_officiel",
    "facebook": ""
   },
   {
    "id": "rennesvolley",
    "nom": "Rennes Étudiants Club Volley",
    "sport": "volley",
-   "instagram": "",
+   "instagram": "@recvolleymasculin",
    "facebook": ""
   },
   {
    "id": "quimpervolley",
    "nom": "Quimper Volley 29",
    "sport": "volley",
-   "instagram": "",
+   "instagram": "@quimpervolley29",
    "facebook": ""
   },
   {
@@ -124,7 +124,7 @@
    "id": "vannesoc",
    "nom": "Vannes OC",
    "sport": "football",
-   "instagram": "",
+   "instagram": "@vannesoc",
    "facebook": ""
   }
  ]

@@ -270,6 +270,7 @@ ul.cl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repe
 ul.cl li{background:var(--chip);border-radius:6px;padding:8px 10px}ul.cl a{font-weight:700}
 footer.foot{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);font-size:.85rem}footer.foot a{color:var(--muted)}
 @media (max-width:520px){dl.facts{grid-template-columns:1fr;gap:0}dl.facts dd{margin-bottom:8px}}
+.tb-h{display:none}.tb-hist .tb-h{display:revert}
 CSS;
 
 function tb_seo_layout(array $d, array $sports, array $o): string {
@@ -308,6 +309,7 @@ function tb_seo_layout(array $d, array $sports, array $o): string {
 <link rel="preload" href="/fonts/archivo.woff" as="font" type="font/woff" crossorigin>
 <link rel="icon" href="' . $icon . '">
 <style>' . TB_SEO_CSS . '</style>
+<script>try{if(localStorage.getItem("tb-hist")==="1")document.documentElement.classList.add("tb-hist")}catch(e){}</script>
 ' . $ld . trim(TB_STATS) . '
 </head>
 <body>
@@ -333,6 +335,9 @@ function tb_ld_crumbs(array $items): array {
   foreach ($items as $i => [$label, $href]) $list[] = ['@type' => 'ListItem', 'position' => $i + 1, 'name' => $label, 'item' => TB_SEO_BASE . $href];
   return ['@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $list];
 }
+
+/** Club de Loire-Atlantique (« Bretagne historique ») : masqué tant que le mode du même nom n'est pas activé (voir tb-hist). */
+function tb_is_hist(array $c): bool { return !empty($c['hist']) || ($c['dept'] ?? '') === 'Loire-Atlantique'; }
 
 /* Noms sous lesquels un club apparaît dans les résultats et les classements */
 function tb_club_names(array $c): array {
@@ -477,7 +482,7 @@ function tb_seo_sport_page(array $d, string $slug): ?string {
   }
   if ($clubs) {
     $b .= '<section><h2>Les clubs de ' . tb_h($lower) . ' bretons</h2><ul class="cl">';
-    foreach ($clubs as $x) $b .= '<li><a href="' . tb_h($x['url']) . '">' . tb_h($x['n']) . '</a><span class="det">' . tb_h(trim(($x['lg'] ?? '') . (!empty($x['r']) ? ' · ' . $x['r'] : ''), ' ·')) . '</span></li>';
+    foreach ($clubs as $x) $b .= '<li' . (tb_is_hist($x) ? ' class="tb-h"' : '') . '><a href="' . tb_h($x['url']) . '">' . tb_h($x['n']) . '</a><span class="det">' . tb_h(trim(($x['lg'] ?? '') . (!empty($x['r']) ? ' · ' . $x['r'] : ''), ' ·')) . '</span></li>';
     $b .= '</ul></section>';
   }
   if (!empty($v['results'])) {
@@ -490,7 +495,7 @@ function tb_seo_sport_page(array $d, string $slug): ?string {
     foreach ($v['next'] as $day) if (!empty($day['games'])) $b .= '<h3>' . tb_h($day['day'] ?? '') . '</h3>' . tb_next_list($day['games']);
     $b .= '</section>';
   }
-  foreach (($v['tables'] ?? []) as $t) if (is_array($t) && !empty($t['rows'])) $b .= '<section><h2>Classement · ' . tb_h($t['name'] ?? '') . '</h2>' . tb_table($t) . '</section>';
+  foreach (($v['tables'] ?? []) as $t) if (is_array($t) && !empty($t['rows'])) $b .= '<section' . (!empty($t['hist']) ? ' class="tb-h"' : '') . '><h2>Classement · ' . tb_h($t['name'] ?? '') . '</h2>' . tb_table($t) . '</section>';
 
   $items = [];
   foreach ($clubs as $i => $x) $items[] = ['@type' => 'ListItem', 'position' => $i + 1, 'url' => TB_SEO_BASE . $x['url'], 'name' => $x['n']];
@@ -539,7 +544,7 @@ function tb_seo_footer(): string {
     $hidden = '';
     foreach (tb_seo_clubs($d) as $c) {
       $link = $a($c, $c['n']);
-      if (!empty($c['hist']) || ($c['dept'] ?? '') === 'Loire-Atlantique') $hidden .= '<span class="tb-h"> · ' . $link . '</span>';
+      if (tb_is_hist($c)) $hidden .= '<span class="tb-h"> · ' . $link . '</span>';
       else $clubs .= ($clubs !== '' ? ' · ' : '') . $link;
     }
     $clubs .= $hidden;

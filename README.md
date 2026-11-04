@@ -81,6 +81,7 @@ Pour le référencement, chaque club et chaque sport a sa propre adresse, fabriq
 - `/sitemap.xml` : généré à la volée avec toutes ces pages (le fichier fixe `sitemap.xml` a été supprimé). La date de mise à jour vient de `version.txt`.
 - En bas de la page d'accueil, un bloc de liens vers toutes ces pages (ajouté par `bot/build.php`, donc par `gate.php`, pas par `build.py`).
   Les clubs de Loire-Atlantique (`hist:true`) n'y sont visibles que si le mode « Bretagne historique » est activé (même réglage `tb-hist` que la page) ; leurs pages et le sitemap restent publics.
+  Sur les pages `/sport/…`, ces clubs et les classements marqués `hist:true` (ex. volley, Ligue A) suivent le même réglage : masqués par défaut, affichés si `tb-hist` vaut `1` dans le navigateur (le réglage se change avec le bouton de la page d'accueil).
 
 Fichiers : `pages.php` (routeur appelé par les règles de `.htaccess`), `bot/seo.php` (lecture des données, gabarits, sitemap). Rien à faire à la main :
 une nouvelle page apparaît dès qu'un club ou un sport entre dans `ALLCLUBS` ou `DATA`. Les données sont gardées dans `cache/seo-data.json` (ignoré par Git) et relues seulement quand la source change.

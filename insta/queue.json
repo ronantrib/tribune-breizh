@@ -1,287 +1,303 @@
 {
-  "posts": [
+ "posts": [
+  {
+   "id": "2026-10-28-test-story",
+   "at": "2026-10-28T17:45+01:00",
+   "type": "story",
+   "images": [
+    "insta/img/2026-10-28-test-story.jpg"
+   ]
+  },
+  {
+   "id": "2026-10-29-story-j1",
+   "at": "2026-10-29T12:00+01:00",
+   "type": "story",
+   "images": [
+    "insta/img/2026-10-29-story-j1.jpg"
+   ]
+  },
+  {
+   "id": "2026-10-30-story-teasing",
+   "at": "2026-10-30T09:00+01:00",
+   "type": "story",
+   "images": [
+    "insta/img/2026-10-30-story-teasing.jpg"
+   ]
+  },
+  {
+   "id": "2026-10-30-story-nice-rennes",
+   "at": "2026-10-30T17:30+01:00",
+   "type": "story",
+   "cards": [
     {
-      "id": "2026-10-28-test-story",
-      "at": "2026-10-28T17:45+01:00",
-      "type": "story",
-      "images": [
-        "insta/img/2026-10-28-test-story.jpg"
-      ]
-    },
-    {
-      "id": "2026-10-29-story-j1",
-      "at": "2026-10-29T12:00+01:00",
-      "type": "story",
-      "images": [
-        "insta/img/2026-10-29-story-j1.jpg"
-      ]
-    },
-    {
-      "id": "2026-10-30-story-teasing",
-      "at": "2026-10-30T09:00+01:00",
-      "type": "story",
-      "images": [
-        "insta/img/2026-10-30-story-teasing.jpg"
-      ]
-    },
-    {
-      "id": "2026-10-30-story-nice-rennes",
-      "at": "2026-10-30T17:30+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Ligue 1 · 9e journée",
-          "title": "Nice – Rennes",
-          "lines": [
-            "Ce soir à 19h : Rennes, 2e du classement, joue à Nice (10e).",
-            "Le match a été avancé du samedi à ce vendredi. En direct sur Ligue 1+."
-          ],
-          "color": "foot"
-        }
-      ]
-    },
-    {
-      "id": "2026-10-31-story-cesson-nantes",
-      "at": "2026-10-31T17:00+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "StarLigue · 9e journée",
-          "title": "Cesson-Rennes – Nantes",
-          "lines": [
-            "Ce soir à 19h : Cesson-Rennes, avant-dernier du classement, reçoit Nantes, 2e.",
-            "En direct sur beIN Sports Max 3."
-          ],
-          "color": "hand"
-        }
-      ]
-    },
-    {
-      "id": "2026-10-31-lorient-cleansheets",
-      "at": "2026-10-31T18:00+01:00",
-      "type": "feed",
-      "caption": "🏴 Une défense qui tient bon !\nLe FC Lorient n'a pas encaissé de but dans 5 de ses 8 premiers matchs de Ligue 1. Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens.\nLes trois derniers : Paris FC (1-0), Monaco (1-0) et Angers (0-0).\nProchain match : Lorient – Brest, lundi 2 novembre à 20h45.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FCLorient #Ligue1 #Merlus",
-      "cards": [
-        {
-          "kicker": "Ligue 1 · FC Lorient",
-          "title": "5 clean sheets en 8 matchs",
-          "lines": [
-            "Les Merlus n'ont pas encaissé de but dans 5 de leurs 8 premiers matchs de Ligue 1.",
-            "Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens."
-          ],
-          "rows": [
-            [
-              "J6",
-              "Lorient – Paris FC",
-              "1-0"
-            ],
-            [
-              "J7",
-              "Lorient – Monaco",
-              "1-0"
-            ],
-            [
-              "J8",
-              "Angers – Lorient",
-              "0-0"
-            ]
-          ],
-          "color": "foot",
-          "foot": "Source : FC Lorient, 28 octobre"
-        }
-      ],
-      "facebook": {
-        "message": "🏴 Une défense qui tient bon : le FC Lorient n'a pas encaissé de but dans 5 de ses 8 premiers matchs de Ligue 1. Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens.\nLes trois derniers : Paris FC (1-0), Monaco (1-0) et Angers (0-0).\nProchain match : Lorient – Brest, lundi 2 novembre à 20h45.\n#TribuneBreizh",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-01-story-resultats",
-      "at": "2026-11-01T09:00+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Week-end du 31 octobre",
-          "title": "Les résultats",
-          "lines": [
-            "Vendredi 30 et samedi 31 octobre."
-          ],
-          "rows": [
-            [
-              "Ligue 1",
-              "Nice – Rennes",
-              "5-2"
-            ],
-            [
-              "Ligue 2",
-              "Guingamp – Saint-Étienne",
-              "3-0"
-            ],
-            [
-              "Ligue 3",
-              "Rouen – Concarneau",
-              "2-1"
-            ],
-            [
-              "Top 14",
-              "Lyon – Vannes",
-              "48-25"
-            ],
-            [
-              "StarLigue",
-              "Cesson-Rennes – Nantes",
-              "37-46"
-            ],
-            [
-              "Ligue Butagaz Énergie",
-              "Nice – Brest BH",
-              "36-32"
-            ]
-          ],
-          "color": "accent",
-          "foot": "Source : breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-01-reel-rhum",
-      "at": "2026-11-01T10:30+01:00",
-      "type": "reel",
-      "video": "insta/reels/2026-11-01-reel-rhum.mp4",
-      "cover": "insta/reels/2026-11-01-reel-rhum.jpg",
-      "caption": "⛵ Dimanche 1er novembre à 13h02, la Route du Rhum s'élance au large de Saint-Malo.\n35 skippers bretons à suivre sur 3 542 milles, jusqu'à Pointe-à-Pitre : quatre en Ultim, trois en Ocean Fifty, cinq en Imoca, neuf en Class40 et quatorze en Vintage.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #RouteDuRhum #Voile #Bretagne"
-    },
-    {
-      "id": "2026-11-02-story",
-      "at": "2026-11-02T10:00+01:00",
-      "type": "story",
-      "visuels": [
-        "story"
-      ]
-    },
-    {
-      "id": "2026-11-02-weekend",
-      "at": "2026-11-02T12:30+01:00",
-      "type": "carousel",
-      "caption": "🏴 Le week-end des Bretons en résumé !\n⚽ Ligue 1 : Nice – Rennes, 5-2 (Rennes est 5e avec 16 points). Ligue 2 : Guingamp – Saint-Étienne, 3-0.\n🏉 Top 14 : Lyon – Vannes, 48-25. 🤾 Brest Bretagne Handball a gagné à Nice (32-36), Cesson-Rennes a perdu face à Nantes (37-46).\nCe soir, place au derby breton : Lorient – Brest, lundi 2 novembre à 20h45 au Moustoir (Ligue 1+).\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #SportBretagne #ActuSport #PassionSport",
-      "visuels": [
-        "resultats",
-        "classement"
-      ],
-      "facebook": {
-        "message": "🏴 Le week-end des Bretons en résumé : Nice – Rennes (5-2) en Ligue 1, Rennes est 5e avec 16 points ; Guingamp – Saint-Étienne (3-0) en Ligue 2 ; Lyon – Vannes (48-25) en Top 14 ; Nice – Brest Bretagne Handball (32-36) en Ligue Butagaz Énergie.\nCe soir, place au derby breton : Lorient – Brest, lundi 2 novembre à 20h45 au Moustoir.\n#TribuneBreizh #SportBreton #SportBretagne",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "all"
-      }
-    },
-    {
-      "id": "2026-11-02-urgent-1750",
-      "at": "2026-11-02T17:50+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Avaries pour deux Bretons",
-          "lines": [
-            "Quentin Le Nabour (Class40) a démâté ce lundi matin : il est indemne et fait route vers le port le plus proche.",
-            "Anthony Marchand (Ultim) a stoppé son bateau après la défaillance du safran central : il a annoncé faire route vers l'Irlande."
-          ],
-          "color": "voile"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-03-score",
-      "at": "2026-11-03T12:30+01:00",
-      "type": "feed",
-      "caption": "🏴 Le derby breton est pour Brest !\n⚽ Lorient 0-2 Brest, lundi 2 novembre au Moustoir (Ligue 1 · 9e journée) : buts d'Ajorque (69e) et d'Edjouma (90e+2).\nTosin avait manqué un penalty pour Lorient à la 90e minute.\nAu classement, Brest est 10e et Lorient 11e, avec 12 points chacun.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #FootBreton #Ligue1",
-      "visuels": [
-        "derby"
-      ],
-      "facebook": {
-        "message": "🏴 Le derby breton est pour Brest ! Lorient 0-2 Brest, lundi 2 novembre au Moustoir (Ligue 1 · 9e journée) : buts d'Ajorque (69e) et d'Edjouma (90e+2). Tosin avait manqué un penalty pour Lorient à la 90e minute.\nBrest est 10e et Lorient 11e, avec 12 points chacun.\n#TribuneBreizh #FootballBretagne #Ligue1",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-03-story-abandons",
-      "at": "2026-11-03T19:22+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Deux abandons bretons",
-          "lines": [
-            "Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) abandonne après une avarie de foil.",
-            "Jérémie Beyou (Charal, Imoca) abandonne pour raisons médicales."
-          ],
-          "color": "voile"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-03-abandons-caudrelier-beyou",
-      "at": "2026-11-03T19:32+01:00",
-      "type": "feed",
-      "caption": "⛵ Route du Rhum : deux skippers bretons abandonnent.\nCharles Caudrelier (Maxi Edmond de Rothschild, Ultim) renonce après une avarie de foil.\nJérémie Beyou (Charal, Imoca) renonce pour raisons médicales.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Deux abandons bretons",
-          "lines": [
-            "Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) abandonne après une avarie de foil.",
-            "Jérémie Beyou (Charal, Imoca) abandonne pour raisons médicales."
-          ],
-          "color": "voile",
-          "foot": "Source : France 3 Bretagne, ICI, Point Marée"
-        }
-      ],
-      "facebook": {
-        "message": "⛵ Route du Rhum : deux skippers bretons abandonnent. Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) renonce après une avarie de foil, et Jérémie Beyou (Charal, Imoca) pour raisons médicales.\n#TribuneBreizh #RouteDuRhum2026 #VoileBretagne",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-04-affiche",
-      "at": "2026-11-04T15:10+01:00",
-      "type": "feed",
-      "caption": "⚽ L'affiche de la semaine : Rennes – Olympiakos !\nCe mercredi 4 novembre à 16h30 au Roazhon Park, pour la 4e journée de la Ligue Europa (Canal+).\nTreizième après trois journées avec 5 points, le Stade Rennais reçoit l'Olympiakos, qui a gagné ses trois premiers matchs.\nLe coup d'envoi a été avancé du jeudi au mercredi après l'interdiction de la date initiale par la préfecture d'Ille-et-Vilaine.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #Rennes #LigueEuropa",
-      "visuels": [
-        "derby"
-      ],
-      "facebook": {
-        "message": "⚽ L'affiche de la semaine : Rennes – Olympiakos ! Ce mercredi 4 novembre à 16h30 au Roazhon Park, pour la 4e journée de la Ligue Europa (Canal+). Treizième après trois journées avec 5 points, le Stade Rennais reçoit l'Olympiakos, qui a gagné ses trois premiers matchs. Votre pronostic ? #TribuneBreizh #Rennes #LigueEuropa",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-03-rhum",
-      "at": "2026-11-04T11:15+01:00",
-      "type": "feed",
-      "caption": "⛵ Route du Rhum : où en sont les Bretons ?\nPointage de ce mercredi 4 novembre à 8h. Chez les Ultim, Tom Laperche (SVR Lazartigue) reste en tête et Thomas Coville (Sodebo Ultim 3) est 2e, à 7,5 milles.\nCorentin Horeau (MACSF) mène les Imoca et Basile Bourgnon (Edenred) les Ocean Fifty. Chez les Vintage, Tanguy Caradec (Eurvad) est en tête en mono et Éric Péron (French Touch) en multi.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
-      "visuels": [
-        "rhum"
-      ]
-    },
-    {
-      "id": "2026-11-04-story-lecleach",
-      "at": "2026-11-04T19:30+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Abandon de Le Cléac'h",
-          "lines": [
-            "Armel Le Cléac'h (Maxi Banque Populaire XI) a chaviré mercredi 4 novembre vers 5h30, à 550 milles au nord-ouest des Açores. Il est indemne.",
-            "Anthony Marchand a aussi renoncé à 16h."
-          ],
-          "color": "voile"
-        }
-      ]
+     "kicker": "Ligue 1 · 9e journée",
+     "title": "Nice – Rennes",
+     "lines": [
+      "Ce soir à 19h : Rennes, 2e du classement, joue à Nice (10e).",
+      "Le match a été avancé du samedi à ce vendredi. En direct sur Ligue 1+."
+     ],
+     "color": "foot"
     }
-  ]
+   ]
+  },
+  {
+   "id": "2026-10-31-story-cesson-nantes",
+   "at": "2026-10-31T17:00+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "StarLigue · 9e journée",
+     "title": "Cesson-Rennes – Nantes",
+     "lines": [
+      "Ce soir à 19h : Cesson-Rennes, avant-dernier du classement, reçoit Nantes, 2e.",
+      "En direct sur beIN Sports Max 3."
+     ],
+     "color": "hand"
+    }
+   ]
+  },
+  {
+   "id": "2026-10-31-lorient-cleansheets",
+   "at": "2026-10-31T18:00+01:00",
+   "type": "feed",
+   "caption": "🏴 Une défense qui tient bon !\nLe FC Lorient n'a pas encaissé de but dans 5 de ses 8 premiers matchs de Ligue 1. Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens.\nLes trois derniers : Paris FC (1-0), Monaco (1-0) et Angers (0-0).\nProchain match : Lorient – Brest, lundi 2 novembre à 20h45.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FCLorient #Ligue1 #Merlus",
+   "cards": [
+    {
+     "kicker": "Ligue 1 · FC Lorient",
+     "title": "5 clean sheets en 8 matchs",
+     "lines": [
+      "Les Merlus n'ont pas encaissé de but dans 5 de leurs 8 premiers matchs de Ligue 1.",
+      "Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens."
+     ],
+     "rows": [
+      [
+       "J6",
+       "Lorient – Paris FC",
+       "1-0"
+      ],
+      [
+       "J7",
+       "Lorient – Monaco",
+       "1-0"
+      ],
+      [
+       "J8",
+       "Angers – Lorient",
+       "0-0"
+      ]
+     ],
+     "color": "foot",
+     "foot": "Source : FC Lorient, 28 octobre"
+    }
+   ],
+   "facebook": {
+    "message": "🏴 Une défense qui tient bon : le FC Lorient n'a pas encaissé de but dans 5 de ses 8 premiers matchs de Ligue 1. Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens.\nLes trois derniers : Paris FC (1-0), Monaco (1-0) et Angers (0-0).\nProchain match : Lorient – Brest, lundi 2 novembre à 20h45.\n#TribuneBreizh",
+    "link": "https://breizh.tribuneouest.fr/",
+    "image": "first"
+   }
+  },
+  {
+   "id": "2026-11-01-story-resultats",
+   "at": "2026-11-01T09:00+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Week-end du 31 octobre",
+     "title": "Les résultats",
+     "lines": [
+      "Vendredi 30 et samedi 31 octobre."
+     ],
+     "rows": [
+      [
+       "Ligue 1",
+       "Nice – Rennes",
+       "5-2"
+      ],
+      [
+       "Ligue 2",
+       "Guingamp – Saint-Étienne",
+       "3-0"
+      ],
+      [
+       "Ligue 3",
+       "Rouen – Concarneau",
+       "2-1"
+      ],
+      [
+       "Top 14",
+       "Lyon – Vannes",
+       "48-25"
+      ],
+      [
+       "StarLigue",
+       "Cesson-Rennes – Nantes",
+       "37-46"
+      ],
+      [
+       "Ligue Butagaz Énergie",
+       "Nice – Brest BH",
+       "36-32"
+      ]
+     ],
+     "color": "accent",
+     "foot": "Source : breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-01-reel-rhum",
+   "at": "2026-11-01T10:30+01:00",
+   "type": "reel",
+   "video": "insta/reels/2026-11-01-reel-rhum.mp4",
+   "cover": "insta/reels/2026-11-01-reel-rhum.jpg",
+   "caption": "⛵ Dimanche 1er novembre à 13h02, la Route du Rhum s'élance au large de Saint-Malo.\n35 skippers bretons à suivre sur 3 542 milles, jusqu'à Pointe-à-Pitre : quatre en Ultim, trois en Ocean Fifty, cinq en Imoca, neuf en Class40 et quatorze en Vintage.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #RouteDuRhum #Voile #Bretagne"
+  },
+  {
+   "id": "2026-11-02-story",
+   "at": "2026-11-02T10:00+01:00",
+   "type": "story",
+   "visuels": [
+    "story"
+   ]
+  },
+  {
+   "id": "2026-11-02-weekend",
+   "at": "2026-11-02T12:30+01:00",
+   "type": "carousel",
+   "caption": "🏴 Le week-end des Bretons en résumé !\n⚽ Ligue 1 : Nice – Rennes, 5-2 (Rennes est 5e avec 16 points). Ligue 2 : Guingamp – Saint-Étienne, 3-0.\n🏉 Top 14 : Lyon – Vannes, 48-25. 🤾 Brest Bretagne Handball a gagné à Nice (32-36), Cesson-Rennes a perdu face à Nantes (37-46).\nCe soir, place au derby breton : Lorient – Brest, lundi 2 novembre à 20h45 au Moustoir (Ligue 1+).\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #SportBretagne #ActuSport #PassionSport",
+   "visuels": [
+    "resultats",
+    "classement"
+   ],
+   "facebook": {
+    "message": "🏴 Le week-end des Bretons en résumé : Nice – Rennes (5-2) en Ligue 1, Rennes est 5e avec 16 points ; Guingamp – Saint-Étienne (3-0) en Ligue 2 ; Lyon – Vannes (48-25) en Top 14 ; Nice – Brest Bretagne Handball (32-36) en Ligue Butagaz Énergie.\nCe soir, place au derby breton : Lorient – Brest, lundi 2 novembre à 20h45 au Moustoir.\n#TribuneBreizh #SportBreton #SportBretagne",
+    "link": "https://breizh.tribuneouest.fr/",
+    "image": "all"
+   }
+  },
+  {
+   "id": "2026-11-02-urgent-1750",
+   "at": "2026-11-02T17:50+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Avaries pour deux Bretons",
+     "lines": [
+      "Quentin Le Nabour (Class40) a démâté ce lundi matin : il est indemne et fait route vers le port le plus proche.",
+      "Anthony Marchand (Ultim) a stoppé son bateau après la défaillance du safran central : il a annoncé faire route vers l'Irlande."
+     ],
+     "color": "voile"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-03-score",
+   "at": "2026-11-03T12:30+01:00",
+   "type": "feed",
+   "caption": "🏴 Le derby breton est pour Brest !\n⚽ Lorient 0-2 Brest, lundi 2 novembre au Moustoir (Ligue 1 · 9e journée) : buts d'Ajorque (69e) et d'Edjouma (90e+2).\nTosin avait manqué un penalty pour Lorient à la 90e minute.\nAu classement, Brest est 10e et Lorient 11e, avec 12 points chacun.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #FootBreton #Ligue1",
+   "visuels": [
+    "derby"
+   ],
+   "facebook": {
+    "message": "🏴 Le derby breton est pour Brest ! Lorient 0-2 Brest, lundi 2 novembre au Moustoir (Ligue 1 · 9e journée) : buts d'Ajorque (69e) et d'Edjouma (90e+2). Tosin avait manqué un penalty pour Lorient à la 90e minute.\nBrest est 10e et Lorient 11e, avec 12 points chacun.\n#TribuneBreizh #FootballBretagne #Ligue1",
+    "link": "https://breizh.tribuneouest.fr/",
+    "image": "first"
+   }
+  },
+  {
+   "id": "2026-11-03-story-abandons",
+   "at": "2026-11-03T19:22+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Deux abandons bretons",
+     "lines": [
+      "Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) abandonne après une avarie de foil.",
+      "Jérémie Beyou (Charal, Imoca) abandonne pour raisons médicales."
+     ],
+     "color": "voile"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-03-abandons-caudrelier-beyou",
+   "at": "2026-11-03T19:32+01:00",
+   "type": "feed",
+   "caption": "⛵ Route du Rhum : deux skippers bretons abandonnent.\nCharles Caudrelier (Maxi Edmond de Rothschild, Ultim) renonce après une avarie de foil.\nJérémie Beyou (Charal, Imoca) renonce pour raisons médicales.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Deux abandons bretons",
+     "lines": [
+      "Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) abandonne après une avarie de foil.",
+      "Jérémie Beyou (Charal, Imoca) abandonne pour raisons médicales."
+     ],
+     "color": "voile",
+     "foot": "Source : France 3 Bretagne, ICI, Point Marée"
+    }
+   ],
+   "facebook": {
+    "message": "⛵ Route du Rhum : deux skippers bretons abandonnent. Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) renonce après une avarie de foil, et Jérémie Beyou (Charal, Imoca) pour raisons médicales.\n#TribuneBreizh #RouteDuRhum2026 #VoileBretagne",
+    "link": "https://breizh.tribuneouest.fr/",
+    "image": "first"
+   }
+  },
+  {
+   "id": "2026-11-03-rhum",
+   "at": "2026-11-04T11:15+01:00",
+   "type": "feed",
+   "caption": "⛵ Route du Rhum : où en sont les Bretons ?\nPointage de ce mercredi 4 novembre à 8h. Chez les Ultim, Tom Laperche (SVR Lazartigue) reste en tête et Thomas Coville (Sodebo Ultim 3) est 2e, à 7,5 milles.\nCorentin Horeau (MACSF) mène les Imoca et Basile Bourgnon (Edenred) les Ocean Fifty. Chez les Vintage, Tanguy Caradec (Eurvad) est en tête en mono et Éric Péron (French Touch) en multi.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
+   "visuels": [
+    "rhum"
+   ]
+  },
+  {
+   "id": "2026-11-04-affiche",
+   "at": "2026-11-04T15:10+01:00",
+   "type": "feed",
+   "caption": "⚽ L'affiche de la semaine : Rennes – Olympiakos !\nCe mercredi 4 novembre à 16h30 au Roazhon Park, pour la 4e journée de la Ligue Europa (Canal+).\nTreizième après trois journées avec 5 points, le Stade Rennais reçoit l'Olympiakos, qui a gagné ses trois premiers matchs.\nLe coup d'envoi a été avancé du jeudi au mercredi après l'interdiction de la date initiale par la préfecture d'Ille-et-Vilaine.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #Rennes #LigueEuropa",
+   "visuels": [
+    "derby"
+   ],
+   "facebook": {
+    "message": "⚽ L'affiche de la semaine : Rennes – Olympiakos ! Ce mercredi 4 novembre à 16h30 au Roazhon Park, pour la 4e journée de la Ligue Europa (Canal+). Treizième après trois journées avec 5 points, le Stade Rennais reçoit l'Olympiakos, qui a gagné ses trois premiers matchs. Votre pronostic ? #TribuneBreizh #Rennes #LigueEuropa",
+    "link": "https://breizh.tribuneouest.fr/",
+    "image": "first"
+   }
+  },
+  {
+   "id": "2026-11-04-story-lecleach",
+   "at": "2026-11-04T19:30+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Abandon de Le Cléac'h",
+     "lines": [
+      "Armel Le Cléac'h (Maxi Banque Populaire XI) a chaviré mercredi 4 novembre vers 5h30, à 550 milles au nord-ouest des Açores. Il est indemne.",
+      "Anthony Marchand a aussi renoncé à 16h."
+     ],
+     "color": "voile"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-04-story-score",
+   "at": "2026-11-04T22:05+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Ligue Europa",
+     "title": "Rennes 0-0 Olympiakos",
+     "lines": [
+      "Mercredi 4 novembre, au Roazhon Park."
+     ],
+     "color": "foot",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  }
+ ]
 }

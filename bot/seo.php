@@ -533,13 +533,25 @@ function tb_seo_footer(): string {
     $a = fn(array $x, string $label) => '<a href="' . tb_h($x['url']) . '">' . tb_h($label) . '</a>';
     $sports = [];
     foreach (tb_seo_sports($d) as $s) $sports[] = $a($s, $s['name']);
-    $clubs = [];
-    foreach (tb_seo_clubs($d) as $c) $clubs[] = $a($c, $c['n']);
-    if (!$sports && !$clubs) return '';
-    return '<nav class="tb-seo" aria-label="Pages par sport et par club"><style>.tb-seo{max-width:1080px;margin:8px auto 0;padding:24px max(16px,env(safe-area-inset-left,0px)) 48px;font:14px/1.9 var(--body,system-ui,sans-serif);color:var(--muted,#5d636b)}.tb-seo h2{font:800 1.1rem/1.2 var(--display,Impact,sans-serif);text-transform:uppercase;margin:0 0 6px;color:var(--ink,#121417)}.tb-seo p{margin:0 0 6px}.tb-seo a{color:var(--ink,#121417)}</style>'
+    // Clubs de Loire-Atlantique (« Bretagne historique » : Nantes, Saint-Nazaire…) : masqués tant que le mode n'est pas activé sur la page.
+    // Ils sont placés en fin de liste, avec leur séparateur « · » à l'intérieur de la partie masquée, pour qu'aucun « · » ne reste seul.
+    $clubs = '';
+    $hidden = '';
+    foreach (tb_seo_clubs($d) as $c) {
+      $link = $a($c, $c['n']);
+      if (!empty($c['hist']) || ($c['dept'] ?? '') === 'Loire-Atlantique') $hidden .= '<span class="tb-h"> · ' . $link . '</span>';
+      else $clubs .= ($clubs !== '' ? ' · ' : '') . $link;
+    }
+    $clubs .= $hidden;
+    if (!$sports && $clubs === '') return '';
+    $sep = fn(array $items) => implode(' · ', $items);
+    $css = '.tb-seo{max-width:1080px;margin:8px auto 0;padding:24px max(16px,env(safe-area-inset-left,0px)) 48px;font:14px/1.9 var(--body,system-ui,sans-serif);color:var(--muted,#5d636b)}.tb-seo h2{font:800 1.1rem/1.2 var(--display,Impact,sans-serif);text-transform:uppercase;margin:0 0 6px;color:var(--ink,#121417)}.tb-seo p{margin:0 0 6px}.tb-seo a{color:var(--ink,#121417)}.tb-seo .tb-h{display:none}.tb-seo.tb-hist .tb-h{display:inline}';
+    // Même réglage que la page : « tb-hist » = « 1 » dans le stockage local ; mis à jour quand on touche le bouton du mode
+    $js = "(function(){var n=document.querySelector('.tb-seo');if(!n)return;function s(){var h=false;try{h=localStorage.getItem('tb-hist')==='1'}catch(e){}n.classList.toggle('tb-hist',h)}s();var b=document.getElementById('histbtn');if(b)b.addEventListener('click',function(){setTimeout(s,0)})})();";
+    return '<nav class="tb-seo" aria-label="Pages par sport et par club"><style>' . $css . '</style>'
       . '<h2>Le sport breton, club par club</h2>'
-      . '<p><strong>Par sport</strong> : ' . implode(' · ', $sports) . '</p>'
-      . '<p><strong>Par club</strong> : ' . implode(' · ', $clubs) . '</p></nav>';
+      . '<p><strong>Par sport</strong> : ' . $sep($sports) . '</p>'
+      . '<p><strong>Par club</strong> : ' . $clubs . '</p><script>' . $js . '</script></nav>';
   } catch (Throwable $e) {
     return '';
   }

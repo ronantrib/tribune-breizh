@@ -235,7 +235,30 @@ function tb_seo_amateur(string $raw): ?array {
     }
     $out['poucets'] = $p;
   }
-  return ($out['recit'] || $out['cdf'] || $out['tables'] || $out['poucets']) ? $out : null;
+
+  // Foot régional (R1 et R2) : lignes dans R1, R2A à R2D ; titres, libellé de journée et notes écrits dans le gabarit renderRegional()
+  $out['regional'] = null;
+  $rf = strpos($raw, 'function renderRegional()');
+  $r1 = TbJs::constant($raw, 'R1');
+  if ($rf !== false && is_array($r1) && $r1) {
+    $rr = substr($raw, $rf, 7000);
+    $reg = ['title' => 'Le foot régional', 'r1label' => '', 'r1' => [], 'r2' => []];
+    if (preg_match('/<h3 class="sec-title"[^>]*>([^<$]+)<\/h3>/', $rr, $m)) $reg['title'] = $clean($m[1]);
+    if (preg_match('/\$\{esc\(r\.zone\)\} · ([^<$`]+)<\/div>/', $rr, $m) && $ok($clean($m[1]))) $reg['r1label'] = $clean($m[1]);
+    foreach ($r1 as $g) {
+      if (is_array($g) && !empty($g['g']) && !empty($g['top']) && is_array($g['top'])) $reg['r1'][] = $g;
+    }
+    $re2 = '/tableHTML\(\{name:("(?:[^"\\\\]|\\\\.)*"),\s*head:(\[[^\]]*\]),\s*rows:(R2[A-Z]),\s*note:("(?:[^"\\\\]|\\\\.)*")/s';
+    if (preg_match_all($re2, $rr, $mm, PREG_SET_ORDER)) {
+      foreach ($mm as $m) {
+        $rows = TbJs::constant($raw, $m[3]);
+        $name = TbJs::at($m[1]); $head = TbJs::at($m[2]); $note = TbJs::at($m[4]);
+        if (is_array($rows) && $rows && is_string($name) && is_array($head)) $reg['r2'][] = ['name' => $name, 'head' => $head, 'rows' => $rows, 'note' => $ok($note) ? $note : ''];
+      }
+    }
+    if ($reg['r1'] || $reg['r2']) $out['regional'] = $reg;
+  }
+  return ($out['recit'] || $out['cdf'] || $out['tables'] || $out['poucets'] || $out['regional']) ? $out : null;
 }
 
 /* ───────────── Route du Rhum : page d'événement, avec archive ───────────── */
@@ -743,6 +766,25 @@ function tb_seo_amateur_page(array $d, array $s, array $sports): string {
         . '<table class="tl"><thead><tr><th>Club</th><th>Niveau</th><th>Prochain tour</th></tr></thead><tbody>';
     foreach ($p['rows'] as $r) if (is_array($r) && count($r) >= 3) $b .= '<tr><td><strong>' . tb_h($r[0]) . '</strong></td><td>' . tb_h($r[1]) . '</td><td>' . tb_h($r[2]) . '</td></tr>';
     $b .= '</tbody></table>' . ($p['note'] !== '' ? '<p class="tn">' . tb_h($p['note']) . '</p>' : '') . '</section>';
+  }
+  if (!empty($a['regional'])) {
+    $g = $a['regional'];
+    $b .= '<h2>' . tb_h($g['title']) . '</h2>';
+    foreach ($g['r1'] as $r) {
+      $nb = count($r['low'] ?? []);
+      $b .= '<section><h3>' . tb_h($r['g']) . '</h3><p class="sub">' . tb_h(trim(($r['zone'] ?? '') . ($g['r1label'] !== '' ? ' · ' . $g['r1label'] : ''), ' ·')) . '</p>'
+          . '<table><thead><tr><th>#</th><th>Club</th><th>J</th><th>G-N-P</th><th>Pts</th></tr></thead><tbody>';
+      foreach ($r['top'] as $i => $x) if (is_array($x) && count($x) >= 4) $b .= '<tr><td>' . ($i + 1) . '</td><td>' . tb_h($x[0]) . '</td><td>' . tb_h($x[1]) . '</td><td>' . tb_h($x[2]) . '</td><td>' . tb_h($x[3]) . '</td></tr>';
+      if (!empty($r['low'])) {
+        $b .= '<tr><td colspan="5">…</td></tr>';
+        foreach ($r['low'] as $i => $x) if (is_array($x) && count($x) >= 2) $b .= '<tr><td>' . (14 - $nb + 1 + $i) . '</td><td>' . tb_h($x[0]) . '</td><td></td><td></td><td>' . tb_h($x[1]) . '</td></tr>';
+      }
+      $b .= '</tbody></table>';
+      if (!empty($r['scorers'])) $b .= '<p class="tn">Buteurs : ' . tb_h($r['scorers']) . '</p>';
+      if (!empty($r['last'])) $b .= '<p class="tn">Derniers résultats : ' . tb_h($r['last']) . '</p>';
+      $b .= '</section>';
+    }
+    foreach ($g['r2'] as $t) $b .= '<section><h3>' . tb_h($t['name']) . '</h3>' . tb_table($t) . '</section>';
   }
   if (isset($sports['foot'])) $b .= '<section><p><a href="' . tb_h($sports['foot']['url']) . '">Tout le football breton professionnel : résultats, classements et agenda</a></p></section>';
 

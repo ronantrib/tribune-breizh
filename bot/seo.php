@@ -238,6 +238,77 @@ function tb_seo_amateur(string $raw): ?array {
   return ($out['recit'] || $out['cdf'] || $out['tables'] || $out['poucets']) ? $out : null;
 }
 
+/* ───────────── Route du Rhum : page d'événement, avec archive ───────────── */
+
+/**
+ * Données de l'événement « Route du Rhum » : constante RHUM (dates, skippers, classement, sources) + textes du gabarit
+ * renderVoile() (récit, départ, flottes). Chaque morceau du gabarit est facultatif. Renvoie null si RHUM est absente ou illisible.
+ * L'adresse porte l'année du départ (/evenement/route-du-rhum-2026) : une prochaine édition aura sa propre page.
+ */
+function tb_seo_rhum(string $raw): ?array {
+  $r = TbJs::constant($raw, 'RHUM');
+  if (!is_array($r) || empty($r['skippers']) || !is_array($r['skippers']) || !preg_match('/^(\d{4})-\d{2}-\d{2}/', (string)($r['start'] ?? ''), $y) || !strtotime((string)$r['start'])) return null;
+  $clean = fn($s) => trim((string)preg_replace('/\s+/u', ' ', html_entity_decode(strip_tags((string)$s), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+  $ok = fn($s) => is_string($s) && $s !== '' && !str_contains($s, '${');
+  $slug = 'route-du-rhum-' . $y[1];
+  $out = ['slug' => $slug, 'name' => 'Route du Rhum ' . $y[1], 'url' => '/evenement/' . $slug, 'start' => (string)$r['start'], 'fin' => (string)($r['fin'] ?? ''),
+    'maj' => $ok($clean($r['maj'] ?? '')) ? $clean($r['maj']) : '', 'skippers' => $r['skippers'], 'classement' => is_array($r['classement'] ?? null) ? $r['classement'] : [],
+    'src' => is_array($r['src'] ?? null) ? $r['src'] : [], 'recit' => null, 'depart' => null, 'flottes' => null];
+
+  $f = strpos($raw, 'function renderVoile()');
+  $region = '';
+  if ($f !== false) {
+    $end = strpos($raw, 'function renderAgenda()', $f);
+    $region = substr($raw, $f, ($end !== false && $end > $f) ? $end - $f : 7000);
+  }
+  if (preg_match('/<section class="block recit[^>]*>(.*?)<\/section>/s', $region, $m)) {
+    preg_match('/<h4>(.*?)<\/h4>/s', $m[1], $h);
+    preg_match_all('/<p>(.*?)<\/p>/s', $m[1], $ps);
+    $paras = array_values(array_filter(array_map($clean, $ps[1] ?? []), $ok));
+    if ($paras) $out['recit'] = ['t' => isset($h[1]) && $ok($clean($h[1])) ? $clean($h[1]) : '', 'p' => $paras];
+  }
+  if (preg_match('/<section class="block"><h3>Le départ<\/h3>(.*?)<\/section>/s', $region, $m)) {
+    preg_match_all('/<p class="note"[^>]*>(.*?)<\/p>/s', $m[1], $nn);
+    preg_match_all('/<b>([^<]+)<\/b><small>([^<]+)<\/small>/', $m[1], $ss, PREG_SET_ORDER);
+    $notes = array_values(array_filter(array_map($clean, $nn[1] ?? []), $ok));
+    $stats = array_map(fn($x) => [$clean($x[1]), $clean($x[2])], $ss);
+    if ($notes || $stats) $out['depart'] = ['notes' => $notes, 'stats' => $stats];
+  }
+  if (preg_match('/<h3>Les flottes<\/h3>\$\{factsHTML\(/', $region, $m, PREG_OFFSET_CAPTURE)) {
+    $items = TbJs::at($region, $m[0][1] + strlen($m[0][0]));
+    if (is_array($items) && $items) {
+      $note = preg_match('/<h3>Les flottes<\/h3>.*?<p class="note">(.*?)<\/p>\s*<\/section>/s', $region, $n) && $ok($clean($n[1])) ? $clean($n[1]) : '';
+      $out['flottes'] = ['items' => $items, 'note' => $note];
+    }
+  }
+  return $out;
+}
+
+/** Date en français : « dimanche 1er novembre 2026 » (heure de Paris). */
+function tb_fr_date(int $ts, bool $weekday = true): string {
+  $J = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+  $M = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+  $dt = new DateTime('@' . $ts);
+  $dt->setTimezone(new DateTimeZone('Europe/Paris'));
+  $d = (int)$dt->format('j');
+  return ($weekday ? $J[(int)$dt->format('w')] . ' ' : '') . ($d === 1 ? '1er' : $d) . ' ' . $M[(int)$dt->format('n') - 1] . ' ' . $dt->format('Y');
+}
+
+/**
+ * Événements ayant une page : celui des données du jour, plus ceux gardés dans archive/ (copie faite à chaque mise à jour du site).
+ * Si la mise à jour de nuit retire l'événement de la page, sa page reste en ligne avec le dernier pointage enregistré.
+ */
+function tb_seo_events(array $d): array {
+  $evs = [];
+  if (!empty($d['rhum']['slug'])) $evs[$d['rhum']['slug']] = $d['rhum'] + ['archived' => false];
+  foreach (glob(dirname(__DIR__) . '/archive/*.json') ?: [] as $file) {
+    $e = json_decode((string)@file_get_contents($file), true);
+    if (is_array($e) && !empty($e['slug']) && !empty($e['skippers']) && !isset($evs[$e['slug']])) $evs[$e['slug']] = $e + ['archived' => true];
+  }
+  uasort($evs, fn($a, $b) => strcmp((string)$b['start'], (string)$a['start']));
+  return $evs;
+}
+
 /* ───────────── Données : lecture de src/index.html, avec cache ───────────── */
 
 /**
@@ -262,7 +333,15 @@ function tb_seo_data(string $srcFile, string $cacheFile): ?array {
   $root = dirname(__DIR__);
   $ver = is_file("$root/version.txt") ? trim((string)file_get_contents("$root/version.txt")) : '';
   $ts = $ver !== '' ? strtotime($ver) : false;
-  $out = ['sha' => $sha, 'updated' => gmdate('c', $ts ?: (int)filemtime($srcFile)), 'clubs' => $clubs, 'data' => $data, 'names' => $names, 'amateur' => tb_seo_amateur($raw)];
+  $updated = gmdate('c', $ts ?: (int)filemtime($srcFile));
+  $rhum = tb_seo_rhum($raw);
+  $out = ['sha' => $sha, 'updated' => $updated, 'clubs' => $clubs, 'data' => $data, 'names' => $names, 'amateur' => tb_seo_amateur($raw), 'rhum' => $rhum];
+  if ($rhum) {   // archive : copie de l'événement, hors Git (archive/ est ignoré), relue si l'événement quitte la page
+    $dir = $root . '/archive';
+    @mkdir($dir, 0755, true);
+    $tmp = $dir . '/.' . getmypid() . '.tmp';
+    if (@file_put_contents($tmp, json_encode($rhum + ['snapshot_at' => $updated], JSON_UNESCAPED_UNICODE)) === false || !@rename($tmp, $dir . '/' . $rhum['slug'] . '.json')) @unlink($tmp);
+  }
   @mkdir(dirname($cacheFile), 0755, true);
   $tmp = $cacheFile . '.' . getmypid() . '.tmp';
   if (file_put_contents($tmp, json_encode($out, JSON_UNESCAPED_UNICODE)) === false || !rename($tmp, $cacheFile)) @unlink($tmp);
@@ -378,6 +457,10 @@ function tb_seo_layout(array $d, array $sports, array $o): string {
   foreach ($sports as $s) {
     $cur = ($o['sport'] ?? '') === $s['key'] ? ' aria-current="page"' : '';
     $nav .= '<a href="' . tb_h($s['url']) . '"' . $cur . '>' . tb_h($s['name']) . '</a>';
+  }
+  foreach (tb_seo_events($d) as $e) {
+    $cur = ($o['event'] ?? '') === $e['slug'] ? ' aria-current="page"' : '';
+    $nav .= '<a href="' . tb_h($e['url']) . '"' . $cur . '>' . tb_h($e['name']) . '</a>';
   }
   $ld = '';
   foreach ($o['jsonld'] as $j) $ld .= '<script type="application/ld+json">' . str_replace('</', '<\/', json_encode($j, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)) . "</script>\n";
@@ -669,20 +752,117 @@ function tb_seo_amateur_page(array $d, array $s, array $sports): string {
     'jsonld' => [$page, tb_ld_crumbs($crumbs)]]);
 }
 
+/* ───────────── Page d'un événement (Route du Rhum) ───────────── */
+
+function tb_seo_event_page(array $d, string $slug, ?int $now = null): ?string {
+  $e = tb_seo_events($d)[$slug] ?? null;
+  if (!$e) return null;
+  $now = $now ?? time();
+  $sports = tb_seo_sports($d);
+  $name = $e['name'];
+  $start = (int)strtotime($e['start']);
+  $fin = $e['fin'] !== '' ? strtotime($e['fin'] . ' 23:59:59 Europe/Paris') : false;
+  $state = $now < $start ? 'avant' : (($fin && $now > $fin) ? 'terminée' : 'en cours');
+  $n = count($e['skippers']);
+  $paris = new DateTimeZone('Europe/Paris');
+  $dstart = new DateTime('@' . $start); $dstart->setTimezone($paris);
+  $dnow = new DateTime('@' . $now); $dnow->setTimezone($paris);
+  $jour = (int)(new DateTime($dstart->format('Y-m-d'), $paris))->diff(new DateTime($dnow->format('Y-m-d'), $paris))->days + 1;
+  $sub = match ($state) {
+    'avant' => 'Départ le ' . tb_fr_date($start) . ' à ' . $dstart->format('G\hi') . " · $n skippers bretons",
+    'en cours' => "Course en cours · jour $jour · $n skippers bretons",
+    default => "Course terminée · $n skippers bretons suivis",
+  };
+
+  $head = trim((string)($e['recit']['t'] ?? ''));
+  $title = tb_cut("$name : classement des Bretons et skippers", 56) . ' | Tribune Breizh';
+  $desc = tb_cut(($head !== '' ? rtrim($head, '.') . '. ' : '') . "Classement des Bretons et liste des $n skippers bretons, mis à jour chaque jour.", 158);
+  $crumbs = [['Accueil', '/'], [$name, $e['url']]];
+
+  $b = tb_crumbs($crumbs) . '<h1>' . tb_h($name) . '</h1><p class="sub">' . tb_h($sub) . '</p>';
+  if (!empty($e['archived'])) {
+    $b .= '<section><p><strong>Archive.</strong> Cette page garde le dernier pointage publié' . (!empty($e['snapshot_at']) ? ' (' . tb_h(tb_fr_date((int)strtotime($e['snapshot_at']), false)) . ')' : '') . '.</p></section>';
+  }
+  if (!empty($e['recit'])) {
+    $b .= '<section><div class="ai">Résumé IA</div><h2>' . tb_h($head !== '' ? $head : "L'actualité de la $name") . '</h2>';
+    foreach ($e['recit']['p'] as $p) $b .= '<p>' . tb_h($p) . '</p>';
+    $b .= '</section>';
+  }
+
+  // Classement des Bretons
+  $rank = fn($x) => (int)$x === 1 ? '1er' : (int)$x . 'e';
+  $b .= '<section><h2>Le classement des Bretons</h2>';
+  if ($e['classement']) {
+    $b .= '<table class="tl"><thead><tr><th>Classe</th><th>Rang</th><th>Skipper</th><th>Écart</th></tr></thead><tbody>';
+    foreach ($e['classement'] as $x) if (is_array($x) && count($x) >= 3) $b .= '<tr><td>' . tb_h($x[0]) . '</td><td>' . tb_h($rank($x[1])) . '</td><td><strong>' . tb_h($x[2]) . '</strong></td><td>' . tb_h($x[3] ?? '') . '</td></tr>';
+    $b .= '</tbody></table>' . ($e['maj'] !== '' ? '<p class="tn">' . tb_h($e['maj']) . '</p>' : '');
+  } else {
+    $b .= '<p>' . ($state === 'avant' ? 'Le classement apparaîtra après le départ, avec le rang de chaque Breton dans sa classe.' : 'Premier classement attendu au prochain pointage.') . '</p>';
+  }
+  $b .= '</section>';
+
+  // Départ et flottes
+  if (!empty($e['depart'])) {
+    $b .= '<section><h2>Le départ</h2>';
+    if ($e['depart']['stats']) {
+      $b .= '<dl class="facts">';
+      foreach ($e['depart']['stats'] as [$v, $l]) $b .= '<dt>' . tb_h($l) . '</dt><dd>' . tb_h($v) . '</dd>';
+      $b .= '</dl>';
+    }
+    foreach ($e['depart']['notes'] as $t) $b .= '<p class="tn">' . tb_h($t) . '</p>';
+    $b .= '</section>';
+  }
+  if (!empty($e['flottes'])) {
+    $b .= '<section><h2>Les flottes</h2><ul class="games">';
+    foreach ($e['flottes']['items'] as $it) {
+      if (!is_array($it) || empty($it['t'])) continue;
+      $b .= '<li>' . (!empty($it['d']) ? '<strong>' . tb_h($it['d']) . '</strong> · ' : '') . tb_h($it['t']) . (!empty($it['s']) ? '<span class="det">' . tb_h($it['s']) . '</span>' : '') . '</li>';
+    }
+    $b .= '</ul>' . ($e['flottes']['note'] !== '' ? '<p class="tn">' . tb_h($e['flottes']['note']) . '</p>' : '') . '</section>';
+  }
+
+  // Skippers bretons, par classe
+  $byClass = [];
+  foreach ($e['skippers'] as $s) if (is_array($s) && count($s) >= 4) $byClass[(string)$s[1]][] = $s;
+  $b .= '<section><h2>Les ' . $n . ' skippers bretons</h2>';
+  foreach ($byClass as $class => $list) {
+    $b .= '<h3>' . tb_h($class) . ' (' . count($list) . ')</h3><ul class="games">';
+    foreach ($list as $s) $b .= '<li><strong>' . tb_h($s[0]) . '</strong><span class="det">' . tb_h($s[2]) . ' · ' . tb_h($s[3]) . '</span></li>';
+    $b .= '</ul>';
+  }
+  $b .= '</section>';
+
+  if ($e['src']) {
+    $b .= '<section><h2>Sources</h2><ul class="games">';
+    foreach ($e['src'] as $s) if (is_array($s) && count($s) >= 2 && preg_match('#^https?://#', (string)$s[1])) $b .= '<li><a href="' . tb_h($s[1]) . '" rel="noopener">' . tb_h($s[0]) . '</a></li>';
+    $b .= '</ul></section>';
+  }
+
+  $ev = ['@context' => 'https://schema.org', '@type' => 'SportsEvent', 'name' => $name, 'sport' => 'Voile', 'url' => TB_SEO_BASE . $e['url'], 'description' => $desc,
+    'startDate' => $e['start'], 'eventStatus' => 'https://schema.org/EventScheduled', 'image' => TB_SEO_BASE . '/og.png',
+    'location' => ['@type' => 'Place', 'name' => 'Saint-Malo', 'address' => ['@type' => 'PostalAddress', 'addressLocality' => 'Saint-Malo', 'addressCountry' => 'FR']]];
+  if ($e['fin'] !== '') $ev['endDate'] = $e['fin'];
+
+  return tb_seo_layout($d, $sports, ['path' => $e['url'], 'title' => $title, 'description' => $desc, 'sport' => '', 'event' => $slug, 'body' => $b,
+    'jsonld' => [$ev, tb_ld_crumbs($crumbs)]]);
+}
+
 /* ───────────── Sitemap et liens de la page d'accueil ───────────── */
 
+/** Pages publiées : [adresse, fréquence, date de mise à jour ou null (= celle du site)]. */
 function tb_seo_urls(array $d): array {
-  $urls = [['/', 'daily'], ['/mentions-legales.html', 'yearly']];
-  foreach (tb_seo_sports($d) as $s) $urls[] = [$s['url'], 'daily'];
-  foreach (tb_seo_clubs($d) as $c) $urls[] = [$c['url'], 'daily'];
+  $urls = [['/', 'daily', null], ['/mentions-legales.html', 'yearly', null]];
+  foreach (tb_seo_sports($d) as $s) $urls[] = [$s['url'], 'daily', null];
+  foreach (tb_seo_events($d) as $e) $urls[] = [$e['url'], !empty($e['archived']) ? 'yearly' : 'daily', !empty($e['archived']) ? ($e['snapshot_at'] ?? null) : null];
+  foreach (tb_seo_clubs($d) as $c) $urls[] = [$c['url'], 'daily', null];
   return $urls;
 }
 
 function tb_seo_sitemap(array $d): string {
   $x = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
-  foreach (tb_seo_urls($d) as [$path, $freq]) {
+  foreach (tb_seo_urls($d) as [$path, $freq, $lm]) {
     // Page fixe (mentions légales) : pas de date de mise à jour, car celle du fichier change à chaque « git pull » sans que la page change
-    $last = $path === '/mentions-legales.html' ? '' : '<lastmod>' . tb_h($d['updated']) . '</lastmod>';
+    $last = $path === '/mentions-legales.html' ? '' : '<lastmod>' . tb_h($lm ?: $d['updated']) . '</lastmod>';
     $x .= '  <url><loc>' . tb_h(TB_SEO_BASE . $path) . '</loc>' . $last . '<changefreq>' . $freq . '</changefreq></url>' . "\n";
   }
   return $x . '</urlset>' . "\n";
@@ -700,6 +880,8 @@ function tb_seo_footer(): string {
     $a = fn(array $x, string $label) => '<a href="' . tb_h($x['url']) . '">' . tb_h($label) . '</a>';
     $sports = [];
     foreach (tb_seo_sports($d) as $s) $sports[] = $a($s, $s['name']);
+    $events = [];
+    foreach (tb_seo_events($d) as $e) $events[] = $a($e, $e['name']);
     // Clubs de Loire-Atlantique (« Bretagne historique » : Nantes, Saint-Nazaire…) : masqués tant que le mode n'est pas activé sur la page.
     // Ils sont placés en fin de liste, avec leur séparateur « · » à l'intérieur de la partie masquée, pour qu'aucun « · » ne reste seul.
     $clubs = '';
@@ -718,6 +900,7 @@ function tb_seo_footer(): string {
     return '<nav class="tb-seo" aria-label="Pages par sport et par club"><style>' . $css . '</style>'
       . '<h2>Le sport breton, club par club</h2>'
       . '<p><strong>Par sport</strong> : ' . $sep($sports) . '</p>'
+      . ($events ? '<p><strong>Événements</strong> : ' . $sep($events) . '</p>' : '')
       . '<p><strong>Par club</strong> : ' . $clubs . '</p><script>' . $js . '</script></nav>';
   } catch (Throwable $e) {
     return '';
@@ -733,6 +916,7 @@ if (PHP_SAPI === 'cli' && realpath($argv[0] ?? '') === __FILE__) {
   $cmd = $argv[1] ?? '';
   if ($cmd === 'club') echo tb_seo_club_page($d, $argv[2] ?? '') ?? "club inconnu\n";
   elseif ($cmd === 'sport') echo tb_seo_sport_page($d, $argv[2] ?? '') ?? "sport inconnu\n";
+  elseif ($cmd === 'evenement') echo tb_seo_event_page($d, $argv[2] ?? '') ?? "événement inconnu\n";
   elseif ($cmd === 'sitemap') echo tb_seo_sitemap($d);
   else {
     $u = tb_seo_urls($d);

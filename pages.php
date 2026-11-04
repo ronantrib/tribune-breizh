@@ -1,6 +1,6 @@
 <?php
 /*
- * Tribune Breizh · routeur des pages par club (/club/NOM), par sport (/sport/NOM) et du sitemap (/sitemap.xml).
+ * Tribune Breizh · routeur des pages par club (/club/NOM), par sport (/sport/NOM), par événement (/evenement/NOM) et du sitemap (/sitemap.xml).
  * Les règles de .htaccess envoient ici ces adresses ; tout le travail est dans bot/seo.php.
  * Une adresse inconnue retombe sur gate.php, comme avant (le site, avec le code 404).
  */
@@ -15,7 +15,7 @@ function tb_pages_fallback(): never {
 
 $t = (string)($_GET['t'] ?? '');
 $id = strtolower((string)($_GET['id'] ?? ''));
-if (!in_array($t, ['club', 'sport', 'sitemap'], true)) tb_pages_fallback();
+if (!in_array($t, ['club', 'sport', 'evenement', 'sitemap'], true)) tb_pages_fallback();
 
 // Une adresse avec « / » final est ramenée à l'adresse canonique (sans « / »)
 $path = parse_url((string)($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '';
@@ -35,7 +35,7 @@ if ($t === 'sitemap') {
     }
   }
   $type = 'text/html; charset=utf-8';
-  $body = $t === 'club' ? tb_seo_club_page($d, $id) : tb_seo_sport_page($d, $id);
+  $body = match ($t) { 'club' => tb_seo_club_page($d, $id), 'evenement' => tb_seo_event_page($d, $id), default => tb_seo_sport_page($d, $id) };
   if ($body === null) tb_pages_fallback();
 }
 

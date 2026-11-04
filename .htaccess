@@ -6,7 +6,7 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Pages par club et par sport (SEO) et sitemap automatique : fabriqués par pages.php à partir des données du site
 RewriteRule ^sitemap\.xml$ pages.php?t=sitemap [L]
-RewriteRule ^(club|sport)/([A-Za-z0-9-]+)/?$ pages.php?t=$1&id=$2 [L,QSA]
+RewriteRule ^(club|sport|evenement)/([A-Za-z0-9-]+)/?$ pages.php?t=$1&id=$2 [L,QSA]
 
 # Ouverture : tout passe par gate.php (page d'attente avant l'heure, vrai site ensuite), jamais d'accès direct à index.html
 RewriteRule ^index\.html$ / [R=302,L]
@@ -14,7 +14,7 @@ RewriteRule ^index\.html$ / [R=302,L]
 # Le dépôt Git et les fichiers techniques ne sont jamais servis
 RedirectMatch 404 /\.git
 RedirectMatch 404 ^/bot/
-RedirectMatch 404 ^/(src|cache)/
+RedirectMatch 404 ^/(src|cache|archive)/
 <FilesMatch "^(build\.py|README\.md|deploy\.sh)$">
   Require all denied
 </FilesMatch>

@@ -72,3 +72,17 @@ de `src/index.html` au moment de publier. Test à la main : `php bot/visuels.php
 - **Mentions des clubs** : `insta/comptes.json` liste les clubs avec `instagram` (ex. `@nomducompte`) et `facebook` (nom exact de la page).
   Les tâches ne recopient que ces valeurs ; **champ vide = aucune mention**. Aucun identifiant n'est jamais deviné.
   Le fichier est à remplir et à valider par Ronan.
+
+## Pages par club, par sport et sitemap automatique (depuis le 4 novembre 2026)
+
+Pour le référencement, chaque club et chaque sport a sa propre adresse, fabriquée sur le serveur à partir des données de `src/index.html` :
+- `/club/NOM-DU-CLUB` (ex. `/club/stade-rennais`) : résumé, derniers résultats, prochains matchs, classement avec le club surligné, fiche, données structurées schema.org (`SportsTeam`). L'ancienne forme avec l'identifiant (`/club/rennes`) redirige en 301 vers l'adresse définitive.
+- `/sport/NOM-DU-SPORT` (ex. `/sport/football`) : récit du jour, clubs bretons, résultats, agenda, classements (`CollectionPage`).
+- `/sitemap.xml` : généré à la volée avec toutes ces pages (le fichier fixe `sitemap.xml` a été supprimé). La date de mise à jour vient de `version.txt`.
+- En bas de la page d'accueil, un bloc de liens vers toutes ces pages (ajouté par `bot/build.php`, donc par `gate.php`, pas par `build.py`).
+
+Fichiers : `pages.php` (routeur appelé par les règles de `.htaccess`), `bot/seo.php` (lecture des données, gabarits, sitemap). Rien à faire à la main :
+une nouvelle page apparaît dès qu'un club ou un sport entre dans `ALLCLUBS` ou `DATA`. Les données sont gardées dans `cache/seo-data.json` (ignoré par Git) et relues seulement quand la source change.
+Si la page publiée change de forme au point que les données ne se lisent plus, l'ancien cache continue d'être servi.
+Vérification à la main : `php bot/seo.php` (liste des pages), `php bot/seo.php club stade-rennais`, `php bot/seo.php sitemap`.
+Après la mise en ligne : déclarer `https://breizh.tribuneouest.fr/sitemap.xml` dans la Search Console.

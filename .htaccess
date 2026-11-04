@@ -4,6 +4,10 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Pages par club et par sport (SEO) et sitemap automatique : fabriqués par pages.php à partir des données du site
+RewriteRule ^sitemap\.xml$ pages.php?t=sitemap [L]
+RewriteRule ^(club|sport)/([A-Za-z0-9-]+)/?$ pages.php?t=$1&id=$2 [L,QSA]
+
 # Ouverture : tout passe par gate.php (page d'attente avant l'heure, vrai site ensuite), jamais d'accès direct à index.html
 RewriteRule ^index\.html$ / [R=302,L]
 

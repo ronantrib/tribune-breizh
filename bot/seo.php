@@ -439,7 +439,9 @@ function tb_seo_club_page(array $d, string $slug): ?string {
   $others = array_filter($clubs, fn($x) => ($x['sport'] ?? '') === $sk && $x['slug'] !== $c['slug']);
   if ($others) {
     $b .= '<section><h2>Autres clubs de ' . tb_h(tb_lower($sportName)) . ' en Bretagne</h2><ul class="cl">';
-    foreach ($others as $x) $b .= '<li><a href="' . tb_h($x['url']) . '">' . tb_h($x['n']) . '</a>' . (!empty($x['lg']) ? '<span class="det">' . tb_h($x['lg']) . '</span>' : '') . '</li>';
+    // Clubs de Loire-Atlantique masqués hors mode Bretagne historique, sauf sur la page d'un club de Loire-Atlantique (on y est déjà)
+    $hideHist = !tb_is_hist($c);
+    foreach ($others as $x) $b .= '<li' . ($hideHist && tb_is_hist($x) ? ' class="tb-h"' : '') . '><a href="' . tb_h($x['url']) . '">' . tb_h($x['n']) . '</a>' . (!empty($x['lg']) ? '<span class="det">' . tb_h($x['lg']) . '</span>' : '') . '</li>';
     $b .= '</ul>' . ($sp ? '<p class="tn"><a href="' . tb_h($sp['url']) . '">Tout le ' . tb_h(tb_lower($sportName)) . ' breton : résultats, classements et agenda</a></p>' : '') . '</section>';
   }
 

@@ -266,6 +266,22 @@
       "visuels": [
         "rhum"
       ]
+    },
+    {
+      "id": "2026-11-04-story-lecleach",
+      "at": "2026-11-04T19:30+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Abandon de Le Cléac'h",
+          "lines": [
+            "Armel Le Cléac'h (Maxi Banque Populaire XI) a chaviré mercredi 4 novembre vers 5h30, à 550 milles au nord-ouest des Açores. Il est indemne.",
+            "Anthony Marchand a aussi renoncé à 16h."
+          ],
+          "color": "voile"
+        }
+      ]
     }
   ]
 }

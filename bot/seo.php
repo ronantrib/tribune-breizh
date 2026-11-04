@@ -37,6 +37,16 @@ final class TbJs {
     }
   }
 
+  /** Littéral JavaScript commençant à $offset dans $src (objet, tableau, chaîne…), ou null s'il n'est pas lisible. */
+  public static function at(string $src, int $offset = 0): mixed {
+    try {
+      $p = new self($src, $offset);
+      return $p->value();
+    } catch (RuntimeException $e) {
+      return null;
+    }
+  }
+
   private function skip(): void {
     while ($this->i < $this->n) {
       $c = $this->s[$this->i];
@@ -153,6 +163,81 @@ final class TbJs {
   }
 }
 
+/* ───────────── Foot amateur : données dispersées entre constantes et gabarit de la page ───────────── */
+
+/**
+ * Le foot amateur n'a pas de bloc de données complet comme les autres sports : les classements et les matchs sont dans
+ * la constante AMATEUR (et POUCETS), mais le récit, les notes et le calendrier de la Coupe sont écrits dans le gabarit
+ * renderAmateur(). Cette fonction rassemble le tout ; chaque morceau est facultatif (absent = simplement omis).
+ * Renvoie null si AMATEUR est illisible (la page foot amateur n'est alors pas publiée).
+ */
+function tb_seo_amateur(string $raw): ?array {
+  $am = TbJs::constant($raw, 'AMATEUR');
+  if (!is_array($am) || !$am) return null;
+  $clean = fn($s) => trim((string)preg_replace('/\s+/u', ' ', html_entity_decode(strip_tags((string)$s), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+  $ok = fn($s) => is_string($s) && $s !== '' && !str_contains($s, '${');
+
+  $f = strpos($raw, 'function renderAmateur()');
+  $region = '';
+  if ($f !== false) {
+    $end = strpos($raw, 'const R1=', $f);
+    $region = substr($raw, $f, ($end !== false && $end > $f) ? $end - $f : 9000);
+  }
+  $out = ['title' => 'Foot amateur', 'round' => '', 'recit' => null, 'cdf' => null, 'tables' => [], 'suite' => null, 'poucets' => null];
+
+  if (preg_match('/k==="amateur"\)\{head=`<h2>[^<]*<\/h2><span class="round">([^<$]*)<\/span>/', $raw, $m)) $out['round'] = $clean($m[1]);
+
+  // Récit du jour : un titre (h4) et des paragraphes
+  if (preg_match('/<section class="block recit[^>]*>(.*?)<\/section>/s', $region, $m)) {
+    preg_match('/<h4>(.*?)<\/h4>/s', $m[1], $h);
+    preg_match_all('/<p>(.*?)<\/p>/s', $m[1], $ps);
+    $paras = array_values(array_filter(array_map($clean, $ps[1] ?? []), $ok));
+    if ($paras) $out['recit'] = ['t' => isset($h[1]) && $ok($clean($h[1])) ? $clean($h[1]) : '', 'p' => $paras];
+  }
+
+  // Coupe de France : titre, libellé du tour, matchs (AMATEUR.cdf)
+  if (is_array($am['cdf'] ?? null) && $am['cdf']) {
+    $cdf = ['title' => 'Coupe de France', 'label' => '', 'games' => $am['cdf']];
+    if (preg_match('/<h3>([^<$]+)<\/h3>\s*<div class="daylbl">([^<$]*)<\/div>\s*\$\{cdf\}/', $region, $m)) { $cdf['title'] = $clean($m[1]); $cdf['label'] = $clean($m[2]); }
+    $out['cdf'] = $cdf;
+  }
+
+  // Classements : nom, colonnes et note écrits dans le gabarit ; lignes dans AMATEUR.n1 / n2
+  $re = '/tableHTML\(\{name:("(?:[^"\\\\]|\\\\.)*"),\s*head:(\[[^\]]*\]),\s*rows:AMATEUR\.(\w+),\s*note:("(?:[^"\\\\]|\\\\.)*")/s';
+  if (preg_match_all($re, $region, $mm, PREG_SET_ORDER)) {
+    foreach ($mm as $m) {
+      $rows = $am[$m[3]] ?? null;
+      $name = TbJs::at($m[1]); $head = TbJs::at($m[2]); $note = TbJs::at($m[4]);
+      if (is_array($rows) && $rows && is_string($name) && is_array($head)) $out['tables'][] = ['name' => $name, 'head' => $head, 'rows' => $rows, 'note' => $ok($note) ? $note : ''];
+    }
+  }
+  if (!$out['tables']) {
+    foreach (['n1' => 'National 1', 'n2' => 'National 2'] as $k => $label) {
+      if (is_array($am[$k] ?? null) && $am[$k]) $out['tables'][] = ['name' => $label, 'head' => ['J', 'Diff', 'Pts'], 'rows' => $am[$k], 'note' => ''];
+    }
+  }
+
+  // Calendrier de la Coupe (« La suite de la Coupe ») : tableau d'objets {d, t, s}
+  if (preg_match('/<h3>([^<$]+)<\/h3>\s*\$\{factsHTML\(/', $region, $m, PREG_OFFSET_CAPTURE)) {
+    $items = TbJs::at($region, $m[0][1] + strlen($m[0][0]));
+    if (is_array($items) && $items) $out['suite'] = ['title' => $clean($m[1][0]), 'items' => $items];
+  }
+
+  // Petits poucets (POUCETS) : club, niveau, match du tour suivant
+  $pou = TbJs::constant($raw, 'POUCETS');
+  if (is_array($pou) && $pou) {
+    $p = ['title' => 'Le suivi des petits poucets', 'intro' => '', 'note' => '', 'rows' => $pou];
+    $pf = strpos($raw, 'function renderPoucets()');
+    if ($pf !== false) {
+      $fn = substr($raw, $pf, 2600);
+      if (preg_match('/<h3>([^<$]+)<\/h3><p class="note"[^>]*>(.*?)<\/p>/s', $fn, $m)) { $p['title'] = $clean($m[1]); $p['intro'] = $ok($clean($m[2])) ? $clean($m[2]) : ''; }
+      if (preg_match_all('/<p class="note">(.*?)<\/p>/s', $fn, $nn) && $ok($clean(end($nn[1])))) $p['note'] = $clean(end($nn[1]));
+    }
+    $out['poucets'] = $p;
+  }
+  return ($out['recit'] || $out['cdf'] || $out['tables'] || $out['poucets']) ? $out : null;
+}
+
 /* ───────────── Données : lecture de src/index.html, avec cache ───────────── */
 
 /**
@@ -177,7 +262,7 @@ function tb_seo_data(string $srcFile, string $cacheFile): ?array {
   $root = dirname(__DIR__);
   $ver = is_file("$root/version.txt") ? trim((string)file_get_contents("$root/version.txt")) : '';
   $ts = $ver !== '' ? strtotime($ver) : false;
-  $out = ['sha' => $sha, 'updated' => gmdate('c', $ts ?: (int)filemtime($srcFile)), 'clubs' => $clubs, 'data' => $data, 'names' => $names];
+  $out = ['sha' => $sha, 'updated' => gmdate('c', $ts ?: (int)filemtime($srcFile)), 'clubs' => $clubs, 'data' => $data, 'names' => $names, 'amateur' => tb_seo_amateur($raw)];
   @mkdir(dirname($cacheFile), 0755, true);
   $tmp = $cacheFile . '.' . getmypid() . '.tmp';
   if (file_put_contents($tmp, json_encode($out, JSON_UNESCAPED_UNICODE)) === false || !rename($tmp, $cacheFile)) @unlink($tmp);
@@ -210,11 +295,19 @@ function tb_cut(string $s, int $max): string {
 /** Sports ayant une page : clé de DATA => ['key','slug','name','title','round','url']. */
 function tb_seo_sports(array $d): array {
   $out = [];
+  // Le foot amateur n'est pas dans DATA : sa page vient de tb_seo_amateur() ; il se place juste après le football, comme sur le site
+  $amateur = function () use ($d): ?array {
+    if (empty($d['amateur'])) return null;
+    $name = (string)($d['names']['amateur'] ?? 'Foot amateur');
+    return ['key' => 'amateur', 'slug' => tb_slug($name), 'name' => $name, 'title' => $name, 'round' => (string)($d['amateur']['round'] ?? ''), 'url' => '/sport/' . tb_slug($name)];
+  };
   foreach ($d['data'] as $k => $v) {
     if (!is_array($v) || !isset($v['title'])) continue;
     $name = (string)($d['names'][$k] ?? $v['title']);
     $out[$k] = ['key' => $k, 'slug' => tb_slug($name), 'name' => $name, 'title' => (string)$v['title'], 'round' => (string)($v['round'] ?? ''), 'url' => '/sport/' . tb_slug($name)];
+    if ($k === 'foot' && ($a = $amateur())) $out['amateur'] = $a;
   }
+  if (!isset($out['amateur']) && ($a = $amateur())) $out['amateur'] = $a;
   return $out;
 }
 
@@ -271,6 +364,9 @@ ul.cl li{background:var(--chip);border-radius:6px;padding:8px 10px}ul.cl a{font-
 footer.foot{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);font-size:.85rem}footer.foot a{color:var(--muted)}
 @media (max-width:520px){dl.facts{grid-template-columns:1fr;gap:0}dl.facts dd{margin-bottom:8px}}
 .tb-h{display:none}.tb-hist .tb-h{display:revert}
+table.tl th,table.tl td{text-align:left}
+.ai{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px}
+.ai::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--accent)}
 CSS;
 
 function tb_seo_layout(array $d, array $sports, array $o): string {
@@ -466,6 +562,7 @@ function tb_seo_sport_page(array $d, string $slug): ?string {
   $s = null;
   foreach ($sports as $x) if ($x['slug'] === $slug) { $s = $x; break; }
   if (!$s) return null;
+  if ($s['key'] === 'amateur') return tb_seo_amateur_page($d, $s, $sports);
   $v = $d['data'][$s['key']];
   $name = $s['name'];
   $lower = tb_lower($name);
@@ -478,7 +575,7 @@ function tb_seo_sport_page(array $d, string $slug): ?string {
   $crumbs = [['Accueil', '/'], [$name, $s['url']]];
   $b = tb_crumbs($crumbs) . '<h1>' . tb_h($name) . ' breton</h1><p class="sub">' . tb_h($s['round'] !== '' ? $s['round'] : "Résultats, classements et agenda") . '</p>';
   if (!empty($v['recit']['p'])) {
-    $b .= '<section><h2>' . tb_h($head !== '' ? $head : "L'actualité du $lower breton") . '</h2>';
+    $b .= '<section><div class="ai">Résumé IA</div><h2>' . tb_h($head !== '' ? $head : "L'actualité du $lower breton") . '</h2>';
     foreach ($v['recit']['p'] as $p) $b .= '<p>' . tb_h($p) . '</p>';
     $b .= '</section>';
   }
@@ -506,6 +603,69 @@ function tb_seo_sport_page(array $d, string $slug): ?string {
   if ($items) $page['mainEntity'] = ['@type' => 'ItemList', 'itemListElement' => $items];
 
   return tb_seo_layout($d, $sports, ['path' => $s['url'], 'title' => $title, 'description' => $desc, 'sport' => $s['key'], 'body' => $b,
+    'jsonld' => [$page, tb_ld_crumbs($crumbs)]]);
+}
+
+/* ───────────── Page du foot amateur ───────────── */
+
+/** Vainqueur d'un match de Coupe de France : 1 = premier nommé, 2 = second, 0 = inconnu. Tirs au but lus dans le 5e champ (« tab 4-3 »). */
+function tb_amateur_winner(array $g): int {
+  $sh = $g[1] ?? null; $sa = $g[2] ?? null;
+  if (is_numeric($sh) && is_numeric($sa) && $sh != $sa) return $sh > $sa ? 1 : 2;
+  if (preg_match('/(\d+)\s*-\s*(\d+)/', (string)($g[4] ?? ''), $m) && $m[1] != $m[2]) return (int)$m[1] > (int)$m[2] ? 1 : 2;
+  return 0;
+}
+
+function tb_seo_amateur_page(array $d, array $s, array $sports): string {
+  $a = $d['amateur'];
+  $name = $s['name'];
+  $title = tb_cut("$name breton : résultats, classements et agenda", 56) . ' | Tribune Breizh';
+  $head = trim((string)($a['recit']['t'] ?? ''));
+  $lead = $head !== '' ? rtrim($head, '.') . '. ' : '';
+  $desc = $lead . 'Résultats, classements et agenda du foot amateur en Bretagne' . ($s['round'] !== '' ? ' (' . $s['round'] . ')' : '') . ', mis à jour chaque jour.';
+  if (!preg_match('/^.{0,158}$/su', $desc)) $desc = tb_cut($lead . 'Résultats, classements et agenda du foot amateur en Bretagne, mis à jour chaque jour.', 158);   // sans la parenthèse si c'est trop long
+
+  $crumbs = [['Accueil', '/'], [$name, $s['url']]];
+  $b = tb_crumbs($crumbs) . '<h1>' . tb_h($name) . ' breton</h1><p class="sub">' . tb_h($s['round'] !== '' ? $s['round'] : 'Résultats, classements et agenda') . '</p>';
+
+  if (!empty($a['recit'])) {
+    $b .= '<section><div class="ai">Résumé IA</div><h2>' . tb_h($head !== '' ? $head : "L'actualité du foot amateur breton") . '</h2>';
+    foreach ($a['recit']['p'] as $p) $b .= '<p>' . tb_h($p) . '</p>';
+    $b .= '</section>';
+  }
+  if (!empty($a['cdf'])) {
+    $c = $a['cdf'];
+    $b .= '<section><h2>' . tb_h($c['title']) . '</h2>' . ($c['label'] !== '' ? '<p class="sub">' . tb_h($c['label']) . '</p>' : '') . '<ul class="games">';
+    foreach ($c['games'] as $g) {
+      if (!is_array($g) || count($g) < 4) continue;
+      $w = tb_amateur_winner($g);
+      $home = $w === 1 ? '<strong>' . tb_h($g[0]) . '</strong>' : tb_h($g[0]);
+      $away = $w === 2 ? '<strong>' . tb_h($g[3]) . '</strong>' : tb_h($g[3]);
+      $b .= '<li>' . $home . ' ' . (int)$g[1] . '-' . (int)$g[2] . ' ' . $away . (!empty($g[4]) ? '<span class="det">' . tb_h($g[4]) . '</span>' : '') . '</li>';
+    }
+    $b .= '</ul><p class="tn">Le vainqueur est en gras. tab = tirs au but.</p></section>';
+  }
+  if (!empty($a['suite'])) {
+    $b .= '<section><h2>' . tb_h($a['suite']['title']) . '</h2><ul class="games">';
+    foreach ($a['suite']['items'] as $it) {
+      if (!is_array($it) || empty($it['t'])) continue;
+      $b .= '<li>' . (!empty($it['d']) ? tb_h($it['d']) . ' · ' : '') . '<strong>' . tb_h($it['t']) . '</strong>' . (!empty($it['s']) ? '<span class="det">' . tb_h($it['s']) . '</span>' : '') . '</li>';
+    }
+    $b .= '</ul></section>';
+  }
+  foreach ($a['tables'] as $t) $b .= '<section><h2>Classement · ' . tb_h($t['name']) . '</h2>' . tb_table($t) . '</section>';
+  if (!empty($a['poucets'])) {
+    $p = $a['poucets'];
+    $b .= '<section><h2>' . tb_h($p['title']) . '</h2>' . ($p['intro'] !== '' ? '<p>' . tb_h($p['intro']) . '</p>' : '')
+        . '<table class="tl"><thead><tr><th>Club</th><th>Niveau</th><th>Prochain tour</th></tr></thead><tbody>';
+    foreach ($p['rows'] as $r) if (is_array($r) && count($r) >= 3) $b .= '<tr><td><strong>' . tb_h($r[0]) . '</strong></td><td>' . tb_h($r[1]) . '</td><td>' . tb_h($r[2]) . '</td></tr>';
+    $b .= '</tbody></table>' . ($p['note'] !== '' ? '<p class="tn">' . tb_h($p['note']) . '</p>' : '') . '</section>';
+  }
+  if (isset($sports['foot'])) $b .= '<section><p><a href="' . tb_h($sports['foot']['url']) . '">Tout le football breton professionnel : résultats, classements et agenda</a></p></section>';
+
+  $page = ['@context' => 'https://schema.org', '@type' => 'CollectionPage', 'name' => "$name breton", 'url' => TB_SEO_BASE . $s['url'], 'description' => $desc, 'inLanguage' => 'fr',
+    'isPartOf' => ['@type' => 'WebSite', 'name' => 'Tribune Breizh', 'url' => TB_SEO_BASE . '/']];
+  return tb_seo_layout($d, $sports, ['path' => $s['url'], 'title' => $title, 'description' => $desc, 'sport' => 'amateur', 'body' => $b,
     'jsonld' => [$page, tb_ld_crumbs($crumbs)]]);
 }
 

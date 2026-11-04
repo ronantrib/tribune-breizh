@@ -78,6 +78,8 @@ de `src/index.html` au moment de publier. Test à la main : `php bot/visuels.php
 Pour le référencement, chaque club et chaque sport a sa propre adresse, fabriquée sur le serveur à partir des données de `src/index.html` :
 - `/club/NOM-DU-CLUB` (ex. `/club/stade-rennais`) : résumé, derniers résultats, prochains matchs, classement avec le club surligné, fiche, données structurées schema.org (`SportsTeam`). L'ancienne forme avec l'identifiant (`/club/rennes`) redirige en 301 vers l'adresse définitive.
 - `/sport/NOM-DU-SPORT` (ex. `/sport/football`) : récit du jour, clubs bretons, résultats, agenda, classements (`CollectionPage`).
+- `/sport/foot-amateur` : page du foot amateur (Coupe de France, National 1 et 2, petits poucets). Ses données ne sont pas dans `DATA` : `bot/seo.php` les rassemble depuis les constantes `AMATEUR` et `POUCETS` et depuis le gabarit `renderAmateur()` (récit, notes des classements, calendrier de la Coupe). Chaque morceau est facultatif : s'il n'est plus lisible après un changement de la page, il est simplement omis ; si `AMATEUR` disparaît, la page n'est plus publiée.
+- Les récits des pages sport portent l'étiquette « Résumé IA », comme sur la page d'accueil.
 - `/sitemap.xml` : généré à la volée avec toutes ces pages (le fichier fixe `sitemap.xml` a été supprimé). La date de mise à jour vient de `version.txt`.
 - En bas de la page d'accueil, un bloc de liens vers toutes ces pages (ajouté par `bot/build.php`, donc par `gate.php`, pas par `build.py`).
   Les clubs de Loire-Atlantique (`hist:true`) n'y sont visibles que si le mode « Bretagne historique » est activé (même réglage `tb-hist` que la page) ; leurs pages et le sitemap restent publics.

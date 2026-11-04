@@ -71,7 +71,7 @@ de `src/index.html` au moment de publier. Test à la main : `php bot/visuels.php
   ou post `facebook` séparé si l'exploit devient une story), au plus un par jour, en plus du post Facebook habituel (90 min d'écart).
 - **Mentions des clubs** : `insta/comptes.json` liste les clubs avec `instagram` (ex. `@nomducompte`) et `facebook` (nom exact de la page).
   Les tâches ne recopient que ces valeurs ; **champ vide = aucune mention**. Aucun identifiant n'est jamais deviné.
-  Le fichier est à remplir et à valider par Ronan.
+  Comptes Instagram des 18 clubs vérifiés par Ronan le 4 novembre 2026 ; comptes Facebook encore à remplir (champ vide = aucune mention).
 
 ## Pages par club, par sport et sitemap automatique (depuis le 4 novembre 2026)
 

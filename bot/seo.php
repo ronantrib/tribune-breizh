@@ -344,7 +344,10 @@ function tb_seo_data(string $srcFile, string $cacheFile): ?array {
   $sha = md5($raw . md5_file(__FILE__));
   if (is_file($cacheFile)) {
     $c = json_decode((string)file_get_contents($cacheFile), true);
-    if (is_array($c) && ($c['sha'] ?? '') === $sha) return $c;
+    // Le cache n'est valable que s'il a été fabriqué par une version du code qui connaît le foot régional (clé « regional ») :
+    // évite de garder un cache périmé si l'ancien code, encore en mémoire du serveur, l'a écrit juste après un changement de ce fichier.
+    $fresh = is_array($c) && (!isset($c['amateur']) || !is_array($c['amateur']) || array_key_exists('regional', $c['amateur']));
+    if (is_array($c) && ($c['sha'] ?? '') === $sha && $fresh) return $c;
   }
   $clubs = TbJs::constant($raw, 'ALLCLUBS');
   $data  = TbJs::constant($raw, 'DATA');

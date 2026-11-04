@@ -93,3 +93,7 @@ une nouvelle page apparaît dès qu'un club ou un sport entre dans `ALLCLUBS` ou
 Si la page publiée change de forme au point que les données ne se lisent plus, l'ancien cache continue d'être servi.
 Vérification à la main : `php bot/seo.php` (liste des pages), `php bot/seo.php club stade-rennais`, `php bot/seo.php sitemap`.
 Après la mise en ligne : déclarer `https://breizh.tribuneouest.fr/sitemap.xml` dans la Search Console.
+- **Route du Rhum sur Facebook** (`tb_fb_auto` dans `bot/garde.php`, appelée par `publish.php`) : du 5 au 30 novembre 2026, le post « -rhum » du jour
+  (visuel « rhum ») est repris automatiquement sur Facebook, en plus du post Facebook habituel (la garde de 90 minutes les espace). Le message est
+  la légende Instagram au moment de publier, sans la ligne « lien en bio » ni les hashtags, avec `#TribuneBreizh #RouteDuRhum2026` et un lien vers
+  la page de l'événement. Un post qui porte déjà un champ `facebook` (même annulé) n'est pas touché ; pour l'exclure un jour, y mettre `"facebook": {"cancel": true}`.

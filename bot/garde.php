@@ -34,3 +34,32 @@ function tb_by_time($posts, $fb = false) {
   });
   return $posts;
 }
+
+/*
+ * Route du Rhum sur Facebook (règle du 4 novembre 2026) : pendant la course, le post « -rhum » du jour (visuel « rhum ») est repris
+ * automatiquement sur Facebook, en plus du post Facebook habituel (la garde de 90 minutes les espace). Le message vient de la légende
+ * Instagram du post au moment de publier (donc de la légende mise à jour le soir), sans la ligne « lien en bio » ni les hashtags,
+ * avec 2 hashtags Facebook. Un post qui a déjà un champ « facebook » (même annulé) n'est pas touché. Appliqué dès le 5 novembre
+ * (les posts d'avant ne sont pas rattrapés), jusqu'au 30 novembre 2026. Appelé par publish.php juste après la lecture de la file.
+ */
+function tb_fb_auto($Q) {
+  foreach ($Q['posts'] ?? [] as $k => $p) {
+    $id = (string)($p['id'] ?? ''); $at = substr((string)($p['at'] ?? ''), 0, 10);
+    if (!preg_match('/-rhum$/', $id) || isset($p['facebook']) || !empty($p['cancel'])) continue;
+    if (($p['type'] ?? 'feed') === 'story' || !in_array('rhum', (array)($p['visuels'] ?? []), true)) continue;
+    if ($at < '2026-11-05' || $at > '2026-11-30') continue;
+    $lines = [];
+    foreach (preg_split('/\R/u', trim((string)($p['caption'] ?? ''))) as $l) {
+      $l = trim($l);
+      if ($l === '' || stripos($l, 'lien en bio') !== false || preg_match('/^(#\S+\s*)+$/u', $l)) continue;
+      $lines[] = $l;
+    }
+    if (!$lines) continue;
+    $Q['posts'][$k]['facebook'] = [
+      'message' => implode("\n", $lines) . "\n\n#TribuneBreizh #RouteDuRhum2026",
+      'link' => 'https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026',
+      'image' => 'first',
+    ];
+  }
+  return $Q;
+}

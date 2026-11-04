@@ -137,7 +137,7 @@ if (time() - $T['refreshed_at'] > 5 * 86400) {
   }
 }
 
-$Q = jread("$REPO/insta/queue.json", ['posts' => []]);
+$Q = tb_fb_auto(jread("$REPO/insta/queue.json", ['posts' => []]));   // garde.php : le post Rhum du jour est aussi repris sur Facebook
 $D = jread("$STATE/done.json", []);
 $now = time();
 

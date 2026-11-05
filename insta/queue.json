@@ -316,6 +316,45 @@
       "visuels": [
         "buteurs"
       ]
+    },
+    {
+      "id": "2026-11-05-club-guingamp",
+      "at": "2026-11-05T17:23+01:00",
+      "type": "feed",
+      "caption": "🏴 Où en est l'En Avant Guingamp (@eaguingamp) ?\nLe club est 9e de Ligue 2 avec 14 points après 11 journées. Il reste sur une victoire 3-0 contre le leader Saint-Étienne et un succès 2-0 à Clermont.\nProchain match : Dunkerque – Guingamp, vendredi 6 novembre à 20h, sur beIN Sports Max 4.\nEt vous, vous y croyez ?\nLien en bio.\n#TribuneBreizh",
+      "cards": [
+        {
+          "kicker": "Où en est En Avant Guingamp ?",
+          "title": "En Avant Guingamp",
+          "lines": [
+            "9e de Ligue 2 avec 14 points après 11 journées."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Saint-Étienne (J11)",
+              "3-0"
+            ],
+            [
+              "Avant",
+              "Clermont (J10)",
+              "2-0"
+            ],
+            [
+              "Prochain",
+              "Dunkerque",
+              "ven. 6 nov. 20h · beIN Sports Max 4"
+            ],
+            [
+              "Ensuite",
+              "Lannion",
+              "Coupe de France · 14-15 nov."
+            ]
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
     }
   ]
 }

@@ -1,14 +1,6 @@
 {
   "posts": [
     {
-      "id": "2026-10-28-test-story",
-      "at": "2026-10-28T17:45+01:00",
-      "type": "story",
-      "images": [
-        "insta/img/2026-10-28-test-story.jpg"
-      ]
-    },
-    {
       "id": "2026-10-29-story-j1",
       "at": "2026-10-29T12:00+01:00",
       "type": "story",
@@ -297,6 +289,32 @@
           "color": "foot",
           "foot": "breizh.tribuneouest.fr"
         }
+      ]
+    },
+    {
+      "id": "2026-11-05-story-saviez",
+      "at": "2026-11-05T09:20+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Le saviez-vous ?",
+          "title": "13 j 7 h 53 min",
+          "lines": [
+            "C'est le temps qu'il a fallu au Concarnois Michel Desjoyeaux pour remporter la Route du Rhum 2002 sur le trimaran Géant.",
+            "Cette édition reste celle de la violente dépression qui a décimé la flotte des grands multicoques."
+          ],
+          "color": "accent",
+          "foot": "Source : Figaro Nautisme"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-05-libre",
+      "at": "2026-11-05T12:40+01:00",
+      "type": "feed",
+      "caption": "🏴 7 buts en Ligue 1 pour Estéban Lepaul : le meilleur buteur des clubs bretons !\nLe Rennais (@staderennaisfc) devance quatre joueurs à 4 buts : Kamory Doumbia et Ludovic Ajorque (Brest, @stadebrestois29), Bamba Dia et Sebastian Szymański (Rennes).\nEn Ligue 2, B. Bokangu (Guingamp, @eaguingamp) en compte 4 ; en Ligue 3, S. Janno (Concarneau, @usconcarneau) aussi.\nButs en championnat au 3 novembre.\nQuel buteur breton vous impressionne le plus ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #FootBreton #Ligue1",
+      "visuels": [
+        "buteurs"
       ]
     }
   ]

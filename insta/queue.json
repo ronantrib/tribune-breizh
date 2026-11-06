@@ -539,6 +539,19 @@
           "foot": "breizh.tribuneouest.fr"
         }
       ]
+    },
+    {
+      "id": "2026-11-07-fb-buteurs",
+      "at": "2026-11-07T13:05+01:00",
+      "type": "facebook",
+      "visuels": [
+        "buteurs"
+      ],
+      "facebook": {
+        "message": "🏴 7 buts en Ligue 1 pour Estéban Lepaul : le meilleur buteur des clubs bretons ! Le Rennais devance quatre joueurs à 4 buts : Kamory Doumbia et Ludovic Ajorque (Brest), Bamba Dia et Sebastian Szymański (Rennes).\nEn Ligue 2, B. Bokangu (Guingamp) en compte 4 ; en Ligue 3, S. Janno (Concarneau) aussi. Buts en championnat au 3 novembre.\nQuel buteur breton vous impressionne le plus ?\n#TribuneBreizh #FootballBretagne #Ligue1",
+        "link": "https://breizh.tribuneouest.fr/",
+        "image": "first"
+      }
     }
   ]
 }

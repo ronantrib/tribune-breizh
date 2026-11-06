@@ -391,51 +391,8 @@
       }
     },
     {
-      "id": "2026-11-06-story-rhum-matin",
-      "at": "2026-11-06T10:23+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Le pointage du matin",
-          "lines": [
-            "Pointage du jeudi 5 novembre à 15h."
-          ],
-          "rows": [
-            [
-              "1er",
-              "Tom Laperche",
-              "Ultim"
-            ],
-            [
-              "2e",
-              "Thomas Coville",
-              "Ultim"
-            ],
-            [
-              "1er",
-              "Basile Bourgnon",
-              "Ocean Fifty"
-            ],
-            [
-              "1er",
-              "Corentin Horeau",
-              "Imoca"
-            ],
-            [
-              "1er",
-              "Tanguy Caradec",
-              "Vintage mono"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
       "id": "2026-11-06-fb-velo",
-      "at": "2026-11-06T10:35+01:00",
+      "at": "2026-11-06T09:30+01:00",
       "type": "facebook",
       "cards": [
         {
@@ -481,6 +438,49 @@
         "link": "https://breizh.tribuneouest.fr/",
         "image": "all"
       }
+    },
+    {
+      "id": "2026-11-06-story-rhum-matin",
+      "at": "2026-11-06T10:23+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Le pointage du matin",
+          "lines": [
+            "Pointage du jeudi 5 novembre à 15h."
+          ],
+          "rows": [
+            [
+              "1er",
+              "Tom Laperche",
+              "Ultim"
+            ],
+            [
+              "2e",
+              "Thomas Coville",
+              "Ultim"
+            ],
+            [
+              "1er",
+              "Basile Bourgnon",
+              "Ocean Fifty"
+            ],
+            [
+              "1er",
+              "Corentin Horeau",
+              "Imoca"
+            ],
+            [
+              "1er",
+              "Tanguy Caradec",
+              "Vintage mono"
+            ]
+          ],
+          "color": "voile",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
     },
     {
       "id": "2026-11-06-story-programme",

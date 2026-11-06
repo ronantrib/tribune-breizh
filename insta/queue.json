@@ -1,22 +1,6 @@
 {
   "posts": [
     {
-      "id": "2026-10-29-story-j1",
-      "at": "2026-10-29T12:00+01:00",
-      "type": "story",
-      "images": [
-        "insta/img/2026-10-29-story-j1.jpg"
-      ]
-    },
-    {
-      "id": "2026-10-30-story-teasing",
-      "at": "2026-10-30T09:00+01:00",
-      "type": "story",
-      "images": [
-        "insta/img/2026-10-30-story-teasing.jpg"
-      ]
-    },
-    {
       "id": "2026-10-30-story-nice-rennes",
       "at": "2026-10-30T17:30+01:00",
       "type": "story",
@@ -352,6 +336,82 @@
             ]
           ],
           "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-06-libre",
+      "at": "2026-11-06T08:47+01:00",
+      "type": "carousel",
+      "caption": "🚴 2 records de France pour les jeunes Bretons aux championnats de France de l'Avenir sur piste, à Loudéac !\nZoé Bihan a été sacrée championne de France juniors du kilomètre le 1er novembre, en 1'09\"183.\nChez les U19, Zéphirin Le Normand-Lucas (VC Pays de Loudéac) a décroché 3 titres, en poursuite individuelle, en poursuite par équipes et au kilomètre, avec un record de France en 1'01\"355.\nQuel jeune Breton vous a le plus impressionné ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #Cyclisme #CyclismeBreton #SportBreton",
+      "cards": [
+        {
+          "kicker": "Cyclisme · Jeunes Bretons",
+          "title": "2 records de France à Loudéac",
+          "lines": [
+            "Championnats de France de l'Avenir sur piste, du 28 octobre au 1er novembre."
+          ],
+          "color": "velo",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Kilomètre juniors",
+          "title": "Zoé Bihan, championne",
+          "lines": [
+            "Sacrée championne de France juniors du kilomètre le 1er novembre, avec un record de France en 1'09\"183."
+          ],
+          "color": "velo",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "U19 · Loudéac",
+          "title": "3 titres pour Le Normand-Lucas",
+          "lines": [
+            "Zéphirin Le Normand-Lucas (VC Pays de Loudéac) : 1er en poursuite individuelle, en poursuite par équipes et au kilomètre.",
+            "Record de France du kilomètre en 1'01\"355."
+          ],
+          "color": "velo",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Cyclo-cross",
+          "title": "Laly Pichon, 10e",
+          "lines": [
+            "Coupe de France de cyclo-cross à Nommay (femmes), le 24 octobre."
+          ],
+          "color": "velo",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ],
+      "facebook": {
+        "message": "🚴 2 records de France pour les jeunes Bretons aux championnats de France de l'Avenir sur piste, à Loudéac : Zoé Bihan, championne de France juniors du kilomètre le 1er novembre (1'09\"183), et Zéphirin Le Normand-Lucas (VC Pays de Loudéac), triple vainqueur chez les U19 avec un record du kilomètre en 1'01\"355.\nQuel jeune Breton vous a le plus impressionné ?\n#TribuneBreizh #Cyclisme #CyclismeBreton",
+        "link": "https://breizh.tribuneouest.fr/",
+        "image": "first"
+      }
+    },
+    {
+      "id": "2026-11-06-story-programme",
+      "at": "2026-11-06T17:52+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Le programme du week-end",
+          "title": "Samedi 7 et dimanche 8 novembre",
+          "lines": [
+            "Les Bretons en action."
+          ],
+          "rows": [
+            ["Sam. 7 · 14h45", "Concarneau – Fleury", "Ligue 1+"],
+            ["Sam. 7 · 18h", "Brest BH – CSM Bucarest", "Ligue des champions"],
+            ["Sam. 7 · 19h", "Rennes – Grand Nancy", "Volley · Ligue B"],
+            ["Sam. 7 · 20h", "Landerneau – Chartres", "LFB TV (YouTube)"],
+            ["Dim. 8 · 15h", "Rennes – Lille", "Ligue 1+"],
+            ["Dim. 8 · 15h", "Vannes – Bordeaux-Bègles", "Canal+ Sport"],
+            ["Dim. 8 · 17h15", "Brest – Lyon", "Ligue 1+"],
+            ["Dim. 8 · 17h15", "Le Havre – Lorient", "Ligue 1+"]
+          ],
+          "color": "accent",
           "foot": "breizh.tribuneouest.fr"
         }
       ]

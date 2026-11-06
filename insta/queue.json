@@ -391,6 +391,49 @@
       }
     },
     {
+      "id": "2026-11-06-story-rhum-matin",
+      "at": "2026-11-06T10:23+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Le pointage du matin",
+          "lines": [
+            "Pointage du jeudi 5 novembre à 15h."
+          ],
+          "rows": [
+            [
+              "1er",
+              "Tom Laperche",
+              "Ultim"
+            ],
+            [
+              "2e",
+              "Thomas Coville",
+              "Ultim"
+            ],
+            [
+              "1er",
+              "Basile Bourgnon",
+              "Ocean Fifty"
+            ],
+            [
+              "1er",
+              "Corentin Horeau",
+              "Imoca"
+            ],
+            [
+              "1er",
+              "Tanguy Caradec",
+              "Vintage mono"
+            ]
+          ],
+          "color": "voile",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
       "id": "2026-11-06-story-programme",
       "at": "2026-11-06T17:52+01:00",
       "type": "story",
@@ -402,14 +445,46 @@
             "Les Bretons en action."
           ],
           "rows": [
-            ["Sam. 7 · 14h45", "Concarneau – Fleury", "Ligue 1+"],
-            ["Sam. 7 · 18h", "Brest BH – CSM Bucarest", "Ligue des champions"],
-            ["Sam. 7 · 19h", "Rennes – Grand Nancy", "Volley · Ligue B"],
-            ["Sam. 7 · 20h", "Landerneau – Chartres", "LFB TV (YouTube)"],
-            ["Dim. 8 · 15h", "Rennes – Lille", "Ligue 1+"],
-            ["Dim. 8 · 15h", "Vannes – Bordeaux-Bègles", "Canal+ Sport"],
-            ["Dim. 8 · 17h15", "Brest – Lyon", "Ligue 1+"],
-            ["Dim. 8 · 17h15", "Le Havre – Lorient", "Ligue 1+"]
+            [
+              "Sam. 7 · 14h45",
+              "Concarneau – Fleury",
+              "Ligue 1+"
+            ],
+            [
+              "Sam. 7 · 18h",
+              "Brest BH – CSM Bucarest",
+              "Ligue des champions"
+            ],
+            [
+              "Sam. 7 · 19h",
+              "Rennes – Grand Nancy",
+              "Volley · Ligue B"
+            ],
+            [
+              "Sam. 7 · 20h",
+              "Landerneau – Chartres",
+              "LFB TV (YouTube)"
+            ],
+            [
+              "Dim. 8 · 15h",
+              "Rennes – Lille",
+              "Ligue 1+"
+            ],
+            [
+              "Dim. 8 · 15h",
+              "Vannes – Bordeaux-Bègles",
+              "Canal+ Sport"
+            ],
+            [
+              "Dim. 8 · 17h15",
+              "Brest – Lyon",
+              "Ligue 1+"
+            ],
+            [
+              "Dim. 8 · 17h15",
+              "Le Havre – Lorient",
+              "Ligue 1+"
+            ]
           ],
           "color": "accent",
           "foot": "breizh.tribuneouest.fr"

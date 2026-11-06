@@ -434,6 +434,55 @@
       ]
     },
     {
+      "id": "2026-11-06-fb-velo",
+      "at": "2026-11-06T10:35+01:00",
+      "type": "facebook",
+      "cards": [
+        {
+          "kicker": "Cyclisme · Jeunes Bretons",
+          "title": "2 records de France à Loudéac",
+          "lines": [
+            "Championnats de France de l'Avenir sur piste, du 28 octobre au 1er novembre."
+          ],
+          "color": "velo",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Kilomètre juniors",
+          "title": "Zoé Bihan, championne",
+          "lines": [
+            "Sacrée championne de France juniors du kilomètre le 1er novembre, avec un record de France en 1'09\"183."
+          ],
+          "color": "velo",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "U19 · Loudéac",
+          "title": "3 titres pour Le Normand-Lucas",
+          "lines": [
+            "Zéphirin Le Normand-Lucas (VC Pays de Loudéac) : 1er en poursuite individuelle, en poursuite par équipes et au kilomètre.",
+            "Record de France du kilomètre en 1'01\"355."
+          ],
+          "color": "velo",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Cyclo-cross",
+          "title": "Laly Pichon, 10e",
+          "lines": [
+            "Coupe de France de cyclo-cross à Nommay (femmes), le 24 octobre."
+          ],
+          "color": "velo",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ],
+      "facebook": {
+        "message": "🚴 2 records de France pour les jeunes Bretons aux championnats de France de l'Avenir sur piste, à Loudéac : Zoé Bihan, championne de France juniors du kilomètre le 1er novembre (1'09\"183), et Zéphirin Le Normand-Lucas (VC Pays de Loudéac), triple vainqueur chez les U19 avec un record du kilomètre en 1'01\"355.\nQuel jeune Breton vous a le plus impressionné ?\n#TribuneBreizh #Cyclisme #CyclismeBreton",
+        "link": "https://breizh.tribuneouest.fr/",
+        "image": "all"
+      }
+    },
+    {
       "id": "2026-11-06-story-programme",
       "at": "2026-11-06T17:52+01:00",
       "type": "story",

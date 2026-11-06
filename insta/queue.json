@@ -660,6 +660,127 @@
           "foot": "breizh.tribuneouest.fr"
         }
       ]
+    },
+    {
+      "id": "2026-11-06-fb-hors-foot",
+      "at": "2026-11-06T19:05+01:00",
+      "type": "facebook",
+      "caption": "Brest Bretagne Handball est 3e de la Ligue Butagaz Énergie, Cesson-Rennes 15e de la StarLigue, Landerneau 7e de La Boulangère Wonderligue et Vannes 14e du Top 14.\nRennes Volley est 3e de la Ligue B masculine et Quimper Volley 5e de l'Élite féminine ; tous jouent ce week-end, sauf Cesson-Rennes, attendu le vendredi 13 novembre.\nQuel sport breton suivez-vous le plus ?\nTout le détail sur breizh.tribuneouest.fr\n#TribuneBreizh #SportBreton",
+      "cards": [
+        {
+          "kicker": "Les Bretons hors foot",
+          "title": "Le point de la semaine",
+          "lines": [
+            "Hand, basket, rugby, volley : où en sont-ils ?"
+          ],
+          "color": "accent",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Handball",
+          "title": "Les clubs bretons",
+          "lines": [
+            "Brest BH est 3e de la Ligue Butagaz Énergie (17 pts) ; Cesson-Rennes est 15e de la StarLigue (2 pts)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Brest BH – Strasbourg-Achenheim",
+              "32-26"
+            ],
+            [
+              "Prochain",
+              "Brest BH – CSM Bucarest",
+              "sam. 7 nov., 18h"
+            ],
+            [
+              "Dernier",
+              "Cesson-Rennes – Nantes",
+              "37-46"
+            ],
+            [
+              "Prochain",
+              "Cesson-Rennes – Toulouse",
+              "ven. 13 nov., 20h30"
+            ]
+          ],
+          "color": "hand",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Basket",
+          "title": "Landerneau",
+          "lines": [
+            "Landerneau est 7e de La Boulangère Wonderligue (3 V – 4 D)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Landerneau – Poznan",
+              "71-76"
+            ],
+            [
+              "Prochain",
+              "Landerneau – Chartres",
+              "sam. 7 nov., 20h"
+            ]
+          ],
+          "color": "basket",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Rugby",
+          "title": "Vannes",
+          "lines": [
+            "Vannes est 14e du Top 14 avec 5 points."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Lyon – Vannes",
+              "48-25"
+            ],
+            [
+              "Prochain",
+              "Vannes – Bordeaux-Bègles",
+              "dim. 8 nov., 15h"
+            ]
+          ],
+          "color": "rugby",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Volley",
+          "title": "Les clubs bretons",
+          "lines": [
+            "Rennes Volley est 3e de la Ligue B masculine (9 pts) ; Quimper Volley est 5e de l'Élite féminine (9 pts)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Rennes – Martigues",
+              "3-1"
+            ],
+            [
+              "Prochain",
+              "Rennes – Grand Nancy",
+              "sam. 7 nov., 19h"
+            ],
+            [
+              "Dernier",
+              "Quimper – Calais",
+              "1-3"
+            ],
+            [
+              "Prochain",
+              "Sens – Quimper",
+              "sam. 7 nov., 20h"
+            ]
+          ],
+          "color": "accent",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
     }
   ]
 }

@@ -66,6 +66,8 @@ function tb_build(string $src): ?string {
   // Liens vers les pages club et sport (SEO) : bloc ajouté ici, car la page est réécrite chaque nuit. Vide si les données sont illisibles.
   $seo = '';
   if (is_file(__DIR__ . '/seo.php')) { require_once __DIR__ . '/seo.php'; $seo = tb_seo_footer(); }
+  // Liens vers les pages de club sur les cartes, classements, matchs et agenda : ajoutés ici pour la même raison (voir bot/clublinks.php).
+  if (is_file(__DIR__ . '/clublinks.php')) { require_once __DIR__ . '/clublinks.php'; $body = tb_clublinks($body); }
   $out = TB_HEAD . implode("\n", $head) . "\n" . trim(TB_STATS) . "\n</head>\n<body>\n" . trim($body) . ($seo !== '' ? "\n" . $seo : '') . "\n</body>\n</html>\n";
   if (strpos($out, 'WXvNyWF5ypo7PuAsgFRJp6') === false || strpos($out, 'const DATA=') === false) return null;
   return $out;
@@ -75,7 +77,7 @@ function tb_build(string $src): ?string {
 function tb_refresh(string $src, string $dst): ?string {
   if (!is_file($src)) return is_file($dst) ? $dst : null;
   $raw = (string)file_get_contents($src);
-  $sum = md5($raw . TB_HEAD . TB_STATS . (is_file(__DIR__ . '/seo.php') ? md5_file(__DIR__ . '/seo.php') : ''));   // empreinte de la source : on ne reconstruit que si elle a changé
+  $sum = md5($raw . TB_HEAD . TB_STATS . (is_file(__DIR__ . '/seo.php') ? md5_file(__DIR__ . '/seo.php') : '') . (is_file(__DIR__ . '/clublinks.php') ? md5_file(__DIR__ . '/clublinks.php') : ''));   // empreinte de la source : on ne reconstruit que si elle a changé
   if (is_file($dst) && @file_get_contents("$dst.md5") === $sum) return $dst;
   $html = tb_build($raw);
   if ($html === null) return is_file($dst) ? $dst : null;   // page reçue anormale : on garde la version précédente

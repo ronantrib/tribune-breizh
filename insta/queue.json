@@ -767,6 +767,23 @@
       ]
     },
     {
+      "id": "2026-11-07-pronostic",
+      "at": "2026-11-07T10:42+01:00",
+      "type": "feed",
+      "caption": "Le Stade Rennais (@staderennaisfc) reçoit Lille dimanche à 15h au Roazhon Park, pour la 10e journée de Ligue 1.\n\nVotre score ? Dites-le en commentaire !\n\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #StadeRennais",
+      "cards": [
+        {
+          "kicker": "Pronostic du week-end",
+          "title": "Rennes – Lille",
+          "lines": [
+            "Dimanche 8 novembre · 15h · Ligue 1 · Ligue 1+"
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
       "id": "2026-11-07-rhum",
       "at": "2026-11-07T20:15+01:00",
       "type": "feed",

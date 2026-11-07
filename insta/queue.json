@@ -1,22 +1,6 @@
 {
   "posts": [
     {
-      "id": "2026-10-30-story-nice-rennes",
-      "at": "2026-10-30T17:30+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Ligue 1 · 9e journée",
-          "title": "Nice – Rennes",
-          "lines": [
-            "Ce soir à 19h : Rennes, 2e du classement, joue à Nice (10e).",
-            "Le match a été avancé du samedi à ce vendredi. En direct sur Ligue 1+."
-          ],
-          "color": "foot"
-        }
-      ]
-    },
-    {
       "id": "2026-10-31-story-cesson-nantes",
       "at": "2026-10-31T17:00+01:00",
       "type": "story",
@@ -780,6 +764,15 @@
           "color": "accent",
           "foot": "breizh.tribuneouest.fr"
         }
+      ]
+    },
+    {
+      "id": "2026-11-07-rhum",
+      "at": "2026-11-07T20:15+01:00",
+      "type": "feed",
+      "caption": "⛵ Route du Rhum : où en sont les Bretons ?\nPointage de ce jeudi 5 novembre à 15h. Chez les Ultim, Tom Laperche (SVR Lazartigue) est en tête et Thomas Coville (Sodebo Ultim 3) est 2e, à 356 milles environ.\nBasile Bourgnon (Edenred) mène les Ocean Fifty, Corentin Horeau (MACSF) les Imoca et Tanguy Caradec (Eurvad) les Vintage mono.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Breizh #VoileBretagne #RouteDuRhum2026 #Skipper",
+      "visuels": [
+        "rhum"
       ]
     }
   ]

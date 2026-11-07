@@ -686,17 +686,17 @@ function ILLU(k){
 }
 const BREVES=[
   ["2026-11-06T22:00","foot","Ligue 2 : Guingamp a été battu à Dunkerque (3-0), le vendredi 6 novembre, pour la 12e journée, et recule à la 11e place avec 14 points."],
-  ["2026-11-06T21:00","foot","Arkema Première Ligue : les féminines du FC Nantes ont été tenues en échec par Toulouse (1-1) à Marcel-Saupin, le vendredi 6 novembre."],
+  ["2026-11-06T21:00","foot","Arkema Première Ligue : les féminines du FC Nantes ont été tenues en échec par Toulouse (1-1) à Marcel-Saupin, le vendredi 6 novembre.","44"],
   ["2026-11-06T15:45","voile","Route du Rhum : l'Alréen Corentin Horeau (MACSF) compte plus de 270 milles d'avance sur Boris Herrmann en tête des Imoca, selon Le Figaro Nautisme du vendredi 6 novembre."],
   ["2026-11-06T22:30","hand","Ligue Butagaz Énergie : après la victoire de Toulon contre Nice (34-26), qui clôt la 8e journée, Brest Bretagne Handball est 2e avec 20 points, derrière Metz (24 pts)."],
   ["2026-11-05T15:00","voile","Route du Rhum : au pointage du jeudi 5 novembre à 15h, Tom Laperche mène toujours les Ultim, environ 356 milles devant Thomas Coville ; en Vintage multi, Éric Péron a cédé la tête à Damien Seguin."],
   ["2026-11-05","foot","Ligue Europa : après la 4e journée, Rennes est 17e de la phase de ligue avec 6 points (une victoire, trois nuls), en zone de barrages."],
 ];
-/* ---------- Brèves : [date ISO (avec heure si connue), sport, texte] ; elles disparaissent après 48 h ---------- */
+/* ---------- Brèves : [date ISO (avec heure si connue), sport, texte, "44" (facultatif : club de Loire-Atlantique, affichée seulement en mode Bretagne historique)] ; elles disparaissent après 48 h ---------- */
 function renderBreves(){
   const J=["dim.","lun.","mar.","mer.","jeu.","ven.","sam."],M=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
   const now=Date.now();
-  const list=BREVES.map(b=>({b,t:new Date(b[0].length>10?b[0]:b[0]+"T23:59:00")})).filter(x=>now-x.t<48*3600e3).sort((x,y)=>y.t-x.t).slice(0,6);
+  const list=BREVES.map(b=>({b,t:new Date(b[0].length>10?b[0]:b[0]+"T23:59:00")})).filter(x=>now-x.t<48*3600e3&&(x.b[3]!=="44"||HIST)).sort((x,y)=>y.t-x.t).slice(0,6);
   if(!list.length)return "";
   const lbl=x=>{const d=x.t;return `${J[d.getDay()]} ${d.getDate()} ${M[d.getMonth()]}${x.b[0].length>10?" · "+d.getHours()+"h"+(d.getMinutes()?String(d.getMinutes()).padStart(2,"0"):""):""}`;};
   return `<section class="breves" aria-label="Les brèves"><h3>Les brèves <small>Au fil de l'actualité</small></h3>${list.map(x=>`<div class="breve" style="--c:${COLORS[x.b[1]]||"var(--accent)"}"><span class="w">${esc(NAMES[x.b[1]]||"")} <time>${esc(lbl(x))}</time></span><p>${esc(x.b[2])}</p></div>`).join("")}</section>`;

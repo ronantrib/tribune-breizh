@@ -7,8 +7,9 @@
  *
  * Ce qui est ajouté :
  *   - un lien « Page du club → » au bas de chaque carte club (la carte garde son clic vers la fiche de la page) ;
- *   - le nom du club en lien dans les classements, les résultats, les prochains matchs, les fiches et l'agenda
+ *   - le nom du club en lien dans les classements (sauf, sur la fiche d'un club, son propre nom) et dans l'agenda
  *     (seulement pour un club suivi ; un nom ambigu, comme « Nantes » en foot, n'est pas lié) ;
+ *   - volontairement pas de liens dans les listes de résultats et de prochains matchs : le même club y revient à chaque ligne ;
  *   - les adresses sont calculées comme dans bot/seo.php (nom du club, identifiant en secours si doublon).
  *
  * Tout ou rien : chaque remplacement doit trouver son motif une seule fois dans la page. Si la page change de forme au point
@@ -30,8 +31,6 @@ a.tl:hover{color:var(--c,var(--accent));border-bottom-style:solid}
 NEW];
   $E[] = [<<<'OLD'
 const disp=n=>n==="Rennes (basket)"?"Rennes":n;
-function matchRow(g){
-  const [h,sh,sa,a,x]=g;
 OLD,
 <<<'NEW'
 const disp=n=>n==="Rennes (basket)"?"Rennes":n;
@@ -43,58 +42,12 @@ const CLUBURL={}; (()=>{const seen={}; ALLCLUBS.forEach(c=>{let s=tbSlug(c.n); i
 function clubFor(n,sp){const m=ALLCLUBS.filter(c=>(HIST||!c.hist)&&(c.nm||c.short)===n&&(!sp||c.sport===sp)); return m.length===1?m[0]:null;}
 /* Nom d'équipe, cliquable vers la page du club quand c'est un club suivi */
 function tl(n,sp,raw){const t=esc(raw?n:disp(n)); const c=isB(n)&&clubFor(n,sp); return c?`<a class="tl" href="${CLUBURL[c.id]}">${t}</a>`:t;}
-function matchRow(g,sp){
-  const [h,sh,sa,a,x]=g;
-NEW];
-  $E[] = [<<<'OLD'
-<div class="t h ${isB(h)?"bzh":""}">${esc(disp(h))}</div><div class="score next">${esc(x||"")}</div><div class="t ${isB(a)?"bzh":""}">${esc(disp(a))}</div></div>`;
-OLD,
-<<<'NEW'
-<div class="t h ${isB(h)?"bzh":""}">${tl(h,sp)}</div><div class="score next">${esc(x||"")}</div><div class="t ${isB(a)?"bzh":""}">${tl(a,sp)}</div></div>`;
-NEW];
-  $E[] = [<<<'OLD'
-<div class="t h ${sh>sa?"w":""} ${isB(h)?"bzh":""}">${esc(disp(h))}</div>
-OLD,
-<<<'NEW'
-<div class="t h ${sh>sa?"w":""} ${isB(h)?"bzh":""}">${tl(h,sp)}</div>
-NEW];
-  $E[] = [<<<'OLD'
-<div class="t ${sa>sh?"w":""} ${isB(a)?"bzh":""}">${esc(disp(a))}</div></div>`;
-OLD,
-<<<'NEW'
-<div class="t ${sa>sh?"w":""} ${isB(a)?"bzh":""}">${tl(a,sp)}</div></div>`;
-NEW];
-  $E[] = [<<<'OLD'
-const nextRow=g=>matchRow([g[0],null,null,g[1],g[2]]);
-OLD,
-<<<'NEW'
-const nextRow=(g,sp)=>matchRow([g[0],null,null,g[1],g[2]],sp);
 NEW];
   $E[] = [<<<'OLD'
 <td>${esc(r[0])}${(()=>{const c=isB(r[0])&&clubForRow(t,r[0]);return c&&c.res.length>1?formHTML(c):"";})()}</td>
 OLD,
 <<<'NEW'
-<td>${(()=>{const c=isB(r[0])&&clubForRow(t,r[0]);return (c?`<a class="tl" href="${CLUBURL[c.id]}">${esc(r[0])}</a>`:esc(r[0]))+(c&&c.res.length>1?formHTML(c):"");})()}</td>
-NEW];
-  $E[] = [<<<'OLD'
-${x.games.map(matchRow).join("")}
-OLD,
-<<<'NEW'
-${x.games.map(g=>matchRow(g,k)).join("")}
-NEW];
-  $E[] = [<<<'OLD'
-${x.games.map(nextRow).join("")}
-OLD,
-<<<'NEW'
-${x.games.map(g=>nextRow(g,k)).join("")}
-NEW];
-  $E[] = [<<<'OLD'
-${esc(g[4]||"")}</div>${matchRow(g.slice(0,4))}`).join("");
-  const nx=c.nxt.length?c.nxt.map(g=>nextRow(g)).join("")
-OLD,
-<<<'NEW'
-${esc(g[4]||"")}</div>${matchRow(g.slice(0,4),c.sport)}`).join("");
-  const nx=c.nxt.length?c.nxt.map(g=>nextRow(g,c.sport)).join("")
+<td>${(()=>{const c=isB(r[0])&&clubForRow(t,r[0]);return (c&&c.id!==self?`<a class="tl" href="${CLUBURL[c.id]}">${esc(r[0])}</a>`:esc(r[0]))+(c&&c.res.length>1?formHTML(c):"");})()}</td>
 NEW];
   $E[] = [<<<'OLD'
 return `<button class="club" style="--c:${SCOL[c.sport]}" data-club="${c.id}">
@@ -129,6 +82,18 @@ NEW];
 OLD,
 <<<'NEW'
 <div class="what"><b>${(()=>{const p=String(e[2]).split(" – "); return p.length===2?p.map(n=>tl(n,e[1],true)).join(" – "):esc(e[2]);})()}</b><small>${esc(e[3])}</small>
+NEW];
+  $E[] = [<<<'OLD'
+function tableHTML(t){
+OLD,
+<<<'NEW'
+function tableHTML(t,self){
+NEW];
+  $E[] = [<<<'OLD'
+const tbl=c.tbl?tableHTML({...DATA[c.tbl[0]].tables[c.tbl[1]]}):"";
+OLD,
+<<<'NEW'
+const tbl=c.tbl?tableHTML({...DATA[c.tbl[0]].tables[c.tbl[1]]},c.id):"";
 NEW];
   return $E;
 }

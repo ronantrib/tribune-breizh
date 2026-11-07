@@ -101,5 +101,5 @@ Après la mise en ligne : déclarer `https://breizh.tribuneouest.fr/sitemap.xml`
 ## Liens vers les pages de club sur la page d'accueil (depuis le 7 novembre 2026)
 
 `bot/clublinks.php`, appelé par `bot/build.php` (donc par `gate.php`), ajoute à la page d'accueil, au moment de la fabriquer, un lien « Page du club → » au bas de chaque carte club
-et rend cliquable le nom des clubs suivis dans les classements, les résultats, les prochains matchs, les fiches et l'agenda (adresse `/club/NOM-DU-CLUB`, calculée comme dans `bot/seo.php`).
+et rend cliquable le nom des clubs suivis dans les classements (sauf, sur la fiche d'un club, son propre nom) et dans l'agenda ; pas de liens dans les listes de résultats et de prochains matchs (adresse `/club/NOM-DU-CLUB`, calculée comme dans `bot/seo.php`).
 Rien n'est modifié dans `src/index.html`, réécrit chaque nuit. Tout ou rien : si un motif de la page n'est plus trouvé, aucun lien n'est ajouté (`php bot/clublinks.php` dit si les liens s'appliquent).

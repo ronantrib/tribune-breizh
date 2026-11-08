@@ -189,7 +189,7 @@ foreach (tb_by_time($Q['posts']) as $p) {   // dans l'ordre des heures : si deux
     $D[$id] = ['status' => 'abandonné', 'tries' => $d['tries'], 'note' => 'trop en retard', 'time' => date('c')];
     jwrite("$STATE/done.json", $D); logline("$id : abandonné (plus de 6 h de retard)."); continue;
   }
-  if (($w = tb_garde_wait($D, time())) > 0) { logline("$id : attend, un post est parti il y a moins de 90 minutes (encore " . ceil($w / 60) . " min)."); continue; }   // garde.php
+  if (empty($p['sans_garde']) && ($w = tb_garde_wait($D, time())) > 0) { logline("$id : attend, un post est parti il y a moins de 90 minutes (encore " . ceil($w / 60) . " min)."); continue; }   // garde.php
   try {
     $type = $p['type'] ?? 'feed';
     if ($type === 'reel') {   // Reel : une vidéo MP4 déposée dans le dépôt (insta/reels/…), 9:16, 3 à 90 s

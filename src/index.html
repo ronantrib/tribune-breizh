@@ -514,8 +514,8 @@ function groupsHTML(gs,rowFn,limit){
 function renderSport(k){
   const d=DATA[k];
   const hv=(h,a)=>HIST||!(HISTNAMES.has(h)||HISTNAMES.has(a))||BZH.has(h)||BZH.has(a);
-  const LIM=k==="foot"?8:0;
-  const res=groupsHTML(d.results.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[3]))})).filter(x=>x.games.length),matchRow,LIM);
+  const LIM=k==="foot"?8:0, LIMR=k==="foot"?8:5;
+  const res=groupsHTML(d.results.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[3]))})).filter(x=>x.games.length),matchRow,LIMR);
   const nxt=groupsHTML(d.next.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[1]))})).filter(x=>x.games.length),nextRow,LIM);
   return `<div class="grid2">
     <section class="block recit wide">${ILLU(k)}<div class="ai">Résumé IA</div><h4>${esc(d.recit.t)}</h4>${d.recit.p.concat(HIST?(d.recit.ph||[]):[]).map(p=>`<p>${esc(p)}</p>`).join("")}${srcHTML(k)}</section>

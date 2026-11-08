@@ -48,6 +48,14 @@ const TB_STATS = <<<'HTML'
 HTML;
 
 /** Transforme la page publiée sur Claude en page du site ; renvoie null si la page n'a pas la forme attendue. */
+/** Garde une trace d'un souci de fabrication : cache/alertes.log (ignoré par Git, non servi) et journal d'erreurs PHP. Ne bloque jamais la page. */
+function tb_alerte(string $msg): void {
+  $dir = dirname(__DIR__) . '/cache';
+  @mkdir($dir, 0755, true);
+  @file_put_contents($dir . '/alertes.log', gmdate('Y-m-d\\TH:i:s\\Z') . ' ' . $msg . "\n", FILE_APPEND | LOCK_EX);
+  @error_log('[tribune-breizh] ' . $msg);
+}
+
 function tb_build(string $src): ?string {
   $body = $src;
   if (preg_match('/^\s*<!doctype html>.*?<body>\s*/is', $body, $m)) $body = substr($body, strlen($m[0]));
@@ -67,7 +75,9 @@ function tb_build(string $src): ?string {
   $seo = '';
   if (is_file(__DIR__ . '/seo.php')) { require_once __DIR__ . '/seo.php'; $seo = tb_seo_footer(); }
   // Liens vers les pages de club sur les cartes, classements, matchs et agenda : ajoutés ici pour la même raison (voir bot/clublinks.php).
-  if (is_file(__DIR__ . '/clublinks.php')) { require_once __DIR__ . '/clublinks.php'; $body = tb_clublinks($body); }
+  if (is_file(__DIR__ . '/clublinks.php')) { require_once __DIR__ . '/clublinks.php'; $avec = tb_clublinks($body);
+    if ($avec === $body) tb_alerte('Liens de club NON appliqués : motifs absents ou en double ' . implode(', ', tb_clublinks_manquants($body)) . ' (php bot/clublinks.php src/index.html pour le détail)');
+    $body = $avec; }
   $out = TB_HEAD . implode("\n", $head) . "\n" . trim(TB_STATS) . "\n</head>\n<body>\n" . trim($body) . ($seo !== '' ? "\n" . $seo : '') . "\n</body>\n</html>\n";
   if (strpos($out, 'WXvNyWF5ypo7PuAsgFRJp6') === false || strpos($out, 'const DATA=') === false) return null;
   return $out;

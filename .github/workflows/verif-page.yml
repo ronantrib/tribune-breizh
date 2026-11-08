@@ -1,0 +1,28 @@
+name: Vérification de la page
+
+# À chaque envoi sur main : la page du site doit encore avoir une syntaxe valide
+# et accepter les liens vers les fiches clubs (bot/clublinks.php, « tout ou rien »).
+# Un échec envoie un e-mail GitHub à la personne qui a poussé.
+on:
+  push:
+    branches: [main]
+    paths: ['src/index.html', 'bot/**', '.github/workflows/verif-page.yml']
+  workflow_dispatch:
+
+jobs:
+  verif:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntaxe du script de la page
+        run: |
+          python3 - <<'PY'
+          import re
+          h = open('src/index.html', encoding='utf-8').read()
+          open('/tmp/page.js', 'w', encoding='utf-8').write('\n'.join(re.findall(r'<script[^>]*>(.*?)</script>', h, re.S)))
+          PY
+          node --check /tmp/page.js
+      - name: Syntaxe PHP
+        run: for f in bot/*.php gate.php pages.php; do php -l "$f"; done
+      - name: Liens vers les fiches clubs
+        run: php bot/clublinks.php src/index.html

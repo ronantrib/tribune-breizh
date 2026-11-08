@@ -108,8 +108,21 @@ function tb_clublinks(string $html): string {
   return $out;
 }
 
+/** Numéros (à partir de 1) des motifs absents ou ambigus dans la page ; liste vide = tous les liens s'appliquent. */
+function tb_clublinks_manquants(string $html): array {
+  $m = [];
+  foreach (tb_clublinks_edits() as $i => [$old, $new]) {
+    if (substr_count($html, $old) !== 1) $m[] = $i + 1;
+  }
+  return $m;
+}
+
 if (PHP_SAPI === 'cli' && realpath($argv[0] ?? '') === __FILE__) {
   $file = $argv[1] ?? dirname(__DIR__) . '/src/index.html';
   $raw = (string)@file_get_contents($file);
-  echo tb_clublinks($raw) !== $raw ? "Liens de club : appliqués\n" : "Liens de club : NON appliqués (page de forme inattendue ou déjà modifiée)\n";
+  if (tb_clublinks($raw) !== $raw) { echo "Liens de club : appliqués\n"; exit(0); }
+  $m = tb_clublinks_manquants($raw);
+  echo "Liens de club : NON appliqués (page de forme inattendue ou déjà modifiée)\n";
+  if ($m) echo "Motifs absents ou en double : " . implode(', ', $m) . " (numéros dans l'ordre de tb_clublinks_edits)\n";
+  exit(1);
 }

@@ -798,6 +798,16 @@
       ]
     },
     {
+      "id": "2026-11-08-fb-rhum-hebdo",
+      "at": "2026-11-08T11:17+01:00",
+      "type": "facebook",
+      "facebook": {
+        "message": "⛵ Route du Rhum : le point du dimanche\nUltim : Tom Laperche (Loudéac) a gagné, arrivé dans la nuit du 7 au 8 novembre, record de l'épreuve. Thomas Coville est 2e, à 376 milles environ.\nOcean Fifty : Basile Bourgnon est en tête, à 685 milles de l'arrivée (classement du 8 novembre à 4h) ; Léonard Legrand est 4e.\nImoca : Corentin Horeau est en tête, à 744 milles de l'arrivée ; Élodie Bonafous est 4e.\nVintage mono : Kieran Le Borgne est en tête, Tanguy Caradec 2e.\nVintage multi : Éric Péron est 2e, Gilles Lamiré 3e.\nQuel skipper breton soutenez-vous ?\nLe suivi complet : https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026\n#TribuneBreizh #RouteDuRhum2026",
+        "link": "https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026",
+        "image": "none"
+      }
+    },
+    {
       "id": "2026-11-08-libre",
       "at": "2026-11-08T12:25+01:00",
       "type": "feed",

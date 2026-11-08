@@ -71,6 +71,7 @@ h3{font-family:var(--display);font-weight:800;font-size:1.25rem;text-transform:u
 .score.next{font-family:var(--body);font-size:.78rem;font-weight:600;color:var(--muted);line-height:1.25;padding:5px 8px}
 @media (max-width:440px){.match{gap:4px}.match .t{font-size:.88rem}.match .t.bzh::after{margin-left:4px}.match .t.h.bzh::after{margin-right:4px}.score{min-width:50px;padding:2px 4px;font-size:1.2rem}.score small{display:block;line-height:1.1}}
 @media (max-width:520px){.match:has(.score.next){grid-template-columns:1fr 1fr;column-gap:16px;row-gap:5px}.match:has(.score.next) .score.next{grid-column:1/-1;grid-row:2;justify-self:center;text-align:center}}
+.match:has(.score.next.long){grid-template-columns:1fr 1fr;column-gap:16px;row-gap:5px}.match:has(.score.next.long) .score.next{grid-column:1/-1;grid-row:2;justify-self:center;text-align:center}
 .tbl{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.9rem}
 th{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;text-align:right;padding:6px;border-bottom:1px solid var(--line)}
@@ -497,7 +498,7 @@ const isB=n=>BZH.has(n)||(HIST&&HISTNAMES.has(n));
 const disp=n=>n==="Rennes (basket)"?"Rennes":n;
 function matchRow(g){
   const [h,sh,sa,a,x]=g;
-  if(sh===null||sh===undefined) return `<div class="match"><div class="t h ${isB(h)?"bzh":""}">${esc(disp(h))}</div><div class="score next">${esc(x||"")}</div><div class="t ${isB(a)?"bzh":""}">${esc(disp(a))}</div></div>`;
+  if(sh===null||sh===undefined) return `<div class="match"><div class="t h ${isB(h)?"bzh":""}">${esc(disp(h))}</div><div class="score next${x&&x.length>24?" long":""}">${esc(x||"")}</div><div class="t ${isB(a)?"bzh":""}">${esc(disp(a))}</div></div>`;
   return `<div class="match"><div class="t h ${sh>sa?"w":""} ${isB(h)?"bzh":""}">${esc(disp(h))}</div><div class="score">${sh}–${sa}${x?` <small style="font-size:.6em;opacity:.7">${esc(x)}</small>`:""}</div><div class="t ${sa>sh?"w":""} ${isB(a)?"bzh":""}">${esc(disp(a))}</div></div>`;
 }
 const nextRow=g=>matchRow([g[0],null,null,g[1],g[2]]);

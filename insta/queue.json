@@ -1,62 +1,6 @@
 {
   "posts": [
     {
-      "id": "2026-10-31-story-cesson-nantes",
-      "at": "2026-10-31T17:00+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "StarLigue · 9e journée",
-          "title": "Cesson-Rennes – Nantes",
-          "lines": [
-            "Ce soir à 19h : Cesson-Rennes, avant-dernier du classement, reçoit Nantes, 2e.",
-            "En direct sur beIN Sports Max 3."
-          ],
-          "color": "hand"
-        }
-      ]
-    },
-    {
-      "id": "2026-10-31-lorient-cleansheets",
-      "at": "2026-10-31T18:00+01:00",
-      "type": "feed",
-      "caption": "🏴 Une défense qui tient bon !\nLe FC Lorient n'a pas encaissé de but dans 5 de ses 8 premiers matchs de Ligue 1. Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens.\nLes trois derniers : Paris FC (1-0), Monaco (1-0) et Angers (0-0).\nProchain match : Lorient – Brest, lundi 2 novembre à 20h45.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FCLorient #Ligue1 #Merlus",
-      "cards": [
-        {
-          "kicker": "Ligue 1 · FC Lorient",
-          "title": "5 clean sheets en 8 matchs",
-          "lines": [
-            "Les Merlus n'ont pas encaissé de but dans 5 de leurs 8 premiers matchs de Ligue 1.",
-            "Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens."
-          ],
-          "rows": [
-            [
-              "J6",
-              "Lorient – Paris FC",
-              "1-0"
-            ],
-            [
-              "J7",
-              "Lorient – Monaco",
-              "1-0"
-            ],
-            [
-              "J8",
-              "Angers – Lorient",
-              "0-0"
-            ]
-          ],
-          "color": "foot",
-          "foot": "Source : FC Lorient, 28 octobre"
-        }
-      ],
-      "facebook": {
-        "message": "🏴 Une défense qui tient bon : le FC Lorient n'a pas encaissé de but dans 5 de ses 8 premiers matchs de Ligue 1. Selon le club, aucune équipe ne fait mieux dans les cinq grands championnats européens.\nLes trois derniers : Paris FC (1-0), Monaco (1-0) et Angers (0-0).\nProchain match : Lorient – Brest, lundi 2 novembre à 20h45.\n#TribuneBreizh",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "first"
-      }
-    },
-    {
       "id": "2026-11-01-story-resultats",
       "at": "2026-11-01T09:00+01:00",
       "type": "story",
@@ -791,6 +735,107 @@
       "visuels": [
         "rhum"
       ]
+    },
+    {
+      "id": "2026-11-08-story-resultats",
+      "at": "2026-11-08T08:30+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Week-end du 7 novembre",
+          "title": "Les résultats",
+          "lines": [
+            "Vendredi 6 et samedi 7 novembre."
+          ],
+          "rows": [
+            [
+              "Ligue 2",
+              "Dunkerque – Guingamp",
+              "3-0"
+            ],
+            [
+              "Ligue 3",
+              "Concarneau – Fleury",
+              "2-0"
+            ],
+            [
+              "Arkema",
+              "Saint-Malo – Marseille",
+              "1-2"
+            ],
+            [
+              "Handball",
+              "Brest BH – CSM Bucarest",
+              "40-25"
+            ],
+            [
+              "Basket",
+              "Landerneau – Chartres",
+              "80-62"
+            ],
+            [
+              "Volley",
+              "Rennes – Grand Nancy",
+              "3-1"
+            ],
+            [
+              "Volley",
+              "Sens – Quimper",
+              "3-2"
+            ]
+          ],
+          "color": "accent",
+          "foot": "Source : breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-08-story",
+      "at": "2026-11-08T10:00+01:00",
+      "type": "story",
+      "visuels": [
+        "story"
+      ]
+    },
+    {
+      "id": "2026-11-08-libre",
+      "at": "2026-11-08T12:25+01:00",
+      "type": "feed",
+      "caption": "⛵ Tom Laperche remporte la Route du Rhum chez les Ultim !\nLe Loudéacien (SVR Lazartigue) a franchi la ligne dans la nuit du samedi 7 au dimanche 8 novembre, en 6 jours, 13 heures et 27 minutes selon l'AFP : un nouveau record de l'épreuve, qui bat celui de Charles Caudrelier en 2022.\nQuel moment de course vous a le plus marqué ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Laperche gagne et bat le record",
+          "lines": [
+            "Le Loudéacien (SVR Lazartigue) s'impose en Ultim dans la nuit du 7 au 8 novembre."
+          ],
+          "rows": [
+            [
+              "Vainqueur",
+              "Tom Laperche",
+              "Ultim"
+            ],
+            [
+              "Temps",
+              "6 j 13 h 27 min",
+              "selon l'AFP"
+            ],
+            [
+              "Record",
+              "Bat celui de Caudrelier",
+              "établi en 2022"
+            ]
+          ],
+          "color": "voile",
+          "foot": "Source : AFP · breizh.tribuneouest.fr"
+        }
+      ],
+      "facebook": {
+        "at": "2026-11-08T09:15+01:00",
+        "message": "⛵ Tom Laperche remporte la Route du Rhum chez les Ultim !\nLe Loudéacien (SVR Lazartigue) a franchi la ligne dans la nuit du samedi 7 au dimanche 8 novembre, en 6 jours, 13 heures et 27 minutes selon l'AFP : un nouveau record de l'épreuve, qui bat celui de Charles Caudrelier en 2022.\n#TribuneBreizh #RouteDuRhum2026 #VoileBretagne",
+        "link": "https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026",
+        "image": "first"
+      }
     }
   ]
 }

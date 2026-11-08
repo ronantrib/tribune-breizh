@@ -904,6 +904,49 @@
           "color": "amateur"
         }
       ]
+    },
+    {
+      "id": "2026-11-08-amateur-2",
+      "at": "2026-11-08T21:15+01:00",
+      "type": "carousel",
+      "caption": "⚽ Le week-end du foot amateur breton en un coup d'œil !\nLorient II a battu Saumur (6-2) en National 1 et Dinan Léhon, vainqueur de Vendée Poiré-sur-Vie (1-0), est 5e avec 15 points.\nEn National 2, Cesson et Vire se partagent la tête (17 points) après leur 0-0.\nCoupe de France : Tinténiac Saint-Domineuc (R1) recevra Concarneau @usconcarneau (L3) le samedi 14 novembre à 17h. Quel petit poucet ira le plus loin ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootAmateur #CoupeDeFrance #National1",
+      "cards": [
+        {
+          "kicker": "Foot amateur · le bilan du week-end",
+          "title": "6-2 : Lorient II s'offre Saumur",
+          "lines": [
+            "National 1, 9e journée (du 5 au 7 novembre) : les réservistes lorientais s'imposent 6-2 et sont 4es avec 16 points."
+          ],
+          "color": "amateur"
+        },
+        {
+          "kicker": "National 1 · poule Ouest",
+          "title": "Dinan Léhon grimpe au 5e rang",
+          "lines": [
+            "Dinan Léhon bat Vendée Poiré-sur-Vie (1-0) et compte 15 points, un de moins que Lorient II.",
+            "Locminé a fait 0-0 contre Tarbes ; Angoulême reste leader avec 23 points."
+          ],
+          "color": "amateur"
+        },
+        {
+          "kicker": "National 2 · poule Bretagne-Normandie",
+          "title": "Cesson et Vire toujours en tête",
+          "lines": [
+            "Cesson et Vire ont fait 0-0 et comptent chacun 17 points après la 7e journée (7 novembre).",
+            "Vitré s'impose à Saint-Pierre Milizac (3-2), Vannes bat le TA Rennes (2-0)."
+          ],
+          "color": "amateur"
+        },
+        {
+          "kicker": "Coupe de France · petits poucets",
+          "title": "Les clubs de R1 face aux pros",
+          "lines": [
+            "Châteaubourg (R1) recevra le FC Nantes (L2) le dimanche 15 novembre à 14h.",
+            "Saint-Renan (R1) recevra Laval (L2) le même jour à 14h ; Tinténiac Saint-Domineuc (R1) recevra Concarneau (L3) le samedi 14 novembre à 17h."
+          ],
+          "color": "amateur"
+        }
+      ]
     }
   ]
 }

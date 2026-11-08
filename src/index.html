@@ -912,16 +912,16 @@ function renderAmateur(){
       <p>La 9e journée de National 1 a souri aux réservistes lorientais, vainqueurs de Saumur (6-2) : 4es avec 16 points, ils restent le premier club breton de la poule, juste devant Dinan Léhon, qui a battu Vendée Poiré-sur-Vie (1-0) et pointe au 5e rang. Locminé a été tenu en échec par Tarbes (0-0), tandis que Saint-Malo s'est incliné chez le leader Angoulême (1-0) dès le jeudi 5 novembre, que le Stade Briochin a perdu aux Herbiers (2-1) et que la GSI Pontivy, battue à Avranches (2-0), reste 15e. En National 2, Cesson, tenu en échec par Vire (0-0), partage toujours la tête avec les Normands ; Vitré s'est imposé à Saint-Pierre Milizac (2-3), Vannes a battu le TA Rennes (2-0) et Guingamp II a concédé le nul contre Caen II (2-2).</p>
       <p>Place à la Coupe de France : le 7e tour, les 14 et 15 novembre, verra l'entrée de Guingamp, qui ira à Lannion (N2) le samedi à 19h, et du FC Nantes, attendu à Châteaubourg (R1) le dimanche à 14h. Concarneau ouvrira le bal le samedi à 17h à Tinténiac Saint-Domineuc (R1). Au 6e tour, le Stade Briochin et Locminé étaient tombés aux tirs au but contre Plabennec et Châteaubourg, deux clubs de Régional 1. Rennes, Brest et Lorient attendront les 32es de finale des 19 et 20 décembre.</p>${srcHTML("amateur")}</section>
     <section class="block"><h3>Coupe de France · 6e tour</h3><div class="daylbl">24-25 octobre · clubs de la Ligue de Bretagne</div>${cdf}<p class="note">Le vainqueur est en gras. tab = tirs au but.</p></section>
-    <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
-      ${tableHTML({name:"National 2 · poule Bretagne-Normandie", head:["J","Diff","Pts"], rows:AMATEUR.n2, note:"Après la 7e journée (7 novembre) : Cesson–Vire 0-0, Saint-Pierre Milizac–Vitré 2-3, Vannes–TA Rennes 2-0, Ginglin-Cesson–Caen PTT 2-2, Guingamp II–Caen II 2-2 et victoire de Saint-Lô contre Lannion (score non lu). Rennes II et Brest II n'ont pas joué (raison non vérifiée). Classement de Foot Mercato, scores de Foot-Direct."})}
-      ${tableHTML({name:"National 1 · poule Ouest", head:["J","Diff","Pts"], rows:AMATEUR.n1, note:"Après la 9e journée (5 au 7 novembre) : Angoulême – Saint-Malo 1-0, Les Herbiers – Stade Briochin 2-1, Chauray – Bayonne 0-0, Lorient II – Saumur 6-2, Châteaubriant – Granville 1-0, Dinan Léhon – Vendée Poiré-sur-Vie 1-0, Avranches – GSI Pontivy 2-0 et Locminé – Tarbes 0-0 (FFF). Classement de Foot Mercato, auquel Dinan Léhon – Vendée Poiré-sur-Vie, pas encore intégré, a été ajouté ; à égalité de points, le départage suit les confrontations directes. 8e journée : Bayonne – Avranches 0-3 et Vendée Poiré-sur-Vie – Les Herbiers 1-1."})}
-      <section class="block"><h3>La suite de la Coupe</h3>${factsHTML([
+    <section class="block"><h3>La suite de la Coupe</h3>${factsHTML([
         {d:"14-15 nov.",t:"7e tour",s:"Entrée de Guingamp."},
         {d:"28-29 nov.",t:"8e tour",s:""},
         {d:"19-20 déc.",t:"32es de finale",s:"Entrée de Rennes, Brest et Lorient."}])}</section>
-    </div>
   </div>
   <div class="grid2" style="margin-top:24px">${renderPoucets()}</div>
+  <div class="grid2" style="margin-top:24px">
+      ${tableHTML({name:"National 1 · poule Ouest", head:["J","Diff","Pts"], rows:AMATEUR.n1, note:"Après la 9e journée (5 au 7 novembre) : Angoulême – Saint-Malo 1-0, Les Herbiers – Stade Briochin 2-1, Chauray – Bayonne 0-0, Lorient II – Saumur 6-2, Châteaubriant – Granville 1-0, Dinan Léhon – Vendée Poiré-sur-Vie 1-0, Avranches – GSI Pontivy 2-0 et Locminé – Tarbes 0-0 (FFF). Classement de Foot Mercato, auquel Dinan Léhon – Vendée Poiré-sur-Vie, pas encore intégré, a été ajouté ; à égalité de points, le départage suit les confrontations directes. 8e journée : Bayonne – Avranches 0-3 et Vendée Poiré-sur-Vie – Les Herbiers 1-1."})}
+      ${tableHTML({name:"National 2 · poule Bretagne-Normandie", head:["J","Diff","Pts"], rows:AMATEUR.n2, note:"Après la 7e journée (7 novembre) : Cesson–Vire 0-0, Saint-Pierre Milizac–Vitré 2-3, Vannes–TA Rennes 2-0, Ginglin-Cesson–Caen PTT 2-2, Guingamp II–Caen II 2-2 et victoire de Saint-Lô contre Lannion (score non lu). Rennes II et Brest II n'ont pas joué (raison non vérifiée). Classement de Foot Mercato, scores de Foot-Direct."})}
+  </div>
   ${renderRegional()}`;
 }
 const R1=[

@@ -1041,7 +1041,6 @@ let current="une";
 const go=k=>{current=k;show(k);};
 const refresh=k=>{if(current===k)show(k);};
 view.addEventListener("click",e=>{
-  const mb=e.target.closest("[data-more]"); if(mb){const l=mb.previousElementSibling;const open=l.hidden;l.hidden=!open;mb.setAttribute("aria-expanded",open?"true":"false");mb.textContent=open?"Voir moins":`Voir plus (${mb.dataset.more})`;return;}
   const dp=e.target.closest("[data-dept]"); if(dp){DEPT=dp.dataset.dept;try{localStorage.setItem("tb-dept",DEPT)}catch(e){}show(current);return;}
   const dl=e.target.closest("[data-dl]"); if(dl){saveVisual(dl.dataset.dl);return;}
   const cp=e.target.closest("[data-copy]"); if(cp){copyLink(cp);return;}
@@ -1054,6 +1053,7 @@ view.addEventListener("click",e=>{
 });
 view.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.closest(".pin")){e.preventDefault();go("club-"+e.target.closest(".pin").dataset.club);}});
 tabs.addEventListener("click",e=>{const b=e.target.closest(".tab");if(b)current=b.dataset.k;});
+view.addEventListener("click",e=>{const mb=e.target.closest("[data-more]"); if(!mb)return; const l=mb.previousElementSibling; const open=l.hidden; l.hidden=!open; mb.setAttribute("aria-expanded",open?"true":"false"); mb.textContent=open?"Voir moins":`Voir plus (${mb.dataset.more})`;});
 const histBtn=document.getElementById("histbtn");
 const syncHist=()=>{if(histBtn){histBtn.setAttribute("aria-pressed",HIST);histBtn.textContent=HIST?"Bretagne historique : oui":"Bretagne historique : non";}};
 if(histBtn){syncHist();histBtn.addEventListener("click",()=>{HIST=!HIST;try{localStorage.setItem("tb-hist",HIST?"1":"0")}catch(e){}syncHist();show(current);});}

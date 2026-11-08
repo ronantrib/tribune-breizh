@@ -507,19 +507,21 @@ function tableHTML(t){
 }
 const factsHTML=arr=>`<div class="facts">${arr.map(f=>`<div class="fact"><div class="d">${esc(f.d)}</div><div><b>${esc(f.t)}</b>${f.s?`<small>${esc(f.s)}</small>`:""}</div></div>`).join("")}</div>`;
 
-function groupsHTML(gs,rowFn,limit){
+const MOREOPEN=new Set();
+function groupsHTML(gs,rowFn,limit,key){
   let n=0,vis="",hid="",hc=0;
   gs.forEach(x=>{const a=[],b=[];x.games.forEach(g=>{(limit&&n>=limit?b:a).push(g);n++});
     if(a.length)vis+=`<div class="daylbl">${esc(x.day)}</div>${a.map(g=>rowFn(g)).join("")}`;
     if(b.length){hc+=b.length;hid+=(a.length?"":`<div class="daylbl">${esc(x.day)}</div>`)+b.map(g=>rowFn(g)).join("");}});
-  return vis+(hc?`<div class="more-list" hidden>${hid}</div><button class="morebtn" type="button" data-more="${hc}" aria-expanded="false">Voir plus (${hc})</button>`:"");
+  const op=MOREOPEN.has(key);
+  return vis+(hc?`<div class="more-list"${op?"":" hidden"}>${hid}</div><button class="morebtn" type="button" data-more="${hc}" data-key="${key||""}" aria-expanded="${op}">${op?"Voir moins":`Voir plus (${hc})`}</button>`:"");
 }
 function renderSport(k){
   const d=DATA[k];
   const hv=(h,a)=>HIST||!(HISTNAMES.has(h)||HISTNAMES.has(a))||BZH.has(h)||BZH.has(a);
   const LIM=k==="foot"?8:0, LIMR=k==="foot"?8:5;
-  const res=groupsHTML(d.results.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[3]))})).filter(x=>x.games.length),matchRow,LIMR);
-  const nxt=groupsHTML(d.next.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[1]))})).filter(x=>x.games.length),nextRow,LIM);
+  const res=groupsHTML(d.results.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[3]))})).filter(x=>x.games.length),matchRow,LIMR,k+"r");
+  const nxt=groupsHTML(d.next.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[1]))})).filter(x=>x.games.length),nextRow,LIM,k+"n");
   return `<div class="grid2">
     <section class="block recit wide">${ILLU(k)}<div class="ai">Résumé IA</div><h4>${esc(d.recit.t)}</h4>${d.recit.p.concat(HIST?(d.recit.ph||[]):[]).map(p=>`<p>${esc(p)}</p>`).join("")}${srcHTML(k)}</section>
     <section class="block"><h3>Résultats des Bretons</h3>${res}</section>
@@ -1057,7 +1059,9 @@ view.addEventListener("click",e=>{
 });
 view.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.closest(".pin")){e.preventDefault();go("club-"+e.target.closest(".pin").dataset.club);}});
 tabs.addEventListener("click",e=>{const b=e.target.closest(".tab");if(b)current=b.dataset.k;});
-view.addEventListener("click",e=>{const mb=e.target.closest("[data-more]"); if(!mb)return; const l=mb.previousElementSibling; const open=l.hidden; l.hidden=!open; mb.setAttribute("aria-expanded",open?"true":"false"); mb.textContent=open?"Voir moins":`Voir plus (${mb.dataset.more})`;});
+view.addEventListener("click",e=>{const mb=e.target.closest("[data-more]"); if(!mb)return; const l=mb.previousElementSibling; const open=l.hidden; l.hidden=!open; mb.setAttribute("aria-expanded",open?"true":"false"); mb.textContent=open?"Voir moins":`Voir plus (${mb.dataset.more})`; if(mb.dataset.key){open?MOREOPEN.add(mb.dataset.key):MOREOPEN.delete(mb.dataset.key);}});
+tabs.addEventListener("click",e=>{const b=e.target.closest(".tab");if(b)b.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});});
+window.addEventListener("load",()=>{const a=tabs.querySelector('.tab[aria-selected="true"]');if(a)a.scrollIntoView({inline:"center",block:"nearest"});});
 const histBtn=document.getElementById("histbtn");
 const syncHist=()=>{if(histBtn){histBtn.setAttribute("aria-pressed",HIST);histBtn.textContent=HIST?"Bretagne historique : oui":"Bretagne historique : non";}};
 if(histBtn){syncHist();histBtn.addEventListener("click",()=>{HIST=!HIST;try{localStorage.setItem("tb-hist",HIST?"1":"0")}catch(e){}syncHist();show(current);});}

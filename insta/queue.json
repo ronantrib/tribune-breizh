@@ -846,6 +846,21 @@
         "link": "https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026",
         "image": "first"
       }
+    },
+    {
+      "id": "2026-11-08-actu-1750",
+      "at": "2026-11-08T17:50+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Résultat · football",
+          "title": "Rennes 1-2 Lille",
+          "lines": [
+            "Ligue 1, 10e journée : Lille s'impose au Roazhon Park, dimanche 8 novembre."
+          ],
+          "color": "foot"
+        }
+      ]
     }
   ]
 }

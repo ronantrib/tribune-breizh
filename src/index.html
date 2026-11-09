@@ -185,6 +185,7 @@ tr.bzh td:first-child{box-shadow:inset 3px 0 0 var(--ink);color:var(--ink)}
 .illu .sf-s{stroke:var(--surface)}
 .illu .ac{fill:var(--c)}
 .illu .ac-s{stroke:var(--c)}
+@media (max-width:520px){.illu-une{display:none}}
 .breves{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:14px 18px 6px;margin-bottom:24px}
 .breves h3{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px}
 .breves h3 small{font-family:var(--body);font-size:.72rem;font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0}
@@ -651,10 +652,43 @@ function renderPoucets(){
     <div class="tbl"><table><thead><tr><th>Club</th><th style="text-align:left">Niveau</th><th style="text-align:left">7e tour (14-15 nov.)</th></tr></thead><tbody>${POUCETS.map(([n,l,t])=>`<tr><td style="text-align:left;color:var(--ink);font-weight:600">${esc(n)}</td><td style="text-align:left"><span class="lvl lvl-${l}">${l}</span></td><td style="text-align:left">${esc(t)}</td></tr>`).join("")}</tbody></table></div>
     <p class="note">Liste tirée des résultats publiés ; d'autres clubs bretons peuvent être qualifiés. Guingamp entre au 7e tour à Lannion, le FC Nantes à Châteaubourg ; Rennes, Brest et Lorient aux 32es de finale, les 19 et 20 décembre. Horaires du 7e tour d'après le programme publié par Footeo le 7 novembre.</p></section>`;
 }
-function renderDerbyMini(){
-  return `<section class="derby"><div class="kicker">Derby breton</div><div class="derby-row"><b>Lannion</b><span class="vs">Samedi 14 novembre · 19h<br><small>À Lannion · Coupe de France, 7e tour</small></span><b>Guingamp</b></div>
+function renderDerbyMini(tag){
+  return `<section class="derby"><div class="kicker">Derby breton${tag?" · "+esc(tag):""}</div><div class="derby-row"><b>Lannion</b><span class="vs">Samedi 14 novembre · 19h<br><small>À Lannion · Coupe de France, 7e tour</small></span><b>Guingamp</b></div>
     <p>Double vainqueur de l'épreuve (2009 et 2014), Guingamp, 11e de Ligue 2, fait son entrée en Coupe de France chez son voisin trégorois. Lannion, dernier de sa poule de National 2 sans le moindre point après sa défaite à Saint-Lô (4-1), rêve d'un exploit face à un club qu'il n'a plus affronté depuis vingt ans : en novembre 2006, déjà au 7e tour, Guingamp s'était imposé 3-0 au Roudourou.</p>
     <div class="note" style="margin-top:4px">À suivre aussi : Tinténiac Saint-Domineuc – Concarneau (Coupe de France, samedi 14 novembre, 17h) et CSM Bucarest – Brest Bretagne Handball (Ligue des champions, dimanche 15 novembre, 16h). Prochain derby breton de Ligue 1 : Lorient – Rennes, dimanche 22 novembre à 17h15 (Ligue 1+).</div></section>`;
+}
+/* NOTE POUR LES MISES À JOUR (demande de l'utilisateur, 9 novembre 2026) : AFFICHAGE DES DERBYS BRETONS EN FOOT. Les derbys ne sont plus affichés en permanence sur « À la une » et sur l'onglet Football : ils n'apparaissent que dans une fenêtre autour du match (fonction derbyUne, ne la modifie pas). J−7 à J−1 : carte avec compte à rebours sous le récit du jour ; jour J : carte en tête de page (masquée si le bloc LIVE est actif sur un derby, car il affiche déjà le match) ; J+1 à J+3 : résultat et réactions ; le reste du temps : rien en vitrine, tout est dans la section « Les derbys bretons de la saison » en bas de l'onglet Football (renderDerbies, historique et calendrier, Ligue 1 seulement). Ce que les mises à jour doivent tenir à jour : (1) le derby de la carte renderDerbyMini() est décrit par la constante DERBY_UNE {a,b,when:"AAAA-MM-JJ",res} : quand tu changes le derby de renderDerbyMini(), change aussi a, b et when, et remets res à null ; (2) dès le lendemain du match, renseigne res={sc:[buts de a,buts de b],txt:"résumé et réactions en 2 ou 3 phrases, sources lues"} (sans res, la carte disparaît à J+1 plutôt que d'afficher un texte d'avant-match) ; (3) les derbys de Ligue 1 de la liste DERBIES sont repris automatiquement, sans rien écrire dans DERBY_UNE : après le match, déplace-le dans DERBYRES avec le champ w:"AAAA-MM-JJ" (date du match) en plus des champs habituels ; (4) ne mets jamais de derby « en vitrine » en dehors de ces dates. */
+const DERBY_UNE={a:"Lannion",b:"Guingamp",when:"2026-11-14",res:null};
+/* Écart en jours calendaires entre aujourd'hui et une date AAAA-MM-JJ (positif : à venir ; 0 : aujourd'hui ; négatif : passé). */
+function derbyDays(when){const n=new Date();return Math.round((new Date(when+"T12:00:00")-new Date(n.getFullYear(),n.getMonth(),n.getDate(),12))/86400000);}
+/* Les derbys à mettre en avant aujourd'hui (2 au plus) : jour J, puis résumés (J+1 à J+3), puis prochains matchs (J−1 à J−7). */
+function derbyUne(){
+  const c=[{a:DERBY_UNE.a,b:DERBY_UNE.b,when:DERBY_UNE.when,k:"une"}];
+  DERBIES.forEach(x=>c.push({a:x.a,b:x.b,when:x.when,k:"l1",x}));
+  DERBYRES.forEach(r=>{if(r.w)c.push({a:r.g[0],b:r.g[3],when:r.w,k:"res",r});});
+  const seen=new Set(), rk=e=>e.d===0?0:e.d<0?1:2;
+  return c.map(e=>({...e,d:derbyDays(e.when)})).filter(e=>e.d>=-3&&e.d<=7&&(e.d>=0||e.k!=="l1")).filter(e=>{const key=e.a+"|"+e.b+"|"+e.when;if(seen.has(key))return false;seen.add(key);return true;})
+    .sort((p,q)=>rk(p)-rk(q)||(rk(p)===1?q.d-p.d:p.d-q.d)).map(e=>({e,h:derbyCard(e)})).filter(x=>x.h).slice(0,2).map(x=>({d:x.e.d,h:x.h}));
+}
+function derbyCard(e){
+  const d=e.d, tag=d>1?"Dans "+d+" jours":d===1?"Demain":d===0?"Aujourd'hui":"Résumé du match";
+  const sc=(s)=>`<span style="font-family:var(--display);font-weight:900;font-size:clamp(1.6rem,6vw,2.6rem);line-height:1;font-variant-numeric:tabular-nums">${s}</span>`;
+  const row=(h,mid,sm,a)=>`<div class="derby-row"><b>${esc(h)}</b><span class="vs">${mid}<br><small>${sm}</small></span><b>${esc(a)}</b></div>`;
+  if(e.k==="une"){
+    if(d>=0)return renderDerbyMini(tag);
+    const R=DERBY_UNE.res; if(!R||!R.sc)return "";
+    return `<section class="derby"><div class="kicker">Derby breton · ${tag}</div>${row(DERBY_UNE.a,sc(R.sc[0]+"–"+R.sc[1]),"Score final",DERBY_UNE.b)}${R.txt?`<p>${esc(R.txt)}</p>`:""}</section>`;
+  }
+  if(e.k==="l1"){
+    const x=e.x;
+    return `<section class="derby"><div class="kicker">Derby breton · ${tag} · ${esc(x.comp)}</div>${row(x.a,esc(x.lbl),esc(x.venue)+(x.tv?" · "+esc(x.tv):""),x.b)}${x.note?`<p>${esc(x.note)}</p>`:""}</section>`;
+  }
+  const r=e.r;
+  return `<section class="derby"><div class="kicker">Derby breton · ${tag} · ${esc(r.comp)}</div>${row(r.g[0],sc(r.g[1]+"–"+r.g[2]),"Score final",r.g[3])}${r.s?`<p>${esc(r.s)}</p>`:""}</section>`;
+}
+/* slot : "haut" (jour J), "milieu" (J−7 à J−1 et J+1 à J+3, sous le récit du jour) ou "tout" (onglet Football) */
+function renderDerbyUne(slot){
+  return derbyUne().filter(x=>slot==="tout"||(slot==="haut")===(x.d===0)).filter(x=>!(x.d===0&&LIVE.on&&/derby/i.test(LIVE.comp))).map(x=>x.h).join("");
 }
 /* NOTE POUR LES MISES À JOUR (demande de l'utilisateur, 8 novembre 2026) : LIENS VERS LES FICHES CLUBS. Sur le site public, le serveur (bot/clublinks.php) ajoute les liens « Page du club → » et les noms de clubs cliquables en cherchant 10 morceaux de code exacts de cette page ; si UN SEUL change, plus aucun lien n'apparaît (tout ou rien, sans message). Ne modifie, ne reformate et ne réécris JAMAIS ces lignes ni leur ordre : la règle CSS de survol `.club:hover` ; `const disp=n=>...` ; la fonction `tableHTML` (son en-tête) et la cellule du club dans ses lignes ; `function clubCard` (le bouton `class="club"` et la ligne « À venir ») ; `const tbl=c.tbl?tableHTML(...)` dans la fiche club ; l'écouteur `view.addEventListener("click",...)` (sa première ligne `const dp=...`) et l'écouteur `keydown` ; la ligne `<div class="what">` de l'agenda. Ne change que les données (tableaux, textes, notes). Les ajouts de fonctionnalités se font dans de NOUVELLES lignes, sans toucher à celles-ci. Vérification possible dans le dépôt : `php bot/clublinks.php src/index.html` doit répondre « appliqués ». */
 /* ---------- Derbys bretons (Ligue 1) ---------- */
@@ -665,7 +699,7 @@ const DERBIES=[
   {comp:"Ligue 1 · 18e journée",a:"Rennes",b:"Lorient",when:"2027-01-31",lbl:"Week-end du 30-31 janvier 2027",venue:"Roazhon Park",tv:"",note:""},
   {comp:"Ligue 1 · 20e journée",a:"Brest",b:"Rennes",when:"2027-02-13",lbl:"Week-end du 13-14 février 2027",venue:"Stade Francis-Le Blé",tv:"",note:""},
   {comp:"Ligue 1",a:"Brest",b:"Lorient",when:"2027-04-03",lbl:"Week-end du 3-4 avril 2027",venue:"Stade Francis-Le Blé",tv:"",note:""}];
-const DERBYRES=[{comp:"Ligue 1 · 9e journée",d:"lundi 2 novembre 2026",g:["Lorient",0,2,"Brest"],s:"Buts d'Ajorque (69e) et d'Edjouma (90e+2) ; Tosin a manqué un penalty pour Lorient (90e). Match reporté du samedi 31 octobre."}];
+const DERBYRES=[{comp:"Ligue 1 · 9e journée",d:"lundi 2 novembre 2026",w:"2026-11-02",g:["Lorient",0,2,"Brest"],s:"Buts d'Ajorque (69e) et d'Edjouma (90e+2) ; Tosin a manqué un penalty pour Lorient (90e). Match reporté du samedi 31 octobre."}];
 function renderDerbies(){
   const now=new Date();
   const up=DERBIES.filter(x=>new Date(x.when+"T23:59:00")>=now);
@@ -691,10 +725,13 @@ function renderFeminines(){
     ${tableHTML(DATA.hand.tables[1])}${tableHTML(DATA.basket.tables[0])}</div>`;
 }
 /* ---------- Illustrations des résumés ---------- */
+/* NOTE POUR LES MISES À JOUR (demande de l'utilisateur, 9 novembre 2026) : ILLUSTRATION DU RÉSUMÉ « LA SEMAINE BRETONNE » (page d'accueil). UNE_ILLU choisit l'illustration selon le sujet du TITRE du résumé : "foot", "amateur", "hand", "rugby", "basket", "velo", "voile", "volley" ou "fem". Si le titre mêle plusieurs sports, prends celui du titre ; en cas de doute ou de semaine mixte, mets "bzh" (scène bretonne : phare, voilier, ballon). Change-la à chaque mise à jour du résumé ; toute autre valeur affiche "bzh". */
+const UNE_ILLU="rugby";
 function ILLU(k){
   const S='class="ln"', A='class="ac"', I='class="ink"', W='class="sf"';
   const stripes=Array.from({length:9},(_,i)=>i%2?"":`<rect x="500" y="${i*200/9}" width="140" height="${200/9}" class="ink" opacity=".07"/>`).join("");
   const art={
+    bzh:`<path d="M0 150q40-14 80 0t80 0 80 0 80 0 80 0 80 0 80 0 80 0V200H0z" class="ink" opacity=".9"/><path d="M0 172q40-14 80 0t80 0 80 0 80 0 80 0 80 0 80 0 80 0" class="sf-s" fill="none" stroke-width="3"/><path d="M44 160l22-26h56l24 26z" ${I}/><g transform="translate(94 20)"><path d="M-14 114l6-80h16l6 80z" ${W} stroke-width="3"/><rect x="-11" y="52" width="22" height="14" ${A}/><rect x="-10" y="82" width="20" height="14" ${A}/><rect x="-12" y="22" width="24" height="12" ${I}/><path d="M-14 22h28l-14-16z" ${A}/></g><path d="M110 34L250 10M110 34L250 62" class="ac-s" fill="none" stroke-width="2" stroke-dasharray="6 6"/><path d="M290 146h150l-20 20H310z" ${I}/><line x1="365" y1="40" x2="365" y2="146" class="ln" stroke-width="4"/><path d="M369 46v92h62z" ${W} stroke-width="3"/><path d="M361 56v82h-48z" ${A}/><g transform="translate(550 56)"><circle r="26" ${W} stroke-width="3"/><path d="M0-10l9.5 6.9-3.6 11.2h-11.8l-3.6-11.2z" ${I}/><path d="M0-10V-26M9.5-3.1L24-8M5.9 8.1l9 12.4M-5.9 8.1l-9 12.4M-9.5-3.1L-24-8" ${S} stroke-width="2"/></g>`,
     foot:`<rect x="40" y="28" width="560" height="144" ${S}/><line x1="320" y1="28" x2="320" y2="172" ${S}/><circle cx="320" cy="100" r="34" ${S}/><circle cx="320" cy="100" r="3" ${I}/><rect x="40" y="62" width="70" height="76" ${S}/><rect x="530" y="62" width="70" height="76" ${S}/><rect x="28" y="84" width="12" height="32" ${S}/><rect x="600" y="84" width="12" height="32" ${S}/><g transform="translate(430 128)"><circle r="20" ${W} stroke-width="3"/><path d="M0-8l7.6 5.5-2.9 9h-9.4l-2.9-9z" ${I}/><path d="M0-8V-20M7.6-2.5l11.4-3.7M4.7 6.5l7 9.7M-4.7 6.5l-7 9.7M-7.6-2.5l-11.4-3.7" ${S} stroke-width="2"/></g><path d="M330 100q50-40 82 14" class="ac-s" fill="none" stroke-dasharray="6 6" stroke-width="3"/>`,
     amateur:`<path d="M0 172H640" ${S}/><path d="M40 172a48 48 0 0 1 48-48" ${S}/><line x1="40" y1="172" x2="40" y2="44" class="ln" stroke-width="5"/><path d="M42 46l58 16-58 18z" ${A}/><g transform="translate(150 150)"><circle r="20" ${W} stroke-width="3"/><path d="M0-8l7.6 5.5-2.9 9h-9.4l-2.9-9z" ${I}/></g><g ${I} opacity=".85">${Array.from({length:6},(_,i)=>`<rect x="${250+i*38}" y="${150-i*14}" width="34" height="${22+i*14}"/>`).join("")}</g><g ${A}>${Array.from({length:12},(_,i)=>`<circle cx="${262+(i%6)*38}" cy="${140-(i%6)*14-(i>5?16:0)}" r="5"/>`).join("")}</g>`,
     hand:`<path d="M0 172H640" ${S}/><g>${Array.from({length:7},(_,i)=>`<rect x="40" y="${64+i*15}" width="10" height="15" class="${i%2?"sf":"ac"}" stroke="none"/>`).join("")}<rect x="40" y="56" width="10" height="116" ${S} fill="none"/><rect x="40" y="56" width="70" height="10" ${A}/><path d="M50 66l60 0v106" ${S}/></g><path d="M110 28a150 150 0 0 1 0 144" ${S}/><path d="M110 8a190 190 0 0 1 0 184" ${S} stroke-dasharray="10 8"/><g transform="translate(380 92)"><circle r="24" ${W} stroke-width="3"/><path d="M-24 0q24-12 48 0M0-24q-12 24 0 48M-17-17q12 6 6 22" ${S} stroke-width="2.5"/></g><path d="M372 106q-90 40-150 28" class="ac-s" fill="none" stroke-dasharray="6 6" stroke-width="3"/>`,
@@ -851,7 +888,7 @@ function renderLive(){
     <div class="upd">${pre?"Score mis à jour environ tous les quarts d'heure pendant le match.":`Mis à jour à ${esc(LIVE.maj)} · rechargez la page pour la dernière version.`}</div></section>`;
 }
 function renderUne(){
-  const lead=`<section class="lead"><div class="kicker">La semaine bretonne</div><h3 class="big">Vannes fait tomber l'UBB, Coville 2e du Rhum</h3>
+  const lead=`<section class="lead">${(ILLU(UNE_ILLU)||ILLU("bzh")).replace('class="illu"','class="illu illu-une" style="width:calc(100% + 44px);margin:-22px -22px 18px;border-radius:5px 5px 0 0"')}<div class="kicker">La semaine bretonne</div><h3 class="big">Vannes fait tomber l'UBB, Coville 2e du Rhum</h3>
     <div class="ai" style="--c:var(--accent)">Résumé IA</div>
     <p>Le week-end s'est terminé en beauté pour le RC Vannes : délocalisés au stade de la Beaujoire, à Nantes, les Morbihannais ont battu Bordeaux-Bègles (23-14) le dimanche 8 novembre, grâce à des essais d'Alemanno, de Medrano et de Tabuavou. Toujours derniers du Top 14, ils remontent à 9 points. En Ligue 1, Brest a dominé Lyon (2-0) et Lorient a gagné au Havre (0-2), mais le Stade Rennais, battu par Lille (1-2), glisse au 8e rang après la victoire de Marseille à Lens. Brest et Lorient, 9e et 10e avec 15 points, abordent la trêve internationale juste derrière.</p>
     <p>En mer, le Rennais Thomas Coville a pris la 2e place de la Route du Rhum en Ultim, le dimanche 8 novembre à 17h42 (heure de Paris), derrière le Loudéacien Tom Laperche, vainqueur dans la nuit avec un record de l'épreuve. Corentin Horeau mène toujours les Imoca et Basile Bourgnon les Ocean Fifty. Place maintenant à la Coupe de France : le 7e tour offre un derby breton entre Lannion et Guingamp, le samedi 14 novembre à 19h, tandis que Brest Bretagne Handball se rend à Chambray le mercredi 11 novembre puis à Bucarest en Ligue des champions le dimanche 15 novembre.</p>
@@ -860,7 +897,7 @@ function renderUne(){
   const mine=favs.length?`<h3 class="sec-title">Mes clubs</h3><div class="clubs" style="margin-bottom:28px">${favs.map(clubCard).join("")}</div>`:`<div class="block hint" style="margin-bottom:24px"><b>Suivez vos clubs.</b> Ouvrez l'onglet « Mon club » et choisissez vos favoris : ils apparaîtront ici en premier.</div>`;
   const others=clubsNow().filter(c=>!FAV.has(c.id)&&inDept(c));
   const hist="";
-  return `${renderLive()}${renderBreves()}${lead}${renderRhumBanner()}${renderSaviez()}${hist}${mine}${renderDerbyMini()}${renderFace()}<h3 class="sec-title">Les clubs bretons en un coup d'œil</h3>${deptChips()}<div class="clubs">${others.length?others.map(clubCard).join(""):`<p class="note">Aucun club suivi dans ce département pour l'instant.</p>`}</div>`;
+  return `${renderLive()}${renderDerbyUne("haut")}${renderBreves()}${lead}${renderDerbyUne("milieu")}${renderRhumBanner()}${renderSaviez()}${hist}${mine}${renderFace()}<h3 class="sec-title">Les clubs bretons en un coup d'œil</h3>${deptChips()}<div class="clubs">${others.length?others.map(clubCard).join(""):`<p class="note">Aucun club suivi dans ce département pour l'instant.</p>`}</div>`;
 }
 
 function renderVelo(){
@@ -1034,7 +1071,7 @@ function show(k){
   else if(k==="velo"){head=`<h2>Cyclisme</h2><span class="round">Coureurs, courses et Tour de France en Bretagne</span>`;body=renderVelo();}
   else if(k==="voile"){head=`<h2>Voile</h2><span class="round">Route du Rhum 2026</span>`;body=renderVoile()+renderRhumDetail();}
   else if(k==="agenda"){head=`<h2>Agenda</h2>${br}<span class="round">Les rendez-vous des clubs bretons</span>`;body=renderAgenda();}
-  else {head=`<h2>${esc(DATA[k].title)}</h2>${br}<span class="round">${esc(DATA[k].round)}</span>`;body=renderSport(k);if(k==="foot")body=renderLive()+renderDerbies()+body.replace(/<\/div>\s*$/,`<div class="wide" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px">${renderButeurs()}${renderMercato()}</div></div>`);}
+  else {head=`<h2>${esc(DATA[k].title)}</h2>${br}<span class="round">${esc(DATA[k].round)}</span>`;body=renderSport(k);if(k==="foot")body=renderLive()+renderDerbyUne("tout")+body.replace(/<\/div>\s*$/,`<div class="wide" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px">${renderButeurs()}${renderMercato()}</div><div class="wide">${renderDerbies()}</div></div>`);}
   view.innerHTML=`<div class="view" style="--c:${s.c}"><div class="head">${head}${cpBtn(k)}</div>${body}</div>`;
   if(k==="visuels")drawVisuels();
   try{localStorage.setItem("tb-tab",k)}catch(e){}

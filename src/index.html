@@ -192,7 +192,7 @@ tr.bzh td:first-child{box-shadow:inset 3px 0 0 var(--ink);color:var(--ink)}
 .breve{display:grid;grid-template-columns:12.5em minmax(0,1fr);gap:4px 12px;padding:9px 0;border-top:1px solid var(--line);align-items:baseline}
 .breve:first-of-type{border-top:0}
 .breve .w{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--c);white-space:nowrap;display:flex;align-items:center;gap:6px}
-.breve .w::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c)}
+.breve .w::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--c)}
 .breve .w time{color:var(--muted);font-weight:600}
 .breve p{margin:0;font-size:.95rem}
 @media (max-width:520px){.breve{grid-template-columns:minmax(0,1fr)}}

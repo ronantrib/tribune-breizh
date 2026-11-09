@@ -361,7 +361,14 @@ function tb_seo_data(string $srcFile, string $cacheFile): ?array {
   $ts = $ver !== '' ? strtotime($ver) : false;
   $updated = gmdate('c', $ts ?: (int)filemtime($srcFile));
   $rhum = tb_seo_rhum($raw);
-  $out = ['sha' => $sha, 'updated' => $updated, 'clubs' => $clubs, 'data' => $data, 'names' => $names, 'amateur' => tb_seo_amateur($raw), 'rhum' => $rhum];
+  // Noms des clubs bretons (BZH) et des villes de la « Bretagne historique » (HISTNAMES) : même règle que la page d'accueil pour masquer les matchs de Nantes ou Saint-Nazaire contre un club hors Bretagne
+  $setOf = function (string $name) use ($raw): array {
+    $at = strpos($raw, "const $name=new Set(");
+    $v = $at === false ? null : TbJs::at($raw, $at + strlen("const $name=new Set("));
+    return is_array($v) ? array_values(array_filter($v, 'is_string')) : [];
+  };
+  $out = ['sha' => $sha, 'updated' => $updated, 'clubs' => $clubs, 'data' => $data, 'names' => $names, 'amateur' => tb_seo_amateur($raw), 'rhum' => $rhum,
+    'bzh' => $setOf('BZH'), 'histnames' => $setOf('HISTNAMES') ?: ['Nantes', 'Saint-Nazaire']];
   if ($rhum) {   // archive : copie de l'événement, hors Git (archive/ est ignoré), relue si l'événement quitte la page
     $dir = $root . '/archive';
     @mkdir($dir, 0755, true);
@@ -551,23 +558,38 @@ function tb_club_names(array $c): array {
   return $n;
 }
 
-function tb_games_list(array $games, array $me = []): string {
+/** Vrai si le match met en jeu une ville de la « Bretagne historique » sans qu'un club breton y joue (même règle que renderSport de la page : hv). */
+function tb_game_is_hist(string $a, string $b, ?array $hist): bool {
+  if (!$hist) return false;
+  $hn = $hist['histnames']; $bz = $hist['bzh'];
+  return (in_array($a, $hn, true) || in_array($b, $hn, true)) && !in_array($a, $bz, true) && !in_array($b, $bz, true);
+}
+
+/** Une journée de matchs (titre + liste) ; masquée entièrement hors mode « Bretagne historique » si tous ses matchs sont historiques. */
+function tb_day_block(array $day, bool $next, ?array $hist): string {
+  $games = $day['games'];
+  $all = $games && count(array_filter($games, fn($g) => !tb_game_is_hist((string)($g[0] ?? ''), (string)($g[$next ? 1 : 3] ?? ''), $hist))) === 0;
+  $html = '<h3>' . tb_h($day['day'] ?? '') . '</h3>' . ($next ? tb_next_list($games, [], $hist) : tb_games_list($games, [], $hist));
+  return $all ? '<div class="tb-h">' . $html . '</div>' : $html;
+}
+
+function tb_games_list(array $games, array $me = [], ?array $hist = null): string {
   $side = fn($name) => isset($me[tb_slug((string)$name)]) ? '<strong>' . tb_h($name) . '</strong>' : tb_h($name);
   $h = '<ul class="games">';
   foreach ($games as $g) {
     if (count($g) >= 4 && is_numeric($g[1]) && is_numeric($g[2])) {
-      $h .= '<li>' . $side($g[0]) . ' ' . (int)$g[1] . '-' . (int)$g[2] . ' ' . $side($g[3]) . (!empty($g[4]) ? '<span class="det">' . tb_h($g[4]) . '</span>' : '') . '</li>';
+      $h .= '<li' . (tb_game_is_hist((string)$g[0], (string)$g[3], $hist) ? ' class="tb-h"' : '') . '>' . $side($g[0]) . ' ' . (int)$g[1] . '-' . (int)$g[2] . ' ' . $side($g[3]) . (!empty($g[4]) ? '<span class="det">' . tb_h($g[4]) . '</span>' : '') . '</li>';
     }
   }
   return $h . '</ul>';
 }
 
-function tb_next_list(array $games, array $me = []): string {
+function tb_next_list(array $games, array $me = [], ?array $hist = null): string {
   $side = fn($name) => isset($me[tb_slug((string)$name)]) ? '<strong>' . tb_h($name) . '</strong>' : tb_h($name);
   $h = '<ul class="games">';
   foreach ($games as $g) {
     if (count($g) < 2) continue;
-    $h .= '<li>' . $side($g[0]) . ' – ' . $side($g[1]) . (!empty($g[2]) ? '<span class="det">' . tb_h($g[2]) . '</span>' : '') . '</li>';
+    $h .= '<li' . (tb_game_is_hist((string)$g[0], (string)$g[1], $hist) ? ' class="tb-h"' : '') . '>' . $side($g[0]) . ' – ' . $side($g[1]) . (!empty($g[2]) ? '<span class="det">' . tb_h($g[2]) . '</span>' : '') . '</li>';
   }
   return $h . '</ul>';
 }
@@ -673,6 +695,7 @@ function tb_seo_sport_page(array $d, string $slug): ?string {
   if (!$s) return null;
   if ($s['key'] === 'amateur') return tb_seo_amateur_page($d, $s, $sports);
   $v = $d['data'][$s['key']];
+  $histRule = !empty($d['histnames']) ? ['histnames' => $d['histnames'], 'bzh' => $d['bzh'] ?? []] : null;   // règle « Bretagne historique » pour les listes de matchs
   $name = $s['name'];
   $lower = tb_lower($name);
   $clubs = array_values(array_filter(tb_seo_clubs($d), fn($x) => ($x['sport'] ?? '') === $s['key']));
@@ -695,12 +718,12 @@ function tb_seo_sport_page(array $d, string $slug): ?string {
   }
   if (!empty($v['results'])) {
     $b .= '<section><h2>Derniers résultats</h2>';
-    foreach ($v['results'] as $day) if (!empty($day['games'])) $b .= '<h3>' . tb_h($day['day'] ?? '') . '</h3>' . tb_games_list($day['games']);
+    foreach ($v['results'] as $day) if (!empty($day['games'])) $b .= tb_day_block($day, false, $histRule);
     $b .= '</section>';
   }
   if (!empty($v['next'])) {
     $b .= '<section><h2>Prochains matchs</h2>';
-    foreach ($v['next'] as $day) if (!empty($day['games'])) $b .= '<h3>' . tb_h($day['day'] ?? '') . '</h3>' . tb_next_list($day['games']);
+    foreach ($v['next'] as $day) if (!empty($day['games'])) $b .= tb_day_block($day, true, $histRule);
     $b .= '</section>';
   }
   foreach (($v['tables'] ?? []) as $t) if (is_array($t) && !empty($t['rows'])) $b .= '<section' . (!empty($t['hist']) ? ' class="tb-h"' : '') . '><h2>Classement · ' . tb_h($t['name'] ?? '') . '</h2>' . tb_table($t) . '</section>';

@@ -919,7 +919,8 @@ function tb_seo_event_page(array $d, string $slug, ?int $now = null): ?string {
 
 /** Pages publiées : [adresse, fréquence, date de mise à jour ou null (= celle du site)]. */
 function tb_seo_urls(array $d): array {
-  $urls = [['/', 'daily', null], ['/mentions-legales.html', 'yearly', null]];
+  // Les mentions légales portent un « noindex » : volontairement absentes du sitemap (une page noindex dans un sitemap est signalée comme erreur par la Search Console)
+  $urls = [['/', 'daily', null]];
   foreach (tb_seo_sports($d) as $s) $urls[] = [$s['url'], 'daily', null];
   foreach (tb_seo_events($d) as $e) $urls[] = [$e['url'], !empty($e['archived']) ? 'yearly' : 'daily', !empty($e['archived']) ? ($e['snapshot_at'] ?? null) : null];
   foreach (tb_seo_clubs($d) as $c) $urls[] = [$c['url'], 'daily', null];
@@ -929,8 +930,7 @@ function tb_seo_urls(array $d): array {
 function tb_seo_sitemap(array $d): string {
   $x = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
   foreach (tb_seo_urls($d) as [$path, $freq, $lm]) {
-    // Page fixe (mentions légales) : pas de date de mise à jour, car celle du fichier change à chaque « git pull » sans que la page change
-    $last = $path === '/mentions-legales.html' ? '' : '<lastmod>' . tb_h($lm ?: $d['updated']) . '</lastmod>';
+    $last = '<lastmod>' . tb_h($lm ?: $d['updated']) . '</lastmod>';
     $x .= '  <url><loc>' . tb_h(TB_SEO_BASE . $path) . '</loc>' . $last . '<changefreq>' . $freq . '</changefreq></url>' . "\n";
   }
   return $x . '</urlset>' . "\n";

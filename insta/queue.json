@@ -936,6 +936,16 @@
       ]
     },
     {
+      "id": "2026-11-09-fb-amateur",
+      "at": "2026-11-09T12:35+01:00",
+      "type": "facebook",
+      "facebook": {
+        "message": "⚽ Foot amateur : les résultats du week-end\nNational 1 (9e journée) : Lorient II bat Saumur (6-2) et Dinan Léhon s'impose face à Vendée Poiré-sur-Vie (1-0). Locminé et Tarbes se quittent sur un nul (0-0).\nNational 2 : Cesson et Vire font match nul (0-0), Vannes bat le TA Rennes (2-0).\nRégional 1, groupe A (dimanche 8 novembre) : AG Plouvorn s'impose à Pluvigner (1-5) et Concarneau (B) bat Plaintel (5-1).\nLe classement complet : https://breizh.tribuneouest.fr/sport/foot-amateur\n#TribuneBreizh",
+        "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
+        "image": "none"
+      }
+    },
+    {
       "id": "2026-11-09-weekend",
       "at": "2026-11-09T12:48+01:00",
       "type": "carousel",
@@ -950,16 +960,6 @@
         "message": "🏴 7 victoires bretonnes sur 8 résultats ce week-end !\n⚽ Ligue 1 : Brest bat Lyon (2-0), Lorient s'impose au Havre (0-2), Rennes s'incline face à Lille (1-2) et est 8e avec 16 points.\n🏉 Vannes bat Bordeaux-Bègles (23-14) en Top 14. 🤾 Brest Bretagne Handball bat Bucarest (40-25) en Ligue des champions. 🏀 Landerneau bat Chartres (80-62).\n#TribuneBreizh #SportBreton #SportBretagne",
         "link": "https://breizh.tribuneouest.fr/",
         "image": "all"
-      }
-    },
-    {
-      "id": "2026-11-10-fb-amateur",
-      "at": "2026-11-10T08:07+01:00",
-      "type": "facebook",
-      "facebook": {
-        "message": "⚽ Foot amateur : les résultats du week-end\nNational 1 (9e journée) : Lorient II bat Saumur (6-2) et Dinan Léhon s'impose face à Vendée Poiré-sur-Vie (1-0). Locminé et Tarbes se quittent sur un nul (0-0).\nNational 2 : Cesson et Vire font match nul (0-0), Vannes bat le TA Rennes (2-0).\nRégional 1, groupe A (dimanche 8 novembre) : AG Plouvorn s'impose à Pluvigner (1-5) et Concarneau (B) bat Plaintel (5-1).\nLe classement complet : https://breizh.tribuneouest.fr/sport/foot-amateur\n#TribuneBreizh",
-        "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
-        "image": "none"
       }
     }
   ]

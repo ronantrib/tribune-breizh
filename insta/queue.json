@@ -1011,7 +1011,13 @@
           "color": "hand",
           "foot": "breizh.tribuneouest.fr"
         }
-      ]
+      ],
+      "facebook": {
+        "message": "🤾 Coupe de France de handball : Cesson-Rennes affrontera le PSG en quarts de finale, les 18 ou 19 décembre.\nLes Irréductibles se sont qualifiés en gagnant à Tremblay (31-32) le mardi 27 octobre. En StarLigue, ils reçoivent Toulouse le vendredi 13 novembre à 20h30.\n#TribuneBreizh #HandballBretagne #Handball",
+        "link": "https://breizh.tribuneouest.fr/sport/handball",
+        "image": "first",
+        "at": "2026-11-10T12:50+01:00"
+      }
     },
     {
       "id": "2026-11-10-fb-club-landerneau",

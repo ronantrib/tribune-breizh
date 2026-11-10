@@ -335,6 +335,50 @@ function tb_seo_events(array $d): array {
 /* ───────────── Données : lecture de src/index.html, avec cache ───────────── */
 
 /**
+ * Foot amateur féminin (Coupe de France féminine, Régional 1 et Régional 2 féminins) : lignes dans CDFF, R1F, R2FA, R2FB ;
+ * récit, titres et notes écrits dans le gabarit renderAmateurF(). Renvoie null si la rubrique est absente ou illisible.
+ */
+function tb_seo_amateur_f(string $raw): ?array {
+  $cd = TbJs::constant($raw, 'CDFF');
+  $f = strpos($raw, 'function renderAmateurF()');
+  if ($f === false) return null;
+  $clean = fn($s) => trim((string)preg_replace('/\s+/u', ' ', html_entity_decode(strip_tags((string)$s), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+  $ok = fn($s) => is_string($s) && $s !== '' && !str_contains($s, '${');
+  $end = strpos($raw, '/* ---------- ', $f);
+  $region = substr($raw, $f, ($end !== false && $end > $f) ? $end - $f : 9000);
+  $out = ['title' => 'Foot amateur féminin', 'recit' => null, 'cdf' => null, 'suite' => null, 'tables' => []];
+
+  if (preg_match('/<h3 class="sec-title"[^>]*>([^<$]+)<\/h3>/', $region, $m) && $ok($clean($m[1]))) $out['title'] = $clean($m[1]);
+
+  if (preg_match('/<section class="block recit[^>]*>(.*?)<\/section>/s', $region, $m)) {
+    preg_match('/<h4>(.*?)<\/h4>/s', $m[1], $h);
+    preg_match_all('/<p>(.*?)<\/p>/s', preg_replace('/\$\{srcHTML.*?\}/s', '', $m[1]), $ps);
+    $paras = array_values(array_filter(array_map($clean, $ps[1] ?? []), $ok));
+    if ($paras) $out['recit'] = ['t' => isset($h[1]) && $ok($clean($h[1])) ? $clean($h[1]) : '', 'p' => $paras];
+  }
+
+  if (is_array($cd) && is_array($cd['games'] ?? null) && $cd['games']) {
+    $out['cdf'] = ['title' => $ok($cd['title'] ?? null) ? $cd['title'] : 'Coupe de France féminine', 'label' => $ok($cd['label'] ?? null) ? $cd['label'] : '', 'games' => $cd['games'], 'note' => ''];
+    if (preg_match('/\$\{cdf\}<p class="note">(.*?)<\/p>/s', $region, $m) && $ok($clean($m[1]))) $out['cdf']['note'] = $clean($m[1]);
+  }
+
+  if (preg_match('/<h3>([^<$]+)<\/h3>\s*\$\{factsHTML\(/', $region, $m, PREG_OFFSET_CAPTURE)) {
+    $items = TbJs::at($region, $m[0][1] + strlen($m[0][0]));
+    if (is_array($items) && $items) $out['suite'] = ['title' => $clean($m[1][0]), 'items' => $items];
+  }
+
+  $re = '/tF\(\{name:("(?:[^"\\\\]|\\\\.)*"),\s*head:(\[[^\]]*\]),\s*rows:(\w+),\s*note:("(?:[^"\\\\]|\\\\.)*")/s';
+  if (preg_match_all($re, $region, $mm, PREG_SET_ORDER)) {
+    foreach ($mm as $m) {
+      $rows = TbJs::constant($raw, $m[3]);
+      $name = TbJs::at($m[1]); $head = TbJs::at($m[2]); $note = TbJs::at($m[4]);
+      if (is_array($rows) && $rows && is_string($name) && is_array($head)) $out['tables'][] = ['name' => $name, 'head' => $head, 'rows' => $rows, 'note' => $ok($note) ? $note : ''];
+    }
+  }
+  return ($out['recit'] || $out['cdf'] || $out['tables']) ? $out : null;
+}
+
+/**
  * Renvoie ['clubs'=>…, 'data'=>…, 'names'=>…, 'sha'=>…, 'updated'=>…] ou null si la page source est absente ou inattendue.
  * Le résultat est gardé dans $cacheFile tant que la source et ce fichier ne changent pas.
  */
@@ -346,7 +390,7 @@ function tb_seo_data(string $srcFile, string $cacheFile): ?array {
     $c = json_decode((string)file_get_contents($cacheFile), true);
     // Le cache n'est valable que s'il a été fabriqué par une version du code qui connaît le foot régional (clé « regional ») :
     // évite de garder un cache périmé si l'ancien code, encore en mémoire du serveur, l'a écrit juste après un changement de ce fichier.
-    $fresh = is_array($c) && (!isset($c['amateur']) || !is_array($c['amateur']) || array_key_exists('regional', $c['amateur']));
+    $fresh = is_array($c) && (!isset($c['amateur']) || !is_array($c['amateur']) || array_key_exists('regional', $c['amateur'])) && array_key_exists('amateurf', $c);
     if (is_array($c) && ($c['sha'] ?? '') === $sha && $fresh) return $c;
   }
   $clubs = TbJs::constant($raw, 'ALLCLUBS');
@@ -367,7 +411,7 @@ function tb_seo_data(string $srcFile, string $cacheFile): ?array {
     $v = $at === false ? null : TbJs::at($raw, $at + strlen("const $name=new Set("));
     return is_array($v) ? array_values(array_filter($v, 'is_string')) : [];
   };
-  $out = ['sha' => $sha, 'updated' => $updated, 'clubs' => $clubs, 'data' => $data, 'names' => $names, 'amateur' => tb_seo_amateur($raw), 'rhum' => $rhum,
+  $out = ['sha' => $sha, 'updated' => $updated, 'clubs' => $clubs, 'data' => $data, 'names' => $names, 'amateur' => tb_seo_amateur($raw), 'amateurf' => tb_seo_amateur_f($raw), 'rhum' => $rhum,
     'bzh' => $setOf('BZH'), 'histnames' => $setOf('HISTNAMES') ?: ['Nantes', 'Saint-Nazaire']];
   if ($rhum) {   // archive : copie de l'événement, hors Git (archive/ est ignoré), relue si l'événement quitte la page
     $dir = $root . '/archive';
@@ -413,13 +457,19 @@ function tb_seo_sports(array $d): array {
     $name = (string)($d['names']['amateur'] ?? 'Foot amateur');
     return ['key' => 'amateur', 'slug' => tb_slug($name), 'name' => $name, 'title' => $name, 'round' => (string)($d['amateur']['round'] ?? ''), 'url' => '/sport/' . tb_slug($name)];
   };
+  // Le foot amateur féminin suit le foot amateur ; sa page vient de tb_seo_amateur_f()
+  $amateurF = function () use ($d): ?array {
+    if (empty($d['amateurf'])) return null;
+    $name = 'Foot amateur féminin';
+    return ['key' => 'amateurf', 'slug' => tb_slug($name), 'name' => $name, 'title' => $name, 'round' => '', 'url' => '/sport/' . tb_slug($name)];
+  };
   foreach ($d['data'] as $k => $v) {
     if (!is_array($v) || !isset($v['title'])) continue;
     $name = (string)($d['names'][$k] ?? $v['title']);
     $out[$k] = ['key' => $k, 'slug' => tb_slug($name), 'name' => $name, 'title' => (string)$v['title'], 'round' => (string)($v['round'] ?? ''), 'url' => '/sport/' . tb_slug($name)];
-    if ($k === 'foot' && ($a = $amateur())) $out['amateur'] = $a;
+    if ($k === 'foot' && ($a = $amateur())) { $out['amateur'] = $a; if ($f = $amateurF()) $out['amateurf'] = $f; }
   }
-  if (!isset($out['amateur']) && ($a = $amateur())) $out['amateur'] = $a;
+  if (!isset($out['amateur']) && ($a = $amateur())) { $out['amateur'] = $a; if ($f = $amateurF()) $out['amateurf'] = $f; }
   return $out;
 }
 
@@ -694,6 +744,7 @@ function tb_seo_sport_page(array $d, string $slug): ?string {
   foreach ($sports as $x) if ($x['slug'] === $slug) { $s = $x; break; }
   if (!$s) return null;
   if ($s['key'] === 'amateur') return tb_seo_amateur_page($d, $s, $sports);
+  if ($s['key'] === 'amateurf') return tb_seo_amateur_f_page($d, $s, $sports);
   $v = $d['data'][$s['key']];
   $histRule = !empty($d['histnames']) ? ['histnames' => $d['histnames'], 'bzh' => $d['bzh'] ?? []] : null;   // règle « Bretagne historique » pour les listes de matchs
   $name = $s['name'];
@@ -817,6 +868,53 @@ function tb_seo_amateur_page(array $d, array $s, array $sports): string {
   $page = ['@context' => 'https://schema.org', '@type' => 'CollectionPage', 'name' => "$name breton", 'url' => TB_SEO_BASE . $s['url'], 'description' => $desc, 'inLanguage' => 'fr',
     'isPartOf' => ['@type' => 'WebSite', 'name' => 'Tribune Breizh', 'url' => TB_SEO_BASE . '/']];
   return tb_seo_layout($d, $sports, ['path' => $s['url'], 'title' => $title, 'description' => $desc, 'sport' => 'amateur', 'body' => $b,
+    'jsonld' => [$page, tb_ld_crumbs($crumbs)]]);
+}
+
+/* ───────────── Page du foot amateur féminin ───────────── */
+
+function tb_seo_amateur_f_page(array $d, array $s, array $sports): string {
+  $a = $d['amateurf'];
+  $name = $s['name'];
+  $title = tb_cut("$name breton : résultats et classements", 56) . ' | Tribune Breizh';
+  $head = trim((string)($a['recit']['t'] ?? ''));
+  $lead = $head !== '' ? rtrim($head, '.') . '. ' : '';
+  $desc = tb_cut($lead . 'Résultats, classements et Coupe de France du foot amateur féminin en Bretagne (Régional 1 et Régional 2), mis à jour chaque jour.', 158);
+
+  $crumbs = [['Accueil', '/'], [$name, $s['url']]];
+  $b = tb_crumbs($crumbs) . '<h1>' . tb_h($name) . ' breton</h1><p class="sub">Coupe de France féminine, Régional 1 et Régional 2</p>';
+
+  if (!empty($a['recit'])) {
+    $b .= '<section><div class="ai">Résumé IA</div><h2>' . tb_h($head !== '' ? $head : "L'actualité du foot amateur féminin breton") . '</h2>';
+    foreach ($a['recit']['p'] as $p) $b .= '<p>' . tb_h($p) . '</p>';
+    $b .= '</section>';
+  }
+  if (!empty($a['cdf'])) {
+    $c = $a['cdf'];
+    $b .= '<section><h2>' . tb_h($c['title']) . '</h2>' . ($c['label'] !== '' ? '<p class="sub">' . tb_h($c['label']) . '</p>' : '') . '<ul class="games">';
+    foreach ($c['games'] as $g) {
+      if (!is_array($g) || count($g) < 4) continue;
+      $w = tb_amateur_winner($g);
+      $home = $w === 1 ? '<strong>' . tb_h($g[0]) . '</strong>' : tb_h($g[0]);
+      $away = $w === 2 ? '<strong>' . tb_h($g[3]) . '</strong>' : tb_h($g[3]);
+      $b .= '<li>' . $home . ' ' . (int)$g[1] . '-' . (int)$g[2] . ' ' . $away . (!empty($g[4]) ? '<span class="det">' . tb_h($g[4]) . '</span>' : '') . '</li>';
+    }
+    $b .= '</ul><p class="tn">' . tb_h($c['note'] !== '' ? $c['note'] : 'Le vainqueur est en gras. tab = tirs au but.') . '</p></section>';
+  }
+  if (!empty($a['suite'])) {
+    $b .= '<section><h2>' . tb_h($a['suite']['title']) . '</h2><ul class="games">';
+    foreach ($a['suite']['items'] as $it) {
+      if (!is_array($it) || empty($it['t'])) continue;
+      $b .= '<li>' . (!empty($it['d']) ? tb_h($it['d']) . ' · ' : '') . '<strong>' . tb_h($it['t']) . '</strong>' . (!empty($it['s']) ? '<span class="det">' . tb_h($it['s']) . '</span>' : '') . '</li>';
+    }
+    $b .= '</ul></section>';
+  }
+  foreach ($a['tables'] as $t) $b .= '<section><h2>Classement · ' . tb_h($t['name']) . '</h2>' . tb_table($t) . ($t['note'] !== '' ? '<p class="tn">' . tb_h($t['note']) . '</p>' : '') . '</section>';
+  if (isset($sports['amateur'])) $b .= '<section><p><a href="' . tb_h($sports['amateur']['url']) . '">Le foot amateur masculin : Coupe de France, National 1 et National 2</a></p></section>';
+
+  $page = ['@context' => 'https://schema.org', '@type' => 'CollectionPage', 'name' => "$name breton", 'url' => TB_SEO_BASE . $s['url'], 'description' => $desc, 'inLanguage' => 'fr',
+    'isPartOf' => ['@type' => 'WebSite', 'name' => 'Tribune Breizh', 'url' => TB_SEO_BASE . '/']];
+  return tb_seo_layout($d, $sports, ['path' => $s['url'], 'title' => $title, 'description' => $desc, 'sport' => 'amateurf', 'body' => $b,
     'jsonld' => [$page, tb_ld_crumbs($crumbs)]]);
 }
 

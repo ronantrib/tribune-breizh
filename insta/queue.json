@@ -1011,12 +1011,49 @@
           "color": "hand",
           "foot": "breizh.tribuneouest.fr"
         }
+      ]
+    },
+    {
+      "id": "2026-11-10-fb-club-landerneau",
+      "at": "2026-11-10T19:23+01:00",
+      "type": "facebook",
+      "cards": [
+        {
+          "kicker": "Où en est Landerneau Bretagne Basket ?",
+          "title": "Landerneau Bretagne Basket",
+          "lines": [
+            "7e de la Boulangère Wonderligue (4 V – 4 D) après 8 journées."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Chartres (LFB · J8)",
+              "80-62"
+            ],
+            [
+              "Avant",
+              "Poznan (EuroCup)",
+              "71-76 a.p."
+            ],
+            [
+              "Prochain",
+              "Lattes-Montpellier",
+              "dim. 22 nov. 15h30 · LFB, 9e journée"
+            ],
+            [
+              "Ensuite",
+              "Fribourg",
+              "mer. 25 nov. 19h30 · EuroCup"
+            ]
+          ],
+          "color": "basket",
+          "foot": "breizh.tribuneouest.fr"
+        }
       ],
       "facebook": {
-        "message": "🤾 Coupe de France de handball : Cesson-Rennes affrontera le PSG en quarts de finale, les 18 ou 19 décembre.\nLes Irréductibles se sont qualifiés en gagnant à Tremblay (31-32) le mardi 27 octobre. En StarLigue, ils reçoivent Toulouse le vendredi 13 novembre à 20h30.\n#TribuneBreizh #HandballBretagne #Handball",
-        "link": "https://breizh.tribuneouest.fr/sport/handball",
-        "image": "first",
-        "at": "2026-11-10T12:50+01:00"
+        "message": "🏀 Où en est Landerneau Bretagne Basket ?\nLe club est 7e de la Boulangère Wonderligue (4 victoires, 4 défaites) après sa victoire contre Chartres (80-62) le samedi 7 novembre. Prochain match : Lattes-Montpellier, le dimanche 22 novembre à 15h30.\nLanderneau peut-il enchaîner ?\n#TribuneBreizh #BasketBretagne #LanderneauBretagneBasket",
+        "link": "https://breizh.tribuneouest.fr/sport/basket",
+        "image": "first"
       }
     }
   ]

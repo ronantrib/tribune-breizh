@@ -1061,6 +1061,49 @@
         "link": "https://breizh.tribuneouest.fr/sport/basket",
         "image": "first"
       }
+    },
+    {
+      "id": "2026-11-10-story-rhum-soir",
+      "at": "2026-11-10T20:10+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Le pointage du soir",
+          "lines": [
+            "Pointage du mardi 10 novembre à 17h."
+          ],
+          "rows": [
+            [
+              "1er",
+              "Basile Bourgnon",
+              "Ocean Fifty · en tête"
+            ],
+            [
+              "1er",
+              "Corentin Horeau",
+              "Imoca · en tête"
+            ],
+            [
+              "4e",
+              "Léonard Legrand",
+              "Ocean Fifty"
+            ],
+            [
+              "3e",
+              "Élodie Bonafous",
+              "Imoca"
+            ],
+            [
+              "7e",
+              "Maxime Sorel",
+              "Imoca"
+            ]
+          ],
+          "color": "voile",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
     }
   ]
 }

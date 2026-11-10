@@ -941,6 +941,45 @@
       "caption": "⚽ Mise à jour après la 10e journée de Ligue 1 : Estéban Lepaul, de Rennes (@staderennaisfc), reste en tête des buteurs bretons avec 7 buts.\nLudovic Ajorque, de Brest (@stadebrestois29), Stan Janno (Concarneau, Ligue 3) et Boulaye Dia (Rennes) suivent avec 5 buts chacun.\nQui sera le meilleur buteur breton à Noël ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #Ligue2"
     },
     {
+      "id": "2026-11-10-club-landerneau",
+      "at": "2026-11-10T12:37+01:00",
+      "type": "feed",
+      "caption": "🏀 Où en est Landerneau Bretagne Basket (@lbb_hn) ?\nLe club est 7e de la Boulangère Wonderligue avec 4 victoires et 4 défaites après 8 journées. Il vient de battre Chartres (80-62) le samedi 7 novembre, après sa défaite en prolongation contre Poznan (71-76) en EuroCup le mercredi 4 novembre.\nProchain match : Lattes-Montpellier – Landerneau, le dimanche 22 novembre à 15h30, pour la 9e journée de LFB.\nLanderneau peut-il enchaîner à Lattes-Montpellier ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #BasketBretagne #LanderneauBretagneBasket #Breizh",
+      "cards": [
+        {
+          "kicker": "Où en est Landerneau Bretagne Basket ?",
+          "title": "Landerneau Bretagne Basket",
+          "lines": [
+            "7e de la Boulangère Wonderligue (4 V – 4 D) après 8 journées."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Chartres (LFB · J8)",
+              "80-62"
+            ],
+            [
+              "Avant",
+              "Poznan (EuroCup)",
+              "71-76 a.p."
+            ],
+            [
+              "Prochain",
+              "Lattes-Montpellier",
+              "dim. 22 nov. 15h30 · LFB, 9e journée"
+            ],
+            [
+              "Ensuite",
+              "Fribourg",
+              "mer. 25 nov. 19h30 · EuroCup"
+            ]
+          ],
+          "color": "basket",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
       "id": "2026-11-10-libre",
       "at": "2026-11-10T18:40+01:00",
       "type": "feed",

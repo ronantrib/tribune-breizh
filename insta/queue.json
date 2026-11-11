@@ -1106,6 +1106,49 @@
       ]
     },
     {
+      "id": "2026-11-11-story-rhum-matin",
+      "at": "2026-11-11T09:12+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Le pointage du matin",
+          "lines": [
+            "Pointage du mardi 10 novembre à 22h (partiel)."
+          ],
+          "rows": [
+            [
+              "1er",
+              "Tom Laperche",
+              "Ultim"
+            ],
+            [
+              "2e",
+              "Thomas Coville",
+              "Ultim"
+            ],
+            [
+              "1er",
+              "Basile Bourgnon",
+              "Ocean Fifty"
+            ],
+            [
+              "1er",
+              "Corentin Horeau",
+              "Imoca"
+            ],
+            [
+              "3e",
+              "Élodie Bonafous",
+              "Imoca"
+            ]
+          ],
+          "color": "voile",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
       "id": "2026-11-11-affiche",
       "at": "2026-11-11T13:18+01:00",
       "type": "feed",

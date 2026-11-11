@@ -1104,6 +1104,15 @@
           "foot": "breizh.tribuneouest.fr"
         }
       ]
+    },
+    {
+      "id": "2026-11-11-affiche",
+      "at": "2026-11-11T13:18+01:00",
+      "type": "feed",
+      "caption": "⚽ L'affiche de la semaine : Lannion – Guingamp !\nUn derby breton en Coupe de France, samedi 14 novembre à 19h à Lannion, pour le 7e tour.\nL'En Avant Guingamp (@eaguingamp) se déplace chez Lannion pour une soirée de coupe à ne pas manquer.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Breizh #FootBreton #FootballBretagne #EnAvantGuingamp",
+      "visuels": [
+        "derby"
+      ]
     }
   ]
 }

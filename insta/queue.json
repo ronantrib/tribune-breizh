@@ -1156,6 +1156,16 @@
       "visuels": [
         "derby"
       ]
+    },
+    {
+      "id": "2026-11-11-fb-derby",
+      "at": "2026-11-11T12:47+01:00",
+      "type": "facebook",
+      "facebook": {
+        "message": "⚽ Derby breton en Coupe de France\nLannion (National 2) reçoit Guingamp (Ligue 2) en 7e tour, le samedi 14 novembre à 19h.\nGuingamp est 11e de Ligue 2 ; Lannion est dernier de sa poule de National 2, sans point.\nQui ira au tour suivant ?\n#TribuneBreizh #CoupeDeFrance #Guingamp",
+        "link": "https://breizh.tribuneouest.fr/sport/football",
+        "image": "none"
+      }
     }
   ]
 }

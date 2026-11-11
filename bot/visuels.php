@@ -144,6 +144,41 @@ function tb_visuel(string $id, string $page) {
       vt($im, 'Dernier match de chaque club féminin suivi', 60, 1000, 22, TB_B4, '9aa1ab');
       return $im;
     }
+    case 'resfoot': case 'reshand': case 'resbasket': case 'resrugby': case 'resvolley': {
+      // Résultats du week-end d'un sport : groupes de DATA.<sport>.results datés (« 7 nov. », « 7 novembre ») des 4 derniers jours, hors Bretagne historique.
+      $sp = ['resfoot' => 'foot', 'reshand' => 'hand', 'resbasket' => 'basket', 'resrugby' => 'rugby', 'resvolley' => 'volley'][$id];
+      $nomSp = ['foot' => 'Football', 'hand' => 'Handball', 'basket' => 'Basket', 'rugby' => 'Rugby', 'volley' => 'Volley'][$sp];
+      $mois = ['janv' => 1, 'févr' => 2, 'mars' => 3, 'avr' => 4, 'mai' => 5, 'juin' => 6, 'juil' => 7, 'août' => 8, 'sept' => 9, 'oct' => 10, 'nov' => 11, 'déc' => 12];
+      $setOf = function ($name) use ($src) { return preg_match('/const ' . $name . '=new Set\((\[.*?\])\)/su', $src, $mm) ? (json_decode($mm[1], true) ?: []) : []; };
+      $hist = $setOf('HISTNAMES'); $bzh = $setOf('BZH');   // comme la page : un match de Bretagne historique n'est montré que si un club breton y joue
+      $D = tb_js_literal(substr($src, (int)strpos($src, "\n  $sp:{title")), 'results:');
+      $now = (int)(getenv('TB_NOW') ?: time()); $games = [];  // TB_NOW : date de test (timestamp)
+      foreach ($D as $grp) {
+        if (!preg_match('/\b(\d{1,2})(?:er)? (janv|févr|mars|avr|mai|juin|juil|août|sept|oct|nov|déc)/u', (string)$grp['day'], $m)) continue;
+        $mo = $mois[$m[2]]; $yr = (int)date('Y', $now); if ($mo > (int)date('n', $now) + 6) $yr--;
+        $ts = mktime(12, 0, 0, $mo, (int)$m[1], $yr);
+        if ($ts > $now + 86400 || $now - $ts > 4 * 86400) continue;
+        $comp = trim(explode(' · ', preg_replace('/\s*\(.*$/u', '', (string)$grp['day']))[0]);
+        foreach ($grp['games'] as $g) {
+          if ((in_array($g[0], $hist, true) || in_array($g[3], $hist, true)) && !in_array($g[0], $bzh, true) && !in_array($g[3], $bzh, true)) continue;
+          $c = $comp; $x = (string)($g[4] ?? '');
+          if (preg_match('/^(Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Dimanche)/u', $c)) $c = ['L1' => 'Ligue 1', 'L2' => 'Ligue 2', 'L3' => 'Ligue 3', 'Arkema' => 'Arkema'][$x] ?? $x;
+          $games[] = [$g[0], $g[1], $g[2], $g[3], $c, $x];
+        }
+      }
+      if (!$games) throw new Exception("aucun résultat récent pour $sp");
+      $im = vbase('Résultats du week-end · ' . $nomSp);
+      foreach (array_slice($games, 0, 8) as $i => $g) {
+        $y = 300 + $i * 88; vrow($im, $i, $y, 76, 54);
+        vt($im, (string)$g[0], 440, $y - 10, vfit((string)$g[0], 340, 34, TB_B7), TB_B7, 'f5f6f4', 'right');
+        vt($im, $g[1] . '-' . $g[2], 540, $y - 6, 50, TB_D, 'ff5a6e', 'center');
+        vt($im, (string)$g[3], 640, $y - 10, vfit((string)$g[3], 340, 34, TB_B7), TB_B7, 'f5f6f4');
+        $lab = $g[4] . (preg_match('/^(J\d|a\.p\.)/u', (string)$g[5]) ? ' · ' . $g[5] : '');
+        vt($im, $lab, 540, $y + 14, 20, TB_B4, '9aa1ab', 'center');
+      }
+      if (count($games) > 8) vt($im, '+ ' . (count($games) - 8) . ' autres résultats sur breizh.tribuneouest.fr', 60, 1000, 22, TB_B4, '9aa1ab');
+      return $im;
+    }
     case 'buteurs': {
       $im = vbase('Les buteurs bretons');
       $l = tb_js_literal($src, 'const BUTEURS=');

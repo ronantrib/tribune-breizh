@@ -61,7 +61,7 @@ dans `insta/gen/` (ignoré par Git), puis les envoie à Instagram. Les posts ave
 Aperçu d'un post : `php ~/repositories/tribune-breizh/bot/publish.php apercu ID` dans le terminal de cPanel.
 
 Visuels d'origine du site : un post peut aussi être décrit par `"visuels": ["resultats", "classement"]` (derby, classement,
-resultats, buteurs, feminin, face, rhum, story ; « feminin » = dernier match de chaque club féminin suivi, champ fem:true de ALLCLUBS). `bot/visuels.php` les redessine à l'identique de l'onglet Visuels, avec les données
+resultats, resfoot|reshand|resbasket|resrugby|resvolley (résultats du week-end d'un sport : groupes datés des 4 derniers jours de DATA.<sport>.results, hors Bretagne historique ; erreur s'il n'y en a aucun), buteurs, feminin, face, rhum, story ; « feminin » = dernier match de chaque club féminin suivi, champ fem:true de ALLCLUBS). `bot/visuels.php` les redessine à l'identique de l'onglet Visuels, avec les données
 de `src/index.html` au moment de publier. Test à la main : `php bot/visuels.php derby /tmp/derby.jpg`.
 
 ### Rythme, garde de 90 minutes et mentions

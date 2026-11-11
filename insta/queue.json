@@ -1156,6 +1156,39 @@
       "visuels": [
         "derby"
       ]
+    },
+    {
+      "id": "2026-11-11-quiz",
+      "at": "2026-11-11T17:37+01:00",
+      "type": "feed",
+      "caption": "⚽ Retour sur une finale de Coupe de France entre voisins bretons !\nQui a marqué un doublé pour Guingamp lors de sa victoire 2-1 contre Rennes en finale de la Coupe de France 2009 ?\nDites-nous en commentaire ce que vous pensez ! Réponse ce soir en story.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #FootBreton #Bretagne",
+      "cards": [
+        {
+          "kicker": "Le quiz du mercredi",
+          "title": "Qui a marqué un doublé pour Guingamp lors de sa victoire 2-1 contre Rennes en finale de la Coupe de France 2009 ?",
+          "lines": [
+            "Réponse ce soir en story."
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-11-story-quiz",
+      "at": "2026-11-11T20:42+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "La réponse du quiz",
+          "title": "Eduardo",
+          "lines": [
+            "En Avant Guingamp a remporté la Coupe de France 2009 en battant le Stade Rennais 2-1 au Stade de France, grâce à un doublé d'Eduardo."
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
     }
   ]
 }

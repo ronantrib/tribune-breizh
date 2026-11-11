@@ -5,7 +5,7 @@
  * Les données sont lues dans src/index.html (la page déposée par les tâches), comme le fait la page elle-même :
  * AFFICHE, ALLCLUBS, BUTEURS, FACE, RHUM, et le tableau des résultats écrit dans drawVisuels.
  *
- * Visuels : derby, classement, resultats, buteurs, face, rhum (1080×1080) et story (1080×1920).
+ * Visuels : derby, classement, resultats, buteurs, feminin, face, rhum (1080×1080) et story (1080×1920).
  * À la main : php bot/visuels.php derby sortie.jpg
  */
 require_once __DIR__ . '/card.php';
@@ -126,6 +126,24 @@ function tb_visuel(string $id, string $page) {
       }
       return $im;
     }
+    case 'feminin': {
+      // Les Bretonnes : dernier résultat de chaque club féminin suivi (fem:true, hors Bretagne historique), lu dans ALLCLUBS.
+      $im = vbase('Les Bretonnes');
+      $rows = array_values(array_filter(tb_js_literal($src, 'const ALLCLUBS='), fn($c) => !empty($c['fem']) && empty($c['hist']) && !empty($c['res'])));
+      foreach (array_slice($rows, 0, 8) as $i => $c) {
+        $y = 300 + $i * 84; vrow($im, $i, $y, 72, 54);
+        $nm = (string)($c['nm'] ?? $c['short']); $r = $c['res'][0];
+        $dom = $r[0] === $nm; $mine = $dom ? $r[1] : $r[2]; $their = $dom ? $r[2] : $r[1]; $opp = $dom ? $r[3] : $r[0];
+        $out = $mine > $their ? 'V' : ($mine < $their ? 'D' : 'N');
+        vt($im, (string)$c['short'], 84, $y - 10, vfit((string)$c['short'], 380, 34, TB_B7), TB_B7, 'f5f6f4');
+        vt($im, (string)$c['lg'], 84, $y + 12, vfit((string)$c['lg'], 380, 22, TB_B4), TB_B4, '9aa1ab');
+        vt($im, $out, 560, $y + 6, 46, TB_D, $out === 'V' ? '3ecf6e' : ($out === 'D' ? 'ff5a6e' : 'f5f6f4'), 'center');
+        vt($im, $mine . '-' . $their, 650, $y + 6, 46, TB_D, 'f5f6f4', 'center');
+        vt($im, (string)$opp, 1004, $y + 4, vfit((string)$opp, 300, 28, TB_B7), TB_B7, 'f5f6f4', 'right');
+      }
+      vt($im, 'Dernier match de chaque club féminin suivi', 60, 1000, 22, TB_B4, '9aa1ab');
+      return $im;
+    }
     case 'buteurs': {
       $im = vbase('Les buteurs bretons');
       $l = tb_js_literal($src, 'const BUTEURS=');
@@ -217,7 +235,7 @@ function tb_render_visuel(string $id, string $page, string $out) {
 }
 
 if (PHP_SAPI === 'cli' && realpath($argv[0] ?? '') === __FILE__) {
-  if (count($argv) < 3) { fwrite(STDERR, "Usage : php bot/visuels.php derby|classement|resultats|buteurs|face|rhum|story sortie.jpg\n"); exit(2); }
+  if (count($argv) < 3) { fwrite(STDERR, "Usage : php bot/visuels.php derby|classement|resultats|buteurs|feminin|face|rhum|story sortie.jpg\n"); exit(2); }
   try { tb_render_visuel($argv[1], dirname(__DIR__) . '/src/index.html', $argv[2]); echo "ok {$argv[2]}\n"; }
   catch (Exception $e) { fwrite(STDERR, $e->getMessage() . "\n"); exit(1); }
 }

@@ -162,6 +162,27 @@
    "sport": "handball",
    "instagram": "",
    "facebook": ""
+  },
+  {
+   "id": "vitrebasket",
+   "nom": "Aurore Vitré Basket Bretagne",
+   "sport": "basket",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "fougeresbasket",
+   "nom": "Pays de Fougères Basket",
+   "sport": "basket",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "lorientbasket",
+   "nom": "CEP Lorient Breizh Basket",
+   "sport": "basket",
+   "instagram": "",
+   "facebook": ""
   }
  ]
 }

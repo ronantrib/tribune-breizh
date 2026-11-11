@@ -127,6 +127,41 @@
    "sport": "football",
    "instagram": "@vannesoc",
    "facebook": ""
+  },
+  {
+   "id": "rec",
+   "nom": "Rennes Étudiants Club",
+   "sport": "rugby",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "rennesrugbyf",
+   "nom": "Stade Rennais Rugby (F)",
+   "sport": "rugby",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "stadenantais",
+   "nom": "Stade Nantais",
+   "sport": "rugby",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "unionrennes",
+   "nom": "Union Rennes Basket 35",
+   "sport": "basket",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "saintgregoire",
+   "nom": "Saint-Grégoire Rennes Métropole Handball (F)",
+   "sport": "handball",
+   "instagram": "",
+   "facebook": ""
   }
  ]
 }

@@ -8,7 +8,7 @@
  *   php publish.php init LE_JETON   enregistre le jeton d'accès (une seule fois)
  *   php publish.php check           vérifie le jeton et montre la file, sans rien publier
  *   php publish.php apercu ID       dessine tout de suite les cartes du post ID (insta/gen/) et donne leurs adresses
- *   (garde.php : jamais deux posts sur un même réseau à moins de 90 minutes d'écart, urgents compris ; `check` l'indique)
+ *   (garde.php : jamais deux posts du fil sur un même réseau à moins de 90 minutes d'écart, urgents compris ; deux stories : 25 minutes ; `check` l'indique)
  *   php publish.php nettoyage       montre les fichiers de insta/img et insta/reels qui seraient supprimés (rien n'est supprimé ; voir cleanup.php)
  *   php publish.php                 publication normale (c'est ce que lance le cron)
  *   php publish.php fbcheck | fbtest | fbapercu ID   canal Facebook (voir facebook.php)
@@ -157,7 +157,8 @@ if ($cmd === 'check') {
     $st = $D[$p['id']]['status'] ?? (!empty($p['cancel']) ? 'annulé' : (strtotime($p['at']) > $now ? 'prévu' : 'en attente'));
     echo "- {$p['at']}  {$p['type']}  {$p['id']}  : $st\n";
   }
-  echo ($w = tb_garde_wait($D, $now)) > 0 ? "Garde : le prochain post Instagram peut partir dans " . ceil($w / 60) . " min.\n" : "Garde : un post Instagram peut partir maintenant.\n";
+  echo ($w = tb_garde_wait($D, $now)) > 0 ? "Garde : le prochain post du fil Instagram peut partir dans " . ceil($w / 60) . " min.\n" : "Garde : un post du fil Instagram peut partir maintenant.\n";
+  echo ($w = tb_garde_wait($D, $now, true)) > 0 ? "Garde : la prochaine story peut partir dans " . ceil($w / 60) . " min.\n" : "Garde : une story peut partir maintenant.\n";
   exit(0);
 }
 
@@ -189,7 +190,8 @@ foreach (tb_by_time($Q['posts']) as $p) {   // dans l'ordre des heures : si deux
     $D[$id] = ['status' => 'abandonné', 'tries' => $d['tries'], 'note' => 'trop en retard', 'time' => date('c')];
     jwrite("$STATE/done.json", $D); logline("$id : abandonné (plus de 6 h de retard)."); continue;
   }
-  if (empty($p['sans_garde']) && ($w = tb_garde_wait($D, time())) > 0) { logline("$id : attend, un post est parti il y a moins de 90 minutes (encore " . ceil($w / 60) . " min)."); continue; }   // garde.php
+  $isStory = ($p['type'] ?? 'feed') === 'story';
+  if (empty($p['sans_garde']) && ($w = tb_garde_wait($D, time(), $isStory)) > 0) { logline("$id : attend, " . ($isStory ? 'une story est partie il y a moins de 25 minutes' : 'un post est parti il y a moins de 90 minutes') . " (encore " . ceil($w / 60) . " min)."); continue; }   // garde.php
   try {
     $type = $p['type'] ?? 'feed';
     if ($type === 'reel') {   // Reel : une vidéo MP4 déposée dans le dépôt (insta/reels/…), 9:16, 3 à 90 s
@@ -213,9 +215,9 @@ foreach (tb_by_time($Q['posts']) as $p) {   // dans l'ordre des heures : si deux
     }
     }
     // On note « à vérifier » avant de publier : si le script s'arrête pile ici, il ne republiera jamais deux fois.
-    $D[$id] = ['status' => 'à vérifier', 'tries' => $d['tries'] + 1, 'time' => date('c')]; jwrite("$STATE/done.json", $D);
+    $D[$id] = ['status' => 'à vérifier', 'type' => $type, 'tries' => $d['tries'] + 1, 'time' => date('c')]; jwrite("$STATE/done.json", $D);
     $m = http('POST', API . "/{$T['user_id']}/media_publish", ['creation_id' => $cid, 'access_token' => $T['access_token']]);
-    $D[$id] = ['status' => 'publié', 'media_id' => $m['id'], 'time' => date('c')]; jwrite("$STATE/done.json", $D);
+    $D[$id] = ['status' => 'publié', 'type' => $type, 'media_id' => $m['id'], 'time' => date('c')]; jwrite("$STATE/done.json", $D);
     logline("$id : publié ($type, média {$m['id']}).");
   } catch (Exception $e) {
     $tries = $d['tries'] + 1;

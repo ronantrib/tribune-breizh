@@ -2,7 +2,7 @@
 /*
  * Tribune Breizh · garde d'espacement : pas de nouveau post sur un réseau moins de 90 minutes après le précédent.
  * Chargé par publish.php (Instagram) et utilisé aussi par facebook.php (Facebook) ; chaque réseau a son propre historique
- * (done.json pour Instagram, fb_done.json pour Facebook). Valable pour TOUS les posts, urgents compris, stories comprises.
+ * (done.json pour Instagram, fb_done.json pour Facebook). Valable pour tous les posts du fil, urgents compris ; les stories ont leur propre garde de 25 minutes entre elles (voir plus bas).
  *
  * Un post qui doit attendre n'est pas abandonné et ne compte pas comme un essai : il repart au premier passage du cron
  * (toutes les 10 minutes) où les 90 minutes sont écoulées. S'il attend au point de dépasser la fenêtre de retard (6 h après
@@ -12,17 +12,29 @@
 
 const GARDE = 90 * 60;
 
-/* Heure (timestamp) de la dernière publication d'un réseau d'après son historique, 0 s'il n'y en a pas. */
-function tb_last_pub($D) {
+/* Stories (décision de Ronan, 11 novembre 2026) : la garde de 90 minutes ne vaut qu'entre posts du fil (feed, carrousel, reel).
+ * Une story ne bloque pas le fil et n'est pas bloquée par lui ; deux stories s'espacent seulement de 25 minutes. */
+const GARDE_STORY = 25 * 60;
+
+/* Une entrée de l'historique est une story si elle porte type=story (enregistré depuis le 11 novembre), ou, pour les anciennes, « story » dans son id. */
+function tb_is_story($id, $d) { return ($d['type'] ?? '') === 'story' || (!isset($d['type']) && stripos((string)$id, 'story') !== false); }
+
+/* Heure (timestamp) de la dernière publication d'un réseau d'après son historique, 0 s'il n'y en a pas.
+ * $story = true : on ne regarde que les stories ; false : on ne regarde que le reste (les stories sont ignorées). */
+function tb_last_pub($D, $story = false) {
   $t = 0;
-  foreach ($D as $d) if (in_array($d['status'] ?? '', ['publié', 'à vérifier'], true)) $t = max($t, (int)strtotime($d['time'] ?? ''));
+  foreach ($D as $id => $d) {
+    if (tb_is_story($id, $d) !== $story) continue;
+    if (in_array($d['status'] ?? '', ['publié', 'à vérifier'], true)) $t = max($t, (int)strtotime($d['time'] ?? ''));
+  }
   return $t;
 }
 
-/* Secondes à attendre avant de pouvoir publier sur ce réseau (0 = c'est possible tout de suite). */
-function tb_garde_wait($D, $now) {
-  $last = tb_last_pub($D);
-  return ($last && $now - $last < GARDE) ? GARDE - ($now - $last) : 0;
+/* Secondes à attendre avant de pouvoir publier sur ce réseau (0 = c'est possible tout de suite).
+ * $story = true pour une story (écart de 25 min avec la dernière story), false pour le reste (90 min avec le dernier post du fil). */
+function tb_garde_wait($D, $now, $story = false) {
+  $last = tb_last_pub($D, $story); $g = $story ? GARDE_STORY : GARDE;
+  return ($last && $now - $last < $g) ? $g - ($now - $last) : 0;
 }
 
 /* Posts triés par heure de publication (celle du champ facebook pour Facebook si $fb), sans changer la file elle-même. */

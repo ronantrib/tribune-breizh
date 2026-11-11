@@ -1158,6 +1158,22 @@
       ]
     },
     {
+      "id": "2026-11-11-urgent-1325",
+      "at": "2026-11-11T13:25+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Doublé breton à l'arrivée",
+          "lines": [
+            "Basile Bourgnon (Ocean Fifty) a gagné sa classe ce mercredi 11 novembre à 6h12 (heure de Paris).",
+            "Corentin Horeau a remporté l'Imoca deux minutes plus tard, à 6h14."
+          ],
+          "color": "voile"
+        }
+      ]
+    },
+    {
       "id": "2026-11-11-quiz",
       "at": "2026-11-11T17:37+01:00",
       "type": "feed",

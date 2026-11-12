@@ -136,12 +136,12 @@ function tb_visuel(string $id, string $page) {
         $dom = $r[0] === $nm; $mine = $dom ? $r[1] : $r[2]; $their = $dom ? $r[2] : $r[1]; $opp = $dom ? $r[3] : $r[0];
         $out = $mine > $their ? 'V' : ($mine < $their ? 'D' : 'N');
         vt($im, (string)$c['short'], 84, $y - 10, vfit((string)$c['short'], 380, 34, TB_B7), TB_B7, 'f5f6f4');
-        vt($im, (string)$c['lg'], 84, $y + 12, vfit((string)$c['lg'], 380, 22, TB_B4), TB_B4, '9aa1ab');
+        $sub = (string)$c['lg'] . (!empty($c['r']) ? ' · ' . $c['r'] : ''); vt($im, $sub, 84, $y + 12, vfit($sub, 380, 22, TB_B4), TB_B4, '9aa1ab');
         vt($im, $out, 560, $y + 6, 46, TB_D, $out === 'V' ? '3ecf6e' : ($out === 'D' ? 'ff5a6e' : 'f5f6f4'), 'center');
         vt($im, $mine . '-' . $their, 650, $y + 6, 46, TB_D, 'f5f6f4', 'center');
         vt($im, (string)$opp, 1004, $y + 4, vfit((string)$opp, 300, 28, TB_B7), TB_B7, 'f5f6f4', 'right');
       }
-      vt($im, 'Dernier match de chaque club féminin suivi', 60, 1000, 22, TB_B4, '9aa1ab');
+      vt($im, 'Dernier match et place au classement de chaque club féminin suivi', 60, 1000, 22, TB_B4, '9aa1ab');
       return $im;
     }
     case 'resfoot': case 'reshand': case 'resbasket': case 'resrugby': case 'resvolley': {

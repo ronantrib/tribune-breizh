@@ -190,6 +190,41 @@
    "sport": "handball",
    "instagram": "@rhd29_officiel",
    "facebook": ""
+  },
+  {
+   "id": "xvcorsaire",
+   "nom": "XV Corsaire Saint-Malo Rugby",
+   "sport": "rugby",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "lerheu",
+   "nom": "SC Le Rheu Rugby",
+   "sport": "rugby",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "guingampfem",
+   "nom": "EA Guingamp (féminines)",
+   "sport": "foot",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "lorientfem",
+   "nom": "FC Lorient (féminines)",
+   "sport": "foot",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "cpbbrequigny",
+   "nom": "CPB Bréquigny Rennes",
+   "sport": "foot",
+   "instagram": "",
+   "facebook": ""
   }
  ]
 }

@@ -130,16 +130,22 @@ function tb_visuel(string $id, string $page) {
       // Les Bretonnes : dernier résultat de chaque club féminin suivi (fem:true, hors Bretagne historique), lu dans ALLCLUBS.
       $im = vbase('Les Bretonnes');
       $rows = array_values(array_filter(tb_js_literal($src, 'const ALLCLUBS='), fn($c) => !empty($c['fem']) && empty($c['hist']) && !empty($c['res'])));
-      foreach (array_slice($rows, 0, 8) as $i => $c) {
-        $y = 300 + $i * 84; vrow($im, $i, $y, 72, 54);
+      // Jusqu'à 8 clubs : grandes lignes ; au-delà (jusqu'à 14), lignes resserrées pour que tous les clubs tiennent sur le visuel.
+      $rows = array_slice($rows, 0, 14); $n = count($rows); $compact = $n > 8;
+      $pitch = $compact ? (int)floor(720 / $n) : 84; $h = $compact ? $pitch - 8 : 72; $t0 = 246;   // $t0 = haut de la première ligne
+      $sz = $compact
+        ? ['n' => 26, 's' => 16, 'o' => 32, 'p' => 30, 'ox' => 22, 'rn' => (int)round($h * .52), 'rs' => (int)round($h * .88), 'rt' => (int)round($h * .78), 'ro' => (int)round($h * .72)]
+        : ['n' => 34, 's' => 22, 'o' => 46, 'p' => 46, 'ox' => 28, 'rn' => 44, 'rs' => 66, 'rt' => 60, 'ro' => 58];
+      foreach ($rows as $i => $c) {
+        $T = $t0 + $i * $pitch; vrow($im, $i, $T + 54, $h, 54);
         $nm = (string)($c['nm'] ?? $c['short']); $r = $c['res'][0];
         $dom = $r[0] === $nm; $mine = $dom ? $r[1] : $r[2]; $their = $dom ? $r[2] : $r[1]; $opp = $dom ? $r[3] : $r[0];
         $out = $mine > $their ? 'V' : ($mine < $their ? 'D' : 'N');
-        vt($im, (string)$c['short'], 84, $y - 10, vfit((string)$c['short'], 380, 34, TB_B7), TB_B7, 'f5f6f4');
-        $sub = (string)$c['lg'] . (!empty($c['r']) ? ' · ' . $c['r'] : ''); vt($im, $sub, 84, $y + 12, vfit($sub, 380, 22, TB_B4), TB_B4, '9aa1ab');
-        vt($im, $out, 560, $y + 6, 46, TB_D, $out === 'V' ? '3ecf6e' : ($out === 'D' ? 'ff5a6e' : 'f5f6f4'), 'center');
-        vt($im, $mine . '-' . $their, 650, $y + 6, 46, TB_D, 'f5f6f4', 'center');
-        vt($im, (string)$opp, 1004, $y + 4, vfit((string)$opp, 300, 28, TB_B7), TB_B7, 'f5f6f4', 'right');
+        vt($im, (string)$c['short'], 84, $T + $sz['rn'], vfit((string)$c['short'], 380, $sz['n'], TB_B7), TB_B7, 'f5f6f4');
+        $sub = (string)$c['lg'] . (!empty($c['r']) ? ' · ' . $c['r'] : ''); vt($im, $sub, 84, $T + $sz['rs'], vfit($sub, 380, $sz['s'], TB_B4), TB_B4, '9aa1ab');
+        vt($im, $out, 560, $T + $sz['rt'], $sz['o'], TB_D, $out === 'V' ? '3ecf6e' : ($out === 'D' ? 'ff5a6e' : 'f5f6f4'), 'center');
+        vt($im, $mine . '-' . $their, 650, $T + $sz['rt'], $sz['p'], TB_D, 'f5f6f4', 'center');
+        vt($im, (string)$opp, 1004, $T + $sz['ro'], vfit((string)$opp, 300, $sz['ox'], TB_B7), TB_B7, 'f5f6f4', 'right');
       }
       vt($im, 'Dernier match et place au classement de chaque club féminin suivi', 60, 1000, 22, TB_B4, '9aa1ab');
       return $im;

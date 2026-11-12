@@ -132,56 +132,56 @@
    "id": "rec",
    "nom": "Rennes Étudiants Club",
    "sport": "rugby",
-   "instagram": "",
+   "instagram": "@rennesrugby",
    "facebook": ""
   },
   {
    "id": "rennesrugbyf",
    "nom": "Stade Rennais Rugby (F)",
    "sport": "rugby",
-   "instagram": "",
+   "instagram": "@staderennaisrugby",
    "facebook": ""
   },
   {
    "id": "stadenantais",
    "nom": "Stade Nantais",
    "sport": "rugby",
-   "instagram": "",
+   "instagram": "@stadenantais",
    "facebook": ""
   },
   {
    "id": "unionrennes",
    "nom": "Union Rennes Basket 35",
    "sport": "basket",
-   "instagram": "",
+   "instagram": "@urb_off",
    "facebook": ""
   },
   {
    "id": "saintgregoire",
    "nom": "Saint-Grégoire Rennes Métropole Handball (F)",
    "sport": "handball",
-   "instagram": "",
+   "instagram": "@sgrmhhandball",
    "facebook": ""
   },
   {
    "id": "vitrebasket",
    "nom": "Aurore Vitré Basket Bretagne",
    "sport": "basket",
-   "instagram": "",
+   "instagram": "@aurore_vitre_basket",
    "facebook": ""
   },
   {
    "id": "fougeresbasket",
    "nom": "Pays de Fougères Basket",
    "sport": "basket",
-   "instagram": "",
+   "instagram": "@paysdefougeresbasket",
    "facebook": ""
   },
   {
    "id": "lorientbasket",
    "nom": "CEP Lorient Breizh Basket",
    "sport": "basket",
-   "instagram": "",
+   "instagram": "@ceplorientbreizhbasket",
    "facebook": ""
   }
  ]

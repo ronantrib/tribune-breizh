@@ -287,7 +287,7 @@ footer a{color:var(--sea)}
 <footer><div class="wrap"><div class="social" id="social"><b>Suivez Tribune Breizh</b><a href="https://www.instagram.com/tribunebreizh/" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a><a id="fblink" href="#" rel="noopener" target="_blank" hidden><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8V6.5c0-.7.2-1 1.2-1H17V2h-2.6C11.5 2 10 3.700 10 6.200V8H7.500v3.500H10V22h4V11.500h2.800L17.300 8z"/></svg>Facebook</a></div>Scores et classements issus des sources officielles (LFP, LNR, LNH, LFH, LFB) et de la presse sportive, avec les sources indiquées sous chaque résumé. Résumés rédigés par IA et mis à jour chaque jour. Les clubs bretons sont signalés par un petit drapeau breton et surlignés dans les classements. <b>Kenavo !</b><p id="mlink" hidden style="margin:10px 0 0"><a href="/mentions-legales.html">Mentions légales</a></p><p id="vislink" hidden style="margin:10px 0 0;font-size:.78rem"><a href="#visuels" style="color:inherit;opacity:.7">Espace visuels (réservé)</a></p></div></footer>
 
 <script>
-const BZH=new Set(["Dinan Léhon","Lorient II","Stade Briochin","Locminé","GSI Pontivy","Cesson","Guingamp II","St-P. Milizac","Rennes II","TA Rennes","Ginglin-Cesson","Brest II","Lannion","Vitré","Rennes","Brest","Lorient","Guingamp","Concarneau","Cesson-Rennes","Vannes","Landerneau","Brest BH","Saint-Malo","Rennes (basket)","Quimper","Stade Rennais","Saint-Grégoire","Fougères","Lorient (basket)"]);
+const BZH=new Set(["Dinan Léhon","Lorient II","Stade Briochin","Locminé","GSI Pontivy","Cesson","Guingamp II","St-P. Milizac","Rennes II","TA Rennes","Ginglin-Cesson","Brest II","Lannion","Vitré","Rennes","Brest","Lorient","Guingamp","Concarneau","Cesson-Rennes","Vannes","Landerneau","Brest BH","Saint-Malo","Rennes (basket)","Quimper","Stade Rennais","Saint-Grégoire","Fougères","Lorient (basket)","Roz Hand'Du 29"]);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const SECTIONS=[
   {k:"une",name:"À la une",br:"Keleier",c:"var(--accent)"},
@@ -352,6 +352,9 @@ const ALLCLUBS=[
   {id:"saintgregoire",n:"Saint-Grégoire Rennes Métropole Handball",wiki:"https://fr.wikipedia.org/wiki/Saint-Gr%C3%A9goire_Rennes_M%C3%A9tropole_Handball",short:"Saint-Grégoire",nm:"Saint-Grégoire",city:"Saint-Grégoire",dept:"Ille-et-Vilaine",lat:48.15,lon:-1.69,sport:"hand",lg:"Division 2 féminine",r:"1re",pts:"8 V, 0 D",venue:"Salle de la Ricoquais",palm:"Championne de France de D2F 2026 (tenant du titre)",fem:true,
     res:[["Saint-Grégoire",33,28,"Rochechouart St-Junien","D2F · 11 nov."],["Bouillargues",36,41,"Saint-Grégoire","D2F · 7 nov."],["Saint-Grégoire",30,27,"Bègles","D2F · 31 oct."],["Saint-Grégoire",36,26,"Roz Hand'Du 29","D2F · J4, 3 oct."]],
     nxt:[], note:"Tenant du titre de D2F, Saint-Grégoire était invaincu avant la 8e journée : sixième victoire de suite contre Bègles (30-27) le samedi 31 octobre, après un succès de 10 points sur Roz Hand'Du 29 (36-26) dans le derby breton du 3 octobre. Il s'est ensuite imposé à Bouillargues Nîmes le samedi 7 novembre (41-36), puis a battu Rochechouart St-Junien, 4e, 33-28 le mercredi 11 novembre : huitième victoire de suite."},
+  {id:"rozhanddu",n:"Roz Hand'Du 29",short:"Roz Hand'Du",nm:"Roz Hand'Du 29",city:"Elliant",dept:"Finistère",lat:47.9,lon:-3.88,sport:"hand",lg:"Division 2 féminine",r:"9e",pts:"3 V, 5 D",venue:"Rosporden (matchs à domicile)",palm:"Championne de France de N1F (poule 2) 2026, promue en D2F",fem:true,tbl:["hand",2],
+    res:[["Roz Hand'Du 29",39,33,"La Roche-sur-Yon","D2F · 11 nov."],["Rochechouart St-Junien",36,21,"Roz Hand'Du 29","D2F · 7 nov."],["Saint-Grégoire",36,26,"Roz Hand'Du 29","D2F · J4, 3 oct."],["Roz Hand'Du 29",17,24,"Le Havre","D2F · J3, 12 sept."]],
+    nxt:[["Bouillargues","Roz Hand'Du 29","sam. 21 nov., 20h · D2F"]], note:"Promu après avoir remporté la poule 2 de Nationale 1 féminine, le club finistérien d'Elliant est 9e de D2F avec trois victoires et cinq défaites. Il a lourdement perdu à Rochechouart St-Junien (21-36) le samedi 7 novembre, avant de se reprendre à domicile, à Rosporden, contre La Roche-sur-Yon (39-33) le mercredi 11 novembre. Il se déplace à Bouillargues Nîmes le samedi 21 novembre, dernière journée avant la trêve de l'Euro."},
   {id:"vitrebasket",n:"Aurore Vitré Basket Bretagne",wiki:"https://fr.wikipedia.org/wiki/Aurore_de_Vitr%C3%A9_(basket-ball)",short:"Vitré (basket)",nm:"Vitré",city:"Vitré",dept:"Ille-et-Vilaine",lat:48.12,lon:-1.21,sport:"basket",lg:"NM1 (poule B)",r:"4e",pts:"5 V – 4 D",venue:"La Poultière",
     res:[["Chartres",73,76,"Vitré","NM1 · 6 nov."],["Vitré",92,81,"Laval","NM1 · 30 oct."],["Rennes (basket)",96,64,"Vitré","NM1 · 27 oct."],["Toulouse",79,74,"Vitré","NM1 · 23 oct."],["Vitré",87,92,"Fougères","NM1 · 20 oct."]],
     nxt:[["Vitré","Les Sables d'Olonne","ven. 13 nov. · NM1 (La Poultière)"],["Challans","Vitré","mar. 17 nov. · NM1"],["Vitré","Rennes (basket)","ven. 4 déc., 20h30 · NM1 (La Poultière)"]], tbl:["basket",1], note:"4e de la poule B de NM1 avec cinq victoires et quatre défaites, 14 points, après la victoire de Fougères à Laval le 11 novembre. Vainqueur à Chartres (73-76) le vendredi 6 novembre, après le derby gagné contre Laval (92-81) devant une Poultière à guichets fermés. Il reçoit Les Sables d'Olonne le 13 novembre."},
@@ -436,14 +439,15 @@ const DATA={
              {day:"Ligue Butagaz Énergie · 8e journée (mer. 4 nov.)", games:[["Brest BH",32,26,"Strasbourg-Achenheim"]]},
              {day:"StarLigue · 9e journée", games:[["Cesson-Rennes",37,46,"Nantes"]]},
              {day:"Coupe de France H · 3e tour", games:[["Tremblay",31,32,"Cesson-Rennes"]]},
-             {day:"D2F · mercredi 11 nov.", games:[["Saint-Grégoire",33,28,"Rochechouart St-Junien"]]},
-             {day:"D2F · samedi 7 nov.", games:[["Bouillargues",36,41,"Saint-Grégoire"]]},
+             {day:"D2F · mercredi 11 nov.", games:[["Saint-Grégoire",33,28,"Rochechouart St-Junien"],["Roz Hand'Du 29",39,33,"La Roche-sur-Yon"]]},
+             {day:"D2F · samedi 7 nov.", games:[["Bouillargues",36,41,"Saint-Grégoire"],["Rochechouart St-Junien",36,21,"Roz Hand'Du 29"]]},
              {day:"D2F · samedi 31 oct.", games:[["Saint-Grégoire",30,27,"Bègles"]]},
              {day:"Ligue Butagaz Énergie · 7e journée", games:[["Nice",32,36,"Brest BH"]]},
              {day:"Ligue des champions F · groupe A", games:[["Esbjerg",35,26,"Brest BH","J6"],["Brest BH",28,33,"FTC","J5"],["Brest BH",28,25,"Krim","J4"]]},
              {day:"D2F · 4e journée (sam. 3 oct.)", games:[["Saint-Grégoire",36,26,"Roz Hand'Du 29"]]},
              {day:"Ligue des champions H · groupe B", games:[["Płock",33,27,"Nantes","J6"],["Nantes",27,33,"Vardar","J5"]]}],
-    next:[{day:"Ligue des champions F · 8e journée", games:[["CSM Bucarest","Brest BH","dim. 15 nov. 16h00"]]},
+    next:[{day:"D2F · 9e journée (sam. 21 nov.)", games:[["Bouillargues","Roz Hand'Du 29","sam. 21 nov. 20h00"]]},
+          {day:"Ligue des champions F · 8e journée", games:[["CSM Bucarest","Brest BH","dim. 15 nov. 16h00"]]},
           {day:"StarLigue · 10e journée", games:[["Cesson-Rennes","Toulouse","ven. 13 nov. 20h30 · HandballTV"],["Nantes","Saint-Raphaël","sam. 14 nov. 19h00 · beIN Sports"]]},
           {day:"Ligue Butagaz Énergie · 10e journée", games:[["Brest BH","Saint-Amand","mer. 18 nov. 20h00"]]},
           {day:"Coupe de France H · quarts de finale (18 ou 19 déc.)", games:[["Paris SG","Cesson-Rennes",""],["Toulouse","Nantes",""]]}],
@@ -506,6 +510,7 @@ const AGENDA=[
   ["2026-11-14","foot","Lannion – Guingamp","Coupe de France, 7e tour · derby breton","19h00",1,"","22"],
   ["2026-11-15","rugby","Salles – Nantes","Nationale 2, 9e journée","15h15",0,"","44"],
   ["2026-11-15","rugby","Stade Rennais – Valkyries Normandie","Élite 2 féminine, 4e journée · stade du Commandant-Bougouin","15h00",0,"","35"],
+  ["2026-11-21","hand","Bouillargues – Roz Hand'Du 29","Division 2 féminine, 9e journée","20h00",0,"","29"],
   ["2026-11-15","hand","CSM Bucarest – Brest BH","Ligue des champions féminine, 8e journée","16h00",0,"","29"],
   ["2026-11-14","foot","Lyon – Saint-Malo","Arkema Première Ligue, 9e journée (féminines)","18h00",0,"YouTube","35"],
   ["2026-11-14","rugby","Rennes – Carcassonne","Nationale, 11e journée · stade du Commandant-Bougouin","18h00",0,"","35"],

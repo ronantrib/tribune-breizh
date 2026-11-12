@@ -1218,6 +1218,60 @@
     "link": "https://breizh.tribuneouest.fr/club/fc-nantes",
     "image": "first"
    }
+  },
+  {
+   "id": "2026-11-12-story-rhum",
+   "at": "2026-11-12T19:45+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Où en sont les Bretons ?",
+     "lines": [
+      "Pointage officiel du jeudi 12 novembre.",
+      "Luke Berry est arrivé ce matin à 3h35 en Ocean Fifty, 6e."
+     ],
+     "rows": [
+      [
+       "6e",
+       "Luke Berry",
+       "Ocean Fifty · arrivé à 3h35"
+      ],
+      [
+       "3e",
+       "Élodie Bonafous",
+       "Imoca · à 22 milles de l'arrivée"
+      ],
+      [
+       "6e",
+       "Davy Beaudart",
+       "Imoca · à 140 milles de l'arrivée"
+      ],
+      [
+       "8e",
+       "Maxime Sorel",
+       "Imoca · à 190 milles de l'arrivée"
+      ],
+      [
+       "7e",
+       "Guillaume L'Hostis",
+       "Class40 · à 802 milles de l'arrivée"
+      ],
+      [
+       "1er",
+       "Kieran Le Borgne",
+       "Vintage mono · en tête, à 990 milles"
+      ],
+      [
+       "2e",
+       "Éric Péron",
+       "Vintage multi · à 391 milles de l'arrivée"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
   }
  ]
 }

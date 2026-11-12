@@ -88,6 +88,8 @@ function vbase($kicker) {
 function vrow($im, $i, $y, $h, $up) { vrect($im, 60, $y - $up, 960, $h, $i % 2 ? '1b1f25' : '171a1f'); }
 
 /* ---------- les sept visuels ---------- */
+function tb_feminin_pages(int $n): int { return $n <= 8 ? 1 : (int)ceil($n / 6); }
+
 function tb_visuel(string $id, string $page) {
   $src = (string)@file_get_contents($page);
   if ($src === '') throw new Exception('page du site introuvable');
@@ -126,16 +128,19 @@ function tb_visuel(string $id, string $page) {
       }
       return $im;
     }
-    case 'feminin': {
+    case 'feminin': case 'femininb': case 'femininc': case 'femininc2': case 'femininc3': {
       // Les Bretonnes : dernier résultat de chaque club féminin suivi (fem:true, hors Bretagne historique), lu dans ALLCLUBS.
-      $im = vbase('Les Bretonnes');
-      $rows = array_values(array_filter(tb_js_literal($src, 'const ALLCLUBS='), fn($c) => !empty($c['fem']) && empty($c['hist']) && !empty($c['res'])));
-      // Jusqu'à 8 clubs : grandes lignes ; au-delà (jusqu'à 14), lignes resserrées pour que tous les clubs tiennent sur le visuel.
-      $rows = array_slice($rows, 0, 14); $n = count($rows); $compact = $n > 8;
-      $pitch = $compact ? (int)floor(720 / $n) : 84; $h = $compact ? $pitch - 8 : 72; $t0 = 246;   // $t0 = haut de la première ligne
-      $sz = $compact
-        ? ['n' => 26, 's' => 16, 'o' => 32, 'p' => 30, 'ox' => 22, 'rn' => (int)round($h * .52), 'rs' => (int)round($h * .88), 'rt' => (int)round($h * .78), 'ro' => (int)round($h * .72)]
-        : ['n' => 34, 's' => 22, 'o' => 46, 'p' => 46, 'ox' => 28, 'rn' => 44, 'rs' => 66, 'rt' => 60, 'ro' => 58];
+      // Carrousel : jusqu'à 8 clubs sur une seule image ; au-delà, des images de 6 clubs au plus, réparties à égalité.
+      // Images : feminin (1re), femininb (2e), femininc (3e), femininc2 (4e). Le nombre d'images : php bot/visuels.php feminin-nombre.
+      $all = array_values(array_filter(tb_js_literal($src, 'const ALLCLUBS='), fn($c) => !empty($c['fem']) && empty($c['hist']) && !empty($c['res'])));
+      $pages = tb_feminin_pages(count($all));
+      $pg = ['feminin' => 0, 'femininb' => 1, 'femininc' => 2, 'femininc2' => 3, 'femininc3' => 4][$id];
+      $per = (int)ceil(count($all) / $pages);
+      $rows = array_slice($all, $pg * $per, $per);
+      $im = vbase($pages > 1 ? 'Les Bretonnes · ' . ($pg + 1) . '/' . $pages : 'Les Bretonnes');
+      $n = count($rows); $compact = false;
+      $pitch = 84; $h = 72; $t0 = 246;   // $t0 = haut de la première ligne
+      $sz = ['n' => 34, 's' => 22, 'o' => 46, 'p' => 46, 'ox' => 28, 'rn' => 44, 'rs' => 66, 'rt' => 60, 'ro' => 58];
       foreach ($rows as $i => $c) {
         $T = $t0 + $i * $pitch; vrow($im, $i, $T + 54, $h, 54);
         $nm = (string)($c['nm'] ?? $c['short']); $r = $c['res'][0];
@@ -276,7 +281,13 @@ function tb_render_visuel(string $id, string $page, string $out) {
 }
 
 if (PHP_SAPI === 'cli' && realpath($argv[0] ?? '') === __FILE__) {
-  if (count($argv) < 3) { fwrite(STDERR, "Usage : php bot/visuels.php derby|classement|resultats|buteurs|feminin|face|rhum|story sortie.jpg\n"); exit(2); }
-  try { tb_render_visuel($argv[1], dirname(__DIR__) . '/src/index.html', $argv[2]); echo "ok {$argv[2]}\n"; }
+  if (count($argv) < 3 && ($argv[1] ?? '') !== 'feminin-nombre') { fwrite(STDERR, "Usage : php bot/visuels.php derby|classement|resultats|buteurs|feminin|face|rhum|story sortie.jpg  |  php bot/visuels.php feminin-nombre\n"); exit(2); }
+  try {
+    if ($argv[1] === 'feminin-nombre') {
+      $all = array_filter(tb_js_literal(file_get_contents(dirname(__DIR__) . '/src/index.html'), 'const ALLCLUBS='), fn($c) => !empty($c['fem']) && empty($c['hist']) && !empty($c['res']));
+      echo tb_feminin_pages(count($all)) . "\n"; exit(0);
+    }
+    tb_render_visuel($argv[1], dirname(__DIR__) . '/src/index.html', $argv[2]); echo "ok {$argv[2]}\n";
+  }
   catch (Exception $e) { fwrite(STDERR, $e->getMessage() . "\n"); exit(1); }
 }

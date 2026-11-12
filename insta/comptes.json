@@ -1,258 +1,258 @@
 {
-  "_valide": "Comptes Instagram vérifiés un par un par Ronan le 4 novembre 2026. Facebook : non rempli, donc aucune mention.",
-  "_aide": "Comptes des clubs à mentionner dans les posts qui les concernent. instagram : identifiant avec @ (ex. @nomducompte) ; facebook : nom exact de la page. Un champ vide = aucune mention pour ce réseau. Ne mettre que des comptes OFFICIELS vérifiés.",
-  "clubs": [
-    {
-      "id": "rennes",
-      "nom": "Stade Rennais",
-      "sport": "football",
-      "instagram": "@staderennaisfc",
-      "facebook": ""
-    },
-    {
-      "id": "brest",
-      "nom": "Stade Brestois",
-      "sport": "football",
-      "instagram": "@stadebrestois29",
-      "facebook": ""
-    },
-    {
-      "id": "lorient",
-      "nom": "FC Lorient",
-      "sport": "football",
-      "instagram": "@fclorient",
-      "facebook": ""
-    },
-    {
-      "id": "guingamp",
-      "nom": "En Avant Guingamp",
-      "sport": "football",
-      "instagram": "@eaguingamp",
-      "facebook": ""
-    },
-    {
-      "id": "concarneau",
-      "nom": "US Concarneau",
-      "sport": "football",
-      "instagram": "@usconcarneau",
-      "facebook": ""
-    },
-    {
-      "id": "cesson",
-      "nom": "Cesson-Rennes MHB",
-      "sport": "handball",
-      "instagram": "@crmhb",
-      "facebook": ""
-    },
-    {
-      "id": "brestbh",
-      "nom": "Brest Bretagne Handball",
-      "sport": "handball",
-      "instagram": "@bbh_officiel",
-      "facebook": ""
-    },
-    {
-      "id": "vannes",
-      "nom": "RC Vannes",
-      "sport": "rugby",
-      "instagram": "@rugbyclubvannes",
-      "facebook": ""
-    },
-    {
-      "id": "landerneau",
-      "nom": "Landerneau Bretagne Basket",
-      "sport": "basket",
-      "instagram": "@lbb_hn",
-      "facebook": ""
-    },
-    {
-      "id": "saintmalo",
-      "nom": "US Saint-Malo",
-      "sport": "football",
-      "instagram": "@ussaintmalo35",
-      "facebook": ""
-    },
-    {
-      "id": "fcnantes",
-      "nom": "FC Nantes",
-      "sport": "football",
-      "instagram": "@fcnantes",
-      "facebook": ""
-    },
-    {
-      "id": "hbcnantes",
-      "nom": "HBC Nantes",
-      "sport": "handball",
-      "instagram": "@hbcnantes",
-      "facebook": ""
-    },
-    {
-      "id": "stnazaire",
-      "nom": "Saint-Nazaire Volley",
-      "sport": "volley",
-      "instagram": "@snvba_officiel",
-      "facebook": ""
-    },
-    {
-      "id": "rennesvolley",
-      "nom": "Rennes Étudiants Club Volley",
-      "sport": "volley",
-      "instagram": "@recvolleymasculin",
-      "facebook": ""
-    },
-    {
-      "id": "quimpervolley",
-      "nom": "Quimper Volley 29",
-      "sport": "volley",
-      "instagram": "@quimpervolley29",
-      "facebook": ""
-    },
-    {
-      "id": "nantesvolley",
-      "nom": "Neptunes de Nantes",
-      "sport": "volley",
-      "instagram": "@neptunedenantes",
-      "facebook": ""
-    },
-    {
-      "id": "nantesf",
-      "nom": "FC Nantes (F)",
-      "sport": "football",
-      "instagram": "@fcnfeminines",
-      "facebook": ""
-    },
-    {
-      "id": "vannesoc",
-      "nom": "Vannes OC",
-      "sport": "football",
-      "instagram": "@vannesoc",
-      "facebook": ""
-    },
-    {
-      "id": "rec",
-      "nom": "Rennes Étudiants Club",
-      "sport": "rugby",
-      "instagram": "@rennesrugby",
-      "facebook": ""
-    },
-    {
-      "id": "rennesrugbyf",
-      "nom": "Stade Rennais Rugby (F)",
-      "sport": "rugby",
-      "instagram": "@staderennaisrugby",
-      "facebook": ""
-    },
-    {
-      "id": "stadenantais",
-      "nom": "Stade Nantais",
-      "sport": "rugby",
-      "instagram": "@stadenantais",
-      "facebook": ""
-    },
-    {
-      "id": "unionrennes",
-      "nom": "Union Rennes Basket 35",
-      "sport": "basket",
-      "instagram": "@urb_off",
-      "facebook": ""
-    },
-    {
-      "id": "saintgregoire",
-      "nom": "Saint-Grégoire Rennes Métropole Handball (F)",
-      "sport": "handball",
-      "instagram": "@sgrmhhandball",
-      "facebook": ""
-    },
-    {
-      "id": "vitrebasket",
-      "nom": "Aurore Vitré Basket Bretagne",
-      "sport": "basket",
-      "instagram": "@aurore_vitre_basket",
-      "facebook": ""
-    },
-    {
-      "id": "fougeresbasket",
-      "nom": "Pays de Fougères Basket",
-      "sport": "basket",
-      "instagram": "@paysdefougeresbasket",
-      "facebook": ""
-    },
-    {
-      "id": "lorientbasket",
-      "nom": "CEP Lorient Breizh Basket",
-      "sport": "basket",
-      "instagram": "@ceplorientbreizhbasket",
-      "facebook": ""
-    },
-    {
-      "id": "rozhanddu",
-      "nom": "Roz Hand'Du 29",
-      "sport": "handball",
-      "instagram": "@rhd29_officiel",
-      "facebook": ""
-    },
-    {
-      "id": "xvcorsaire",
-      "nom": "XV Corsaire Saint-Malo Rugby",
-      "sport": "rugby",
-      "instagram": "@xvcorsaire",
-      "facebook": ""
-    },
-    {
-      "id": "lerheu",
-      "nom": "SC Le Rheu Rugby",
-      "sport": "rugby",
-      "instagram": "@sclerheurugbyofficiel",
-      "facebook": ""
-    },
-    {
-      "id": "guingampfem",
-      "nom": "EA Guingamp (féminines)",
-      "sport": "foot",
-      "instagram": "@eag_feminines",
-      "facebook": ""
-    },
-    {
-      "id": "lorientfem",
-      "nom": "FC Lorient (féminines)",
-      "sport": "foot",
-      "instagram": "@fclorient",
-      "facebook": ""
-    },
-    {
-      "id": "cpbbrequigny",
-      "nom": "CPB Bréquigny Rennes",
-      "sport": "foot",
-      "instagram": "@cpbbreqfeminine",
-      "facebook": ""
-    },
-    {
-      "id": "cpbrennesm",
-      "nom": "CPB Rennes Handball (hommes)",
-      "sport": "handball",
-      "instagram": "@cpbhand",
-      "facebook": ""
-    },
-    {
-      "id": "lanester",
-      "nom": "Lanester Handball",
-      "sport": "handball",
-      "instagram": "@lanesterhb",
-      "facebook": ""
-    },
-    {
-      "id": "cpbrennesf",
-      "nom": "CPB Rennes Handball (féminines)",
-      "sport": "handball",
-      "instagram": "@cpbhand",
-      "facebook": ""
-    },
-    {
-      "id": "brestbh2",
-      "nom": "Brest Bretagne Handball 2",
-      "sport": "handball",
-      "instagram": "@bbh_officiel",
-      "facebook": ""
-    }
-  ]
+ "_valide": "Comptes Instagram vérifiés un par un par Ronan le 4 novembre 2026. Facebook : non rempli, donc aucune mention.",
+ "_aide": "Comptes des clubs à mentionner dans les posts qui les concernent. instagram : identifiant avec @ (ex. @nomducompte) ; facebook : nom exact de la page. Un champ vide = aucune mention pour ce réseau. Ne mettre que des comptes OFFICIELS vérifiés.",
+ "clubs": [
+  {
+   "id": "rennes",
+   "nom": "Stade Rennais",
+   "sport": "football",
+   "instagram": "@staderennaisfc",
+   "facebook": ""
+  },
+  {
+   "id": "brest",
+   "nom": "Stade Brestois",
+   "sport": "football",
+   "instagram": "@stadebrestois29",
+   "facebook": ""
+  },
+  {
+   "id": "lorient",
+   "nom": "FC Lorient",
+   "sport": "football",
+   "instagram": "@fclorient",
+   "facebook": ""
+  },
+  {
+   "id": "guingamp",
+   "nom": "En Avant Guingamp",
+   "sport": "football",
+   "instagram": "@eaguingamp",
+   "facebook": ""
+  },
+  {
+   "id": "concarneau",
+   "nom": "US Concarneau",
+   "sport": "football",
+   "instagram": "@usconcarneau",
+   "facebook": ""
+  },
+  {
+   "id": "cesson",
+   "nom": "Cesson-Rennes MHB",
+   "sport": "handball",
+   "instagram": "@crmhb",
+   "facebook": ""
+  },
+  {
+   "id": "brestbh",
+   "nom": "Brest Bretagne Handball",
+   "sport": "handball",
+   "instagram": "@bbh_officiel",
+   "facebook": ""
+  },
+  {
+   "id": "vannes",
+   "nom": "RC Vannes",
+   "sport": "rugby",
+   "instagram": "@rugbyclubvannes",
+   "facebook": ""
+  },
+  {
+   "id": "landerneau",
+   "nom": "Landerneau Bretagne Basket",
+   "sport": "basket",
+   "instagram": "@lbb_hn",
+   "facebook": ""
+  },
+  {
+   "id": "saintmalo",
+   "nom": "US Saint-Malo",
+   "sport": "football",
+   "instagram": "@ussaintmalo35",
+   "facebook": ""
+  },
+  {
+   "id": "fcnantes",
+   "nom": "FC Nantes",
+   "sport": "football",
+   "instagram": "@fcnantes",
+   "facebook": ""
+  },
+  {
+   "id": "hbcnantes",
+   "nom": "HBC Nantes",
+   "sport": "handball",
+   "instagram": "@hbcnantes",
+   "facebook": ""
+  },
+  {
+   "id": "stnazaire",
+   "nom": "Saint-Nazaire Volley",
+   "sport": "volley",
+   "instagram": "@snvba_officiel",
+   "facebook": ""
+  },
+  {
+   "id": "rennesvolley",
+   "nom": "Rennes Étudiants Club Volley",
+   "sport": "volley",
+   "instagram": "@recvolleymasculin",
+   "facebook": ""
+  },
+  {
+   "id": "quimpervolley",
+   "nom": "Quimper Volley 29",
+   "sport": "volley",
+   "instagram": "@quimpervolley29",
+   "facebook": ""
+  },
+  {
+   "id": "nantesvolley",
+   "nom": "Neptunes de Nantes",
+   "sport": "volley",
+   "instagram": "@neptunedenantes",
+   "facebook": ""
+  },
+  {
+   "id": "nantesf",
+   "nom": "FC Nantes (F)",
+   "sport": "football",
+   "instagram": "@fcnfeminines",
+   "facebook": ""
+  },
+  {
+   "id": "vannesoc",
+   "nom": "Vannes OC",
+   "sport": "football",
+   "instagram": "@vannesoc",
+   "facebook": ""
+  },
+  {
+   "id": "rec",
+   "nom": "Rennes Étudiants Club",
+   "sport": "rugby",
+   "instagram": "@rennesrugby",
+   "facebook": ""
+  },
+  {
+   "id": "rennesrugbyf",
+   "nom": "Stade Rennais Rugby (F)",
+   "sport": "rugby",
+   "instagram": "@staderennaisrugby",
+   "facebook": ""
+  },
+  {
+   "id": "stadenantais",
+   "nom": "Stade Nantais",
+   "sport": "rugby",
+   "instagram": "@stadenantais",
+   "facebook": ""
+  },
+  {
+   "id": "unionrennes",
+   "nom": "Union Rennes Basket 35",
+   "sport": "basket",
+   "instagram": "@urb_off",
+   "facebook": ""
+  },
+  {
+   "id": "saintgregoire",
+   "nom": "Saint-Grégoire Rennes Métropole Handball (F)",
+   "sport": "handball",
+   "instagram": "@sgrmhhandball",
+   "facebook": ""
+  },
+  {
+   "id": "vitrebasket",
+   "nom": "Aurore Vitré Basket Bretagne",
+   "sport": "basket",
+   "instagram": "@aurore_vitre_basket",
+   "facebook": ""
+  },
+  {
+   "id": "fougeresbasket",
+   "nom": "Pays de Fougères Basket",
+   "sport": "basket",
+   "instagram": "@paysdefougeresbasket",
+   "facebook": ""
+  },
+  {
+   "id": "lorientbasket",
+   "nom": "CEP Lorient Breizh Basket",
+   "sport": "basket",
+   "instagram": "@ceplorientbreizhbasket",
+   "facebook": ""
+  },
+  {
+   "id": "rozhanddu",
+   "nom": "Roz Hand'Du 29",
+   "sport": "handball",
+   "instagram": "@rhd29_officiel",
+   "facebook": ""
+  },
+  {
+   "id": "xvcorsaire",
+   "nom": "XV Corsaire Saint-Malo Rugby",
+   "sport": "rugby",
+   "instagram": "@xvcorsaire",
+   "facebook": ""
+  },
+  {
+   "id": "lerheu",
+   "nom": "SC Le Rheu Rugby",
+   "sport": "rugby",
+   "instagram": "@sclerheurugbyofficiel",
+   "facebook": ""
+  },
+  {
+   "id": "guingampfem",
+   "nom": "EA Guingamp (féminines)",
+   "sport": "foot",
+   "instagram": "@eag_feminines",
+   "facebook": ""
+  },
+  {
+   "id": "lorientfem",
+   "nom": "FC Lorient (féminines)",
+   "sport": "foot",
+   "instagram": "@fclorient",
+   "facebook": ""
+  },
+  {
+   "id": "cpbbrequigny",
+   "nom": "CPB Bréquigny Rennes",
+   "sport": "foot",
+   "instagram": "@cpbbreqfeminine",
+   "facebook": ""
+  },
+  {
+   "id": "cpbrennesm",
+   "nom": "CPB Rennes Handball (hommes)",
+   "sport": "handball",
+   "instagram": "@cpbhand",
+   "facebook": ""
+  },
+  {
+   "id": "lanester",
+   "nom": "Lanester Handball",
+   "sport": "handball",
+   "instagram": "@lanesterhb",
+   "facebook": ""
+  },
+  {
+   "id": "cpbrennesf",
+   "nom": "CPB Rennes Handball (féminines)",
+   "sport": "handball",
+   "instagram": "@cpbhand",
+   "facebook": ""
+  },
+  {
+   "id": "brestbh2",
+   "nom": "Brest Bretagne Handball 2",
+   "sport": "handball",
+   "instagram": "@bbh_officiel",
+   "facebook": ""
+  }
+ ]
 }

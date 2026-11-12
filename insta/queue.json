@@ -1205,6 +1205,16 @@
           "foot": "breizh.tribuneouest.fr"
         }
       ]
+    },
+    {
+      "id": "2026-11-12-fb-regional",
+      "at": "2026-11-12T12:41+01:00",
+      "type": "facebook",
+      "facebook": {
+        "message": "⚽ Régional 2 · groupe A : où en sont les clubs ?\nAprès la 6e journée (8 novembre) :\n1. Plouzané, 18 points\n2. Bourg-Blanc, 10 points\n3. Sizun-Le Tréhou, 9 points\n4. Coataudon, 8 points\n5. AS Brest, 8 points\n12. ESL Brest, 3 points\nPlouzané a battu Morlaix (2-1) pour rester en tête.\nVotre club est-il dans le coup ? Dites-le en commentaire !\nTous les classements : https://breizh.tribuneouest.fr/sport/foot-amateur\n#TribuneBreizh",
+        "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
+        "image": "none"
+      }
     }
   ]
 }

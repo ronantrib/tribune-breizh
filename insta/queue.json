@@ -1,1220 +1,1141 @@
 {
-  "posts": [
+ "posts": [
+  {
+   "id": "2026-11-05-story-saviez",
+   "at": "2026-11-05T09:20+01:00",
+   "type": "story",
+   "cards": [
     {
-      "id": "2026-11-03-score",
-      "at": "2026-11-03T12:30+01:00",
-      "type": "feed",
-      "caption": "🏴 Le derby breton est pour Brest !\n⚽ Lorient 0-2 Brest, lundi 2 novembre au Moustoir (Ligue 1 · 9e journée) : buts d'Ajorque (69e) et d'Edjouma (90e+2).\nTosin avait manqué un penalty pour Lorient à la 90e minute.\nAu classement, Brest est 10e et Lorient 11e, avec 12 points chacun.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #FootBreton #Ligue1",
-      "visuels": [
-        "derby"
-      ],
-      "facebook": {
-        "message": "🏴 Le derby breton est pour Brest ! Lorient 0-2 Brest, lundi 2 novembre au Moustoir (Ligue 1 · 9e journée) : buts d'Ajorque (69e) et d'Edjouma (90e+2). Tosin avait manqué un penalty pour Lorient à la 90e minute.\nBrest est 10e et Lorient 11e, avec 12 points chacun.\n#TribuneBreizh #FootballBretagne #Ligue1",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-03-story-abandons",
-      "at": "2026-11-03T19:22+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Deux abandons bretons",
-          "lines": [
-            "Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) abandonne après une avarie de foil.",
-            "Jérémie Beyou (Charal, Imoca) abandonne pour raisons médicales."
-          ],
-          "color": "voile"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-03-abandons-caudrelier-beyou",
-      "at": "2026-11-03T19:32+01:00",
-      "type": "feed",
-      "caption": "⛵ Route du Rhum : deux skippers bretons abandonnent.\nCharles Caudrelier (Maxi Edmond de Rothschild, Ultim) renonce après une avarie de foil.\nJérémie Beyou (Charal, Imoca) renonce pour raisons médicales.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Deux abandons bretons",
-          "lines": [
-            "Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) abandonne après une avarie de foil.",
-            "Jérémie Beyou (Charal, Imoca) abandonne pour raisons médicales."
-          ],
-          "color": "voile",
-          "foot": "Source : France 3 Bretagne, ICI, Point Marée"
-        }
-      ],
-      "facebook": {
-        "message": "⛵ Route du Rhum : deux skippers bretons abandonnent. Charles Caudrelier (Maxi Edmond de Rothschild, Ultim) renonce après une avarie de foil, et Jérémie Beyou (Charal, Imoca) pour raisons médicales.\n#TribuneBreizh #RouteDuRhum2026 #VoileBretagne",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-03-rhum",
-      "at": "2026-11-04T11:15+01:00",
-      "type": "feed",
-      "caption": "⛵ Route du Rhum : où en sont les Bretons ?\nPointage de ce mercredi 4 novembre à 8h. Chez les Ultim, Tom Laperche (SVR Lazartigue) reste en tête et Thomas Coville (Sodebo Ultim 3) est 2e, à 7,5 milles.\nCorentin Horeau (MACSF) mène les Imoca et Basile Bourgnon (Edenred) les Ocean Fifty. Chez les Vintage, Tanguy Caradec (Eurvad) est en tête en mono et Éric Péron (French Touch) en multi.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
-      "visuels": [
-        "rhum"
-      ]
-    },
-    {
-      "id": "2026-11-04-affiche",
-      "at": "2026-11-04T15:10+01:00",
-      "type": "feed",
-      "caption": "⚽ L'affiche de la semaine : Rennes – Olympiakos !\nCe mercredi 4 novembre à 16h30 au Roazhon Park, pour la 4e journée de la Ligue Europa (Canal+).\nTreizième après trois journées avec 5 points, le Stade Rennais reçoit l'Olympiakos, qui a gagné ses trois premiers matchs.\nLe coup d'envoi a été avancé du jeudi au mercredi après l'interdiction de la date initiale par la préfecture d'Ille-et-Vilaine.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #Rennes #LigueEuropa",
-      "visuels": [
-        "derby"
-      ],
-      "facebook": {
-        "message": "⚽ L'affiche de la semaine : Rennes – Olympiakos ! Ce mercredi 4 novembre à 16h30 au Roazhon Park, pour la 4e journée de la Ligue Europa (Canal+). Treizième après trois journées avec 5 points, le Stade Rennais reçoit l'Olympiakos, qui a gagné ses trois premiers matchs. Votre pronostic ? #TribuneBreizh #Rennes #LigueEuropa",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-04-story-lecleach",
-      "at": "2026-11-04T19:30+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Abandon de Le Cléac'h",
-          "lines": [
-            "Armel Le Cléac'h (Maxi Banque Populaire XI) a chaviré mercredi 4 novembre vers 5h30, à 550 milles au nord-ouest des Açores. Il est indemne.",
-            "Anthony Marchand a aussi renoncé à 16h."
-          ],
-          "color": "voile"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-04-story-score",
-      "at": "2026-11-04T22:05+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Ligue Europa",
-          "title": "Rennes 0-0 Olympiakos",
-          "lines": [
-            "Mercredi 4 novembre, au Roazhon Park."
-          ],
-          "color": "foot",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-05-story-saviez",
-      "at": "2026-11-05T09:20+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Le saviez-vous ?",
-          "title": "13 j 7 h 53 min",
-          "lines": [
-            "C'est le temps qu'il a fallu au Concarnois Michel Desjoyeaux pour remporter la Route du Rhum 2002 sur le trimaran Géant.",
-            "Cette édition reste celle de la violente dépression qui a décimé la flotte des grands multicoques."
-          ],
-          "color": "accent",
-          "foot": "Source : Figaro Nautisme"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-05-libre",
-      "at": "2026-11-05T12:40+01:00",
-      "type": "feed",
-      "caption": "🏴 7 buts en Ligue 1 pour Estéban Lepaul : le meilleur buteur des clubs bretons !\nLe Rennais (@staderennaisfc) devance quatre joueurs à 4 buts : Kamory Doumbia et Ludovic Ajorque (Brest, @stadebrestois29), Bamba Dia et Sebastian Szymański (Rennes).\nEn Ligue 2, B. Bokangu (Guingamp, @eaguingamp) en compte 4 ; en Ligue 3, S. Janno (Concarneau, @usconcarneau) aussi.\nButs en championnat au 3 novembre.\nQuel buteur breton vous impressionne le plus ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #FootBreton #Ligue1",
-      "visuels": [
-        "buteurs"
-      ]
-    },
-    {
-      "id": "2026-11-05-club-guingamp",
-      "at": "2026-11-05T17:23+01:00",
-      "type": "feed",
-      "caption": "🏴 Où en est l'En Avant Guingamp (@eaguingamp) ?\nLe club est 9e de Ligue 2 avec 14 points après 11 journées. Il reste sur une victoire 3-0 contre le leader Saint-Étienne et un succès 2-0 à Clermont.\nProchain match : Dunkerque – Guingamp, vendredi 6 novembre à 20h, sur beIN Sports Max 4.\nEt vous, vous y croyez ?\nLien en bio.\n#TribuneBreizh",
-      "cards": [
-        {
-          "kicker": "Où en est En Avant Guingamp ?",
-          "title": "En Avant Guingamp",
-          "lines": [
-            "9e de Ligue 2 avec 14 points après 11 journées."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Saint-Étienne (J11)",
-              "3-0"
-            ],
-            [
-              "Avant",
-              "Clermont (J10)",
-              "2-0"
-            ],
-            [
-              "Prochain",
-              "Dunkerque",
-              "ven. 6 nov. 20h · beIN Sports Max 4"
-            ],
-            [
-              "Ensuite",
-              "Lannion",
-              "Coupe de France · 14-15 nov."
-            ]
-          ],
-          "color": "foot",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-06-libre",
-      "at": "2026-11-06T08:47+01:00",
-      "type": "carousel",
-      "caption": "🚴 2 records de France pour les jeunes Bretons aux championnats de France de l'Avenir sur piste, à Loudéac !\nZoé Bihan a été sacrée championne de France juniors du kilomètre le 1er novembre, en 1'09\"183.\nChez les U19, Zéphirin Le Normand-Lucas (VC Pays de Loudéac) a décroché 3 titres, en poursuite individuelle, en poursuite par équipes et au kilomètre, avec un record de France en 1'01\"355.\nQuel jeune Breton vous a le plus impressionné ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #Cyclisme #CyclismeBreton #SportBreton",
-      "cards": [
-        {
-          "kicker": "Cyclisme · Jeunes Bretons",
-          "title": "2 records de France à Loudéac",
-          "lines": [
-            "Championnats de France de l'Avenir sur piste, du 28 octobre au 1er novembre."
-          ],
-          "color": "velo",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Kilomètre juniors",
-          "title": "Zoé Bihan, championne",
-          "lines": [
-            "Sacrée championne de France juniors du kilomètre le 1er novembre, avec un record de France en 1'09\"183."
-          ],
-          "color": "velo",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "U19 · Loudéac",
-          "title": "3 titres pour Le Normand-Lucas",
-          "lines": [
-            "Zéphirin Le Normand-Lucas (VC Pays de Loudéac) : 1er en poursuite individuelle, en poursuite par équipes et au kilomètre.",
-            "Record de France du kilomètre en 1'01\"355."
-          ],
-          "color": "velo",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Cyclo-cross",
-          "title": "Laly Pichon, 10e",
-          "lines": [
-            "Coupe de France de cyclo-cross à Nommay (femmes), le 24 octobre."
-          ],
-          "color": "velo",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ],
-      "facebook": {
-        "message": "🚴 2 records de France pour les jeunes Bretons aux championnats de France de l'Avenir sur piste, à Loudéac : Zoé Bihan, championne de France juniors du kilomètre le 1er novembre (1'09\"183), et Zéphirin Le Normand-Lucas (VC Pays de Loudéac), triple vainqueur chez les U19 avec un record du kilomètre en 1'01\"355.\nQuel jeune Breton vous a le plus impressionné ?\n#TribuneBreizh #Cyclisme #CyclismeBreton",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "all"
-      }
-    },
-    {
-      "id": "2026-11-06-fb-velo",
-      "at": "2026-11-06T09:30+01:00",
-      "type": "facebook",
-      "cards": [
-        {
-          "kicker": "Cyclisme · Jeunes Bretons",
-          "title": "2 records de France à Loudéac",
-          "lines": [
-            "Championnats de France de l'Avenir sur piste, du 28 octobre au 1er novembre."
-          ],
-          "color": "velo",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Kilomètre juniors",
-          "title": "Zoé Bihan, championne",
-          "lines": [
-            "Sacrée championne de France juniors du kilomètre le 1er novembre, avec un record de France en 1'09\"183."
-          ],
-          "color": "velo",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "U19 · Loudéac",
-          "title": "3 titres pour Le Normand-Lucas",
-          "lines": [
-            "Zéphirin Le Normand-Lucas (VC Pays de Loudéac) : 1er en poursuite individuelle, en poursuite par équipes et au kilomètre.",
-            "Record de France du kilomètre en 1'01\"355."
-          ],
-          "color": "velo",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Cyclo-cross",
-          "title": "Laly Pichon, 10e",
-          "lines": [
-            "Coupe de France de cyclo-cross à Nommay (femmes), le 24 octobre."
-          ],
-          "color": "velo",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ],
-      "facebook": {
-        "message": "🚴 2 records de France pour les jeunes Bretons aux championnats de France de l'Avenir sur piste, à Loudéac : Zoé Bihan, championne de France juniors du kilomètre le 1er novembre (1'09\"183), et Zéphirin Le Normand-Lucas (VC Pays de Loudéac), triple vainqueur chez les U19 avec un record du kilomètre en 1'01\"355.\nQuel jeune Breton vous a le plus impressionné ?\n#TribuneBreizh #Cyclisme #CyclismeBreton",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "all"
-      }
-    },
-    {
-      "id": "2026-11-06-story-rhum-matin",
-      "at": "2026-11-06T10:23+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Le pointage du matin",
-          "lines": [
-            "Pointage du jeudi 5 novembre à 15h."
-          ],
-          "rows": [
-            [
-              "1er",
-              "Tom Laperche",
-              "Ultim"
-            ],
-            [
-              "2e",
-              "Thomas Coville",
-              "Ultim"
-            ],
-            [
-              "1er",
-              "Basile Bourgnon",
-              "Ocean Fifty"
-            ],
-            [
-              "1er",
-              "Corentin Horeau",
-              "Imoca"
-            ],
-            [
-              "1er",
-              "Tanguy Caradec",
-              "Vintage mono"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-06-hors-foot",
-      "at": "2026-11-06T12:52+01:00",
-      "type": "carousel",
-      "caption": "Brest Bretagne Handball @bbh_officiel est 3e de la Ligue Butagaz Énergie, Cesson-Rennes @crmhb 15e de la StarLigue, Landerneau @lbb_hn 7e de La Boulangère Wonderligue et Vannes @rugbyclubvannes 14e du Top 14.\nRennes Volley est 3e de la Ligue B masculine et Quimper Volley 5e de l'Élite féminine ; tous jouent ce week-end, sauf Cesson-Rennes, attendu le vendredi 13 novembre.\nQuel sport breton suivez-vous le plus ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #HandballBretagne #BasketBretagne #RugbyBretagne",
-      "cards": [
-        {
-          "kicker": "Les Bretons hors foot",
-          "title": "Le point de la semaine",
-          "lines": [
-            "Hand, basket, rugby, volley : où en sont-ils ?"
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Handball",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Brest BH est 3e de la Ligue Butagaz Énergie (17 pts) ; Cesson-Rennes est 15e de la StarLigue (2 pts)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Brest BH – Strasbourg-Achenheim",
-              "32-26"
-            ],
-            [
-              "Prochain",
-              "Brest BH – CSM Bucarest",
-              "sam. 7 nov., 18h"
-            ],
-            [
-              "Dernier",
-              "Cesson-Rennes – Nantes",
-              "37-46"
-            ],
-            [
-              "Prochain",
-              "Cesson-Rennes – Toulouse",
-              "ven. 13 nov., 20h30"
-            ]
-          ],
-          "color": "hand",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Basket",
-          "title": "Landerneau",
-          "lines": [
-            "Landerneau est 7e de La Boulangère Wonderligue (3 V – 4 D)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Landerneau – Poznan",
-              "71-76"
-            ],
-            [
-              "Prochain",
-              "Landerneau – Chartres",
-              "sam. 7 nov., 20h"
-            ]
-          ],
-          "color": "basket",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Rugby",
-          "title": "Vannes",
-          "lines": [
-            "Vannes est 14e du Top 14 avec 5 points."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Lyon – Vannes",
-              "48-25"
-            ],
-            [
-              "Prochain",
-              "Vannes – Bordeaux-Bègles",
-              "dim. 8 nov., 15h"
-            ]
-          ],
-          "color": "rugby",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Volley",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Rennes Volley est 3e de la Ligue B masculine (9 pts) ; Quimper Volley est 5e de l'Élite féminine (9 pts)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Rennes – Martigues",
-              "3-1"
-            ],
-            [
-              "Prochain",
-              "Rennes – Grand Nancy",
-              "sam. 7 nov., 19h"
-            ],
-            [
-              "Dernier",
-              "Quimper – Calais",
-              "1-3"
-            ],
-            [
-              "Prochain",
-              "Sens – Quimper",
-              "sam. 7 nov., 20h"
-            ]
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-06-story-programme",
-      "at": "2026-11-06T17:52+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Le programme du week-end",
-          "title": "Samedi 7 et dimanche 8 novembre",
-          "lines": [
-            "Les Bretons en action."
-          ],
-          "rows": [
-            [
-              "Sam. 7 · 14h45",
-              "Concarneau – Fleury",
-              "Ligue 1+"
-            ],
-            [
-              "Sam. 7 · 18h",
-              "Brest BH – CSM Bucarest",
-              "Ligue des champions"
-            ],
-            [
-              "Sam. 7 · 19h",
-              "Rennes – Grand Nancy",
-              "Volley · Ligue B"
-            ],
-            [
-              "Sam. 7 · 20h",
-              "Landerneau – Chartres",
-              "LFB TV (YouTube)"
-            ],
-            [
-              "Dim. 8 · 15h",
-              "Rennes – Lille",
-              "Ligue 1+"
-            ],
-            [
-              "Dim. 8 · 15h",
-              "Vannes – Bordeaux-Bègles",
-              "Canal+ Sport"
-            ],
-            [
-              "Dim. 8 · 17h15",
-              "Brest – Lyon",
-              "Ligue 1+"
-            ],
-            [
-              "Dim. 8 · 17h15",
-              "Le Havre – Lorient",
-              "Ligue 1+"
-            ]
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-06-fb-hors-foot",
-      "at": "2026-11-06T19:05+01:00",
-      "type": "facebook",
-      "caption": "Brest Bretagne Handball est 3e de la Ligue Butagaz Énergie, Cesson-Rennes 15e de la StarLigue, Landerneau 7e de La Boulangère Wonderligue et Vannes 14e du Top 14.\nRennes Volley est 3e de la Ligue B masculine et Quimper Volley 5e de l'Élite féminine ; tous jouent ce week-end, sauf Cesson-Rennes, attendu le vendredi 13 novembre.\nQuel sport breton suivez-vous le plus ?\nTout le détail sur breizh.tribuneouest.fr\n#TribuneBreizh #SportBreton",
-      "cards": [
-        {
-          "kicker": "Les Bretons hors foot",
-          "title": "Le point de la semaine",
-          "lines": [
-            "Hand, basket, rugby, volley : où en sont-ils ?"
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Handball",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Brest BH est 3e de la Ligue Butagaz Énergie (17 pts) ; Cesson-Rennes est 15e de la StarLigue (2 pts)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Brest BH – Strasbourg-Achenheim",
-              "32-26"
-            ],
-            [
-              "Prochain",
-              "Brest BH – CSM Bucarest",
-              "sam. 7 nov., 18h"
-            ],
-            [
-              "Dernier",
-              "Cesson-Rennes – Nantes",
-              "37-46"
-            ],
-            [
-              "Prochain",
-              "Cesson-Rennes – Toulouse",
-              "ven. 13 nov., 20h30"
-            ]
-          ],
-          "color": "hand",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Basket",
-          "title": "Landerneau",
-          "lines": [
-            "Landerneau est 7e de La Boulangère Wonderligue (3 V – 4 D)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Landerneau – Poznan",
-              "71-76"
-            ],
-            [
-              "Prochain",
-              "Landerneau – Chartres",
-              "sam. 7 nov., 20h"
-            ]
-          ],
-          "color": "basket",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Rugby",
-          "title": "Vannes",
-          "lines": [
-            "Vannes est 14e du Top 14 avec 5 points."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Lyon – Vannes",
-              "48-25"
-            ],
-            [
-              "Prochain",
-              "Vannes – Bordeaux-Bègles",
-              "dim. 8 nov., 15h"
-            ]
-          ],
-          "color": "rugby",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Volley",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Rennes Volley est 3e de la Ligue B masculine (9 pts) ; Quimper Volley est 5e de l'Élite féminine (9 pts)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Rennes – Martigues",
-              "3-1"
-            ],
-            [
-              "Prochain",
-              "Rennes – Grand Nancy",
-              "sam. 7 nov., 19h"
-            ],
-            [
-              "Dernier",
-              "Quimper – Calais",
-              "1-3"
-            ],
-            [
-              "Prochain",
-              "Sens – Quimper",
-              "sam. 7 nov., 20h"
-            ]
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-07-pronostic",
-      "at": "2026-11-07T10:42+01:00",
-      "type": "feed",
-      "caption": "Le Stade Rennais (@staderennaisfc) reçoit Lille dimanche à 15h au Roazhon Park, pour la 10e journée de Ligue 1.\n\nVotre score ? Dites-le en commentaire !\n\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #StadeRennais",
-      "cards": [
-        {
-          "kicker": "Pronostic du week-end",
-          "title": "Rennes – Lille",
-          "lines": [
-            "Dimanche 8 novembre · 15h · Ligue 1 · Ligue 1+"
-          ],
-          "color": "foot",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-07-rhum",
-      "at": "2026-11-07T20:15+01:00",
-      "type": "feed",
-      "caption": "⛵ Route du Rhum : où en sont les Bretons ?\nPointage de ce jeudi 5 novembre à 15h. Chez les Ultim, Tom Laperche (SVR Lazartigue) est en tête et Thomas Coville (Sodebo Ultim 3) est 2e, à 356 milles environ.\nBasile Bourgnon (Edenred) mène les Ocean Fifty, Corentin Horeau (MACSF) les Imoca et Tanguy Caradec (Eurvad) les Vintage mono.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Breizh #VoileBretagne #RouteDuRhum2026 #Skipper",
-      "visuels": [
-        "rhum"
-      ]
-    },
-    {
-      "id": "2026-11-08-story-resultats",
-      "at": "2026-11-08T08:30+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Week-end du 7 novembre",
-          "title": "Les résultats",
-          "lines": [
-            "Vendredi 6 et samedi 7 novembre."
-          ],
-          "rows": [
-            [
-              "Ligue 2",
-              "Dunkerque – Guingamp",
-              "3-0"
-            ],
-            [
-              "Ligue 3",
-              "Concarneau – Fleury",
-              "2-0"
-            ],
-            [
-              "Arkema",
-              "Saint-Malo – Marseille",
-              "1-2"
-            ],
-            [
-              "Handball",
-              "Brest BH – CSM Bucarest",
-              "40-25"
-            ],
-            [
-              "Basket",
-              "Landerneau – Chartres",
-              "80-62"
-            ],
-            [
-              "Volley",
-              "Rennes – Grand Nancy",
-              "3-1"
-            ],
-            [
-              "Volley",
-              "Sens – Quimper",
-              "3-2"
-            ]
-          ],
-          "color": "accent",
-          "foot": "Source : breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-08-story",
-      "at": "2026-11-08T10:00+01:00",
-      "type": "story",
-      "visuels": [
-        "story"
-      ]
-    },
-    {
-      "id": "2026-11-08-fb-rhum-hebdo",
-      "at": "2026-11-08T11:17+01:00",
-      "type": "facebook",
-      "facebook": {
-        "message": "⛵ Route du Rhum : le point du dimanche\nUltim : Tom Laperche (Loudéac) a gagné, arrivé dans la nuit du 7 au 8 novembre, record de l'épreuve. Thomas Coville est 2e, à 376 milles environ.\nOcean Fifty : Basile Bourgnon est en tête, à 685 milles de l'arrivée (classement du 8 novembre à 4h) ; Léonard Legrand est 4e.\nImoca : Corentin Horeau est en tête, à 744 milles de l'arrivée ; Élodie Bonafous est 4e.\nVintage mono : Kieran Le Borgne est en tête, Tanguy Caradec 2e.\nVintage multi : Éric Péron est 2e, Gilles Lamiré 3e.\nQuel skipper breton soutenez-vous ?\nLe suivi complet : https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026\n#TribuneBreizh #RouteDuRhum2026",
-        "link": "https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026",
-        "image": "none"
-      }
-    },
-    {
-      "id": "2026-11-08-libre",
-      "at": "2026-11-08T12:25+01:00",
-      "type": "feed",
-      "caption": "⛵ Tom Laperche remporte la Route du Rhum chez les Ultim !\nLe Loudéacien (SVR Lazartigue) a franchi la ligne dans la nuit du samedi 7 au dimanche 8 novembre, en 6 jours, 13 heures et 27 minutes selon l'AFP : un nouveau record de l'épreuve, qui bat celui de Charles Caudrelier en 2022.\nQuel moment de course vous a le plus marqué ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Laperche gagne et bat le record",
-          "lines": [
-            "Le Loudéacien (SVR Lazartigue) s'impose en Ultim dans la nuit du 7 au 8 novembre."
-          ],
-          "rows": [
-            [
-              "Vainqueur",
-              "Tom Laperche",
-              "Ultim"
-            ],
-            [
-              "Temps",
-              "6 j 13 h 27 min",
-              "selon l'AFP"
-            ],
-            [
-              "Record",
-              "Bat celui de Caudrelier",
-              "établi en 2022"
-            ]
-          ],
-          "color": "voile",
-          "foot": "Source : AFP · breizh.tribuneouest.fr"
-        }
-      ],
-      "facebook": {
-        "at": "2026-11-08T09:15+01:00",
-        "message": "⛵ Tom Laperche remporte la Route du Rhum chez les Ultim !\nLe Loudéacien (SVR Lazartigue) a franchi la ligne dans la nuit du samedi 7 au dimanche 8 novembre, en 6 jours, 13 heures et 27 minutes selon l'AFP : un nouveau record de l'épreuve, qui bat celui de Charles Caudrelier en 2022.\n#TribuneBreizh #RouteDuRhum2026 #VoileBretagne",
-        "link": "https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-08-actu-1750",
-      "at": "2026-11-08T17:50+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Résultat · football",
-          "title": "Rennes 1-2 Lille",
-          "lines": [
-            "Ligue 1, 10e journée : Lille s'impose au Roazhon Park, dimanche 8 novembre."
-          ],
-          "color": "foot"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-08-amateur",
-      "at": "2026-11-08T20:30+01:00",
-      "type": "feed",
-      "caption": "⚽ Le week-end du foot amateur breton en un coup d'œil !\nLorient II a battu Saumur (6-2) en National 1 et Dinan Léhon, vainqueur de Vendée Poiré-sur-Vie (1-0), est 5e avec 15 points.\nEn National 2, Cesson et Vire se partagent la tête (17 points) après leur 0-0.\nCoupe de France : Tinténiac Saint-Domineuc (R1) recevra Concarneau @usconcarneau (L3) le samedi 14 novembre à 17h. Quel petit poucet ira le plus loin ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootAmateur #CoupeDeFrance #National1",
-      "cards": [
-        {
-          "kicker": "Foot amateur · le bilan du week-end",
-          "title": "6-2 : Lorient II s'offre Saumur",
-          "lines": [
-            "National 1, 9e journée (du 5 au 7 novembre) : les réservistes lorientais s'imposent 6-2 et sont 4es avec 16 points."
-          ],
-          "color": "amateur"
-        },
-        {
-          "kicker": "National 1 · poule Ouest",
-          "title": "Dinan Léhon grimpe au 5e rang",
-          "lines": [
-            "Dinan Léhon bat Vendée Poiré-sur-Vie (1-0) et compte 15 points, un de moins que Lorient II.",
-            "Locminé a fait 0-0 contre Tarbes ; Angoulême reste leader avec 23 points."
-          ],
-          "color": "amateur"
-        },
-        {
-          "kicker": "National 2 · poule Bretagne-Normandie",
-          "title": "Cesson et Vire toujours en tête",
-          "lines": [
-            "Cesson et Vire ont fait 0-0 et comptent chacun 17 points après la 7e journée (7 novembre).",
-            "Vitré s'impose à Saint-Pierre Milizac (3-2), Vannes bat le TA Rennes (2-0)."
-          ],
-          "color": "amateur"
-        },
-        {
-          "kicker": "Coupe de France · petits poucets",
-          "title": "Les clubs de R1 face aux pros",
-          "lines": [
-            "Châteaubourg (R1) recevra le FC Nantes (L2) le dimanche 15 novembre à 14h.",
-            "Saint-Renan (R1) recevra Laval (L2) le même jour à 14h ; Tinténiac Saint-Domineuc (R1) recevra Concarneau (L3) le samedi 14 novembre à 17h."
-          ],
-          "color": "amateur"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-08-amateur-2",
-      "at": "2026-11-08T21:15+01:00",
-      "type": "carousel",
-      "caption": "⚽ Le week-end du foot amateur breton en un coup d'œil !\nLorient II a battu Saumur (6-2) en National 1 et Dinan Léhon, vainqueur de Vendée Poiré-sur-Vie (1-0), est 5e avec 15 points.\nEn National 2, Cesson et Vire se partagent la tête (17 points) après leur 0-0.\nCoupe de France : Tinténiac Saint-Domineuc (R1) recevra Concarneau @usconcarneau (L3) le samedi 14 novembre à 17h. Quel petit poucet ira le plus loin ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootAmateur #CoupeDeFrance #National1",
-      "cards": [
-        {
-          "kicker": "Foot amateur · le bilan du week-end",
-          "title": "6-2 : Lorient II s'offre Saumur",
-          "lines": [
-            "National 1, 9e journée (du 5 au 7 novembre) : les réservistes lorientais s'imposent 6-2 et sont 4es avec 16 points."
-          ],
-          "color": "amateur"
-        },
-        {
-          "kicker": "National 1 · poule Ouest",
-          "title": "Dinan Léhon grimpe au 5e rang",
-          "lines": [
-            "Dinan Léhon bat Vendée Poiré-sur-Vie (1-0) et compte 15 points, un de moins que Lorient II.",
-            "Locminé a fait 0-0 contre Tarbes ; Angoulême reste leader avec 23 points."
-          ],
-          "color": "amateur"
-        },
-        {
-          "kicker": "National 2 · poule Bretagne-Normandie",
-          "title": "Cesson et Vire toujours en tête",
-          "lines": [
-            "Cesson et Vire ont fait 0-0 et comptent chacun 17 points après la 7e journée (7 novembre).",
-            "Vitré s'impose à Saint-Pierre Milizac (3-2), Vannes bat le TA Rennes (2-0)."
-          ],
-          "color": "amateur"
-        },
-        {
-          "kicker": "Coupe de France · petits poucets",
-          "title": "Les clubs de R1 face aux pros",
-          "lines": [
-            "Châteaubourg (R1) recevra le FC Nantes (L2) le dimanche 15 novembre à 14h.",
-            "Saint-Renan (R1) recevra Laval (L2) le même jour à 14h ; Tinténiac Saint-Domineuc (R1) recevra Concarneau (L3) le samedi 14 novembre à 17h."
-          ],
-          "color": "amateur"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-09-story-rhum-matin",
-      "at": "2026-11-09T09:12+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Le pointage du matin",
-          "lines": [
-            "Pointage du dimanche 8 novembre à 20h35."
-          ],
-          "rows": [
-            [
-              "1er",
-              "Tom Laperche",
-              "Ultim · vainqueur"
-            ],
-            [
-              "2e",
-              "Thomas Coville",
-              "Ultim · arrivé"
-            ],
-            [
-              "1er",
-              "Basile Bourgnon",
-              "Ocean Fifty · en tête"
-            ],
-            [
-              "1er",
-              "Corentin Horeau",
-              "Imoca · en tête"
-            ],
-            [
-              "1er",
-              "Kieran Le Borgne",
-              "Vintage mono · en tête"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-09-fb-amateur",
-      "at": "2026-11-09T12:20+01:00",
-      "type": "facebook",
-      "facebook": {
-        "message": "⚽ Foot amateur : les résultats du week-end\nNational 1 (9e journée) : Lorient II bat Saumur (6-2) et Dinan Léhon s'impose face à Vendée Poiré-sur-Vie (1-0). Locminé et Tarbes se quittent sur un nul (0-0).\nNational 2 : Cesson et Vire font match nul (0-0), Vannes bat le TA Rennes (2-0).\nRégional 1, groupe A (dimanche 8 novembre) : AG Plouvorn s'impose à Pluvigner (1-5) et Concarneau (B) bat Plaintel (5-1).\nLe classement complet : https://breizh.tribuneouest.fr/sport/foot-amateur\n#TribuneBreizh",
-        "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
-        "image": "none"
-      }
-    },
-    {
-      "id": "2026-11-09-weekend",
-      "at": "2026-11-09T12:35+01:00",
-      "type": "carousel",
-      "caption": "🏴 7 victoires bretonnes sur 8 résultats ce week-end !\n⚽ Ligue 1 : Brest (@stadebrestois29) bat Lyon (2-0) et Lorient (@fclorient) s'impose au Havre (0-2). Rennes (@staderennaisfc) s'incline face à Lille (1-2) et est 8e avec 16 points.\n🏉 Top 14 : Vannes (@rugbyclubvannes) bat Bordeaux-Bègles (23-14). 🤾 Brest Bretagne Handball s'impose face à Bucarest (40-25) en Ligue des champions. 🏀 Landerneau bat Chartres (80-62).\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #Bretagne #ActuSport #PassionSport",
-      "visuels": [
-        "resultats",
-        "classement"
-      ],
-      "facebook": {
-        "at": "2026-11-09T08:15+01:00",
-        "message": "🏴 7 victoires bretonnes sur 8 résultats ce week-end !\n⚽ Ligue 1 : Brest bat Lyon (2-0), Lorient s'impose au Havre (0-2), Rennes s'incline face à Lille (1-2) et est 8e avec 16 points.\n🏉 Vannes bat Bordeaux-Bègles (23-14) en Top 14. 🤾 Brest Bretagne Handball bat Bucarest (40-25) en Ligue des champions. 🏀 Landerneau bat Chartres (80-62).\n#TribuneBreizh #SportBreton #SportBretagne",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "all"
-      }
-    },
-    {
-      "id": "2026-11-09-buteurs",
-      "at": "2026-11-09T19:08+01:00",
-      "type": "feed",
-      "visuels": [
-        "buteurs"
-      ],
-      "caption": "⚽ Estéban Lepaul (Rennes (@staderennaisfc)) reste en tête des buteurs bretons avec 7 buts en Ligue 1.\nLudovic Ajorque (Brest (@stadebrestois29)) le suit avec 5 buts, comme Stan Janno (Concarneau) en Ligue 3.\nQui sera le meilleur buteur breton à Noël ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #StadeRennais"
-    },
-    {
-      "id": "2026-11-09-buteurs-maj",
-      "at": "2026-11-09T20:42+01:00",
-      "type": "feed",
-      "visuels": [
-        "buteurs"
-      ],
-      "caption": "⚽ Mise à jour après la 10e journée de Ligue 1 : Estéban Lepaul, de Rennes (@staderennaisfc), reste en tête des buteurs bretons avec 7 buts.\nLudovic Ajorque, de Brest (@stadebrestois29), Stan Janno (Concarneau, Ligue 3) et Boulaye Dia (Rennes) suivent avec 5 buts chacun.\nQui sera le meilleur buteur breton à Noël ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #Ligue2"
-    },
-    {
-      "id": "2026-11-10-club-landerneau",
-      "at": "2026-11-10T12:37+01:00",
-      "type": "feed",
-      "caption": "🏀 Où en est Landerneau Bretagne Basket (@lbb_hn) ?\nLe club est 7e de la Boulangère Wonderligue avec 4 victoires et 4 défaites après 8 journées. Il vient de battre Chartres (80-62) le samedi 7 novembre, après sa défaite en prolongation contre Poznan (71-76) en EuroCup le mercredi 4 novembre.\nProchain match : Lattes-Montpellier – Landerneau, le dimanche 22 novembre à 15h30, pour la 9e journée de LFB.\nLanderneau peut-il enchaîner à Lattes-Montpellier ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #BasketBretagne #LanderneauBretagneBasket #Breizh",
-      "cards": [
-        {
-          "kicker": "Où en est Landerneau Bretagne Basket ?",
-          "title": "Landerneau Bretagne Basket",
-          "lines": [
-            "7e de la Boulangère Wonderligue (4 V – 4 D) après 8 journées."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Chartres (LFB · J8)",
-              "80-62"
-            ],
-            [
-              "Avant",
-              "Poznan (EuroCup)",
-              "71-76 a.p."
-            ],
-            [
-              "Prochain",
-              "Lattes-Montpellier",
-              "dim. 22 nov. 15h30 · LFB, 9e journée"
-            ],
-            [
-              "Ensuite",
-              "Fribourg",
-              "mer. 25 nov. 19h30 · EuroCup"
-            ]
-          ],
-          "color": "basket",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-10-libre",
-      "at": "2026-11-10T18:40+01:00",
-      "type": "feed",
-      "caption": "🤾 Cesson-Rennes affrontera le PSG en quarts de finale de la Coupe de France, les 18 ou 19 décembre !\nLes Irréductibles se sont qualifiés en s'imposant à Tremblay (31-32) le mardi 27 octobre. En StarLigue, Cesson-Rennes (@crmhb) est avant-dernier avec 2 points ; prochain match : Toulouse, le vendredi 13 novembre à 20h30.\nCesson-Rennes peut-il jouer un mauvais tour au PSG ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #HandballBretagne #Handball #CessonRennes",
-      "cards": [
-        {
-          "kicker": "Coupe de France de handball",
-          "title": "Cesson-Rennes défie le PSG",
-          "lines": [
-            "Qualifié en gagnant à Tremblay, Cesson-Rennes jouera les quarts de finale les 18 ou 19 décembre."
-          ],
-          "rows": [
-            [
-              "27 oct.",
-              "Tremblay – Cesson-Rennes",
-              "31-32"
-            ],
-            [
-              "Ven. 13 nov. · 20h30",
-              "Cesson-Rennes – Toulouse",
-              "StarLigue · HandballTV"
-            ],
-            [
-              "18 ou 19 déc.",
-              "Paris SG – Cesson-Rennes",
-              "Quarts de finale"
-            ]
-          ],
-          "color": "hand",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ],
-      "facebook": {
-        "message": "🤾 Coupe de France de handball : Cesson-Rennes affrontera le PSG en quarts de finale, les 18 ou 19 décembre.\nLes Irréductibles se sont qualifiés en gagnant à Tremblay (31-32) le mardi 27 octobre. En StarLigue, ils reçoivent Toulouse le vendredi 13 novembre à 20h30.\n#TribuneBreizh #HandballBretagne #Handball",
-        "link": "https://breizh.tribuneouest.fr/sport/handball",
-        "image": "first",
-        "at": "2026-11-10T12:50+01:00"
-      }
-    },
-    {
-      "id": "2026-11-10-fb-club-landerneau",
-      "at": "2026-11-10T19:23+01:00",
-      "type": "facebook",
-      "cards": [
-        {
-          "kicker": "Où en est Landerneau Bretagne Basket ?",
-          "title": "Landerneau Bretagne Basket",
-          "lines": [
-            "7e de la Boulangère Wonderligue (4 V – 4 D) après 8 journées."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Chartres (LFB · J8)",
-              "80-62"
-            ],
-            [
-              "Avant",
-              "Poznan (EuroCup)",
-              "71-76 a.p."
-            ],
-            [
-              "Prochain",
-              "Lattes-Montpellier",
-              "dim. 22 nov. 15h30 · LFB, 9e journée"
-            ],
-            [
-              "Ensuite",
-              "Fribourg",
-              "mer. 25 nov. 19h30 · EuroCup"
-            ]
-          ],
-          "color": "basket",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ],
-      "facebook": {
-        "message": "🏀 Où en est Landerneau Bretagne Basket ?\nLe club est 7e de la Boulangère Wonderligue (4 victoires, 4 défaites) après sa victoire contre Chartres (80-62) le samedi 7 novembre. Prochain match : Lattes-Montpellier, le dimanche 22 novembre à 15h30.\nLanderneau peut-il enchaîner ?\n#TribuneBreizh #BasketBretagne #LanderneauBretagneBasket",
-        "link": "https://breizh.tribuneouest.fr/sport/basket",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-10-story-rhum-soir",
-      "at": "2026-11-10T20:10+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Le pointage du soir",
-          "lines": [
-            "Pointage du mardi 10 novembre à 17h."
-          ],
-          "rows": [
-            [
-              "1er",
-              "Basile Bourgnon",
-              "Ocean Fifty · en tête"
-            ],
-            [
-              "1er",
-              "Corentin Horeau",
-              "Imoca · en tête"
-            ],
-            [
-              "4e",
-              "Léonard Legrand",
-              "Ocean Fifty"
-            ],
-            [
-              "3e",
-              "Élodie Bonafous",
-              "Imoca"
-            ],
-            [
-              "7e",
-              "Maxime Sorel",
-              "Imoca"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-11-story-rhum-matin",
-      "at": "2026-11-11T09:12+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Le pointage du matin",
-          "lines": [
-            "Pointage du mardi 10 novembre à 22h (partiel)."
-          ],
-          "rows": [
-            [
-              "1er",
-              "Tom Laperche",
-              "Ultim"
-            ],
-            [
-              "2e",
-              "Thomas Coville",
-              "Ultim"
-            ],
-            [
-              "1er",
-              "Basile Bourgnon",
-              "Ocean Fifty"
-            ],
-            [
-              "1er",
-              "Corentin Horeau",
-              "Imoca"
-            ],
-            [
-              "3e",
-              "Élodie Bonafous",
-              "Imoca"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-11-affiche",
-      "at": "2026-11-11T13:18+01:00",
-      "type": "feed",
-      "caption": "⚽ L'affiche de la semaine : Lannion – Guingamp !\nUn derby breton en Coupe de France, samedi 14 novembre à 19h à Lannion, pour le 7e tour.\nL'En Avant Guingamp (@eaguingamp) se déplace chez Lannion pour une soirée de coupe à ne pas manquer.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Breizh #FootBreton #FootballBretagne #EnAvantGuingamp",
-      "visuels": [
-        "derby"
-      ]
-    },
-    {
-      "id": "2026-11-11-urgent-1325",
-      "at": "2026-11-11T13:25+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Doublé breton à l'arrivée",
-          "lines": [
-            "Basile Bourgnon (Ocean Fifty) a gagné sa classe ce mercredi 11 novembre à 6h12 (heure de Paris).",
-            "Corentin Horeau a remporté l'Imoca deux minutes plus tard, à 6h14."
-          ],
-          "color": "voile"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-11-quiz-v2",
-      "at": "2026-11-11T19:52+01:00",
-      "type": "feed",
-      "caption": "⚽ Retour sur une finale de Coupe de France entre voisins bretons !\nQui a marqué un doublé pour Guingamp lors de sa victoire 2-1 contre Rennes en finale de la Coupe de France 2009 ?\nDites-nous en commentaire ce que vous pensez ! Réponse ce soir en story.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #FootBreton #Bretagne",
-      "cards": [
-        {
-          "kicker": "Le quiz du mercredi",
-          "title": "Qui a marqué un doublé pour Guingamp lors de la finale 2009 ?",
-          "lines": [
-            "Réponse ce soir en story."
-          ],
-          "color": "foot",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-11-story-quiz",
-      "at": "2026-11-11T20:42+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "La réponse du quiz",
-          "title": "Eduardo",
-          "lines": [
-            "En Avant Guingamp a remporté la Coupe de France 2009 en battant le Stade Rennais 2-1 au Stade de France, grâce à un doublé d'Eduardo."
-          ],
-          "color": "foot",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-12-fb-regional",
-      "at": "2026-11-12T12:41+01:00",
-      "type": "facebook",
-      "facebook": {
-        "message": "⚽ Régional 2 · groupe A : où en sont les clubs ?\nAprès la 6e journée (8 novembre) :\n1. Plouzané, 18 points\n2. Bourg-Blanc, 10 points\n3. Sizun-Le Tréhou, 9 points\n4. Coataudon, 8 points\n5. AS Brest, 8 points\n12. ESL Brest, 3 points\nPlouzané a battu Morlaix (2-1) pour rester en tête.\nVotre club est-il dans le coup ? Dites-le en commentaire !\nTous les classements : https://breizh.tribuneouest.fr/sport/foot-amateur\n#TribuneBreizh",
-        "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
-        "image": "none"
-      }
+     "kicker": "Le saviez-vous ?",
+     "title": "13 j 7 h 53 min",
+     "lines": [
+      "C'est le temps qu'il a fallu au Concarnois Michel Desjoyeaux pour remporter la Route du Rhum 2002 sur le trimaran Géant.",
+      "Cette édition reste celle de la violente dépression qui a décimé la flotte des grands multicoques."
+     ],
+     "color": "accent",
+     "foot": "Source : Figaro Nautisme"
     }
-  ]
+   ]
+  },
+  {
+   "id": "2026-11-05-libre",
+   "at": "2026-11-05T12:40+01:00",
+   "type": "feed",
+   "caption": "🏴 7 buts en Ligue 1 pour Estéban Lepaul : le meilleur buteur des clubs bretons !\nLe Rennais (@staderennaisfc) devance quatre joueurs à 4 buts : Kamory Doumbia et Ludovic Ajorque (Brest, @stadebrestois29), Bamba Dia et Sebastian Szymański (Rennes).\nEn Ligue 2, B. Bokangu (Guingamp, @eaguingamp) en compte 4 ; en Ligue 3, S. Janno (Concarneau, @usconcarneau) aussi.\nButs en championnat au 3 novembre.\nQuel buteur breton vous impressionne le plus ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #FootBreton #Ligue1",
+   "visuels": [
+    "buteurs"
+   ]
+  },
+  {
+   "id": "2026-11-05-club-guingamp",
+   "at": "2026-11-05T17:23+01:00",
+   "type": "feed",
+   "caption": "🏴 Où en est l'En Avant Guingamp (@eaguingamp) ?\nLe club est 9e de Ligue 2 avec 14 points après 11 journées. Il reste sur une victoire 3-0 contre le leader Saint-Étienne et un succès 2-0 à Clermont.\nProchain match : Dunkerque – Guingamp, vendredi 6 novembre à 20h, sur beIN Sports Max 4.\nEt vous, vous y croyez ?\nLien en bio.\n#TribuneBreizh",
+   "cards": [
+    {
+     "kicker": "Où en est En Avant Guingamp ?",
+     "title": "En Avant Guingamp",
+     "lines": [
+      "9e de Ligue 2 avec 14 points après 11 journées."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Saint-Étienne (J11)",
+       "3-0"
+      ],
+      [
+       "Avant",
+       "Clermont (J10)",
+       "2-0"
+      ],
+      [
+       "Prochain",
+       "Dunkerque",
+       "ven. 6 nov. 20h · beIN Sports Max 4"
+      ],
+      [
+       "Ensuite",
+       "Lannion",
+       "Coupe de France · 14-15 nov."
+      ]
+     ],
+     "color": "foot",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-06-libre",
+   "at": "2026-11-06T08:47+01:00",
+   "type": "carousel",
+   "caption": "🚴 2 records de France pour les jeunes Bretons aux championnats de France de l'Avenir sur piste, à Loudéac !\nZoé Bihan a été sacrée championne de France juniors du kilomètre le 1er novembre, en 1'09\"183.\nChez les U19, Zéphirin Le Normand-Lucas (VC Pays de Loudéac) a décroché 3 titres, en poursuite individuelle, en poursuite par équipes et au kilomètre, avec un record de France en 1'01\"355.\nQuel jeune Breton vous a le plus impressionné ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #Cyclisme #CyclismeBreton #SportBreton",
+   "cards": [
+    {
+     "kicker": "Cyclisme · Jeunes Bretons",
+     "title": "2 records de France à Loudéac",
+     "lines": [
+      "Championnats de France de l'Avenir sur piste, du 28 octobre au 1er novembre."
+     ],
+     "color": "velo",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Kilomètre juniors",
+     "title": "Zoé Bihan, championne",
+     "lines": [
+      "Sacrée championne de France juniors du kilomètre le 1er novembre, avec un record de France en 1'09\"183."
+     ],
+     "color": "velo",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "U19 · Loudéac",
+     "title": "3 titres pour Le Normand-Lucas",
+     "lines": [
+      "Zéphirin Le Normand-Lucas (VC Pays de Loudéac) : 1er en poursuite individuelle, en poursuite par équipes et au kilomètre.",
+      "Record de France du kilomètre en 1'01\"355."
+     ],
+     "color": "velo",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Cyclo-cross",
+     "title": "Laly Pichon, 10e",
+     "lines": [
+      "Coupe de France de cyclo-cross à Nommay (femmes), le 24 octobre."
+     ],
+     "color": "velo",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ],
+   "facebook": {
+    "message": "🚴 2 records de France pour les jeunes Bretons aux championnats de France de l'Avenir sur piste, à Loudéac : Zoé Bihan, championne de France juniors du kilomètre le 1er novembre (1'09\"183), et Zéphirin Le Normand-Lucas (VC Pays de Loudéac), triple vainqueur chez les U19 avec un record du kilomètre en 1'01\"355.\nQuel jeune Breton vous a le plus impressionné ?\n#TribuneBreizh #Cyclisme #CyclismeBreton",
+    "link": "https://breizh.tribuneouest.fr/",
+    "image": "all"
+   }
+  },
+  {
+   "id": "2026-11-06-fb-velo",
+   "at": "2026-11-06T09:30+01:00",
+   "type": "facebook",
+   "cards": [
+    {
+     "kicker": "Cyclisme · Jeunes Bretons",
+     "title": "2 records de France à Loudéac",
+     "lines": [
+      "Championnats de France de l'Avenir sur piste, du 28 octobre au 1er novembre."
+     ],
+     "color": "velo",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Kilomètre juniors",
+     "title": "Zoé Bihan, championne",
+     "lines": [
+      "Sacrée championne de France juniors du kilomètre le 1er novembre, avec un record de France en 1'09\"183."
+     ],
+     "color": "velo",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "U19 · Loudéac",
+     "title": "3 titres pour Le Normand-Lucas",
+     "lines": [
+      "Zéphirin Le Normand-Lucas (VC Pays de Loudéac) : 1er en poursuite individuelle, en poursuite par équipes et au kilomètre.",
+      "Record de France du kilomètre en 1'01\"355."
+     ],
+     "color": "velo",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Cyclo-cross",
+     "title": "Laly Pichon, 10e",
+     "lines": [
+      "Coupe de France de cyclo-cross à Nommay (femmes), le 24 octobre."
+     ],
+     "color": "velo",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ],
+   "facebook": {
+    "message": "🚴 2 records de France pour les jeunes Bretons aux championnats de France de l'Avenir sur piste, à Loudéac : Zoé Bihan, championne de France juniors du kilomètre le 1er novembre (1'09\"183), et Zéphirin Le Normand-Lucas (VC Pays de Loudéac), triple vainqueur chez les U19 avec un record du kilomètre en 1'01\"355.\nQuel jeune Breton vous a le plus impressionné ?\n#TribuneBreizh #Cyclisme #CyclismeBreton",
+    "link": "https://breizh.tribuneouest.fr/",
+    "image": "all"
+   }
+  },
+  {
+   "id": "2026-11-06-story-rhum-matin",
+   "at": "2026-11-06T10:23+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Le pointage du matin",
+     "lines": [
+      "Pointage du jeudi 5 novembre à 15h."
+     ],
+     "rows": [
+      [
+       "1er",
+       "Tom Laperche",
+       "Ultim"
+      ],
+      [
+       "2e",
+       "Thomas Coville",
+       "Ultim"
+      ],
+      [
+       "1er",
+       "Basile Bourgnon",
+       "Ocean Fifty"
+      ],
+      [
+       "1er",
+       "Corentin Horeau",
+       "Imoca"
+      ],
+      [
+       "1er",
+       "Tanguy Caradec",
+       "Vintage mono"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-06-hors-foot",
+   "at": "2026-11-06T12:52+01:00",
+   "type": "carousel",
+   "caption": "Brest Bretagne Handball @bbh_officiel est 3e de la Ligue Butagaz Énergie, Cesson-Rennes @crmhb 15e de la StarLigue, Landerneau @lbb_hn 7e de La Boulangère Wonderligue et Vannes @rugbyclubvannes 14e du Top 14.\nRennes Volley est 3e de la Ligue B masculine et Quimper Volley 5e de l'Élite féminine ; tous jouent ce week-end, sauf Cesson-Rennes, attendu le vendredi 13 novembre.\nQuel sport breton suivez-vous le plus ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #HandballBretagne #BasketBretagne #RugbyBretagne",
+   "cards": [
+    {
+     "kicker": "Les Bretons hors foot",
+     "title": "Le point de la semaine",
+     "lines": [
+      "Hand, basket, rugby, volley : où en sont-ils ?"
+     ],
+     "color": "accent",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Handball",
+     "title": "Les clubs bretons",
+     "lines": [
+      "Brest BH est 3e de la Ligue Butagaz Énergie (17 pts) ; Cesson-Rennes est 15e de la StarLigue (2 pts)."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Brest BH – Strasbourg-Achenheim",
+       "32-26"
+      ],
+      [
+       "Prochain",
+       "Brest BH – CSM Bucarest",
+       "sam. 7 nov., 18h"
+      ],
+      [
+       "Dernier",
+       "Cesson-Rennes – Nantes",
+       "37-46"
+      ],
+      [
+       "Prochain",
+       "Cesson-Rennes – Toulouse",
+       "ven. 13 nov., 20h30"
+      ]
+     ],
+     "color": "hand",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Basket",
+     "title": "Landerneau",
+     "lines": [
+      "Landerneau est 7e de La Boulangère Wonderligue (3 V – 4 D)."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Landerneau – Poznan",
+       "71-76"
+      ],
+      [
+       "Prochain",
+       "Landerneau – Chartres",
+       "sam. 7 nov., 20h"
+      ]
+     ],
+     "color": "basket",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Rugby",
+     "title": "Vannes",
+     "lines": [
+      "Vannes est 14e du Top 14 avec 5 points."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Lyon – Vannes",
+       "48-25"
+      ],
+      [
+       "Prochain",
+       "Vannes – Bordeaux-Bègles",
+       "dim. 8 nov., 15h"
+      ]
+     ],
+     "color": "rugby",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Volley",
+     "title": "Les clubs bretons",
+     "lines": [
+      "Rennes Volley est 3e de la Ligue B masculine (9 pts) ; Quimper Volley est 5e de l'Élite féminine (9 pts)."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Rennes – Martigues",
+       "3-1"
+      ],
+      [
+       "Prochain",
+       "Rennes – Grand Nancy",
+       "sam. 7 nov., 19h"
+      ],
+      [
+       "Dernier",
+       "Quimper – Calais",
+       "1-3"
+      ],
+      [
+       "Prochain",
+       "Sens – Quimper",
+       "sam. 7 nov., 20h"
+      ]
+     ],
+     "color": "accent",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-06-story-programme",
+   "at": "2026-11-06T17:52+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Le programme du week-end",
+     "title": "Samedi 7 et dimanche 8 novembre",
+     "lines": [
+      "Les Bretons en action."
+     ],
+     "rows": [
+      [
+       "Sam. 7 · 14h45",
+       "Concarneau – Fleury",
+       "Ligue 1+"
+      ],
+      [
+       "Sam. 7 · 18h",
+       "Brest BH – CSM Bucarest",
+       "Ligue des champions"
+      ],
+      [
+       "Sam. 7 · 19h",
+       "Rennes – Grand Nancy",
+       "Volley · Ligue B"
+      ],
+      [
+       "Sam. 7 · 20h",
+       "Landerneau – Chartres",
+       "LFB TV (YouTube)"
+      ],
+      [
+       "Dim. 8 · 15h",
+       "Rennes – Lille",
+       "Ligue 1+"
+      ],
+      [
+       "Dim. 8 · 15h",
+       "Vannes – Bordeaux-Bègles",
+       "Canal+ Sport"
+      ],
+      [
+       "Dim. 8 · 17h15",
+       "Brest – Lyon",
+       "Ligue 1+"
+      ],
+      [
+       "Dim. 8 · 17h15",
+       "Le Havre – Lorient",
+       "Ligue 1+"
+      ]
+     ],
+     "color": "accent",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-06-fb-hors-foot",
+   "at": "2026-11-06T19:05+01:00",
+   "type": "facebook",
+   "caption": "Brest Bretagne Handball est 3e de la Ligue Butagaz Énergie, Cesson-Rennes 15e de la StarLigue, Landerneau 7e de La Boulangère Wonderligue et Vannes 14e du Top 14.\nRennes Volley est 3e de la Ligue B masculine et Quimper Volley 5e de l'Élite féminine ; tous jouent ce week-end, sauf Cesson-Rennes, attendu le vendredi 13 novembre.\nQuel sport breton suivez-vous le plus ?\nTout le détail sur breizh.tribuneouest.fr\n#TribuneBreizh #SportBreton",
+   "cards": [
+    {
+     "kicker": "Les Bretons hors foot",
+     "title": "Le point de la semaine",
+     "lines": [
+      "Hand, basket, rugby, volley : où en sont-ils ?"
+     ],
+     "color": "accent",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Handball",
+     "title": "Les clubs bretons",
+     "lines": [
+      "Brest BH est 3e de la Ligue Butagaz Énergie (17 pts) ; Cesson-Rennes est 15e de la StarLigue (2 pts)."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Brest BH – Strasbourg-Achenheim",
+       "32-26"
+      ],
+      [
+       "Prochain",
+       "Brest BH – CSM Bucarest",
+       "sam. 7 nov., 18h"
+      ],
+      [
+       "Dernier",
+       "Cesson-Rennes – Nantes",
+       "37-46"
+      ],
+      [
+       "Prochain",
+       "Cesson-Rennes – Toulouse",
+       "ven. 13 nov., 20h30"
+      ]
+     ],
+     "color": "hand",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Basket",
+     "title": "Landerneau",
+     "lines": [
+      "Landerneau est 7e de La Boulangère Wonderligue (3 V – 4 D)."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Landerneau – Poznan",
+       "71-76"
+      ],
+      [
+       "Prochain",
+       "Landerneau – Chartres",
+       "sam. 7 nov., 20h"
+      ]
+     ],
+     "color": "basket",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Rugby",
+     "title": "Vannes",
+     "lines": [
+      "Vannes est 14e du Top 14 avec 5 points."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Lyon – Vannes",
+       "48-25"
+      ],
+      [
+       "Prochain",
+       "Vannes – Bordeaux-Bègles",
+       "dim. 8 nov., 15h"
+      ]
+     ],
+     "color": "rugby",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "Volley",
+     "title": "Les clubs bretons",
+     "lines": [
+      "Rennes Volley est 3e de la Ligue B masculine (9 pts) ; Quimper Volley est 5e de l'Élite féminine (9 pts)."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Rennes – Martigues",
+       "3-1"
+      ],
+      [
+       "Prochain",
+       "Rennes – Grand Nancy",
+       "sam. 7 nov., 19h"
+      ],
+      [
+       "Dernier",
+       "Quimper – Calais",
+       "1-3"
+      ],
+      [
+       "Prochain",
+       "Sens – Quimper",
+       "sam. 7 nov., 20h"
+      ]
+     ],
+     "color": "accent",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-07-pronostic",
+   "at": "2026-11-07T10:42+01:00",
+   "type": "feed",
+   "caption": "Le Stade Rennais (@staderennaisfc) reçoit Lille dimanche à 15h au Roazhon Park, pour la 10e journée de Ligue 1.\n\nVotre score ? Dites-le en commentaire !\n\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #StadeRennais",
+   "cards": [
+    {
+     "kicker": "Pronostic du week-end",
+     "title": "Rennes – Lille",
+     "lines": [
+      "Dimanche 8 novembre · 15h · Ligue 1 · Ligue 1+"
+     ],
+     "color": "foot",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-07-rhum",
+   "at": "2026-11-07T20:15+01:00",
+   "type": "feed",
+   "caption": "⛵ Route du Rhum : où en sont les Bretons ?\nPointage de ce jeudi 5 novembre à 15h. Chez les Ultim, Tom Laperche (SVR Lazartigue) est en tête et Thomas Coville (Sodebo Ultim 3) est 2e, à 356 milles environ.\nBasile Bourgnon (Edenred) mène les Ocean Fifty, Corentin Horeau (MACSF) les Imoca et Tanguy Caradec (Eurvad) les Vintage mono.\nLe suivi de la course et le classement des Bretons sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Breizh #VoileBretagne #RouteDuRhum2026 #Skipper",
+   "visuels": [
+    "rhum"
+   ]
+  },
+  {
+   "id": "2026-11-08-story-resultats",
+   "at": "2026-11-08T08:30+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Week-end du 7 novembre",
+     "title": "Les résultats",
+     "lines": [
+      "Vendredi 6 et samedi 7 novembre."
+     ],
+     "rows": [
+      [
+       "Ligue 2",
+       "Dunkerque – Guingamp",
+       "3-0"
+      ],
+      [
+       "Ligue 3",
+       "Concarneau – Fleury",
+       "2-0"
+      ],
+      [
+       "Arkema",
+       "Saint-Malo – Marseille",
+       "1-2"
+      ],
+      [
+       "Handball",
+       "Brest BH – CSM Bucarest",
+       "40-25"
+      ],
+      [
+       "Basket",
+       "Landerneau – Chartres",
+       "80-62"
+      ],
+      [
+       "Volley",
+       "Rennes – Grand Nancy",
+       "3-1"
+      ],
+      [
+       "Volley",
+       "Sens – Quimper",
+       "3-2"
+      ]
+     ],
+     "color": "accent",
+     "foot": "Source : breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-08-story",
+   "at": "2026-11-08T10:00+01:00",
+   "type": "story",
+   "visuels": [
+    "story"
+   ]
+  },
+  {
+   "id": "2026-11-08-fb-rhum-hebdo",
+   "at": "2026-11-08T11:17+01:00",
+   "type": "facebook",
+   "facebook": {
+    "message": "⛵ Route du Rhum : le point du dimanche\nUltim : Tom Laperche (Loudéac) a gagné, arrivé dans la nuit du 7 au 8 novembre, record de l'épreuve. Thomas Coville est 2e, à 376 milles environ.\nOcean Fifty : Basile Bourgnon est en tête, à 685 milles de l'arrivée (classement du 8 novembre à 4h) ; Léonard Legrand est 4e.\nImoca : Corentin Horeau est en tête, à 744 milles de l'arrivée ; Élodie Bonafous est 4e.\nVintage mono : Kieran Le Borgne est en tête, Tanguy Caradec 2e.\nVintage multi : Éric Péron est 2e, Gilles Lamiré 3e.\nQuel skipper breton soutenez-vous ?\nLe suivi complet : https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026\n#TribuneBreizh #RouteDuRhum2026",
+    "link": "https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026",
+    "image": "none"
+   }
+  },
+  {
+   "id": "2026-11-08-libre",
+   "at": "2026-11-08T12:25+01:00",
+   "type": "feed",
+   "caption": "⛵ Tom Laperche remporte la Route du Rhum chez les Ultim !\nLe Loudéacien (SVR Lazartigue) a franchi la ligne dans la nuit du samedi 7 au dimanche 8 novembre, en 6 jours, 13 heures et 27 minutes selon l'AFP : un nouveau record de l'épreuve, qui bat celui de Charles Caudrelier en 2022.\nQuel moment de course vous a le plus marqué ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Laperche gagne et bat le record",
+     "lines": [
+      "Le Loudéacien (SVR Lazartigue) s'impose en Ultim dans la nuit du 7 au 8 novembre."
+     ],
+     "rows": [
+      [
+       "Vainqueur",
+       "Tom Laperche",
+       "Ultim"
+      ],
+      [
+       "Temps",
+       "6 j 13 h 27 min",
+       "selon l'AFP"
+      ],
+      [
+       "Record",
+       "Bat celui de Caudrelier",
+       "établi en 2022"
+      ]
+     ],
+     "color": "voile",
+     "foot": "Source : AFP · breizh.tribuneouest.fr"
+    }
+   ],
+   "facebook": {
+    "at": "2026-11-08T09:15+01:00",
+    "message": "⛵ Tom Laperche remporte la Route du Rhum chez les Ultim !\nLe Loudéacien (SVR Lazartigue) a franchi la ligne dans la nuit du samedi 7 au dimanche 8 novembre, en 6 jours, 13 heures et 27 minutes selon l'AFP : un nouveau record de l'épreuve, qui bat celui de Charles Caudrelier en 2022.\n#TribuneBreizh #RouteDuRhum2026 #VoileBretagne",
+    "link": "https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026",
+    "image": "first"
+   }
+  },
+  {
+   "id": "2026-11-08-actu-1750",
+   "at": "2026-11-08T17:50+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Résultat · football",
+     "title": "Rennes 1-2 Lille",
+     "lines": [
+      "Ligue 1, 10e journée : Lille s'impose au Roazhon Park, dimanche 8 novembre."
+     ],
+     "color": "foot"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-08-amateur",
+   "at": "2026-11-08T20:30+01:00",
+   "type": "feed",
+   "caption": "⚽ Le week-end du foot amateur breton en un coup d'œil !\nLorient II a battu Saumur (6-2) en National 1 et Dinan Léhon, vainqueur de Vendée Poiré-sur-Vie (1-0), est 5e avec 15 points.\nEn National 2, Cesson et Vire se partagent la tête (17 points) après leur 0-0.\nCoupe de France : Tinténiac Saint-Domineuc (R1) recevra Concarneau @usconcarneau (L3) le samedi 14 novembre à 17h. Quel petit poucet ira le plus loin ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootAmateur #CoupeDeFrance #National1",
+   "cards": [
+    {
+     "kicker": "Foot amateur · le bilan du week-end",
+     "title": "6-2 : Lorient II s'offre Saumur",
+     "lines": [
+      "National 1, 9e journée (du 5 au 7 novembre) : les réservistes lorientais s'imposent 6-2 et sont 4es avec 16 points."
+     ],
+     "color": "amateur"
+    },
+    {
+     "kicker": "National 1 · poule Ouest",
+     "title": "Dinan Léhon grimpe au 5e rang",
+     "lines": [
+      "Dinan Léhon bat Vendée Poiré-sur-Vie (1-0) et compte 15 points, un de moins que Lorient II.",
+      "Locminé a fait 0-0 contre Tarbes ; Angoulême reste leader avec 23 points."
+     ],
+     "color": "amateur"
+    },
+    {
+     "kicker": "National 2 · poule Bretagne-Normandie",
+     "title": "Cesson et Vire toujours en tête",
+     "lines": [
+      "Cesson et Vire ont fait 0-0 et comptent chacun 17 points après la 7e journée (7 novembre).",
+      "Vitré s'impose à Saint-Pierre Milizac (3-2), Vannes bat le TA Rennes (2-0)."
+     ],
+     "color": "amateur"
+    },
+    {
+     "kicker": "Coupe de France · petits poucets",
+     "title": "Les clubs de R1 face aux pros",
+     "lines": [
+      "Châteaubourg (R1) recevra le FC Nantes (L2) le dimanche 15 novembre à 14h.",
+      "Saint-Renan (R1) recevra Laval (L2) le même jour à 14h ; Tinténiac Saint-Domineuc (R1) recevra Concarneau (L3) le samedi 14 novembre à 17h."
+     ],
+     "color": "amateur"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-08-amateur-2",
+   "at": "2026-11-08T21:15+01:00",
+   "type": "carousel",
+   "caption": "⚽ Le week-end du foot amateur breton en un coup d'œil !\nLorient II a battu Saumur (6-2) en National 1 et Dinan Léhon, vainqueur de Vendée Poiré-sur-Vie (1-0), est 5e avec 15 points.\nEn National 2, Cesson et Vire se partagent la tête (17 points) après leur 0-0.\nCoupe de France : Tinténiac Saint-Domineuc (R1) recevra Concarneau @usconcarneau (L3) le samedi 14 novembre à 17h. Quel petit poucet ira le plus loin ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootAmateur #CoupeDeFrance #National1",
+   "cards": [
+    {
+     "kicker": "Foot amateur · le bilan du week-end",
+     "title": "6-2 : Lorient II s'offre Saumur",
+     "lines": [
+      "National 1, 9e journée (du 5 au 7 novembre) : les réservistes lorientais s'imposent 6-2 et sont 4es avec 16 points."
+     ],
+     "color": "amateur"
+    },
+    {
+     "kicker": "National 1 · poule Ouest",
+     "title": "Dinan Léhon grimpe au 5e rang",
+     "lines": [
+      "Dinan Léhon bat Vendée Poiré-sur-Vie (1-0) et compte 15 points, un de moins que Lorient II.",
+      "Locminé a fait 0-0 contre Tarbes ; Angoulême reste leader avec 23 points."
+     ],
+     "color": "amateur"
+    },
+    {
+     "kicker": "National 2 · poule Bretagne-Normandie",
+     "title": "Cesson et Vire toujours en tête",
+     "lines": [
+      "Cesson et Vire ont fait 0-0 et comptent chacun 17 points après la 7e journée (7 novembre).",
+      "Vitré s'impose à Saint-Pierre Milizac (3-2), Vannes bat le TA Rennes (2-0)."
+     ],
+     "color": "amateur"
+    },
+    {
+     "kicker": "Coupe de France · petits poucets",
+     "title": "Les clubs de R1 face aux pros",
+     "lines": [
+      "Châteaubourg (R1) recevra le FC Nantes (L2) le dimanche 15 novembre à 14h.",
+      "Saint-Renan (R1) recevra Laval (L2) le même jour à 14h ; Tinténiac Saint-Domineuc (R1) recevra Concarneau (L3) le samedi 14 novembre à 17h."
+     ],
+     "color": "amateur"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-09-story-rhum-matin",
+   "at": "2026-11-09T09:12+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Le pointage du matin",
+     "lines": [
+      "Pointage du dimanche 8 novembre à 20h35."
+     ],
+     "rows": [
+      [
+       "1er",
+       "Tom Laperche",
+       "Ultim · vainqueur"
+      ],
+      [
+       "2e",
+       "Thomas Coville",
+       "Ultim · arrivé"
+      ],
+      [
+       "1er",
+       "Basile Bourgnon",
+       "Ocean Fifty · en tête"
+      ],
+      [
+       "1er",
+       "Corentin Horeau",
+       "Imoca · en tête"
+      ],
+      [
+       "1er",
+       "Kieran Le Borgne",
+       "Vintage mono · en tête"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-09-fb-amateur",
+   "at": "2026-11-09T12:20+01:00",
+   "type": "facebook",
+   "facebook": {
+    "message": "⚽ Foot amateur : les résultats du week-end\nNational 1 (9e journée) : Lorient II bat Saumur (6-2) et Dinan Léhon s'impose face à Vendée Poiré-sur-Vie (1-0). Locminé et Tarbes se quittent sur un nul (0-0).\nNational 2 : Cesson et Vire font match nul (0-0), Vannes bat le TA Rennes (2-0).\nRégional 1, groupe A (dimanche 8 novembre) : AG Plouvorn s'impose à Pluvigner (1-5) et Concarneau (B) bat Plaintel (5-1).\nLe classement complet : https://breizh.tribuneouest.fr/sport/foot-amateur\n#TribuneBreizh",
+    "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
+    "image": "none"
+   }
+  },
+  {
+   "id": "2026-11-09-weekend",
+   "at": "2026-11-09T12:35+01:00",
+   "type": "carousel",
+   "caption": "🏴 7 victoires bretonnes sur 8 résultats ce week-end !\n⚽ Ligue 1 : Brest (@stadebrestois29) bat Lyon (2-0) et Lorient (@fclorient) s'impose au Havre (0-2). Rennes (@staderennaisfc) s'incline face à Lille (1-2) et est 8e avec 16 points.\n🏉 Top 14 : Vannes (@rugbyclubvannes) bat Bordeaux-Bègles (23-14). 🤾 Brest Bretagne Handball s'impose face à Bucarest (40-25) en Ligue des champions. 🏀 Landerneau bat Chartres (80-62).\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #Bretagne #ActuSport #PassionSport",
+   "visuels": [
+    "resultats",
+    "classement"
+   ],
+   "facebook": {
+    "at": "2026-11-09T08:15+01:00",
+    "message": "🏴 7 victoires bretonnes sur 8 résultats ce week-end !\n⚽ Ligue 1 : Brest bat Lyon (2-0), Lorient s'impose au Havre (0-2), Rennes s'incline face à Lille (1-2) et est 8e avec 16 points.\n🏉 Vannes bat Bordeaux-Bègles (23-14) en Top 14. 🤾 Brest Bretagne Handball bat Bucarest (40-25) en Ligue des champions. 🏀 Landerneau bat Chartres (80-62).\n#TribuneBreizh #SportBreton #SportBretagne",
+    "link": "https://breizh.tribuneouest.fr/",
+    "image": "all"
+   }
+  },
+  {
+   "id": "2026-11-09-buteurs",
+   "at": "2026-11-09T19:08+01:00",
+   "type": "feed",
+   "visuels": [
+    "buteurs"
+   ],
+   "caption": "⚽ Estéban Lepaul (Rennes (@staderennaisfc)) reste en tête des buteurs bretons avec 7 buts en Ligue 1.\nLudovic Ajorque (Brest (@stadebrestois29)) le suit avec 5 buts, comme Stan Janno (Concarneau) en Ligue 3.\nQui sera le meilleur buteur breton à Noël ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #StadeRennais"
+  },
+  {
+   "id": "2026-11-09-buteurs-maj",
+   "at": "2026-11-09T20:42+01:00",
+   "type": "feed",
+   "visuels": [
+    "buteurs"
+   ],
+   "caption": "⚽ Mise à jour après la 10e journée de Ligue 1 : Estéban Lepaul, de Rennes (@staderennaisfc), reste en tête des buteurs bretons avec 7 buts.\nLudovic Ajorque, de Brest (@stadebrestois29), Stan Janno (Concarneau, Ligue 3) et Boulaye Dia (Rennes) suivent avec 5 buts chacun.\nQui sera le meilleur buteur breton à Noël ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #Ligue2"
+  },
+  {
+   "id": "2026-11-10-club-landerneau",
+   "at": "2026-11-10T12:37+01:00",
+   "type": "feed",
+   "caption": "🏀 Où en est Landerneau Bretagne Basket (@lbb_hn) ?\nLe club est 7e de la Boulangère Wonderligue avec 4 victoires et 4 défaites après 8 journées. Il vient de battre Chartres (80-62) le samedi 7 novembre, après sa défaite en prolongation contre Poznan (71-76) en EuroCup le mercredi 4 novembre.\nProchain match : Lattes-Montpellier – Landerneau, le dimanche 22 novembre à 15h30, pour la 9e journée de LFB.\nLanderneau peut-il enchaîner à Lattes-Montpellier ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #BasketBretagne #LanderneauBretagneBasket #Breizh",
+   "cards": [
+    {
+     "kicker": "Où en est Landerneau Bretagne Basket ?",
+     "title": "Landerneau Bretagne Basket",
+     "lines": [
+      "7e de la Boulangère Wonderligue (4 V – 4 D) après 8 journées."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Chartres (LFB · J8)",
+       "80-62"
+      ],
+      [
+       "Avant",
+       "Poznan (EuroCup)",
+       "71-76 a.p."
+      ],
+      [
+       "Prochain",
+       "Lattes-Montpellier",
+       "dim. 22 nov. 15h30 · LFB, 9e journée"
+      ],
+      [
+       "Ensuite",
+       "Fribourg",
+       "mer. 25 nov. 19h30 · EuroCup"
+      ]
+     ],
+     "color": "basket",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-10-libre",
+   "at": "2026-11-10T18:40+01:00",
+   "type": "feed",
+   "caption": "🤾 Cesson-Rennes affrontera le PSG en quarts de finale de la Coupe de France, les 18 ou 19 décembre !\nLes Irréductibles se sont qualifiés en s'imposant à Tremblay (31-32) le mardi 27 octobre. En StarLigue, Cesson-Rennes (@crmhb) est avant-dernier avec 2 points ; prochain match : Toulouse, le vendredi 13 novembre à 20h30.\nCesson-Rennes peut-il jouer un mauvais tour au PSG ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #HandballBretagne #Handball #CessonRennes",
+   "cards": [
+    {
+     "kicker": "Coupe de France de handball",
+     "title": "Cesson-Rennes défie le PSG",
+     "lines": [
+      "Qualifié en gagnant à Tremblay, Cesson-Rennes jouera les quarts de finale les 18 ou 19 décembre."
+     ],
+     "rows": [
+      [
+       "27 oct.",
+       "Tremblay – Cesson-Rennes",
+       "31-32"
+      ],
+      [
+       "Ven. 13 nov. · 20h30",
+       "Cesson-Rennes – Toulouse",
+       "StarLigue · HandballTV"
+      ],
+      [
+       "18 ou 19 déc.",
+       "Paris SG – Cesson-Rennes",
+       "Quarts de finale"
+      ]
+     ],
+     "color": "hand",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ],
+   "facebook": {
+    "message": "🤾 Coupe de France de handball : Cesson-Rennes affrontera le PSG en quarts de finale, les 18 ou 19 décembre.\nLes Irréductibles se sont qualifiés en gagnant à Tremblay (31-32) le mardi 27 octobre. En StarLigue, ils reçoivent Toulouse le vendredi 13 novembre à 20h30.\n#TribuneBreizh #HandballBretagne #Handball",
+    "link": "https://breizh.tribuneouest.fr/sport/handball",
+    "image": "first",
+    "at": "2026-11-10T12:50+01:00"
+   }
+  },
+  {
+   "id": "2026-11-10-fb-club-landerneau",
+   "at": "2026-11-10T19:23+01:00",
+   "type": "facebook",
+   "cards": [
+    {
+     "kicker": "Où en est Landerneau Bretagne Basket ?",
+     "title": "Landerneau Bretagne Basket",
+     "lines": [
+      "7e de la Boulangère Wonderligue (4 V – 4 D) après 8 journées."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Chartres (LFB · J8)",
+       "80-62"
+      ],
+      [
+       "Avant",
+       "Poznan (EuroCup)",
+       "71-76 a.p."
+      ],
+      [
+       "Prochain",
+       "Lattes-Montpellier",
+       "dim. 22 nov. 15h30 · LFB, 9e journée"
+      ],
+      [
+       "Ensuite",
+       "Fribourg",
+       "mer. 25 nov. 19h30 · EuroCup"
+      ]
+     ],
+     "color": "basket",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ],
+   "facebook": {
+    "message": "🏀 Où en est Landerneau Bretagne Basket ?\nLe club est 7e de la Boulangère Wonderligue (4 victoires, 4 défaites) après sa victoire contre Chartres (80-62) le samedi 7 novembre. Prochain match : Lattes-Montpellier, le dimanche 22 novembre à 15h30.\nLanderneau peut-il enchaîner ?\n#TribuneBreizh #BasketBretagne #LanderneauBretagneBasket",
+    "link": "https://breizh.tribuneouest.fr/sport/basket",
+    "image": "first"
+   }
+  },
+  {
+   "id": "2026-11-10-story-rhum-soir",
+   "at": "2026-11-10T20:10+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Le pointage du soir",
+     "lines": [
+      "Pointage du mardi 10 novembre à 17h."
+     ],
+     "rows": [
+      [
+       "1er",
+       "Basile Bourgnon",
+       "Ocean Fifty · en tête"
+      ],
+      [
+       "1er",
+       "Corentin Horeau",
+       "Imoca · en tête"
+      ],
+      [
+       "4e",
+       "Léonard Legrand",
+       "Ocean Fifty"
+      ],
+      [
+       "3e",
+       "Élodie Bonafous",
+       "Imoca"
+      ],
+      [
+       "7e",
+       "Maxime Sorel",
+       "Imoca"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-11-story-rhum-matin",
+   "at": "2026-11-11T09:12+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Le pointage du matin",
+     "lines": [
+      "Pointage du mardi 10 novembre à 22h (partiel)."
+     ],
+     "rows": [
+      [
+       "1er",
+       "Tom Laperche",
+       "Ultim"
+      ],
+      [
+       "2e",
+       "Thomas Coville",
+       "Ultim"
+      ],
+      [
+       "1er",
+       "Basile Bourgnon",
+       "Ocean Fifty"
+      ],
+      [
+       "1er",
+       "Corentin Horeau",
+       "Imoca"
+      ],
+      [
+       "3e",
+       "Élodie Bonafous",
+       "Imoca"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-11-affiche",
+   "at": "2026-11-11T13:18+01:00",
+   "type": "feed",
+   "caption": "⚽ L'affiche de la semaine : Lannion – Guingamp !\nUn derby breton en Coupe de France, samedi 14 novembre à 19h à Lannion, pour le 7e tour.\nL'En Avant Guingamp (@eaguingamp) se déplace chez Lannion pour une soirée de coupe à ne pas manquer.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Breizh #FootBreton #FootballBretagne #EnAvantGuingamp",
+   "visuels": [
+    "derby"
+   ]
+  },
+  {
+   "id": "2026-11-11-urgent-1325",
+   "at": "2026-11-11T13:25+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Doublé breton à l'arrivée",
+     "lines": [
+      "Basile Bourgnon (Ocean Fifty) a gagné sa classe ce mercredi 11 novembre à 6h12 (heure de Paris).",
+      "Corentin Horeau a remporté l'Imoca deux minutes plus tard, à 6h14."
+     ],
+     "color": "voile"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-11-quiz-v2",
+   "at": "2026-11-11T19:52+01:00",
+   "type": "feed",
+   "caption": "⚽ Retour sur une finale de Coupe de France entre voisins bretons !\nQui a marqué un doublé pour Guingamp lors de sa victoire 2-1 contre Rennes en finale de la Coupe de France 2009 ?\nDites-nous en commentaire ce que vous pensez ! Réponse ce soir en story.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #FootBreton #Bretagne",
+   "cards": [
+    {
+     "kicker": "Le quiz du mercredi",
+     "title": "Qui a marqué un doublé pour Guingamp lors de la finale 2009 ?",
+     "lines": [
+      "Réponse ce soir en story."
+     ],
+     "color": "foot",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-11-story-quiz",
+   "at": "2026-11-11T20:42+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "La réponse du quiz",
+     "title": "Eduardo",
+     "lines": [
+      "En Avant Guingamp a remporté la Coupe de France 2009 en battant le Stade Rennais 2-1 au Stade de France, grâce à un doublé d'Eduardo."
+     ],
+     "color": "foot",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-12-fb-regional",
+   "at": "2026-11-12T12:41+01:00",
+   "type": "facebook",
+   "facebook": {
+    "message": "⚽ Régional 2 · groupe A : où en sont les clubs ?\nAprès la 6e journée (8 novembre) :\n1. Plouzané, 18 points\n2. Bourg-Blanc, 10 points\n3. Sizun-Le Tréhou, 9 points\n4. Coataudon, 8 points\n5. AS Brest, 8 points\n12. ESL Brest, 3 points\nPlouzané a battu Morlaix (2-1) pour rester en tête.\nVotre club est-il dans le coup ? Dites-le en commentaire !\nTous les classements : https://breizh.tribuneouest.fr/sport/foot-amateur\n#TribuneBreizh",
+    "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
+    "image": "none"
+   }
+  },
+  {
+   "id": "2026-11-12-libre",
+   "at": "2026-11-12T18:27+01:00",
+   "type": "feed",
+   "caption": "🏴 2 victoires à l'extérieur pour les Bretons du hand et du basket !\n🤾 Brest Bretagne Handball (@bbh_officiel) s'est imposé à Chambray (26-28) le mercredi 11 novembre et reste 2e de la Ligue Butagaz Énergie avec 23 points, à 4 points de Metz (27).\n🏀 En NM1, Fougères a gagné à Laval (66-69) le même soir et remonte à la 3e place de la poule B, avec 15 points.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #HandballBretagne #BasketBretagne #BBH",
+   "cards": [
+    {
+     "kicker": "Mercredi 11 novembre",
+     "title": "2 victoires à l'extérieur",
+     "lines": [
+      "Les Bretons du hand et du basket s'imposent."
+     ],
+     "rows": [
+      [
+       "Handball",
+       "Chambray – Brest BH",
+       "26-28"
+      ],
+      [
+       "Basket · NM1",
+       "Laval – Fougères",
+       "66-69"
+      ]
+     ],
+     "color": "hand",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  }
+ ]
 }

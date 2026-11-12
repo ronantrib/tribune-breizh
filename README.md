@@ -70,8 +70,13 @@ de `src/index.html` au moment de publier. Test à la main : `php bot/visuels.php
   précédent, urgents et stories compris. Un post qui attend n'est ni abandonné ni compté comme un essai ; il part au premier passage du cron
   où les 90 minutes sont écoulées (sinon, abandon au bout de la fenêtre de 6 h). Les posts attendent dans l'ordre de leur heure. Un statut
   « à vérifier » compte comme une publication. `php bot/publish.php check` affiche l'état de la garde.
-- **Rythme** (consignes des tâches planifiées) : au moins 1 et au plus 2 posts Instagram par jour (les stories sont en plus), 1 post Facebook ;
+- **Rythme** (consignes des tâches planifiées) : au moins 1 et au plus 2 posts Instagram par jour (les stories sont en plus), Facebook : voir la règle du 12 novembre 2026 ci-dessous ;
   les sujets forts en trop sont reportés aux jours creux ; heures variées par créneaux 8h-10h, 12h-14h et 18h-21h, 3 h au moins entre deux posts.
+- **Facebook, règle du 12 novembre 2026** : 1 post Facebook par jour par défaut ; un second est permis seulement s'il existe un second sujet fort (jour de
+  résultats le lundi, programme du week-end le vendredi, derby, exploit, temps fort de la Route du Rhum), sur un sujet différent du premier,
+  jamais pour remplir. Écart d'au moins 3 heures entre les deux, et **2 posts Facebook au plus par jour, exploits et reprise automatique du Rhum compris**
+  (la garde de 90 minutes de `bot/garde.php` reste inchangée). Cette règle remplace le « 1 post Facebook » et les plafonds particuliers plus bas
+  (week-end, lundi, exploits en plus du post habituel) ; aucun code n'a changé.
 - **Facebook et exploits** : un exploit (coupe, titre) repéré par la vérification légère est aussi publié sur Facebook (champ `facebook` du post,
   ou post `facebook` séparé si l'exploit devient une story), au plus un par jour, en plus du post Facebook habituel (90 min d'écart).
 - **Mentions des clubs** : `insta/comptes.json` liste les clubs avec `instagram` (ex. `@nomducompte`) et `facebook` (nom exact de la page).

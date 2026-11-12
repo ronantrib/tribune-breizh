@@ -1109,6 +1109,45 @@
    }
   },
   {
+   "id": "2026-11-12-club-fcnantes",
+   "at": "2026-11-12T12:48+01:00",
+   "type": "feed",
+   "caption": "⚽ Où en est le FC Nantes (@fcnantes) ?\nLe club est 14e de Ligue 2 avec 12 points après 12 journées. Il s'est imposé à Pau (2-0) le samedi 7 novembre, après son match nul contre Clermont (1-1).\nProchain rendez-vous : Châteaubourg – Nantes, le dimanche 15 novembre à 14h, au 7e tour de la Coupe de France, puis Grenoble à la Beaujoire le samedi 21 novembre à 14h.\nEt vous, le FC Nantes va-t-il continuer à remonter ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue2 #FCNantes",
+   "cards": [
+    {
+     "kicker": "Où en est FC Nantes ?",
+     "title": "FC Nantes",
+     "lines": [
+      "14e de Ligue 2 avec 12 points après 12 journées."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Pau (L2 · J12)",
+       "2-0 (V)"
+      ],
+      [
+       "Avant",
+       "Clermont (L2 · J11)",
+       "1-1 (N)"
+      ],
+      [
+       "Prochain",
+       "Châteaubourg",
+       "dim. 15 nov. 14h · Coupe de France, 7e tour"
+      ],
+      [
+       "Ensuite",
+       "Grenoble",
+       "sam. 21 nov. 14h · L2, 13e journée · beIN Sports 1"
+      ]
+     ],
+     "color": "foot",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
    "id": "2026-11-12-libre",
    "at": "2026-11-12T18:27+01:00",
    "type": "feed",
@@ -1136,6 +1175,49 @@
      "foot": "breizh.tribuneouest.fr"
     }
    ]
+  },
+  {
+   "id": "2026-11-12-fb-club-fcnantes",
+   "at": "2026-11-12T19:11+01:00",
+   "type": "facebook",
+   "cards": [
+    {
+     "kicker": "Où en est FC Nantes ?",
+     "title": "FC Nantes",
+     "lines": [
+      "14e de Ligue 2 avec 12 points après 12 journées."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Pau (L2 · J12)",
+       "2-0 (V)"
+      ],
+      [
+       "Avant",
+       "Clermont (L2 · J11)",
+       "1-1 (N)"
+      ],
+      [
+       "Prochain",
+       "Châteaubourg",
+       "dim. 15 nov. 14h · Coupe de France, 7e tour"
+      ],
+      [
+       "Ensuite",
+       "Grenoble",
+       "sam. 21 nov. 14h · L2, 13e journée · beIN Sports 1"
+      ]
+     ],
+     "color": "foot",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ],
+   "facebook": {
+    "message": "⚽ Où en est le FC Nantes ?\nLe club est 14e de Ligue 2 avec 12 points après 12 journées, et s'est imposé à Pau (2-0) le samedi 7 novembre.\nProchain rendez-vous : Châteaubourg, le dimanche 15 novembre à 14h en Coupe de France.\nLe FC Nantes va-t-il continuer à remonter ?\n#TribuneBreizh #Ligue2 #FCNantes",
+    "link": "https://breizh.tribuneouest.fr/club/fc-nantes",
+    "image": "first"
+   }
   }
  ]
 }

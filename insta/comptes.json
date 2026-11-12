@@ -225,6 +225,34 @@
    "sport": "foot",
    "instagram": "",
    "facebook": ""
+  },
+  {
+   "id": "cpbrennesm",
+   "nom": "CPB Rennes Handball (hommes)",
+   "sport": "handball",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "lanester",
+   "nom": "Lanester Handball",
+   "sport": "handball",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "cpbrennesf",
+   "nom": "CPB Rennes Handball (féminines)",
+   "sport": "handball",
+   "instagram": "",
+   "facebook": ""
+  },
+  {
+   "id": "brestbh2",
+   "nom": "Brest Bretagne Handball 2",
+   "sport": "handball",
+   "instagram": "",
+   "facebook": ""
   }
  ]
 }

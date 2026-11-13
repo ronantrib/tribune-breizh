@@ -1209,6 +1209,49 @@
    ]
   },
   {
+   "id": "2026-11-13-story-rhum-matin",
+   "at": "2026-11-13T08:53+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Le pointage du matin",
+     "lines": [
+      "Pointage officiel du jeudi 12 novembre à 18h (partiel)."
+     ],
+     "rows": [
+      [
+       "6e",
+       "Davy Beaudart",
+       "Imoca · à 50 milles de l'arrivée"
+      ],
+      [
+       "7e",
+       "Maxime Sorel",
+       "Imoca · à 63 milles de l'arrivée"
+      ],
+      [
+       "7e",
+       "Guillaume L'Hostis",
+       "Class40 · à 772 milles de l'arrivée"
+      ],
+      [
+       "1er",
+       "Kieran Le Borgne",
+       "Vintage mono · en tête"
+      ],
+      [
+       "2e",
+       "Éric Péron",
+       "Vintage multi · à 223 milles du leader"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
    "id": "2026-11-13-story-programme",
    "at": "2026-11-13T18:07+01:00",
    "type": "story",

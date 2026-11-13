@@ -1407,20 +1407,25 @@
    "cards": [
     {
      "kicker": "Le programme du week-end",
-     "title": "Samedi 14 et dimanche 15 novembre",
+     "title": "Du vendredi 13 au dimanche 15 novembre",
      "lines": [
       "Les Bretons en action."
      ],
      "rows": [
       [
-       "Sam. 14 · 18h30",
-       "CPB Rennes – Brest BH 2 (hand)",
+       "Ven. 13 · 19h",
+       "Nantes – Lens (foot féminin)",
+       "YouTube"
+      ],
+      [
+       "Ven. 13 · 20h",
+       "Angers – Union Rennes (basket)",
        ""
       ],
       [
-       "Sam. 14 · 19h",
-       "Lannion – Guingamp (Coupe de France)",
-       ""
+       "Ven. 13 · 20h30",
+       "Cesson-Rennes – Toulouse (hand)",
+       "HandballTV"
       ],
       [
        "Sam. 14 · 18h",
@@ -1429,27 +1434,22 @@
       ],
       [
        "Sam. 14 · 19h",
+       "Lannion – Guingamp (Coupe de France)",
+       ""
+      ],
+      [
+       "Sam. 14 · 19h",
        "Nantes – Saint-Raphaël (hand)",
        "beIN Sports"
       ],
       [
-       "Sam. 14 · 19h",
-       "Fréjus – Rennes (volley)",
-       ""
-      ],
-      [
-       "Dim. 15 · 14h",
-       "Châteaubourg – FC Nantes (Coupe de France)",
+       "Dim. 15 · 15h15",
+       "Salles – Nantes (rugby)",
        ""
       ],
       [
        "Dim. 15 · 16h",
        "CSM Bucarest – Brest BH (hand)",
-       ""
-      ],
-      [
-       "Dim. 15 · 15h15",
-       "Salles – Nantes (rugby)",
        ""
       ]
      ],

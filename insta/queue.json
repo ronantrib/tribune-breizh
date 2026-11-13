@@ -1,71 +1,6 @@
 {
  "posts": [
   {
-   "id": "2026-11-05-story-saviez",
-   "at": "2026-11-05T09:20+01:00",
-   "type": "story",
-   "cards": [
-    {
-     "kicker": "Le saviez-vous ?",
-     "title": "13 j 7 h 53 min",
-     "lines": [
-      "C'est le temps qu'il a fallu au Concarnois Michel Desjoyeaux pour remporter la Route du Rhum 2002 sur le trimaran Géant.",
-      "Cette édition reste celle de la violente dépression qui a décimé la flotte des grands multicoques."
-     ],
-     "color": "accent",
-     "foot": "Source : Figaro Nautisme"
-    }
-   ]
-  },
-  {
-   "id": "2026-11-05-libre",
-   "at": "2026-11-05T12:40+01:00",
-   "type": "feed",
-   "caption": "🏴 7 buts en Ligue 1 pour Estéban Lepaul : le meilleur buteur des clubs bretons !\nLe Rennais (@staderennaisfc) devance quatre joueurs à 4 buts : Kamory Doumbia et Ludovic Ajorque (Brest, @stadebrestois29), Bamba Dia et Sebastian Szymański (Rennes).\nEn Ligue 2, B. Bokangu (Guingamp, @eaguingamp) en compte 4 ; en Ligue 3, S. Janno (Concarneau, @usconcarneau) aussi.\nButs en championnat au 3 novembre.\nQuel buteur breton vous impressionne le plus ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #FootBreton #Ligue1",
-   "visuels": [
-    "buteurs"
-   ]
-  },
-  {
-   "id": "2026-11-05-club-guingamp",
-   "at": "2026-11-05T17:23+01:00",
-   "type": "feed",
-   "caption": "🏴 Où en est l'En Avant Guingamp (@eaguingamp) ?\nLe club est 9e de Ligue 2 avec 14 points après 11 journées. Il reste sur une victoire 3-0 contre le leader Saint-Étienne et un succès 2-0 à Clermont.\nProchain match : Dunkerque – Guingamp, vendredi 6 novembre à 20h, sur beIN Sports Max 4.\nEt vous, vous y croyez ?\nLien en bio.\n#TribuneBreizh",
-   "cards": [
-    {
-     "kicker": "Où en est En Avant Guingamp ?",
-     "title": "En Avant Guingamp",
-     "lines": [
-      "9e de Ligue 2 avec 14 points après 11 journées."
-     ],
-     "rows": [
-      [
-       "Dernier",
-       "Saint-Étienne (J11)",
-       "3-0"
-      ],
-      [
-       "Avant",
-       "Clermont (J10)",
-       "2-0"
-      ],
-      [
-       "Prochain",
-       "Dunkerque",
-       "ven. 6 nov. 20h · beIN Sports Max 4"
-      ],
-      [
-       "Ensuite",
-       "Lannion",
-       "Coupe de France · 14-15 nov."
-      ]
-     ],
-     "color": "foot",
-     "foot": "breizh.tribuneouest.fr"
-    }
-   ]
-  },
-  {
    "id": "2026-11-06-libre",
    "at": "2026-11-06T08:47+01:00",
    "type": "carousel",
@@ -1269,6 +1204,64 @@
       ]
      ],
      "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
+   "id": "2026-11-13-story-programme",
+   "at": "2026-11-13T18:07+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Le programme du week-end",
+     "title": "Samedi 14 et dimanche 15 novembre",
+     "lines": [
+      "Les Bretons en action."
+     ],
+     "rows": [
+      [
+       "Sam. 14 · 18h30",
+       "CPB Rennes – Brest BH 2 (hand)",
+       ""
+      ],
+      [
+       "Sam. 14 · 19h",
+       "Lannion – Guingamp (Coupe de France)",
+       ""
+      ],
+      [
+       "Sam. 14 · 18h",
+       "Rennes – Carcassonne (rugby)",
+       ""
+      ],
+      [
+       "Sam. 14 · 19h",
+       "Nantes – Saint-Raphaël (hand)",
+       "beIN Sports"
+      ],
+      [
+       "Sam. 14 · 19h",
+       "Fréjus – Rennes (volley)",
+       ""
+      ],
+      [
+       "Dim. 15 · 14h",
+       "Châteaubourg – FC Nantes (Coupe de France)",
+       ""
+      ],
+      [
+       "Dim. 15 · 16h",
+       "CSM Bucarest – Brest BH (hand)",
+       ""
+      ],
+      [
+       "Dim. 15 · 15h15",
+       "Salles – Nantes (rugby)",
+       ""
+      ]
+     ],
+     "color": "accent",
      "foot": "breizh.tribuneouest.fr"
     }
    ]

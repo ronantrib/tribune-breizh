@@ -598,6 +598,29 @@ function tableHTML(t){
 const factsHTML=arr=>`<div class="facts">${arr.map(f=>`<div class="fact"><div class="d">${esc(f.d)}</div><div><b>${esc(f.t)}</b>${f.s?`<small>${esc(f.s)}</small>`:""}</div></div>`).join("")}</div>`;
 
 const MOREOPEN=new Set();
+const MOIS_FR={jan:0,janv:0,fev:1,fevr:1,mar:2,avr:3,mai:4,juin:5,juil:6,juillet:6,aout:7,sept:8,oct:9,nov:10,dec:11};
+function dayKey(s){
+  const n=s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+  const re=/(\d{1,2})\s*(?:er)?\s*([a-z]+)/g;let m;
+  while((m=re.exec(n))){
+    const w=m[2].replace(/\.$/,"");
+    const mo=MOIS_FR[w]??MOIS_FR[w.slice(0,4)]??MOIS_FR[w.slice(0,3)];
+    if(mo!==undefined){
+      const day=+m[1],now=new Date();let y=now.getFullYear();
+      if(mo>now.getMonth()+1)y--;
+      return new Date(y,mo,day).getTime();
+    }
+  }
+  return null;
+}
+/* Trie les blocs de résultats du plus récent au plus ancien d'après la date lue dans "day" ;
+   un bloc sans date explicite ("StarLigue · 9e journée") hérite de la date du bloc précédent,
+   pour rester juste après lui même si la saisie n'est pas déjà dans l'ordre chronologique. */
+function sortResults(gs){
+  let last=null;
+  return gs.map((g,i)=>{let k=dayKey(g.day);if(k==null)k=last;else last=k;return{g,i,k:k==null?-Infinity:k};})
+    .sort((a,b)=>b.k-a.k||a.i-b.i).map(x=>x.g);
+}
 function groupsHTML(gs,rowFn,limit,key){
   let n=0,vis="",hid="",hc=0;
   gs.forEach(x=>{const a=[],b=[];x.games.forEach(g=>{(limit&&n>=limit?b:a).push(g);n++});
@@ -610,7 +633,7 @@ function renderSport(k){
   const d=DATA[k];
   const hv=(h,a)=>HIST||!(HISTNAMES.has(h)||HISTNAMES.has(a))||BZH.has(h)||BZH.has(a);
   const LIM=k==="foot"?8:0, LIMR=k==="foot"?8:5;
-  const res=groupsHTML(d.results.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[3]))})).filter(x=>x.games.length),matchRow,LIMR,k+"r");
+  const res=groupsHTML(sortResults(d.results.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[3]))})).filter(x=>x.games.length)),matchRow,LIMR,k+"r");
   const nxt=groupsHTML(d.next.map(x=>({day:x.day,games:x.games.filter(g=>hv(g[0],g[1]))})).filter(x=>x.games.length),nextRow,LIM,k+"n");
   return `<div class="grid2">
     <section class="block recit wide">${ILLU(k)}<div class="ai">Résumé IA</div><h4>${esc(d.recit.t)}</h4>${d.recit.p.concat(HIST?(d.recit.ph||[]):[]).map(p=>`<p>${esc(p)}</p>`).join("")}${srcHTML(k)}</section>

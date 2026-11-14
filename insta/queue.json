@@ -1162,6 +1162,27 @@
       }
     },
     {
+      "id": "2026-11-14-fb-pronostic",
+      "at": "2026-11-14T09:47+01:00",
+      "type": "facebook",
+      "cards": [
+        {
+          "kicker": "Pronostic du week-end",
+          "title": "Lannion – Guingamp",
+          "lines": [
+            "Samedi 14 novembre · 19h · Coupe de France, 7e tour · derby breton"
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ],
+      "facebook": {
+        "message": "Pronostic du week-end : Lannion – Guingamp\nSamedi 14 novembre à 19h, en Coupe de France (7e tour), pour un derby breton.\nVotre score ? Dites-le en commentaire !\nLe programme complet : https://breizh.tribuneouest.fr/sport/football\n#TribuneBreizh #SportBreton",
+        "link": "https://breizh.tribuneouest.fr/sport/football",
+        "image": "first"
+      }
+    },
+    {
       "id": "2026-11-14-story",
       "at": "2026-11-14T10:00+01:00",
       "type": "story",

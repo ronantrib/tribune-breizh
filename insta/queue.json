@@ -1243,6 +1243,23 @@
       ]
     },
     {
+      "id": "2026-11-14-story-score",
+      "at": "2026-11-14T23:40+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Derby breton · Coupe de France",
+          "title": "Lannion 0-0 Guingamp",
+          "lines": [
+            "7e tour, samedi 14 novembre.",
+            "Lannion qualifié aux tirs au but (4-3)."
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
       "id": "2026-11-15-soir-2310",
       "at": "2026-11-15T08:30+01:00",
       "type": "feed",

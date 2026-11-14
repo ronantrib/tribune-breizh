@@ -1241,6 +1241,22 @@
       "visuels": [
         "rhum"
       ]
+    },
+    {
+      "id": "2026-11-15-soir-2310",
+      "at": "2026-11-15T08:30+01:00",
+      "type": "feed",
+      "caption": "Coupe de France : exploit du Lannion FC ! Le club de National 2 a éliminé l'EA Guingamp (@eaguingamp), pensionnaire de Ligue 2, au 7e tour, le samedi 14 novembre : 0-0 puis 4-3 aux tirs au but.\nLannion se qualifie pour le 8e tour, prévu les 28 et 29 novembre.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #CoupeDeFrance #Lannion #Guingamp",
+      "cards": [
+        {
+          "kicker": "Exploit · football",
+          "title": "Exploit en coupe",
+          "lines": [
+            "Lannion (National 2) élimine Guingamp (Ligue 2) aux tirs au but, 4-3 après 0-0, au 7e tour de la Coupe de France, samedi 14 novembre."
+          ],
+          "color": "foot"
+        }
+      ]
     }
   ]
 }

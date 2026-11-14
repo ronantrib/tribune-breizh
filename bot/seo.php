@@ -738,6 +738,45 @@ function tb_seo_club_page(array $d, string $slug): ?string {
 
 /* ───────────── Page d'un sport ───────────── */
 
+const TB_MOIS_FR = ['jan' => 1, 'janv' => 1, 'fev' => 2, 'fevr' => 2, 'mar' => 3, 'avr' => 4, 'mai' => 5, 'juin' => 6,
+  'juil' => 7, 'juillet' => 7, 'aout' => 8, 'sept' => 9, 'oct' => 10, 'nov' => 11, 'dec' => 12];
+
+/** Date (timestamp) lue dans un libellé « day » de résultat (ex. "(sam. 7 nov.)", "mercredi 11 nov.") ; null si aucune date n'y est écrite. */
+function tb_day_date(string $s): ?int {
+  $n = mb_strtolower(strtr($s, ['é' => 'e', 'è' => 'e', 'ê' => 'e', 'ë' => 'e', 'à' => 'a', 'â' => 'a', 'û' => 'u', 'ù' => 'u', 'ô' => 'o', 'î' => 'i', 'ï' => 'i', 'ç' => 'c']));
+  if (!preg_match_all('/(\d{1,2})\s*(?:er)?\s*([a-z]+)/u', $n, $mm, PREG_SET_ORDER)) return null;
+  foreach ($mm as $m) {
+    $w = rtrim($m[2], '.');
+    $mo = TB_MOIS_FR[$w] ?? TB_MOIS_FR[mb_substr($w, 0, 4)] ?? TB_MOIS_FR[mb_substr($w, 0, 3)] ?? null;
+    if ($mo !== null) {
+      $day = (int)$m[1];
+      $now = new DateTime('now', new DateTimeZone('Europe/Paris'));
+      $y = (int)$now->format('Y');
+      if ($mo > (int)$now->format('n') + 1) $y--;
+      $ts = @mktime(12, 0, 0, $mo, $day, $y);
+      return $ts !== false ? $ts : null;
+    }
+  }
+  return null;
+}
+
+/**
+ * Trie les blocs de résultats du plus récent au plus ancien d'après la date lue dans « day » (même logique que
+ * sortResults() dans src/index.html) ; un bloc sans date explicite (« StarLigue · 9e journée ») hérite de la date
+ * du bloc précédent, pour rester juste après lui même si les données ne sont pas déjà dans l'ordre chronologique.
+ */
+function tb_sort_results(array $groups): array {
+  $last = null;
+  $keyed = [];
+  foreach (array_values($groups) as $i => $g) {
+    $k = tb_day_date((string)($g['day'] ?? ''));
+    if ($k === null) $k = $last; else $last = $k;
+    $keyed[] = ['g' => $g, 'i' => $i, 'k' => $k ?? -PHP_INT_MAX];
+  }
+  usort($keyed, fn($a, $b) => $b['k'] <=> $a['k'] ?: $a['i'] <=> $b['i']);
+  return array_map(fn($x) => $x['g'], $keyed);
+}
+
 function tb_seo_sport_page(array $d, string $slug): ?string {
   $sports = tb_seo_sports($d);
   $s = null;
@@ -769,7 +808,7 @@ function tb_seo_sport_page(array $d, string $slug): ?string {
   }
   if (!empty($v['results'])) {
     $b .= '<section><h2>Derniers résultats</h2>';
-    foreach ($v['results'] as $day) if (!empty($day['games'])) $b .= tb_day_block($day, false, $histRule);
+    foreach (tb_sort_results($v['results']) as $day) if (!empty($day['games'])) $b .= tb_day_block($day, false, $histRule);
     $b .= '</section>';
   }
   if (!empty($v['next'])) {

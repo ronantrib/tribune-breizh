@@ -1308,6 +1308,49 @@
    ]
   },
   {
+   "id": "2026-11-15-story-rhum-matin",
+   "at": "2026-11-15T10:12+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Le pointage du matin",
+     "lines": [
+      "Pointage du samedi 14 novembre à 19h30 (heure de Paris)."
+     ],
+     "rows": [
+      [
+       "1er",
+       "Kieran Le Borgne",
+       "Vintage mono · en tête, à 513 milles"
+      ],
+      [
+       "3e",
+       "Tanguy Caradec",
+       "Vintage mono · à 672 milles"
+      ],
+      [
+       "7e",
+       "Guillaume L'Hostis",
+       "Class40 · à 286 milles de l'arrivée"
+      ],
+      [
+       "3e",
+       "Florian Guéguen",
+       "Vintage multi · à 641 milles"
+      ],
+      [
+       "4e",
+       "Marc Guillemot",
+       "Vintage multi · à 688 milles"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
    "id": "2026-11-15-fb-rhum-hebdo",
    "at": "2026-11-15T11:34+01:00",
    "type": "facebook",

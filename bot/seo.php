@@ -199,6 +199,9 @@ function tb_seo_amateur(string $raw): ?array {
   if (is_array($am['cdf'] ?? null) && $am['cdf']) {
     $cdf = ['title' => 'Coupe de France', 'label' => '', 'games' => $am['cdf']];
     if (preg_match('/<h3>([^<$]+)<\/h3>\s*<div class="daylbl">([^<$]*)<\/div>\s*\$\{cdf\}/', $region, $m)) { $cdf['title'] = $clean($m[1]); $cdf['label'] = $clean($m[2]); }
+    // Depuis le 15 novembre 2026, le titre du tour vient de AMATEUR.cdfTour = {t, d} (le gabarit n'a plus de texte fixe)
+    $ct = $am['cdfTour'] ?? null;
+    if (is_array($ct) && !empty($ct['t'])) { $cdf['title'] = 'Coupe de France · ' . $clean($ct['t']); $cdf['label'] = trim($clean($ct['d'] ?? '') . ' · clubs de la Ligue de Bretagne', ' ·'); }
     $out['cdf'] = $cdf;
   }
 

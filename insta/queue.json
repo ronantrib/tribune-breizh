@@ -1274,6 +1274,16 @@
           "color": "foot"
         }
       ]
+    },
+    {
+      "id": "2026-11-15-fb-rhum-hebdo",
+      "at": "2026-11-15T11:34+01:00",
+      "type": "facebook",
+      "facebook": {
+        "message": "⛵ Route du Rhum : le point du dimanche\nPointage du samedi 14 novembre à 19h30 (heure de Paris).\nUltim : Tom Laperche (Loudéac) a gagné, record de l'épreuve ; Thomas Coville est 2e.\nOcean Fifty : Basile Bourgnon a gagné ; Léonard Legrand est 4e, Luke Berry 6e.\nImoca : Corentin Horeau a gagné ; Élodie Bonafous est 3e, Maxime Sorel 5e, Davy Beaudart 7e.\nClass40 : Guillaume L'Hostis est 7e, à 286 milles de l'arrivée.\nVintage mono : Kieran Le Borgne est en tête, à 513 milles de l'arrivée.\nVintage multi : Éric Péron est arrivé 2e.\nQuel skipper breton soutenez-vous ?\nLe suivi complet : https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026\n#TribuneBreizh #RouteDuRhum2026",
+        "link": "https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026",
+        "image": "none"
+      }
     }
   ]
 }

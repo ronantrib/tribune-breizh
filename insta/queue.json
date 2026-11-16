@@ -1442,14 +1442,19 @@
    "id": "2026-11-16-weekend",
    "at": "2026-11-16T12:48+01:00",
    "type": "carousel",
-   "caption": "🏴 Trêve de Ligue 1, mais pas pour les Bretons !\n⚽ Coupe de France : Lannion élimine Guingamp (@eaguingamp) aux tirs au but (0-0, 4-3), le TA Rennes sort la GSI Pontivy (2-2, 3-2 aux tirs au but) et Concarneau (@usconcarneau) s'impose à Tinténiac (1-4).\n🏉 En rugby, le Stade Rennais bat les Valkyries (20-19). 🤾 Brest Bretagne Handball (@bbh_officiel) s'incline à Bucarest (34-30) en Ligue des champions.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #Bretagne #ActuSport #PassionSport",
+   "caption": "🏴 Trêve de Ligue 1, mais pas pour les Bretons !\n⚽ Coupe de France : Lannion élimine Guingamp (@eaguingamp) aux tirs au but (0-0, 4-3), le TA Rennes sort la GSI Pontivy (2-2, 3-2 aux tirs au but) et Concarneau (@usconcarneau) s'impose à Tinténiac (1-4).\n🏉 En rugby, le Stade Rennais bat les Valkyries (20-19). 🤾 Brest Bretagne Handball (@bbh_officiel) s'incline à Bucarest (34-30) en Ligue des champions.\nSwipez pour tous les résultats, sport par sport.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #Bretagne #ActuSport #PassionSport",
    "visuels": [
     "resultats",
+    "resfoot",
+    "reshand",
+    "resbasket",
+    "resrugby",
+    "resvolley",
     "classement"
-   ],
+  ],
    "facebook": {
     "at": "2026-11-16T08:20+01:00",
-    "message": "🏴 Trêve de Ligue 1, mais pas pour les Bretons !\n⚽ Coupe de France : Lannion élimine Guingamp aux tirs au but (0-0, 4-3), le TA Rennes sort la GSI Pontivy (2-2, 3-2 aux tirs au but) et Concarneau s'impose à Tinténiac (1-4).\n🏉 Le Stade Rennais bat les Valkyries (20-19) en rugby. 🤾 Brest Bretagne Handball s'incline à Bucarest (34-30) en Ligue des champions.\n#TribuneBreizh #SportBreton #SportBretagne",
+    "message": "🏴 Trêve de Ligue 1, mais pas pour les Bretons !\n⚽ Coupe de France : Lannion élimine Guingamp aux tirs au but (0-0, 4-3), le TA Rennes sort la GSI Pontivy (2-2, 3-2 aux tirs au but) et Concarneau s'impose à Tinténiac (1-4).\n🏉 Le Stade Rennais bat les Valkyries (20-19) en rugby. 🤾 Brest Bretagne Handball s'incline à Bucarest (34-30) en Ligue des champions.\nTous les sports suivis en images : football, handball, basket, rugby, volley.\n#TribuneBreizh #SportBreton #SportBretagne",
     "link": "https://breizh.tribuneouest.fr/",
     "image": "all"
    }

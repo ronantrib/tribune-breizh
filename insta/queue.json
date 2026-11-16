@@ -1458,6 +1458,22 @@
     "link": "https://breizh.tribuneouest.fr/",
     "image": "all"
    }
+  },
+  {
+   "id": "2026-11-16-coupe-1405",
+   "at": "2026-11-16T14:05+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Coupe de France · 8e tour",
+     "title": "Les affiches bretonnes",
+     "lines": [
+      "Les 28 et 29 novembre : Lannion (N2) contre Laval (L2), Concarneau (L3) contre Vannes OC (N2).",
+      "Milizac (N2) contre le Stade Pontivyen (R1), TA Rennes (N2) contre Rouen (L3). Lieux à confirmer."
+     ],
+     "color": "foot"
+    }
+   ]
   }
  ]
 }

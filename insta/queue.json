@@ -1338,6 +1338,55 @@
     "link": "https://breizh.tribuneouest.fr/sport/basket",
     "image": "first"
    }
+  },
+  {
+   "id": "2026-11-17-story-rhum",
+   "at": "2026-11-17T19:45+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Où en sont les Bretons ?",
+     "lines": [
+      "Pointage du mardi 17 novembre à 8h05 (partiel).",
+      "Kieran Le Borgne a remporté les Vintage mono."
+     ],
+     "rows": [
+      [
+       "Vintage mono",
+       "Kieran Le Borgne",
+       "1er · vainqueur"
+      ],
+      [
+       "Class40",
+       "Guillaume L'Hostis",
+       "7e · arrivé le lundi 16 novembre"
+      ],
+      [
+       "Vintage multi",
+       "Florian Guéguen",
+       "3e · à 81 milles"
+      ],
+      [
+       "Class40",
+       "Jules Bonnier",
+       "18e · à 144 milles"
+      ],
+      [
+       "Class40",
+       "Emmanuel Hamez",
+       "19e · à 159 milles"
+      ],
+      [
+       "Vintage multi",
+       "Marc Guillemot",
+       "4e · à 167 milles"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
   }
  ]
 }

@@ -1186,6 +1186,45 @@
    "caption": "Les buteurs bretons de la saison : Estéban Lepaul (Rennes) mène avec 7 buts en Ligue 1 @staderennaisfc, devant Ludovic Ajorque (Brest) @stadebrestois29, Boulaye Dia (Rennes) et Stan Janno (Concarneau) @usconcarneau, tous trois à 5 buts.\n\nQui sera le meilleur buteur breton à Noël ?\n\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #StadeRennais"
   },
   {
+   "id": "2026-11-17-club-lorientbasket",
+   "at": "2026-11-17T12:52+01:00",
+   "type": "feed",
+   "caption": "🏀 Où en est le CEP Lorient Breizh Basket (@ceplorientbreizhbasket) ?\nLe club est 6e de la poule B de NM1 avec 5 victoires et 5 défaites (15 points). Il a battu Tarbes-Lourdes (79-74) le vendredi 13 novembre, après sa lourde défaite à Challans (95-61) le 6 novembre.\nProchain match : Union Rennes – Lorient, ce mardi 17 novembre à 20h, puis Angers – Lorient le vendredi 20 novembre.\nLe CEP peut-il réussir le derby à Rennes ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #BasketBretagne #Basketball #Bretagne",
+   "cards": [
+    {
+     "kicker": "Où en est CEP Lorient Breizh Basket ?",
+     "title": "CEP Lorient Breizh Basket",
+     "lines": [
+      "6e de la poule B de NM1 (5 V – 5 D, 15 points)."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Tarbes-Lourdes (NM1)",
+       "79-74"
+      ],
+      [
+       "Avant",
+       "Challans (NM1)",
+       "61-95"
+      ],
+      [
+       "Prochain",
+       "Union Rennes",
+       "mar. 17 nov. 20h · NM1"
+      ],
+      [
+       "Ensuite",
+       "Angers",
+       "ven. 20 nov. · NM1"
+      ]
+     ],
+     "color": "basket",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
    "id": "2026-11-17-libre",
    "at": "2026-11-17T18:12+01:00",
    "type": "carousel",
@@ -1255,6 +1294,49 @@
     "link": "https://breizh.tribuneouest.fr/",
     "image": "all",
     "at": "2026-11-17T08:14+01:00"
+   }
+  },
+  {
+   "id": "2026-11-17-fb-club-lorientbasket",
+   "at": "2026-11-17T19:08+01:00",
+   "type": "facebook",
+   "cards": [
+    {
+     "kicker": "Où en est CEP Lorient Breizh Basket ?",
+     "title": "CEP Lorient Breizh Basket",
+     "lines": [
+      "6e de la poule B de NM1 (5 V – 5 D, 15 points)."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Tarbes-Lourdes (NM1)",
+       "79-74"
+      ],
+      [
+       "Avant",
+       "Challans (NM1)",
+       "61-95"
+      ],
+      [
+       "Prochain",
+       "Union Rennes",
+       "mar. 17 nov. 20h · NM1"
+      ],
+      [
+       "Ensuite",
+       "Angers",
+       "ven. 20 nov. · NM1"
+      ]
+     ],
+     "color": "basket",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ],
+   "facebook": {
+    "message": "🏀 Où en est le CEP Lorient Breizh Basket ?\nLe club est 6e de la poule B de NM1 (5 victoires, 5 défaites) après sa victoire contre Tarbes-Lourdes (79-74) le vendredi 13 novembre. Prochain match : Union Rennes – Lorient, ce mardi 17 novembre à 20h.\nLe CEP peut-il réussir le derby ?\n#TribuneBreizh #BasketBretagne #Basketball",
+    "link": "https://breizh.tribuneouest.fr/sport/basket",
+    "image": "first"
    }
   }
  ]

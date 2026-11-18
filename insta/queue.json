@@ -1389,6 +1389,49 @@
       ]
     },
     {
+      "id": "2026-11-18-story-rhum-matin",
+      "at": "2026-11-18T09:07+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Le pointage du matin",
+          "lines": [
+            "Pointage du mercredi 18 novembre à 4h35 (heure de Paris)."
+          ],
+          "rows": [
+            [
+              "Ultim",
+              "Tom Laperche",
+              "1er"
+            ],
+            [
+              "Ocean Fifty",
+              "Basile Bourgnon",
+              "1er"
+            ],
+            [
+              "Imoca",
+              "Corentin Horeau",
+              "1er"
+            ],
+            [
+              "Vintage mono",
+              "Kieran Le Borgne",
+              "1er"
+            ],
+            [
+              "Ultim",
+              "Thomas Coville",
+              "2e"
+            ]
+          ],
+          "color": "voile",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
       "id": "2026-11-18-affiche",
       "at": "2026-11-18T12:27+01:00",
       "type": "carousel",

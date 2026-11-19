@@ -1,272 +1,6 @@
 {
   "posts": [
     {
-      "id": "2026-11-10-club-landerneau",
-      "at": "2026-11-10T12:37+01:00",
-      "type": "feed",
-      "caption": "🏀 Où en est Landerneau Bretagne Basket (@lbb_hn) ?\nLe club est 7e de la Boulangère Wonderligue avec 4 victoires et 4 défaites après 8 journées. Il vient de battre Chartres (80-62) le samedi 7 novembre, après sa défaite en prolongation contre Poznan (71-76) en EuroCup le mercredi 4 novembre.\nProchain match : Lattes-Montpellier – Landerneau, le dimanche 22 novembre à 15h30, pour la 9e journée de LFB.\nLanderneau peut-il enchaîner à Lattes-Montpellier ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #BasketBretagne #LanderneauBretagneBasket #Breizh",
-      "cards": [
-        {
-          "kicker": "Où en est Landerneau Bretagne Basket ?",
-          "title": "Landerneau Bretagne Basket",
-          "lines": [
-            "7e de la Boulangère Wonderligue (4 V – 4 D) après 8 journées."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Chartres (LFB · J8)",
-              "80-62"
-            ],
-            [
-              "Avant",
-              "Poznan (EuroCup)",
-              "71-76 a.p."
-            ],
-            [
-              "Prochain",
-              "Lattes-Montpellier",
-              "dim. 22 nov. 15h30 · LFB, 9e journée"
-            ],
-            [
-              "Ensuite",
-              "Fribourg",
-              "mer. 25 nov. 19h30 · EuroCup"
-            ]
-          ],
-          "color": "basket",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-10-libre",
-      "at": "2026-11-10T18:40+01:00",
-      "type": "feed",
-      "caption": "🤾 Cesson-Rennes affrontera le PSG en quarts de finale de la Coupe de France, les 18 ou 19 décembre !\nLes Irréductibles se sont qualifiés en s'imposant à Tremblay (31-32) le mardi 27 octobre. En StarLigue, Cesson-Rennes (@crmhb) est avant-dernier avec 2 points ; prochain match : Toulouse, le vendredi 13 novembre à 20h30.\nCesson-Rennes peut-il jouer un mauvais tour au PSG ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #HandballBretagne #Handball #CessonRennes",
-      "cards": [
-        {
-          "kicker": "Coupe de France de handball",
-          "title": "Cesson-Rennes défie le PSG",
-          "lines": [
-            "Qualifié en gagnant à Tremblay, Cesson-Rennes jouera les quarts de finale les 18 ou 19 décembre."
-          ],
-          "rows": [
-            [
-              "27 oct.",
-              "Tremblay – Cesson-Rennes",
-              "31-32"
-            ],
-            [
-              "Ven. 13 nov. · 20h30",
-              "Cesson-Rennes – Toulouse",
-              "StarLigue · HandballTV"
-            ],
-            [
-              "18 ou 19 déc.",
-              "Paris SG – Cesson-Rennes",
-              "Quarts de finale"
-            ]
-          ],
-          "color": "hand",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ],
-      "facebook": {
-        "message": "🤾 Coupe de France de handball : Cesson-Rennes affrontera le PSG en quarts de finale, les 18 ou 19 décembre.\nLes Irréductibles se sont qualifiés en gagnant à Tremblay (31-32) le mardi 27 octobre. En StarLigue, ils reçoivent Toulouse le vendredi 13 novembre à 20h30.\n#TribuneBreizh #HandballBretagne #Handball",
-        "link": "https://breizh.tribuneouest.fr/sport/handball",
-        "image": "first",
-        "at": "2026-11-10T12:50+01:00"
-      }
-    },
-    {
-      "id": "2026-11-10-fb-club-landerneau",
-      "at": "2026-11-10T19:23+01:00",
-      "type": "facebook",
-      "cards": [
-        {
-          "kicker": "Où en est Landerneau Bretagne Basket ?",
-          "title": "Landerneau Bretagne Basket",
-          "lines": [
-            "7e de la Boulangère Wonderligue (4 V – 4 D) après 8 journées."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Chartres (LFB · J8)",
-              "80-62"
-            ],
-            [
-              "Avant",
-              "Poznan (EuroCup)",
-              "71-76 a.p."
-            ],
-            [
-              "Prochain",
-              "Lattes-Montpellier",
-              "dim. 22 nov. 15h30 · LFB, 9e journée"
-            ],
-            [
-              "Ensuite",
-              "Fribourg",
-              "mer. 25 nov. 19h30 · EuroCup"
-            ]
-          ],
-          "color": "basket",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ],
-      "facebook": {
-        "message": "🏀 Où en est Landerneau Bretagne Basket ?\nLe club est 7e de la Boulangère Wonderligue (4 victoires, 4 défaites) après sa victoire contre Chartres (80-62) le samedi 7 novembre. Prochain match : Lattes-Montpellier, le dimanche 22 novembre à 15h30.\nLanderneau peut-il enchaîner ?\n#TribuneBreizh #BasketBretagne #LanderneauBretagneBasket",
-        "link": "https://breizh.tribuneouest.fr/sport/basket",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-10-story-rhum-soir",
-      "at": "2026-11-10T20:10+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Le pointage du soir",
-          "lines": [
-            "Pointage du mardi 10 novembre à 17h."
-          ],
-          "rows": [
-            [
-              "1er",
-              "Basile Bourgnon",
-              "Ocean Fifty · en tête"
-            ],
-            [
-              "1er",
-              "Corentin Horeau",
-              "Imoca · en tête"
-            ],
-            [
-              "4e",
-              "Léonard Legrand",
-              "Ocean Fifty"
-            ],
-            [
-              "3e",
-              "Élodie Bonafous",
-              "Imoca"
-            ],
-            [
-              "7e",
-              "Maxime Sorel",
-              "Imoca"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-11-story-rhum-matin",
-      "at": "2026-11-11T09:12+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Le pointage du matin",
-          "lines": [
-            "Pointage du mardi 10 novembre à 22h (partiel)."
-          ],
-          "rows": [
-            [
-              "1er",
-              "Tom Laperche",
-              "Ultim"
-            ],
-            [
-              "2e",
-              "Thomas Coville",
-              "Ultim"
-            ],
-            [
-              "1er",
-              "Basile Bourgnon",
-              "Ocean Fifty"
-            ],
-            [
-              "1er",
-              "Corentin Horeau",
-              "Imoca"
-            ],
-            [
-              "3e",
-              "Élodie Bonafous",
-              "Imoca"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-11-affiche",
-      "at": "2026-11-11T13:18+01:00",
-      "type": "feed",
-      "caption": "⚽ L'affiche de la semaine : Lannion – Guingamp !\nUn derby breton en Coupe de France, samedi 14 novembre à 19h à Lannion, pour le 7e tour.\nL'En Avant Guingamp (@eaguingamp) se déplace chez Lannion pour une soirée de coupe à ne pas manquer.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Breizh #FootBreton #FootballBretagne #EnAvantGuingamp",
-      "visuels": [
-        "derby"
-      ]
-    },
-    {
-      "id": "2026-11-11-urgent-1325",
-      "at": "2026-11-11T13:25+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Doublé breton à l'arrivée",
-          "lines": [
-            "Basile Bourgnon (Ocean Fifty) a gagné sa classe ce mercredi 11 novembre à 6h12 (heure de Paris).",
-            "Corentin Horeau a remporté l'Imoca deux minutes plus tard, à 6h14."
-          ],
-          "color": "voile"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-11-quiz-v2",
-      "at": "2026-11-11T19:52+01:00",
-      "type": "feed",
-      "caption": "⚽ Retour sur une finale de Coupe de France entre voisins bretons !\nQui a marqué un doublé pour Guingamp lors de sa victoire 2-1 contre Rennes en finale de la Coupe de France 2009 ?\nDites-nous en commentaire ce que vous pensez ! Réponse ce soir en story.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #FootBreton #Bretagne",
-      "cards": [
-        {
-          "kicker": "Le quiz du mercredi",
-          "title": "Qui a marqué un doublé pour Guingamp lors de la finale 2009 ?",
-          "lines": [
-            "Réponse ce soir en story."
-          ],
-          "color": "foot",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-11-story-quiz",
-      "at": "2026-11-11T20:42+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "La réponse du quiz",
-          "title": "Eduardo",
-          "lines": [
-            "En Avant Guingamp a remporté la Coupe de France 2009 en battant le Stade Rennais 2-1 au Stade de France, grâce à un doublé d'Eduardo."
-          ],
-          "color": "foot",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
       "id": "2026-11-12-fb-regional",
       "at": "2026-11-12T12:41+01:00",
       "type": "facebook",
@@ -1449,6 +1183,74 @@
         "message": "🤔 Le saviez-vous ? Deux buts sur un seul tir cadré.\nLe 22 octobre 2023, au Moustoir, le FC Lorient a battu le Stade Rennais (2-1) après un but contre son camp de Warmed Omari (4e), puis le but d'Isaak Touré (45e+2).\nSelon Opta, les Merlus devenaient la première équipe de Ligue 1 à marquer deux buts en une mi-temps avec un seul tir cadré depuis la saison 2006-2007.\nVous en souvenez-vous, de ce derby breton ?\nLa suite sur le site : https://breizh.tribuneouest.fr/club/fc-lorient\n#TribuneBreizh #FCLorient",
         "link": "https://breizh.tribuneouest.fr/club/fc-lorient",
         "image": "none"
+      }
+    },
+    {
+      "id": "2026-11-19-libre",
+      "at": "2026-11-19T18:08+01:00",
+      "type": "carousel",
+      "caption": "🏴 3 victoires bretonnes en hand et en basket cette semaine !\n🤾 Brest Bretagne Handball (@bbh_officiel) a battu Saint-Amand (35-20) à Brest Arena le mercredi 18 novembre et reste 2e de la Ligue Butagaz Énergie avec 26 points, à quatre longueurs de Metz.\n🏀 En NM1, Vitré s'est imposé chez le leader Challans (82-90) et Fougères a battu Tours (71-70) le mardi 17 novembre. L'Union Rennes partage la tête avec Challans (19 points).\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #HandballBretagne #BasketBretagne #BBH",
+      "cards": [
+        {
+          "kicker": "Hand et basket",
+          "title": "3 victoires bretonnes",
+          "lines": [
+            "Du mardi 17 au mercredi 18 novembre."
+          ],
+          "rows": [
+            [
+              "Handball",
+              "Brest BH – Saint-Amand",
+              "35-20"
+            ],
+            [
+              "Basket · NM1",
+              "Challans – Vitré",
+              "82-90"
+            ],
+            [
+              "Basket · NM1",
+              "Fougères – Tours",
+              "71-70"
+            ]
+          ],
+          "color": "accent",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Handball",
+          "title": "Brest écrase Saint-Amand",
+          "lines": [
+            "35-20 à Brest Arena, mercredi 18 novembre, pour la 10e journée. Brest reste 2e avec 26 points, à quatre longueurs de Metz."
+          ],
+          "color": "hand",
+          "foot": "Ligue Butagaz Énergie"
+        },
+        {
+          "kicker": "Basket · NM1",
+          "title": "Vitré gagne chez le leader",
+          "lines": [
+            "Vitré s'impose à Challans (82-90), mardi 17 novembre.",
+            "Fougères a battu Tours (71-70) le même soir."
+          ],
+          "color": "basket",
+          "foot": "NM1 · poule B"
+        },
+        {
+          "kicker": "NM1 · poule B",
+          "title": "L'Union Rennes en tête",
+          "lines": [
+            "L'Union Rennes partage la tête avec Challans (19 points). Fougères est 3e, Vitré 5e, Lorient 8e."
+          ],
+          "color": "basket",
+          "foot": "Classement FFBB du 19 novembre"
+        }
+      ],
+      "facebook": {
+        "message": "🏴 3 victoires bretonnes en hand et en basket cette semaine !\n🤾 Brest Bretagne Handball a battu Saint-Amand (35-20) le mercredi 18 novembre et reste 2e de la Ligue Butagaz Énergie, à quatre longueurs de Metz.\n🏀 En NM1, Vitré s'est imposé à Challans (82-90) et Fougères a battu Tours (71-70) le mardi 17 novembre ; l'Union Rennes partage la tête avec Challans.\n#TribuneBreizh #HandballBretagne #BasketBretagne",
+        "link": "https://breizh.tribuneouest.fr/",
+        "image": "all",
+        "at": "2026-11-19T08:12+01:00"
       }
     }
   ]

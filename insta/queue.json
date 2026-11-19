@@ -1334,6 +1334,60 @@
         "link": "https://breizh.tribuneouest.fr/sport/rugby",
         "image": "first"
       }
+    },
+    {
+      "id": "2026-11-19-story-rhum",
+      "at": "2026-11-19T19:45+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Où en sont les Bretons ?",
+          "lines": [
+            "Pointage du jeudi 19 novembre à 4h35 (heure de Paris).",
+            "Gilles Lamiré, 6e en Vintage multi, est à 29 milles de l'arrivée malgré son avarie."
+          ],
+          "rows": [
+            [
+              "1er",
+              "Tom Laperche",
+              "Ultim · vainqueur le dimanche 8 novembre"
+            ],
+            [
+              "1er",
+              "Basile Bourgnon",
+              "Ocean Fifty · vainqueur le mercredi 11 novembre"
+            ],
+            [
+              "1er",
+              "Corentin Horeau",
+              "Imoca · vainqueur le mercredi 11 novembre"
+            ],
+            [
+              "6e",
+              "Gilles Lamiré",
+              "Vintage multi · à 29 milles de l'arrivée"
+            ],
+            [
+              "6e",
+              "Jean Le Cam",
+              "Vintage mono · à 604 milles de l'arrivée"
+            ],
+            [
+              "36e",
+              "Goulven Marie",
+              "Class40 · à 609 milles de l'arrivée"
+            ],
+            [
+              "39e",
+              "Yohan Bertrand",
+              "Class40 · à 954 milles de l'arrivée"
+            ]
+          ],
+          "color": "voile",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
     }
   ]
 }

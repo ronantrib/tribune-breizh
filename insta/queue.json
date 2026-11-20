@@ -1215,6 +1215,49 @@
    ]
   },
   {
+   "id": "2026-11-20-story-rhum-matin",
+   "at": "2026-11-20T09:07+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Le pointage du matin",
+     "lines": [
+      "Pointage du jeudi 19 novembre à 4h35 (heure de Paris), partiel et non définitif."
+     ],
+     "rows": [
+      [
+       "6e",
+       "Gilles Lamiré",
+       "Vintage multi · à 29 milles de l'arrivée"
+      ],
+      [
+       "6e",
+       "Jean Le Cam",
+       "Vintage mono · à 604 milles de l'arrivée"
+      ],
+      [
+       "7e",
+       "Christophe Bachmann",
+       "Vintage mono · à 605 milles de l'arrivée"
+      ],
+      [
+       "36e",
+       "Goulven Marie",
+       "Class40 · à 609 milles de l'arrivée"
+      ],
+      [
+       "39e",
+       "Yohan Bertrand",
+       "Class40 · à 954 milles de l'arrivée"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
    "id": "2026-11-20-story-saviez",
    "at": "2026-11-20T14:12+01:00",
    "type": "story",

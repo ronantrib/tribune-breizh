@@ -578,6 +578,7 @@ function tb_seo_layout(array $d, array $sports, array $o): string {
 ' . $ld . trim(TB_STATS) . '
 </head>
 <body>
+' . (is_file(__DIR__ . '/newsletter_widget.php') ? (function () { require_once __DIR__ . '/newsletter_widget.php'; return tb_newsletter_block(); })() : '') . '
 <header class="mast"><div class="wrap"><a class="brand" href="/">Tribune <em>Breizh</em></a><nav class="sports" aria-label="Sports">' . $nav . '</nav></div></header>
 <main class="wrap">
 ' . $o['body'] . '

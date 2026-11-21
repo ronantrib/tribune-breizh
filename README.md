@@ -36,6 +36,15 @@ Si la page publiée change de forme au point que les données ne se lisent plus,
 Vérification à la main : `php bot/seo.php` (liste des pages), `php bot/seo.php club stade-rennais`, `php bot/seo.php sitemap`.
 Après la mise en ligne : déclarer `https://breizh.tribuneouest.fr/sitemap.xml` dans la Search Console.
 
+## Newsletter
+
+Bandeau d'inscription (`bot/newsletter_widget.php`, fonction `tb_newsletter_block()`) injecté comme le bloc de liens SEO : par `bot/build.php` sur la page d'accueil, et dans `bot/seo.php` (`tb_seo_layout`) sur les pages club/sport/événement. Jamais écrit dans `src/index.html`, réécrit chaque nuit.
+- Le formulaire envoie en JS vers `/abonnement.php` (racine du site : `bot/` n'est pas servi sur le web).
+- Les adresses sont stockées dans `cache/abonnes.csv` (une ligne par inscrit : date ISO, email ; ignoré par Git, non servi). Pour récupérer la liste : téléchargement via le gestionnaire de fichiers cPanel ou FTP.
+- Piège à robots (champ caché) et frein anti-rafale (5 inscriptions par IP par heure, `cache/abonnes-rate.json`) contre les abus ; déduplication insensible à la casse.
+- Le bandeau se cache 14 jours si on le ferme, et pour toujours après une inscription réussie (`localStorage`).
+- Pour retirer le bandeau : faire renvoyer une chaîne vide par `tb_newsletter_block()`.
+
 ## Liens vers les pages de club sur la page d'accueil
 
 `bot/clublinks.php`, appelé par `bot/build.php` (donc par `gate.php`), ajoute à la page d'accueil, au moment de la fabriquer, un lien « Page du club → » au bas de chaque carte club

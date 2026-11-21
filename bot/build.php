@@ -31,6 +31,7 @@ const TB_HEAD = <<<'HTML'
 <link rel="canonical" href="https://breizh.tribuneouest.fr/">
 <link rel="preload" href="/fonts/big-shoulders-display.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="/fonts/archivo.woff" as="font" type="font/woff" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"Tribune Breizh","url":"https://breizh.tribuneouest.fr/","logo":"https://breizh.tribuneouest.fr/og.png","sameAs":["https://www.instagram.com/tribunebreizh/","https://www.facebook.com/share/1C9Eaki1Mg/?mibextid=wwXIfr"],"areaServed":{"@type":"AdministrativeArea","name":"Bretagne"},"description":"Tribune Breizh : tout le sport breton, club par club. Résultats, classements, agenda TV, foot amateur, Route du Rhum et fiches de tous les clubs de Bretagne, mis à jour chaque jour."}</script>
 <style>
 /* Polices hébergées sur le site (aucun appel à Google) · licence SIL OFL, voir /fonts */
 @font-face{font-family:"Big Shoulders Display";src:url("/fonts/big-shoulders-display.woff") format("woff");font-weight:600 900;font-display:swap}
@@ -78,7 +79,10 @@ function tb_build(string $src): ?string {
   if (is_file(__DIR__ . '/clublinks.php')) { require_once __DIR__ . '/clublinks.php'; $avec = tb_clublinks($body);
     if ($avec === $body) tb_alerte('Liens de club NON appliqués : motifs absents ou en double ' . implode(', ', tb_clublinks_manquants($body)) . ' (php bot/clublinks.php src/index.html pour le détail)');
     $body = $avec; }
-  $out = TB_HEAD . implode("\n", $head) . "\n" . trim(TB_STATS) . "\n</head>\n<body>\n" . trim($body) . ($seo !== '' ? "\n" . $seo : '') . "\n</body>\n</html>\n";
+  // Bandeau d'inscription à la newsletter : ajouté ici pour la même raison (la page est réécrite chaque nuit).
+  $news = '';
+  if (is_file(__DIR__ . '/newsletter_widget.php')) { require_once __DIR__ . '/newsletter_widget.php'; $news = tb_newsletter_block(); }
+  $out = TB_HEAD . implode("\n", $head) . "\n" . trim(TB_STATS) . "\n</head>\n<body>\n" . $news . trim($body) . ($seo !== '' ? "\n" . $seo : '') . "\n</body>\n</html>\n";
   if (strpos($out, 'WXvNyWF5ypo7PuAsgFRJp6') === false || strpos($out, 'const DATA=') === false) return null;
   return $out;
 }
@@ -87,7 +91,7 @@ function tb_build(string $src): ?string {
 function tb_refresh(string $src, string $dst): ?string {
   if (!is_file($src)) return is_file($dst) ? $dst : null;
   $raw = (string)file_get_contents($src);
-  $sum = md5($raw . TB_HEAD . TB_STATS . (is_file(__DIR__ . '/seo.php') ? md5_file(__DIR__ . '/seo.php') : '') . (is_file(__DIR__ . '/clublinks.php') ? md5_file(__DIR__ . '/clublinks.php') : ''));   // empreinte de la source : on ne reconstruit que si elle a changé
+  $sum = md5($raw . TB_HEAD . TB_STATS . (is_file(__DIR__ . '/seo.php') ? md5_file(__DIR__ . '/seo.php') : '') . (is_file(__DIR__ . '/clublinks.php') ? md5_file(__DIR__ . '/clublinks.php') : '') . (is_file(__DIR__ . '/newsletter_widget.php') ? md5_file(__DIR__ . '/newsletter_widget.php') : ''));   // empreinte de la source : on ne reconstruit que si elle a changé
   if (is_file($dst) && @file_get_contents("$dst.md5") === $sum) return $dst;
   $html = tb_build($raw);
   if ($html === null) return is_file($dst) ? $dst : null;   // page reçue anormale : on garde la version précédente

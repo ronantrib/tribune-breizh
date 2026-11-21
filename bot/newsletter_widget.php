@@ -11,7 +11,7 @@ function tb_newsletter_block(): string {
   return <<<'HTML'
 <div id="tb-news" class="tb-news" hidden>
   <div class="tb-news-in">
-    <p class="tb-news-txt">📬 <b>Chaque jour, le sport breton dans votre boîte mail.</b> Résultats, programme, un email, zéro spam.</p>
+    <p class="tb-news-txt">📬 <b>Chaque semaine, le résumé du sport breton dans votre boîte mail.</b> Résultats, programme, un email, zéro spam.</p>
     <form id="tb-news-form" class="tb-news-form">
       <label for="tb-news-email" class="tb-news-sr">Adresse email</label>
       <input id="tb-news-email" name="email" type="email" required placeholder="vous@exemple.fr" autocomplete="email" maxlength="190">

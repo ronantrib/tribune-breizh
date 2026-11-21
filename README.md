@@ -45,6 +45,31 @@ Bandeau d'inscription (`bot/newsletter_widget.php`, fonction `tb_newsletter_bloc
 - Le bandeau se cache 14 jours si on le ferme, et pour toujours après une inscription réussie (`localStorage`).
 - Pour retirer le bandeau : faire renvoyer une chaîne vide par `tb_newsletter_block()`.
 
+### Envoi hebdomadaire
+
+`bot/newsletter_send.php` envoie une fois par semaine le résumé (un paragraphe par sport, repris du récit IA déjà écrit pour chaque page `/sport/NOM`, plus la Route du Rhum si l'épreuve est en cours — voir `bot/newsletter_digest.php`), via l'API Brevo (gratuite jusqu'à 300 emails/jour).
+
+**Mise en route (une fois) :**
+1. Créer un compte sur [brevo.com](https://www.brevo.com), récupérer une clé API (Paramètres > Clés API > Créer une clé API).
+2. Valider un expéditeur dans Brevo (Paramètres > Expéditeurs, ou domaine entier pour une meilleure délivrabilité) : une adresse comme `contact@tribuneouest.fr` suffit pour démarrer.
+3. Sur le serveur o2switch (hors dépôt Git, comme `~/insta/` pour Instagram), créer `~/newsletter/config.php` :
+   ```php
+   <?php
+   define('TB_BREVO_KEY', 'xkeysib-…');            // la clé API Brevo
+   define('TB_BREVO_FROM', 'contact@tribuneouest.fr'); // l'adresse validée à l'étape 2
+   ```
+4. Ajouter une tâche cron (cPanel > Tâches Cron), une fois par semaine, par exemple le lundi 8h :
+   ```
+   0 8 * * 1 php ~/repositories/tribune-breizh/bot/newsletter_send.php >> ~/newsletter/log.txt 2>&1
+   ```
+
+**À la main** (terminal cPanel) :
+- `php bot/newsletter_send.php apercu` : affiche le HTML sans rien envoyer ni rien marquer comme fait.
+- `php bot/newsletter_send.php` : envoie, sauf si déjà fait cette semaine ISO (`cache/newsletter-last.json`).
+- `php bot/newsletter_send.php force` : envoie même si déjà fait cette semaine.
+
+Chaque email porte un lien de désabonnement propre au destinataire (`desabonnement.php`, jeton signé par `bot/newsletter_common.php`, secret auto-généré dans `cache/newsletter-secret.txt`) : retire l'adresse de `cache/abonnes.csv` sans rien demander d'autre.
+
 ## Liens vers les pages de club sur la page d'accueil
 
 `bot/clublinks.php`, appelé par `bot/build.php` (donc par `gate.php`), ajoute à la page d'accueil, au moment de la fabriquer, un lien « Page du club → » au bas de chaque carte club

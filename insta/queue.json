@@ -1250,6 +1250,27 @@
       ]
     },
     {
+      "id": "2026-11-21-fb-pronostic",
+      "at": "2026-11-21T19:23+01:00",
+      "type": "facebook",
+      "cards": [
+        {
+          "kicker": "Pronostic du week-end",
+          "title": "Lorient – Rennes",
+          "lines": [
+            "Dimanche 22 novembre · 17h15 · Ligue 1 · Ligue 1+ · derby breton"
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ],
+      "facebook": {
+        "message": "Pronostic du week-end : Lorient – Rennes\nDimanche 22 novembre à 17h15, en Ligue 1 (11e journée), sur Ligue 1+, pour un derby breton.\nVotre score pour ce derby ? Donnez-le en commentaire !\nLe programme complet : https://breizh.tribuneouest.fr/sport/football\n#TribuneBreizh #SportBreton",
+        "link": "https://breizh.tribuneouest.fr/sport/football",
+        "image": "first"
+      }
+    },
+    {
       "id": "2026-11-21-rhum",
       "at": "2026-11-21T20:15+01:00",
       "type": "feed",

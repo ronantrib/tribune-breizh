@@ -1250,6 +1250,28 @@
       ]
     },
     {
+      "id": "2026-11-22-fb-face",
+      "at": "2026-11-21T12:48+01:00",
+      "type": "facebook",
+      "visuels": [
+        "face"
+      ],
+      "facebook": {
+        "message": "Derby breton : Lorient – Rennes\nDimanche 22 novembre à 17h15, sur Ligue 1+, pour la 11e journée de Ligue 1.\nQui l'emporte ? Dites-le en commentaire !\nForme récente et classement : https://breizh.tribuneouest.fr/sport/football\n#TribuneBreizh #SportBreton",
+        "link": "https://breizh.tribuneouest.fr/sport/football",
+        "image": "first"
+      }
+    },
+    {
+      "id": "2026-11-22-face",
+      "at": "2026-11-21T18:37+01:00",
+      "type": "feed",
+      "visuels": [
+        "face"
+      ],
+      "caption": "Derby breton demain : le FC Lorient (@fclorient) reçoit le Stade Rennais (@staderennaisfc) au Moustoir, pour la 11e journée de Ligue 1.\nCoup d'envoi dimanche 22 novembre à 17h15, sur Ligue 1+. Qui l'emporte ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #StadeRennais"
+    },
+    {
       "id": "2026-11-21-fb-pronostic",
       "at": "2026-11-21T19:23+01:00",
       "type": "facebook",

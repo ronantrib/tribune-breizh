@@ -1300,6 +1300,16 @@
       "visuels": [
         "rhum"
       ]
+    },
+    {
+      "id": "2026-11-22-fb-rhum-hebdo",
+      "at": "2026-11-22T11:37+01:00",
+      "type": "facebook",
+      "facebook": {
+        "message": "Route du Rhum : le point du dimanche\n\nLes têtes de course ont déjà touché la Guadeloupe : Tom Laperche (Loudéac) a gagné en Ultim, Basile Bourgnon en Ocean Fifty, Corentin Horeau en Imoca et Kieran Le Borgne en Vintage mono.\nEncore en mer, pointage du samedi 21 novembre à 19h : Goulven Marie (Class40, 37e) à 141 milles de l'arrivée, estimée dimanche vers 16h ; Christophe Bachmann (Vintage mono, 6e) à 111 milles, estimée vers 14h30 ; Jean Le Cam (Vintage mono, 7e) à 120 milles, estimée vers 15h45.\nYohan Bertrand (Class40, 40e) est à 530 milles, arrivée estimée mardi 24 novembre vers 6h30.\n\nQuel skipper breton soutenez-vous ?\n\nLe suivi complet : https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026\n\n#TribuneBreizh #RouteDuRhum2026",
+        "link": "https://breizh.tribuneouest.fr/evenement/route-du-rhum-2026",
+        "image": "none"
+      }
     }
   ]
 }

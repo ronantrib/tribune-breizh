@@ -1279,14 +1279,18 @@
    "id": "2026-11-23-weekend",
    "at": "2026-11-23T12:23+01:00",
    "type": "carousel",
-   "caption": "🏴 1 derby, 1 nul : Lorient (@fclorient) et Rennes (@staderennaisfc) se quittent sur 1-1 en Ligue 1 !\n⚽ Brest (@stadebrestois29) s'impose à Strasbourg (0-1) : 6e avec 18 points, devant Rennes, 9e (17), et Lorient, 10e (16).\nVendredi 20 novembre, Guingamp (@eaguingamp) s'est incliné 1-3 face à Rodez. 🏀 Landerneau s'est incliné à Lattes-Montpellier (82-78).\nSwipez pour tous les résultats du 20 au 22 novembre et le classement.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #Ligue1 #FCLorient",
+   "caption": "🏴 1 derby, 1 nul : Lorient (@fclorient) et Rennes (@staderennaisfc) se quittent sur 1-1 en Ligue 1 !\n⚽ Brest (@stadebrestois29) s'impose à Strasbourg (0-1) : 6e avec 18 points, devant Rennes, 9e (17), et Lorient, 10e (16).\nVendredi 20 novembre, Guingamp (@eaguingamp) s'est incliné 1-3 face à Rodez. 🏀 Landerneau s'est incliné à Lattes-Montpellier (82-78).\nSwipez pour tous les résultats du 20 au 22 novembre et le classement.\nSwipez pour tous les résultats, sport par sport.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #Ligue1 #FCLorient",
    "visuels": [
     "resultats",
+    "resfoot",
+    "resbasket",
+    "resrugby",
+    "resvolley",
     "classement"
    ],
    "facebook": {
     "at": "2026-11-23T08:07+01:00",
-    "message": "🏴 1 derby, 1 nul : Lorient et Rennes se quittent sur 1-1 en Ligue 1 !\n⚽ Brest s'impose à Strasbourg (0-1) : 6e avec 18 points, devant Rennes, 9e (17), et Lorient, 10e (16).\nVendredi 20 novembre, Guingamp s'est incliné 1-3 face à Rodez. 🏀 Landerneau s'est incliné à Lattes-Montpellier (82-78).\nTous les résultats du 20 au 22 novembre et le classement en images.\n#TribuneBreizh #SportBretagne #FootballBretagne",
+    "message": "🏴 1 derby, 1 nul : Lorient et Rennes se quittent sur 1-1 en Ligue 1 !\n⚽ Brest s'impose à Strasbourg (0-1) : 6e avec 18 points, devant Rennes, 9e (17), et Lorient, 10e (16).\nVendredi 20 novembre, Guingamp s'est incliné 1-3 face à Rodez. 🏀 Landerneau s'est incliné à Lattes-Montpellier (82-78).\nTous les résultats du 20 au 22 novembre et le classement en images.\nTous les sports suivis en images : football, basket, rugby, volley.\n#TribuneBreizh #SportBretagne #FootballBretagne",
     "link": "https://breizh.tribuneouest.fr/",
     "image": "all"
    }

@@ -1233,6 +1233,49 @@
    ]
   },
   {
+   "id": "2026-11-23-story-rhum-matin",
+   "at": "2026-11-23T09:12+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Le pointage du matin",
+     "lines": [
+      "Pointage du dimanche 22 novembre à 22h55 (heure de Paris)."
+     ],
+     "rows": [
+      [
+       "7e",
+       "Jean Le Cam",
+       "Vintage mono · arrivé le dimanche 22 novembre à 17h36"
+      ],
+      [
+       "9e",
+       "Gilles Colubi",
+       "Vintage mono · à 426 milles de l'arrivée"
+      ],
+      [
+       "10e",
+       "Frédéric Mailhos",
+       "Vintage mono · à 493 milles de l'arrivée"
+      ],
+      [
+       "37e",
+       "Goulven Marie",
+       "Class40 · arrivé le dimanche 22 novembre à 22h26"
+      ],
+      [
+       "40e",
+       "Yohan Bertrand",
+       "Class40 · à 331 milles de l'arrivée"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
    "id": "2026-11-23-weekend",
    "at": "2026-11-23T12:23+01:00",
    "type": "carousel",

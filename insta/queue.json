@@ -1383,6 +1383,16 @@
           "foot": "breizh.tribuneouest.fr"
         }
       ]
+    },
+    {
+      "id": "2026-11-23-fb-amateur",
+      "at": "2026-11-23T12:38+01:00",
+      "type": "facebook",
+      "facebook": {
+        "message": "Foot amateur : les résultats du week-end\n\nRégional 1, 9e journée (dimanche 22 novembre) :\nGroupe A : AG Plouvorn – Plougastel 1-0 (Plouvorn en tête, 22 points)\nGroupe A : Douarnenez – Concarneau (B) 4-3\nGroupe A : Plaintel – Stade Pontivyen 3-0\nGroupe B : Tinténiac – Cadets Bains-sur-Oust 1-3 (Bains-sur-Oust en tête, 20 points)\n\nLe classement complet : https://breizh.tribuneouest.fr/sport/foot-amateur\n\n#TribuneBreizh",
+        "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
+        "image": "none"
+      }
     }
   ]
 }

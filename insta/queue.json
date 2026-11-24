@@ -1313,6 +1313,128 @@
     "buteurs"
    ],
    "caption": "Les buteurs bretons de la saison : Estéban Lepaul (Rennes) mène avec 7 buts en Ligue 1 @staderennaisfc, devant Boulaye Dia (6 buts) et Ludovic Ajorque (Brest, 5 buts) @stadebrestois29.\n\nQui sera le meilleur buteur breton à Noël ?\n\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #StadeRennais"
+  },
+  {
+   "id": "2026-11-24-libre",
+   "at": "2026-11-24T18:26+01:00",
+   "type": "carousel",
+   "cards": [
+    {
+     "kicker": "Foot amateur",
+     "title": "3 Bretons dans le top 6",
+     "lines": [
+      "National 1, poule Ouest, après la 10e journée du samedi 21 novembre 2026."
+     ],
+     "color": "amateur",
+     "foot": "breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "National 1 · 10e journée",
+     "title": "Les résultats bretons",
+     "lines": [
+      "Samedi 21 novembre 2026."
+     ],
+     "rows": [
+      [
+       "Lorient II – Locminé",
+       "0-1"
+      ],
+      [
+       "Stade Briochin – Dinan Léhon",
+       "2-2"
+      ],
+      [
+       "Saint-Malo – Les Herbiers",
+       "0-1"
+      ],
+      [
+       "GSI Pontivy – Chauray",
+       "1-2"
+      ]
+     ],
+     "color": "amateur",
+     "foot": "Source : breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "National 1",
+     "title": "Le classement des Bretons",
+     "lines": [
+      "Après 10 journées."
+     ],
+     "rows": [
+      [
+       "4e",
+       "Lorient II",
+       "16 pts"
+      ],
+      [
+       "5e",
+       "Dinan Léhon",
+       "16 pts"
+      ],
+      [
+       "6e",
+       "Locminé",
+       "15 pts"
+      ],
+      [
+       "11e",
+       "Saint-Malo",
+       "12 pts"
+      ],
+      [
+       "12e",
+       "Stade Briochin",
+       "11 pts"
+      ]
+     ],
+     "color": "amateur",
+     "foot": "Source : breizh.tribuneouest.fr"
+    },
+    {
+     "kicker": "National 2 · poule Bretagne-Normandie",
+     "title": "Cesson seul en tête",
+     "lines": [
+      "Après la 8e journée, les 21 et 22 novembre 2026."
+     ],
+     "rows": [
+      [
+       "1er",
+       "Cesson",
+       "18 pts"
+      ],
+      [
+       "2e",
+       "Rennes II",
+       "17 pts"
+      ],
+      [
+       "4e",
+       "Vitré",
+       "15 pts"
+      ],
+      [
+       "5e",
+       "Guingamp II",
+       "14 pts"
+      ],
+      [
+       "6e",
+       "St-P. Milizac",
+       "14 pts"
+      ]
+     ],
+     "color": "amateur",
+     "foot": "Source : breizh.tribuneouest.fr"
+    }
+   ],
+   "caption": "⚽ 3 clubs bretons dans les 6 premiers de National 1 !\nAprès la 10e journée (samedi 21 novembre), la réserve lorientaise est 4e avec 16 points, Dinan Léhon 5e (16) et Locminé 6e (15).\nEn National 2, Cesson est seul en tête avec 18 points, devant Rennes II et Vire (17).\nQuel club amateur breton vous a le plus surpris cette saison ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootBreton #FootballBretagne #National",
+   "facebook": {
+    "at": "2026-11-24T12:41+01:00",
+    "message": "⚽ 3 clubs bretons dans les 6 premiers de National 1 !\nAprès la 10e journée (samedi 21 novembre), la réserve lorientaise est 4e avec 16 points, Dinan Léhon 5e (16) et Locminé 6e (15). En National 2, Cesson est seul en tête avec 18 points après la 8e journée.\nQuel club amateur breton vous a le plus surpris cette saison ?\n#TribuneBreizh #FootBreton #National",
+    "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
+    "image": "all"
+   }
   }
  ]
 }

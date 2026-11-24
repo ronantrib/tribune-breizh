@@ -1315,6 +1315,40 @@
    "caption": "Les buteurs bretons de la saison : Estéban Lepaul (Rennes) mène avec 7 buts en Ligue 1 @staderennaisfc, devant Boulaye Dia (6 buts) et Ludovic Ajorque (Brest, 5 buts) @stadebrestois29.\n\nQui sera le meilleur buteur breton à Noël ?\n\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #StadeRennais"
   },
   {
+   "id": "2026-11-24-club-cpbrennesm",
+   "at": "2026-11-24T12:41+01:00",
+   "type": "feed",
+   "caption": "🤾 Où en est le CPB Rennes Handball (@cpbhand) ?\nLe club rennais est 10e de la poule 2 de Nationale 1 masculine avec 9 points, après la 6e journée. Sa seule victoire est celle de Caen (27-26) le samedi 24 octobre, après quatre défaites de suite.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #HandballBretagne #Handball #Rennes",
+   "cards": [
+    {
+     "kicker": "Où en est CPB Rennes Handball ?",
+     "title": "CPB Rennes Handball (hommes)",
+     "lines": [
+      "10e de la poule 2 de Nationale 1 masculine (9 points, après la 6e journée)."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Caen (N1M)",
+       "27-26"
+      ],
+      [
+       "Avant",
+       "Hennebont-Lochrist (N1M)",
+       "20-27"
+      ],
+      [
+       "Avant",
+       "Gonfreville (N1M)",
+       "24-29"
+      ]
+     ],
+     "color": "hand",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
+  },
+  {
    "id": "2026-11-24-libre",
    "at": "2026-11-24T18:26+01:00",
    "type": "carousel",
@@ -1434,6 +1468,44 @@
     "message": "⚽ 3 clubs bretons dans les 6 premiers de National 1 !\nAprès la 10e journée (samedi 21 novembre), la réserve lorientaise est 4e avec 16 points, Dinan Léhon 5e (16) et Locminé 6e (15). En National 2, Cesson est seul en tête avec 18 points après la 8e journée.\nQuel club amateur breton vous a le plus surpris cette saison ?\n#TribuneBreizh #FootBreton #National",
     "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
     "image": "all"
+   }
+  },
+  {
+   "id": "2026-11-24-fb-club-cpbrennesm",
+   "at": "2026-11-24T20:04+01:00",
+   "type": "facebook",
+   "cards": [
+    {
+     "kicker": "Où en est CPB Rennes Handball ?",
+     "title": "CPB Rennes Handball (hommes)",
+     "lines": [
+      "10e de la poule 2 de Nationale 1 masculine (9 points, après la 6e journée)."
+     ],
+     "rows": [
+      [
+       "Dernier",
+       "Caen (N1M)",
+       "27-26"
+      ],
+      [
+       "Avant",
+       "Hennebont-Lochrist (N1M)",
+       "20-27"
+      ],
+      [
+       "Avant",
+       "Gonfreville (N1M)",
+       "24-29"
+      ]
+     ],
+     "color": "hand",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ],
+   "facebook": {
+    "message": "🤾 Où en est le CPB Rennes Handball ?\nLe club rennais est 10e de la poule 2 de Nationale 1 masculine avec 9 points, après la 6e journée.\nSa seule victoire est celle de Caen (27-26) le samedi 24 octobre, après quatre défaites de suite.\n#TribuneBreizh #HandballBretagne #Handball",
+    "link": "https://breizh.tribuneouest.fr/sport/handball",
+    "image": "first"
    }
   }
  ]

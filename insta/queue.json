@@ -1435,6 +1435,55 @@
     "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
     "image": "all"
    }
+  },
+  {
+   "id": "2026-11-24-story-rhum",
+   "at": "2026-11-24T19:45+01:00",
+   "type": "story",
+   "cards": [
+    {
+     "kicker": "Route du Rhum",
+     "title": "Où en sont les Bretons ?",
+     "lines": [
+      "Pointage du mardi 24 novembre à 6h35 (heure de Paris).",
+      "Quatre Bretons étaient encore en mer à ce pointage."
+     ],
+     "rows": [
+      [
+       "40e",
+       "Yohan Bertrand",
+       "Class40 · à 70 milles de l'arrivée, arrivée estimée mardi 24 novembre vers 18h15"
+      ],
+      [
+       "9e",
+       "Gilles Colubi",
+       "Vintage mono · à 193 milles de l'arrivée, arrivée estimée mercredi 25 novembre vers 11h30"
+      ],
+      [
+       "10e",
+       "Frédéric Mailhos",
+       "Vintage mono · à 246 milles de l'arrivée, arrivée estimée mercredi 25 novembre vers 20h15"
+      ],
+      [
+       "11e",
+       "Rémy Gérin",
+       "Vintage mono · à 731 milles de l'arrivée, arrivée estimée samedi 28 novembre vers 6h15"
+      ],
+      [
+       "37e",
+       "Goulven Marie",
+       "Class40 · arrivé le dimanche 22 novembre à 22h26"
+      ],
+      [
+       "7e",
+       "Jean Le Cam",
+       "Vintage mono · arrivé le dimanche 22 novembre à 17h36"
+      ]
+     ],
+     "color": "voile",
+     "foot": "breizh.tribuneouest.fr"
+    }
+   ]
   }
  ]
 }

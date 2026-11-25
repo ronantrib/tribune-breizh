@@ -1547,6 +1547,39 @@
         "derby",
         "face"
       ]
+    },
+    {
+      "id": "2026-11-25-quiz",
+      "at": "2026-11-25T17:34+01:00",
+      "type": "feed",
+      "caption": "Un petit quiz pour votre mercredi, côté football breton !\nLa question : en quelle année le Stade Rennais avait-il remporté la Coupe de France pour la dernière fois avant son sacre de 2019 face au PSG ?\nDites-nous en commentaire ce que vous pensez ! Réponse ce soir en story.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #Bretagne",
+      "cards": [
+        {
+          "kicker": "Le quiz du mercredi",
+          "title": "Rennes en Coupe de France : dernier titre avant 2019 ?",
+          "lines": [
+            "Réponse ce soir en story."
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-25-story-quiz",
+      "at": "2026-11-25T20:21+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "La réponse du quiz",
+          "title": "1971",
+          "lines": [
+            "Le 27 avril 2019, Rennes a battu le PSG aux tirs au but (6-5) en finale : son premier titre dans l'épreuve depuis 1971."
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
     }
   ]
 }

@@ -1580,6 +1580,16 @@
           "foot": "breizh.tribuneouest.fr"
         }
       ]
+    },
+    {
+      "id": "2026-11-26-fb-regional",
+      "at": "2026-11-26T12:29+01:00",
+      "type": "facebook",
+      "facebook": {
+        "message": "Régional 2 · groupe B : où en sont les clubs ?\nAprès la 7e journée (22 novembre) :\n1. Ploemeur, 19 pts\n2. Pont-l'Abbé, 16 pts\n3. Larmor-Plage, 15 pts\n4. Trégunc, 13 pts\n5. Paotred Dispount (B), 10 pts\n12. Scaër, 4 pts\nDans le haut du tableau, Pont-l'Abbé a battu Larmor-Plage 1-0.\nVotre club est-il dans le coup ? Dites-le en commentaire !\nTous les classements : https://breizh.tribuneouest.fr/sport/foot-amateur\n#TribuneBreizh",
+        "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
+        "image": "none"
+      }
     }
   ]
 }

@@ -1,371 +1,6 @@
 {
   "posts": [
     {
-      "id": "2026-11-16-story-rhum-matin",
-      "at": "2026-11-16T09:07+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Le pointage du matin",
-          "lines": [
-            "Pointage du dimanche 15 novembre à 19h30 (heure de Paris)."
-          ],
-          "rows": [
-            [
-              "1er",
-              "Kieran Le Borgne",
-              "Vintage mono · en tête, à 288 milles de l'arrivée"
-            ],
-            [
-              "2e",
-              "Tanguy Caradec",
-              "Vintage mono · à 441 milles de l'arrivée"
-            ],
-            [
-              "7e",
-              "Guillaume L'Hostis",
-              "Class40 · à 26 milles de l'arrivée"
-            ],
-            [
-              "3e",
-              "Florian Guéguen",
-              "Vintage multi · à 426 milles de l'arrivée"
-            ],
-            [
-              "4e",
-              "Marc Guillemot",
-              "Vintage multi · à 473 milles de l'arrivée"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-16-fb-amateur",
-      "at": "2026-11-16T12:41+01:00",
-      "type": "facebook",
-      "facebook": {
-        "message": "⚽ Foot amateur : les résultats du week-end\nCoupe de France, 7e tour : les petits ont vu grand !\nLannion (N2) a éliminé Guingamp (L2) aux tirs au but (0-0, 4-3).\nLe TA Rennes (N2) a sorti la GSI Pontivy (N1) aux tirs au but (2-2, 3-2).\nMilizac (N2) s'est imposé à Vitré, 2-1.\nVannes OC a battu Perros-Louannec, 7-0.\nLe classement complet : https://breizh.tribuneouest.fr/sport/foot-amateur\n#TribuneBreizh",
-        "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
-        "image": "none"
-      }
-    },
-    {
-      "id": "2026-11-16-weekend",
-      "at": "2026-11-16T12:48+01:00",
-      "type": "carousel",
-      "caption": "🏴 Trêve de Ligue 1, mais pas pour les Bretons !\n⚽ Coupe de France : Lannion élimine Guingamp (@eaguingamp) aux tirs au but (0-0, 4-3), le TA Rennes sort la GSI Pontivy (2-2, 3-2 aux tirs au but) et Concarneau (@usconcarneau) s'impose à Tinténiac (1-4).\n🏉 En rugby, le Stade Rennais bat les Valkyries (20-19). 🤾 Brest Bretagne Handball (@bbh_officiel) s'incline à Bucarest (34-30) en Ligue des champions.\nSwipez pour tous les résultats, sport par sport.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #Bretagne #ActuSport #PassionSport",
-      "visuels": [
-        "resultats",
-        "resfoot",
-        "reshand",
-        "resbasket",
-        "resrugby",
-        "resvolley",
-        "classement"
-      ],
-      "facebook": {
-        "at": "2026-11-16T08:20+01:00",
-        "message": "🏴 Trêve de Ligue 1, mais pas pour les Bretons !\n⚽ Coupe de France : Lannion élimine Guingamp aux tirs au but (0-0, 4-3), le TA Rennes sort la GSI Pontivy (2-2, 3-2 aux tirs au but) et Concarneau s'impose à Tinténiac (1-4).\n🏉 Le Stade Rennais bat les Valkyries (20-19) en rugby. 🤾 Brest Bretagne Handball s'incline à Bucarest (34-30) en Ligue des champions.\nTous les sports suivis en images : football, handball, basket, rugby, volley.\n#TribuneBreizh #SportBreton #SportBretagne",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "all"
-      }
-    },
-    {
-      "id": "2026-11-16-coupe-1405",
-      "at": "2026-11-16T14:05+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Coupe de France · 8e tour",
-          "title": "Les affiches bretonnes",
-          "lines": [
-            "Les 28 et 29 novembre : Lannion (N2) contre Laval (L2), Concarneau (L3) contre Vannes OC (N2).",
-            "Milizac (N2) contre le Stade Pontivyen (R1), TA Rennes (N2) contre Rouen (L3). Lieux à confirmer."
-          ],
-          "color": "foot"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-16-buteurs",
-      "at": "2026-11-16T19:23+01:00",
-      "type": "feed",
-      "visuels": [
-        "buteurs"
-      ],
-      "caption": "Les buteurs bretons de la saison : Estéban Lepaul (Rennes) mène avec 7 buts en Ligue 1 @staderennaisfc, devant Ludovic Ajorque (Brest) @stadebrestois29, Boulaye Dia (Rennes) et Stan Janno (Concarneau) @usconcarneau, tous trois à 5 buts.\n\nQui sera le meilleur buteur breton à Noël ?\n\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #Ligue1 #StadeRennais"
-    },
-    {
-      "id": "2026-11-17-club-lorientbasket",
-      "at": "2026-11-17T12:52+01:00",
-      "type": "feed",
-      "caption": "🏀 Où en est le CEP Lorient Breizh Basket (@ceplorientbreizhbasket) ?\nLe club est 6e de la poule B de NM1 avec 5 victoires et 5 défaites (15 points). Il a battu Tarbes-Lourdes (79-74) le vendredi 13 novembre, après sa lourde défaite à Challans (95-61) le 6 novembre.\nProchain match : Union Rennes – Lorient, ce mardi 17 novembre à 20h, puis Angers – Lorient le vendredi 20 novembre.\nLe CEP peut-il réussir le derby à Rennes ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #BasketBretagne #Basketball #Bretagne",
-      "cards": [
-        {
-          "kicker": "Où en est CEP Lorient Breizh Basket ?",
-          "title": "CEP Lorient Breizh Basket",
-          "lines": [
-            "6e de la poule B de NM1 (5 V – 5 D, 15 points)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Tarbes-Lourdes (NM1)",
-              "79-74"
-            ],
-            [
-              "Avant",
-              "Challans (NM1)",
-              "61-95"
-            ],
-            [
-              "Prochain",
-              "Union Rennes",
-              "mar. 17 nov. 20h · NM1"
-            ],
-            [
-              "Ensuite",
-              "Angers",
-              "ven. 20 nov. · NM1"
-            ]
-          ],
-          "color": "basket",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-17-libre",
-      "at": "2026-11-17T18:12+01:00",
-      "type": "carousel",
-      "caption": "🚴 2 records de France sur piste pour les jeunes Bretons à Loudéac !\nZoé Bihan a décroché le titre au kilomètre juniors le 1er novembre (record en 1'09\"183), et Zéphirin Le Normand-Lucas a gagné trois épreuves chez les U19, dont le kilomètre (1'01\"355).\nEn cyclo-cross, Lana Le Guilloux a pris la 2e puis la 3e place en Coupe de France juniors à Nommay. Swipez pour tous les résultats.\nQuel jeune talent breton suivez-vous cet hiver ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #Cyclisme #CyclismeBreton #Cyclocross",
-      "cards": [
-        {
-          "kicker": "Jeunes cyclistes bretons",
-          "title": "2 records de France à Loudéac",
-          "lines": [
-            "Championnats de France de l'Avenir sur piste, du 28 octobre au 1er novembre."
-          ],
-          "color": "velo",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Piste · kilomètre juniors",
-          "title": "Zoé Bihan, 1re",
-          "lines": [
-            "Le 1er novembre à Loudéac, la jeune Bretonne a signé un record de France juniors en 1'09\"183."
-          ],
-          "color": "velo"
-        },
-        {
-          "kicker": "Piste · U19",
-          "title": "Zéphirin Le Normand-Lucas",
-          "lines": [
-            "1er en poursuite individuelle, en poursuite par équipes et au kilomètre, avec un record de France en 1'01\"355."
-          ],
-          "color": "velo"
-        },
-        {
-          "kicker": "Cyclo-cross · juniors femmes",
-          "title": "Lana Le Guilloux",
-          "lines": [
-            "2e puis 3e des deux manches de Coupe de France à Nommay (24 et 25 octobre), puis 25e du championnat d'Europe le 7 novembre."
-          ],
-          "color": "velo"
-        },
-        {
-          "kicker": "Coupe de France à Nommay",
-          "title": "Les Bretons en cyclo-cross",
-          "lines": [
-            "Manches des 24 et 25 octobre."
-          ],
-          "rows": [
-            [
-              "Lison Desprez",
-              "U23 femmes",
-              "3e puis 2e"
-            ],
-            [
-              "Louis Tanguy",
-              "U23 hommes",
-              "3e puis 4e"
-            ],
-            [
-              "Enzo Conan",
-              "U19 hommes",
-              "5e puis 6e"
-            ]
-          ],
-          "color": "velo"
-        }
-      ],
-      "facebook": {
-        "message": "🚴 Jeunes cyclistes bretons : 2 records de France sur piste à Loudéac !\nZoé Bihan, 1re du kilomètre juniors le 1er novembre (1'09\"183), et Zéphirin Le Normand-Lucas, 1er en poursuite individuelle, en poursuite par équipes et au kilomètre chez les U19 (1'01\"355).\nEn cyclo-cross, Lana Le Guilloux a pris la 2e puis la 3e place de la Coupe de France juniors à Nommay, les 24 et 25 octobre.\nQuel jeune talent breton suivez-vous cet hiver ?\n#TribuneBreizh #Cyclisme #CyclismeBreton",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "all",
-        "at": "2026-11-17T08:14+01:00"
-      }
-    },
-    {
-      "id": "2026-11-17-fb-club-lorientbasket",
-      "at": "2026-11-17T19:08+01:00",
-      "type": "facebook",
-      "cards": [
-        {
-          "kicker": "Où en est CEP Lorient Breizh Basket ?",
-          "title": "CEP Lorient Breizh Basket",
-          "lines": [
-            "6e de la poule B de NM1 (5 V – 5 D, 15 points)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Tarbes-Lourdes (NM1)",
-              "79-74"
-            ],
-            [
-              "Avant",
-              "Challans (NM1)",
-              "61-95"
-            ],
-            [
-              "Prochain",
-              "Union Rennes",
-              "mar. 17 nov. 20h · NM1"
-            ],
-            [
-              "Ensuite",
-              "Angers",
-              "ven. 20 nov. · NM1"
-            ]
-          ],
-          "color": "basket",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ],
-      "facebook": {
-        "message": "🏀 Où en est le CEP Lorient Breizh Basket ?\nLe club est 6e de la poule B de NM1 (5 victoires, 5 défaites) après sa victoire contre Tarbes-Lourdes (79-74) le vendredi 13 novembre. Prochain match : Union Rennes – Lorient, ce mardi 17 novembre à 20h.\nLe CEP peut-il réussir le derby ?\n#TribuneBreizh #BasketBretagne #Basketball",
-        "link": "https://breizh.tribuneouest.fr/sport/basket",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-17-story-rhum",
-      "at": "2026-11-17T19:45+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Où en sont les Bretons ?",
-          "lines": [
-            "Pointage du mardi 17 novembre à 8h05 (partiel).",
-            "Kieran Le Borgne a remporté les Vintage mono."
-          ],
-          "rows": [
-            [
-              "Vintage mono",
-              "Kieran Le Borgne",
-              "1er · vainqueur"
-            ],
-            [
-              "Class40",
-              "Guillaume L'Hostis",
-              "7e · arrivé le lundi 16 novembre"
-            ],
-            [
-              "Vintage multi",
-              "Florian Guéguen",
-              "3e · à 81 milles"
-            ],
-            [
-              "Class40",
-              "Jules Bonnier",
-              "18e · à 144 milles"
-            ],
-            [
-              "Class40",
-              "Emmanuel Hamez",
-              "19e · à 159 milles"
-            ],
-            [
-              "Vintage multi",
-              "Marc Guillemot",
-              "4e · à 167 milles"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-18-story-rhum-matin",
-      "at": "2026-11-18T09:07+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Le pointage du matin",
-          "lines": [
-            "Pointage du mercredi 18 novembre à 4h35 (heure de Paris)."
-          ],
-          "rows": [
-            [
-              "Ultim",
-              "Tom Laperche",
-              "1er"
-            ],
-            [
-              "Ocean Fifty",
-              "Basile Bourgnon",
-              "1er"
-            ],
-            [
-              "Imoca",
-              "Corentin Horeau",
-              "1er"
-            ],
-            [
-              "Vintage mono",
-              "Kieran Le Borgne",
-              "1er"
-            ],
-            [
-              "Ultim",
-              "Thomas Coville",
-              "2e"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-18-affiche",
-      "at": "2026-11-18T12:27+01:00",
-      "type": "carousel",
-      "caption": "⚽ 2 derbys, 2 victoires lorientaises sans but encaissé en 2025-2026 : voici l'affiche de la semaine !\nLorient (@fclorient) reçoit Rennes (@staderennaisfc) dimanche 22 novembre à 17h15 au Moustoir, pour la 11e journée de Ligue 1 (Ligue 1+).\nRennes est 8e avec 16 points, Lorient 10e avec 15 points : 1 point sépare les deux clubs.\nLorient–Rennes : quel score pour vous ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #FootBreton #Ligue1",
-      "visuels": [
-        "derby",
-        "face"
-      ]
-    },
-    {
-      "id": "2026-11-18-fb-libre",
-      "at": "2026-11-18T12:53+01:00",
-      "type": "facebook",
-      "facebook": {
-        "message": "🤔 Le saviez-vous ? Deux buts sur un seul tir cadré.\nLe 22 octobre 2023, au Moustoir, le FC Lorient a battu le Stade Rennais (2-1) après un but contre son camp de Warmed Omari (4e), puis le but d'Isaak Touré (45e+2).\nSelon Opta, les Merlus devenaient la première équipe de Ligue 1 à marquer deux buts en une mi-temps avec un seul tir cadré depuis la saison 2006-2007.\nVous en souvenez-vous, de ce derby breton ?\nLa suite sur le site : https://breizh.tribuneouest.fr/club/fc-lorient\n#TribuneBreizh #FCLorient",
-        "link": "https://breizh.tribuneouest.fr/club/fc-lorient",
-        "image": "none"
-      }
-    },
-    {
       "id": "2026-11-19-club-xvcorsaire",
       "at": "2026-11-19T12:37+01:00",
       "type": "feed",
@@ -1589,6 +1224,84 @@
         "message": "Régional 2 · groupe B : où en sont les clubs ?\nAprès la 7e journée (22 novembre) :\n1. Ploemeur, 19 pts\n2. Pont-l'Abbé, 16 pts\n3. Larmor-Plage, 15 pts\n4. Trégunc, 13 pts\n5. Paotred Dispount (B), 10 pts\n12. Scaër, 4 pts\nDans le haut du tableau, Pont-l'Abbé a battu Larmor-Plage 1-0.\nVotre club est-il dans le coup ? Dites-le en commentaire !\nTous les classements : https://breizh.tribuneouest.fr/sport/foot-amateur\n#TribuneBreizh",
         "link": "https://breizh.tribuneouest.fr/sport/foot-amateur",
         "image": "none"
+      }
+    },
+    {
+      "id": "2026-11-26-libre",
+      "at": "2026-11-26T18:04+01:00",
+      "type": "carousel",
+      "caption": "🏀 19 points d'écart : Landerneau (@lbb_hn) s'impose largement à Fribourg !\nCette victoire (66-85), le mercredi 25 novembre, est la 2e des Finistériennes en cinq matchs du groupe H d'EuroCup.\nPour espérer se qualifier, elles devront gagner à Derthona le mercredi 2 décembre (19h, horaire à confirmer).\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Breizh #BasketBretagne #Basketball #LanderneauBretagneBasket",
+      "cards": [
+        {
+          "kicker": "EuroCup féminine",
+          "title": "+19 points à Fribourg",
+          "lines": [
+            "La deuxième victoire des Finistériennes dans le groupe H."
+          ],
+          "color": "basket",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Mercredi 25 novembre",
+          "title": "Fribourg 66-85 Landerneau",
+          "lines": [
+            "Une large victoire à l'extérieur pour les Finistériennes."
+          ],
+          "color": "basket",
+          "foot": "Source : Ouest-France"
+        },
+        {
+          "kicker": "EuroCup · groupe H",
+          "title": "2 victoires en 5 matchs",
+          "lines": [
+            "Les cinq matchs de Landerneau."
+          ],
+          "color": "basket",
+          "rows": [
+            [
+              "14 oct.",
+              "Poznan – Landerneau",
+              "77-65"
+            ],
+            [
+              "22 oct.",
+              "Landerneau – Fribourg",
+              "88-63"
+            ],
+            [
+              "29 oct.",
+              "Landerneau – Derthona",
+              "68-73"
+            ],
+            [
+              "4 nov.",
+              "Landerneau – Poznan",
+              "71-76 a.p."
+            ],
+            [
+              "25 nov.",
+              "Fribourg – Landerneau",
+              "66-85"
+            ]
+          ],
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Prochain rendez-vous",
+          "title": "Direction Derthona",
+          "lines": [
+            "Mercredi 2 décembre à 19h (horaire à confirmer).",
+            "Il faudra gagner pour espérer se qualifier."
+          ],
+          "color": "basket",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ],
+      "facebook": {
+        "at": "2026-11-26T08:09+01:00",
+        "message": "🏀 Landerneau Bretagne Basket frappe fort en EuroCup !\nLes Finistériennes se sont largement imposées à Fribourg (66-85) le mercredi 25 novembre, leur 2e victoire en cinq matchs du groupe H.\nPour espérer se qualifier, elles devront gagner à Derthona le mercredi 2 décembre (19h, à confirmer).\n#TribuneBreizh #BasketBretagne #LanderneauBretagneBasket",
+        "link": "https://breizh.tribuneouest.fr/club/landerneau-bretagne-basket",
+        "image": "all"
       }
     }
   ]

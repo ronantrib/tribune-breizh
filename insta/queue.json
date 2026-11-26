@@ -1314,6 +1314,60 @@
       "caption": "⚽ Derby breton en Coupe de France : Vannes OC (@vannesoc) reçoit Concarneau (@usconcarneau) ce samedi 28 novembre à 20h00, au stade de la Rabine, pour le 8e tour.\nQui verra le tour suivant ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #FootballBretagne #FootBreton #Vannes"
     },
     {
+      "id": "2026-11-26-story-rhum",
+      "at": "2026-11-26T19:45+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Où en sont les Bretons ?",
+          "lines": [
+            "Pointage du jeudi 26 novembre à 14h20 (heure de Paris).",
+            "Rémy Gérin était alors encore en course."
+          ],
+          "rows": [
+            [
+              "1er",
+              "Tom Laperche",
+              "Ultim · vainqueur le dimanche 8 novembre"
+            ],
+            [
+              "1er",
+              "Basile Bourgnon",
+              "Ocean Fifty · vainqueur le mercredi 11 novembre"
+            ],
+            [
+              "1er",
+              "Corentin Horeau",
+              "Imoca · vainqueur le mercredi 11 novembre"
+            ],
+            [
+              "7e",
+              "Guillaume L'Hostis",
+              "Class40 · arrivé le lundi 16 novembre à 5h53"
+            ],
+            [
+              "1er",
+              "Kieran Le Borgne",
+              "Vintage mono · vainqueur dans la nuit du 16 au 17 novembre"
+            ],
+            [
+              "2e",
+              "Éric Péron",
+              "Vintage multi · arrivé le vendredi 13 novembre"
+            ],
+            [
+              "11e",
+              "Rémy Gérin",
+              "Vintage mono · à 368 milles de l'arrivée, arrivée estimée samedi 28 novembre vers 12h"
+            ]
+          ],
+          "color": "voile",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
       "id": "2026-11-28-fb-face",
       "at": "2026-11-28T08:07+01:00",
       "type": "facebook",

@@ -1352,25 +1352,25 @@
       "cards": [
         {
           "kicker": "Le programme du week-end",
-          "title": "Samedi 28 et dimanche 29 novembre",
+          "title": "Du vendredi 27 au dimanche 29 novembre",
           "lines": [
             "Les Bretons en action, avec un derby en Coupe de France."
           ],
           "rows": [
             [
+              "Ven. 27 · 20h",
+              "Montpellier – Cesson-Rennes (StarLigue)",
+              ""
+            ],
+            [
+              "Ven. 27 · 20h45",
+              "Brest – Paris FC (Ligue 1)",
+              "Ligue 1+"
+            ],
+            [
               "Sam. 28 · 16h35",
               "Stade Français – Vannes (Top 14)",
-              "Canal+"
-            ],
-            [
-              "Sam. 28 · 18h",
-              "Saint-Pierre Milizac – Stade Pontivyen (Coupe de France)",
-              ""
-            ],
-            [
-              "Sam. 28 · 19h",
-              "Lannion – Laval (Coupe de France)",
-              ""
+              "Canal+ et Canal+ Sport 360"
             ],
             [
               "Sam. 28 · 20h",
@@ -1379,7 +1379,7 @@
             ],
             [
               "Sam. 28 · 20h",
-              "Chalon – Rennes (volley)",
+              "Chalon – Rennes (Ligue B masculine)",
               ""
             ],
             [
@@ -1389,7 +1389,7 @@
             ],
             [
               "Dim. 29 · 15h",
-              "Brive – Stade Rennais (rugby féminin)",
+              "Brive – Stade Rennais (Élite 2 féminine)",
               ""
             ],
             [

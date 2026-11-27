@@ -1164,6 +1164,49 @@
       ]
     },
     {
+      "id": "2026-11-27-story-rhum-matin",
+      "at": "2026-11-27T09:03+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Route du Rhum",
+          "title": "Le pointage du matin",
+          "lines": [
+            "Pointage du jeudi 26 novembre à 14h20 (heure de Paris) pour Rémy Gérin."
+          ],
+          "rows": [
+            [
+              "1er",
+              "Tom Laperche",
+              "Ultim · vainqueur le dimanche 8 novembre"
+            ],
+            [
+              "1er",
+              "Basile Bourgnon",
+              "Ocean Fifty · vainqueur le mercredi 11 novembre"
+            ],
+            [
+              "1er",
+              "Corentin Horeau",
+              "Imoca · vainqueur le mercredi 11 novembre"
+            ],
+            [
+              "1er",
+              "Kieran Le Borgne",
+              "Vintage mono · vainqueur dans la nuit du 16 au 17 novembre"
+            ],
+            [
+              "11e",
+              "Rémy Gérin",
+              "Vintage mono · à 368 milles de l'arrivée"
+            ]
+          ],
+          "color": "voile",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
       "id": "2026-11-27-story-programme",
       "at": "2026-11-27T17:41+01:00",
       "type": "story",

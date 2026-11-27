@@ -1,210 +1,6 @@
 {
   "posts": [
     {
-      "id": "2026-11-19-club-xvcorsaire",
-      "at": "2026-11-19T12:37+01:00",
-      "type": "feed",
-      "caption": "🏉 Où en est le XV Corsaire Saint-Malo Rugby (@xvcorsaire) ?\nLe club est 8e de la poule 1 de Fédérale 1 avec 16 points (3 victoires, 5 défaites), après sa défaite à domicile contre Beauvais (16-26) le dimanche 8 novembre. Une semaine plus tôt, Saint-Malo s'était incliné à Auxerre (20-25) ; il avait auparavant battu Issoire (22-17) puis Annecy (33-29).\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #RugbyBretagne #Rugby #Bretagne",
-      "cards": [
-        {
-          "kicker": "Où en est XV Corsaire Saint-Malo Rugby ?",
-          "title": "XV Corsaire Saint-Malo Rugby",
-          "lines": [
-            "8e de la poule 1 de Fédérale 1 (16 points, 3 victoires, 5 défaites)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Beauvais (F1)",
-              "16-26"
-            ],
-            [
-              "Avant",
-              "Auxerre (F1)",
-              "20-25"
-            ],
-            [
-              "Avant",
-              "Issoire (F1)",
-              "22-17"
-            ],
-            [
-              "Avant",
-              "Annecy (F1)",
-              "33-29"
-            ]
-          ],
-          "color": "rugby",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-19-libre",
-      "at": "2026-11-19T18:08+01:00",
-      "type": "carousel",
-      "caption": "🏴 3 victoires bretonnes en hand et en basket cette semaine !\n🤾 Brest Bretagne Handball (@bbh_officiel) a battu Saint-Amand (35-20) à Brest Arena le mercredi 18 novembre et reste 2e de la Ligue Butagaz Énergie avec 26 points, à quatre longueurs de Metz.\n🏀 En NM1, Vitré s'est imposé chez le leader Challans (82-90) et Fougères a battu Tours (71-70) le mardi 17 novembre. L'Union Rennes partage la tête avec Challans (19 points).\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #HandballBretagne #BasketBretagne #BBH",
-      "cards": [
-        {
-          "kicker": "Hand et basket",
-          "title": "3 victoires bretonnes",
-          "lines": [
-            "Du mardi 17 au mercredi 18 novembre."
-          ],
-          "rows": [
-            [
-              "Handball",
-              "Brest BH – Saint-Amand",
-              "35-20"
-            ],
-            [
-              "Basket · NM1",
-              "Challans – Vitré",
-              "82-90"
-            ],
-            [
-              "Basket · NM1",
-              "Fougères – Tours",
-              "71-70"
-            ]
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Handball",
-          "title": "Brest écrase Saint-Amand",
-          "lines": [
-            "35-20 à Brest Arena, mercredi 18 novembre, pour la 10e journée. Brest reste 2e avec 26 points, à quatre longueurs de Metz."
-          ],
-          "color": "hand",
-          "foot": "Ligue Butagaz Énergie"
-        },
-        {
-          "kicker": "Basket · NM1",
-          "title": "Vitré gagne chez le leader",
-          "lines": [
-            "Vitré s'impose à Challans (82-90), mardi 17 novembre.",
-            "Fougères a battu Tours (71-70) le même soir."
-          ],
-          "color": "basket",
-          "foot": "NM1 · poule B"
-        },
-        {
-          "kicker": "NM1 · poule B",
-          "title": "L'Union Rennes en tête",
-          "lines": [
-            "L'Union Rennes partage la tête avec Challans (19 points). Fougères est 3e, Vitré 5e, Lorient 8e."
-          ],
-          "color": "basket",
-          "foot": "Classement FFBB du 19 novembre"
-        }
-      ],
-      "facebook": {
-        "message": "🏴 3 victoires bretonnes en hand et en basket cette semaine !\n🤾 Brest Bretagne Handball a battu Saint-Amand (35-20) le mercredi 18 novembre et reste 2e de la Ligue Butagaz Énergie, à quatre longueurs de Metz.\n🏀 En NM1, Vitré s'est imposé à Challans (82-90) et Fougères a battu Tours (71-70) le mardi 17 novembre ; l'Union Rennes partage la tête avec Challans.\n#TribuneBreizh #HandballBretagne #BasketBretagne",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "all",
-        "at": "2026-11-19T08:12+01:00"
-      }
-    },
-    {
-      "id": "2026-11-19-fb-club-xvcorsaire",
-      "at": "2026-11-19T19:02+01:00",
-      "type": "facebook",
-      "cards": [
-        {
-          "kicker": "Où en est XV Corsaire Saint-Malo Rugby ?",
-          "title": "XV Corsaire Saint-Malo Rugby",
-          "lines": [
-            "8e de la poule 1 de Fédérale 1 (16 points, 3 victoires, 5 défaites)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Beauvais (F1)",
-              "16-26"
-            ],
-            [
-              "Avant",
-              "Auxerre (F1)",
-              "20-25"
-            ],
-            [
-              "Avant",
-              "Issoire (F1)",
-              "22-17"
-            ],
-            [
-              "Avant",
-              "Annecy (F1)",
-              "33-29"
-            ]
-          ],
-          "color": "rugby",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ],
-      "facebook": {
-        "message": "🏉 Où en est le XV Corsaire Saint-Malo Rugby ?\nLe club est 8e de la poule 1 de Fédérale 1 avec 16 points (3 victoires, 5 défaites), après sa défaite à domicile contre Beauvais (16-26) le dimanche 8 novembre.\nLa semaine d'avant, Saint-Malo s'était incliné à Auxerre (20-25).\n#TribuneBreizh #RugbyBretagne #Rugby",
-        "link": "https://breizh.tribuneouest.fr/sport/rugby",
-        "image": "first"
-      }
-    },
-    {
-      "id": "2026-11-19-story-rhum",
-      "at": "2026-11-19T19:45+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Où en sont les Bretons ?",
-          "lines": [
-            "Pointage du jeudi 19 novembre à 4h35 (heure de Paris).",
-            "Gilles Lamiré, 6e en Vintage multi, est à 29 milles de l'arrivée malgré son avarie."
-          ],
-          "rows": [
-            [
-              "1er",
-              "Tom Laperche",
-              "Ultim · vainqueur le dimanche 8 novembre"
-            ],
-            [
-              "1er",
-              "Basile Bourgnon",
-              "Ocean Fifty · vainqueur le mercredi 11 novembre"
-            ],
-            [
-              "1er",
-              "Corentin Horeau",
-              "Imoca · vainqueur le mercredi 11 novembre"
-            ],
-            [
-              "6e",
-              "Gilles Lamiré",
-              "Vintage multi · à 29 milles de l'arrivée"
-            ],
-            [
-              "6e",
-              "Jean Le Cam",
-              "Vintage mono · à 604 milles de l'arrivée"
-            ],
-            [
-              "36e",
-              "Goulven Marie",
-              "Class40 · à 609 milles de l'arrivée"
-            ],
-            [
-              "39e",
-              "Yohan Bertrand",
-              "Class40 · à 954 milles de l'arrivée"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
       "id": "2026-11-20-story-rhum-matin",
       "at": "2026-11-20T09:07+01:00",
       "type": "story",
@@ -1363,6 +1159,64 @@
             ]
           ],
           "color": "voile",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-27-story-programme",
+      "at": "2026-11-27T17:41+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Le programme du week-end",
+          "title": "Samedi 28 et dimanche 29 novembre",
+          "lines": [
+            "Les Bretons en action, avec un derby en Coupe de France."
+          ],
+          "rows": [
+            [
+              "Sam. 28 · 16h35",
+              "Stade Français – Vannes (Top 14)",
+              "Canal+"
+            ],
+            [
+              "Sam. 28 · 18h",
+              "Saint-Pierre Milizac – Stade Pontivyen (Coupe de France)",
+              ""
+            ],
+            [
+              "Sam. 28 · 19h",
+              "Lannion – Laval (Coupe de France)",
+              ""
+            ],
+            [
+              "Sam. 28 · 20h",
+              "Vannes OC – Concarneau (Coupe de France)",
+              ""
+            ],
+            [
+              "Sam. 28 · 20h",
+              "Chalon – Rennes (volley)",
+              ""
+            ],
+            [
+              "Sam. 28 · 20h45",
+              "Paris SG – Lorient (Ligue 1)",
+              "Ligue 1+"
+            ],
+            [
+              "Dim. 29 · 15h",
+              "Brive – Stade Rennais (rugby féminin)",
+              ""
+            ],
+            [
+              "Dim. 29 · 17h15",
+              "Toulouse – Rennes (Ligue 1)",
+              "Ligue 1+"
+            ]
+          ],
+          "color": "accent",
           "foot": "breizh.tribuneouest.fr"
         }
       ]

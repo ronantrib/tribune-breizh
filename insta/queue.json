@@ -1404,6 +1404,23 @@
       ]
     },
     {
+      "id": "2026-11-27-anniv",
+      "at": "2026-11-27T18:35+01:00",
+      "type": "story",
+      "cards": [
+        {
+          "kicker": "Il y a 5 ans",
+          "title": "Rennes s’offre le derby à Lorient",
+          "lines": [
+            "Le 28 novembre 2021, le Stade Rennais s’impose 2-0 à Lorient en Ligue 1.",
+            "Gaëtan Laborde (75e) et Jérémy Doku (78e) font la différence en fin de match.",
+            "Avec ce succès dans le derby breton, Rennes occupe la 2e place du championnat."
+          ],
+          "color": "foot"
+        }
+      ]
+    },
+    {
       "id": "2026-11-27-fb-hors-foot",
       "at": "2026-11-27T18:53+01:00",
       "type": "facebook",

@@ -1207,6 +1207,137 @@
       ]
     },
     {
+      "id": "2026-11-27-hors-foot",
+      "at": "2026-11-27T12:24+01:00",
+      "type": "carousel",
+      "caption": "Brest Bretagne Handball @bbh_officiel est 2e de la Ligue Butagaz Énergie, Union Rennes @urb_off partage la tête de la poule B de NM1 avec Challans, Rennes Volley est 5e de la Ligue B masculine et Quimper Volley 4e de l'Élite féminine.\nCesson-Rennes @crmhb se déplace à Montpellier ce vendredi à 20h et Vannes @rugbyclubvannes au Stade Français ce samedi à 16h35.\nQuel match breton allez-vous suivre ce week-end ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #HandballBretagne #BasketBretagne #RugbyBretagne",
+      "cards": [
+        {
+          "kicker": "Les Bretons hors foot",
+          "title": "Le point de la semaine",
+          "lines": [
+            "Hand, basket, rugby, volley : où en sont-ils ?"
+          ],
+          "color": "accent",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Handball",
+          "title": "Les clubs bretons",
+          "lines": [
+            "Brest BH est 2e de la Ligue Butagaz Énergie (26 pts) ; Cesson-Rennes est 15e de la StarLigue (3 pts)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Brest BH – Saint-Amand",
+              "35-20"
+            ],
+            [
+              "Dernier",
+              "Dunkerque – Cesson-Rennes",
+              "21-21"
+            ],
+            [
+              "Prochain",
+              "Montpellier – Cesson-Rennes",
+              "ven. 27 nov., 20h"
+            ]
+          ],
+          "color": "hand",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Basket",
+          "title": "Les clubs bretons",
+          "lines": [
+            "Union Rennes partage la tête de la poule B de NM1 avec Challans (9 V – 3 D) ; Landerneau est 8e de La Boulangère Wonderligue (4 V – 5 D)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Bordeaux – Rennes",
+              "77-87"
+            ],
+            [
+              "Prochain",
+              "Vitré – Rennes",
+              "ven. 4 déc., 20h30"
+            ],
+            [
+              "Dernier",
+              "Fribourg – Landerneau",
+              "66-85"
+            ],
+            [
+              "Prochain",
+              "Derthona – Landerneau",
+              "mer. 2 déc., 19h (à confirmer)"
+            ]
+          ],
+          "color": "basket",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Rugby",
+          "title": "Les clubs bretons",
+          "lines": [
+            "Vannes est 14e du Top 14 (9 pts) ; le REC est 12e de la Nationale (17 pts)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Vannes – Bordeaux-Bègles",
+              "23-14"
+            ],
+            [
+              "Prochain",
+              "Stade Français – Vannes",
+              "sam. 28 nov., 16h35"
+            ],
+            [
+              "Dernier",
+              "Massy – Rennes",
+              "45-13"
+            ],
+            [
+              "Prochain",
+              "Rennes – Mont-de-Marsan",
+              "sam. 5 déc., 18h"
+            ]
+          ],
+          "color": "rugby",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Volley",
+          "title": "Les clubs bretons",
+          "lines": [
+            "Rennes Volley est 5e de la Ligue B masculine (13 pts) ; Quimper Volley est 4e de l'Élite féminine (10 pts)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Rennes – Toulouse",
+              "1-3"
+            ],
+            [
+              "Prochain",
+              "Chalon – Rennes",
+              "sam. 28 nov., 20h"
+            ],
+            [
+              "Dernier",
+              "Quimper – Cannes",
+              "0-3"
+            ]
+          ],
+          "color": "accent",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ]
+    },
+    {
       "id": "2026-11-27-story-programme",
       "at": "2026-11-27T17:41+01:00",
       "type": "story",
@@ -1263,6 +1394,141 @@
           "foot": "breizh.tribuneouest.fr"
         }
       ]
+    },
+    {
+      "id": "2026-11-27-fb-hors-foot",
+      "at": "2026-11-27T18:53+01:00",
+      "type": "facebook",
+      "cards": [
+        {
+          "kicker": "Les Bretons hors foot",
+          "title": "Le point de la semaine",
+          "lines": [
+            "Hand, basket, rugby, volley : où en sont-ils ?"
+          ],
+          "color": "accent",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Handball",
+          "title": "Les clubs bretons",
+          "lines": [
+            "Brest BH est 2e de la Ligue Butagaz Énergie (26 pts) ; Cesson-Rennes est 15e de la StarLigue (3 pts)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Brest BH – Saint-Amand",
+              "35-20"
+            ],
+            [
+              "Dernier",
+              "Dunkerque – Cesson-Rennes",
+              "21-21"
+            ],
+            [
+              "Prochain",
+              "Montpellier – Cesson-Rennes",
+              "ven. 27 nov., 20h"
+            ]
+          ],
+          "color": "hand",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Basket",
+          "title": "Les clubs bretons",
+          "lines": [
+            "Union Rennes partage la tête de la poule B de NM1 avec Challans (9 V – 3 D) ; Landerneau est 8e de La Boulangère Wonderligue (4 V – 5 D)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Bordeaux – Rennes",
+              "77-87"
+            ],
+            [
+              "Prochain",
+              "Vitré – Rennes",
+              "ven. 4 déc., 20h30"
+            ],
+            [
+              "Dernier",
+              "Fribourg – Landerneau",
+              "66-85"
+            ],
+            [
+              "Prochain",
+              "Derthona – Landerneau",
+              "mer. 2 déc., 19h (à confirmer)"
+            ]
+          ],
+          "color": "basket",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Rugby",
+          "title": "Les clubs bretons",
+          "lines": [
+            "Vannes est 14e du Top 14 (9 pts) ; le REC est 12e de la Nationale (17 pts)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Vannes – Bordeaux-Bègles",
+              "23-14"
+            ],
+            [
+              "Prochain",
+              "Stade Français – Vannes",
+              "sam. 28 nov., 16h35"
+            ],
+            [
+              "Dernier",
+              "Massy – Rennes",
+              "45-13"
+            ],
+            [
+              "Prochain",
+              "Rennes – Mont-de-Marsan",
+              "sam. 5 déc., 18h"
+            ]
+          ],
+          "color": "rugby",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Volley",
+          "title": "Les clubs bretons",
+          "lines": [
+            "Rennes Volley est 5e de la Ligue B masculine (13 pts) ; Quimper Volley est 4e de l'Élite féminine (10 pts)."
+          ],
+          "rows": [
+            [
+              "Dernier",
+              "Rennes – Toulouse",
+              "1-3"
+            ],
+            [
+              "Prochain",
+              "Chalon – Rennes",
+              "sam. 28 nov., 20h"
+            ],
+            [
+              "Dernier",
+              "Quimper – Cannes",
+              "0-3"
+            ]
+          ],
+          "color": "accent",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ],
+      "facebook": {
+        "message": "Brest Bretagne Handball est 2e de la Ligue Butagaz Énergie, Union Rennes partage la tête de la poule B de NM1 avec Challans, Rennes Volley est 5e de la Ligue B masculine et Quimper Volley 4e de l'Élite féminine.\nCesson-Rennes se déplace à Montpellier ce vendredi à 20h et Vannes au Stade Français ce samedi à 16h35.\nQuel match breton allez-vous suivre ce week-end ?\nTout le détail sur breizh.tribuneouest.fr\n#TribuneBreizh #SportBreton",
+        "link": "https://breizh.tribuneouest.fr/",
+        "image": "all"
+      }
     },
     {
       "id": "2026-11-28-fb-face",

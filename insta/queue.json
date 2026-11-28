@@ -1190,6 +1190,27 @@
       ]
     },
     {
+      "id": "2026-11-28-fb-pronostic",
+      "at": "2026-11-28T10:46+01:00",
+      "type": "facebook",
+      "cards": [
+        {
+          "kicker": "Pronostic du week-end",
+          "title": "Paris SG – Lorient",
+          "lines": [
+            "Samedi 28 novembre · 20h45 · Ligue 1 · Ligue 1+"
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        }
+      ],
+      "facebook": {
+        "message": "Pronostic du week-end : Paris SG – Lorient\nCe samedi 28 novembre à 20h45, en Ligue 1 (12e journée), sur Ligue 1+.\nQuel score voyez-vous ce soir ? Dites-le en commentaire !\nLe programme complet : https://breizh.tribuneouest.fr/sport/football\n#TribuneBreizh #SportBreton",
+        "link": "https://breizh.tribuneouest.fr/sport/football",
+        "image": "first"
+      }
+    },
+    {
       "id": "2026-11-28-libre",
       "at": "2026-11-28T11:37+01:00",
       "type": "carousel",

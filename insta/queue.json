@@ -1,393 +1,6 @@
 {
   "posts": [
     {
-      "id": "2026-11-20-story-rhum-matin",
-      "at": "2026-11-20T09:07+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Route du Rhum",
-          "title": "Le pointage du matin",
-          "lines": [
-            "Pointage du jeudi 19 novembre à 4h35 (heure de Paris), partiel et non définitif."
-          ],
-          "rows": [
-            [
-              "6e",
-              "Gilles Lamiré",
-              "Vintage multi · à 29 milles de l'arrivée"
-            ],
-            [
-              "6e",
-              "Jean Le Cam",
-              "Vintage mono · à 604 milles de l'arrivée"
-            ],
-            [
-              "7e",
-              "Christophe Bachmann",
-              "Vintage mono · à 605 milles de l'arrivée"
-            ],
-            [
-              "36e",
-              "Goulven Marie",
-              "Class40 · à 609 milles de l'arrivée"
-            ],
-            [
-              "39e",
-              "Yohan Bertrand",
-              "Class40 · à 954 milles de l'arrivée"
-            ]
-          ],
-          "color": "voile",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-20-reel-programme",
-      "at": "2026-11-20T10:53+01:00",
-      "type": "reel",
-      "video": "insta/reels/2026-11-20-reel-programme.mp4",
-      "cover": "insta/reels/2026-11-20-reel-programme.jpg",
-      "caption": "Guingamp @eaguingamp reçoit Rodez ce vendredi à 20h00 en Ligue 2 (beIN Sports 5). Samedi, La Roche-sur-Yon – Concarneau @usconcarneau à 14h45 en Ligue 3, puis Strasbourg – Brest @stadebrestois29 à 20h45 en Ligue 1 (Ligue 1+). Dimanche, à 15h30, Landerneau joue à Lattes-Montpellier en LFB, et à 17h15 c'est le derby breton Lorient @fclorient – Rennes @staderennaisfc (Ligue 1+).\nQuel match suivez-vous en priorité ?\nTout le programme sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #Ligue1 #Ligue2 #Bretagne"
-    },
-    {
-      "id": "2026-11-20-hors-foot",
-      "at": "2026-11-20T12:41+01:00",
-      "type": "carousel",
-      "caption": "Brest Bretagne Handball @bbh_officiel est 2e de la Ligue Butagaz Énergie, Cesson-Rennes @crmhb 15e de la StarLigue, Union Rennes @urb_off 1er de la poule B de NM1 et Vannes @rugbyclubvannes 14e du Top 14.\nRennes Volley est 4e de la Ligue B masculine et Quimper Volley 4e de l'Élite féminine ; Union Rennes joue à Bordeaux ce vendredi à 20h.\nQuel sport breton suivez-vous le plus ?\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBreton #HandballBretagne #BasketBretagne #RugbyBretagne",
-      "cards": [
-        {
-          "kicker": "Les Bretons hors foot",
-          "title": "Le point de la semaine",
-          "lines": [
-            "Hand, basket, rugby, volley : où en sont-ils ?"
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Handball",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Brest BH est 2e de la Ligue Butagaz Énergie (26 pts) ; Cesson-Rennes est 15e de la StarLigue (3 pts)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Brest BH – Saint-Amand",
-              "35-20"
-            ],
-            [
-              "Dernier",
-              "Dunkerque – Cesson-Rennes",
-              "21-21"
-            ],
-            [
-              "Prochain",
-              "Paris SG – Cesson-Rennes",
-              "18 ou 19 déc."
-            ]
-          ],
-          "color": "hand",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Basket",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Union Rennes est 1er de la poule B de NM1 (8 V – 3 D) ; Landerneau est 7e de La Boulangère Wonderligue (4 V – 4 D)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Rennes – Lorient",
-              "76-62"
-            ],
-            [
-              "Prochain",
-              "Bordeaux – Rennes",
-              "ven. 20 nov., 20h"
-            ],
-            [
-              "Dernier",
-              "Landerneau – Chartres",
-              "80-62"
-            ],
-            [
-              "Prochain",
-              "Lattes-Montpellier – Landerneau",
-              "dim. 22 nov., 15h30"
-            ]
-          ],
-          "color": "basket",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Rugby",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Vannes est 14e du Top 14 (9 pts) ; le REC est 13e de la Nationale (16 pts)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Vannes – Bordeaux-Bègles",
-              "23-14"
-            ],
-            [
-              "Prochain",
-              "Stade Français – Vannes",
-              "sam. 28 nov., 16h35"
-            ],
-            [
-              "Dernier",
-              "Rennes – Carcassonne",
-              "22-27"
-            ],
-            [
-              "Prochain",
-              "Massy – Rennes",
-              "ven. 20 nov., 19h"
-            ]
-          ],
-          "color": "rugby",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Volley",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Rennes Volley est 4e de la Ligue B masculine (12 pts) ; Quimper Volley est 4e de l'Élite féminine (10 pts)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Fréjus – Rennes",
-              "3-0"
-            ],
-            [
-              "Prochain",
-              "Rennes – Cambrai",
-              "ven. 20 nov., 19h30"
-            ],
-            [
-              "Dernier",
-              "Quimper – Cannes",
-              "0-3"
-            ]
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-20-story-saviez",
-      "at": "2026-11-20T14:12+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Le saviez-vous ?",
-          "title": "Deux buts sur un seul tir cadré",
-          "lines": [
-            "Le 22 octobre 2023 au Moustoir, Lorient bat Rennes 2-1 en ne cadrant qu'une frappe en première période (but contre son camp d'Omari, puis Touré, 45e+2).",
-            "Selon Opta, une première en Ligue 1 depuis 2006-2007."
-          ],
-          "color": "accent",
-          "foot": "Source : 90min"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-20-story-programme",
-      "at": "2026-11-20T17:52+01:00",
-      "type": "story",
-      "cards": [
-        {
-          "kicker": "Le programme du week-end",
-          "title": "Du vendredi 20 au dimanche 22 novembre",
-          "lines": [
-            "Les Bretons en action, derby au Moustoir dimanche."
-          ],
-          "rows": [
-            [
-              "Ven. 20 · 19h30",
-              "Rennes – Cambrai (volley)",
-              ""
-            ],
-            [
-              "Ven. 20 · 20h",
-              "Guingamp – Rodez (Ligue 2)",
-              "beIN Sports 5"
-            ],
-            [
-              "Sam. 21 · 14h45",
-              "La Roche-sur-Yon – Concarneau (Ligue 3)",
-              ""
-            ],
-            [
-              "Sam. 21 · 20h30",
-              "Brest BH 2 – Octeville-sur-Mer (hand)",
-              ""
-            ],
-            [
-              "Sam. 21 · 20h45",
-              "Strasbourg – Brest (Ligue 1)",
-              "Ligue 1+"
-            ],
-            [
-              "Dim. 22 · 15h30",
-              "Lattes-Montpellier – Landerneau (basket)",
-              ""
-            ],
-            [
-              "Dim. 22 · 17h15",
-              "Lorient – Rennes (Ligue 1)",
-              "Ligue 1+"
-            ]
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-20-fb-hors-foot",
-      "at": "2026-11-20T18:47+01:00",
-      "type": "facebook",
-      "cards": [
-        {
-          "kicker": "Les Bretons hors foot",
-          "title": "Le point de la semaine",
-          "lines": [
-            "Hand, basket, rugby, volley : où en sont-ils ?"
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Handball",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Brest BH est 2e de la Ligue Butagaz Énergie (26 pts) ; Cesson-Rennes est 15e de la StarLigue (3 pts)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Brest BH – Saint-Amand",
-              "35-20"
-            ],
-            [
-              "Dernier",
-              "Dunkerque – Cesson-Rennes",
-              "21-21"
-            ],
-            [
-              "Prochain",
-              "Paris SG – Cesson-Rennes",
-              "18 ou 19 déc."
-            ]
-          ],
-          "color": "hand",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Basket",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Union Rennes est 1er de la poule B de NM1 (8 V – 3 D) ; Landerneau est 7e de La Boulangère Wonderligue (4 V – 4 D)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Rennes – Lorient",
-              "76-62"
-            ],
-            [
-              "Prochain",
-              "Bordeaux – Rennes",
-              "ven. 20 nov., 20h"
-            ],
-            [
-              "Dernier",
-              "Landerneau – Chartres",
-              "80-62"
-            ],
-            [
-              "Prochain",
-              "Lattes-Montpellier – Landerneau",
-              "dim. 22 nov., 15h30"
-            ]
-          ],
-          "color": "basket",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Rugby",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Vannes est 14e du Top 14 (9 pts) ; le REC est 13e de la Nationale (16 pts)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Vannes – Bordeaux-Bègles",
-              "23-14"
-            ],
-            [
-              "Prochain",
-              "Stade Français – Vannes",
-              "sam. 28 nov., 16h35"
-            ],
-            [
-              "Dernier",
-              "Rennes – Carcassonne",
-              "22-27"
-            ],
-            [
-              "Prochain",
-              "Massy – Rennes",
-              "ven. 20 nov., 19h"
-            ]
-          ],
-          "color": "rugby",
-          "foot": "breizh.tribuneouest.fr"
-        },
-        {
-          "kicker": "Volley",
-          "title": "Les clubs bretons",
-          "lines": [
-            "Rennes Volley est 4e de la Ligue B masculine (12 pts) ; Quimper Volley est 4e de l'Élite féminine (10 pts)."
-          ],
-          "rows": [
-            [
-              "Dernier",
-              "Fréjus – Rennes",
-              "3-0"
-            ],
-            [
-              "Prochain",
-              "Rennes – Cambrai",
-              "ven. 20 nov., 19h30"
-            ],
-            [
-              "Dernier",
-              "Quimper – Cannes",
-              "0-3"
-            ]
-          ],
-          "color": "accent",
-          "foot": "breizh.tribuneouest.fr"
-        }
-      ],
-      "facebook": {
-        "message": "Brest Bretagne Handball est 2e de la Ligue Butagaz Énergie, Cesson-Rennes 15e de la StarLigue, Union Rennes 1er de la poule B de NM1 et Vannes 14e du Top 14.\nRennes Volley est 4e de la Ligue B masculine et Quimper Volley 4e de l'Élite féminine ; Union Rennes joue à Bordeaux ce vendredi à 20h.\nQuel sport breton suivez-vous le plus ?\nTout le détail sur breizh.tribuneouest.fr\n#TribuneBreizh #SportBreton",
-        "link": "https://breizh.tribuneouest.fr/",
-        "image": "all"
-      }
-    },
-    {
       "id": "2026-11-21-story-rhum-matin",
       "at": "2026-11-21T10:12+01:00",
       "type": "story",
@@ -1567,6 +1180,98 @@
         "link": "https://breizh.tribuneouest.fr/sport/football",
         "image": "first"
       }
+    },
+    {
+      "id": "2026-11-28-story",
+      "at": "2026-11-28T10:00+01:00",
+      "type": "story",
+      "visuels": [
+        "story"
+      ]
+    },
+    {
+      "id": "2026-11-28-libre",
+      "at": "2026-11-28T11:37+01:00",
+      "type": "carousel",
+      "caption": "⚽ 4 victoires de suite en Ligue 1 pour Brest (@stadebrestois29), sans encaisser de but !\nVendredi 27 novembre, les Brestois ont battu le Paris FC (1-0) grâce à Luck Zogbé (21e) et à huit arrêts d'Egil Selvik.\nLes voilà provisoirement 3es avec 21 points, à 2 points du Paris FC.\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #SportBretagne #FootballBretagne #FootBreton #StadeBrestois",
+      "cards": [
+        {
+          "kicker": "Ligue 1 · Brest",
+          "title": "4 victoires de suite",
+          "lines": [
+            "En championnat, et sans encaisser le moindre but."
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Vendredi 27 novembre",
+          "title": "Brest 1-0 Paris FC",
+          "lines": [
+            "Au stade Francis-Le Blé, Luck Zogbé marque à la 21e minute sur une passe de Kamory Doumbia."
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Dans les buts",
+          "title": "8 arrêts pour Selvik",
+          "lines": [
+            "Egil Selvik a préservé l'avantage brestois."
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "La série",
+          "title": "4 matchs, 4 succès",
+          "lines": [
+            "En Ligue 1, depuis le lundi 2 novembre."
+          ],
+          "rows": [
+            [
+              "2 nov.",
+              "Lorient – Brest",
+              "0-2"
+            ],
+            [
+              "8 nov.",
+              "Brest – Lyon",
+              "2-0"
+            ],
+            [
+              "21 nov.",
+              "Strasbourg – Brest",
+              "0-1"
+            ],
+            [
+              "27 nov.",
+              "Brest – Paris FC",
+              "1-0"
+            ]
+          ],
+          "color": "foot",
+          "foot": "breizh.tribuneouest.fr"
+        },
+        {
+          "kicker": "Classement provisoire",
+          "title": "Brest 3e avec 21 points",
+          "lines": [
+            "À 2 points du Paris FC et à égalité avec Lille, qui compte un match de moins."
+          ],
+          "color": "foot",
+          "foot": "Au vendredi 27 novembre"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-28-rhum",
+      "at": "2026-11-28T20:15+01:00",
+      "type": "feed",
+      "caption": "⛵ 178 milles : voilà ce qui restait à parcourir à Rémy Gérin au pointage du vendredi 27 novembre à 18h.\nLe skipper de La Trinité-sur-Mer, 11e en Vintage mono, était alors le dernier concurrent de sa catégorie encore en course sur la Route du Rhum.\nWebtv Îles estimait son arrivée à Pointe-à-Pitre au samedi 28 novembre vers 18h (heure de Paris).\nTout le détail sur breizh.tribuneouest.fr (lien en bio)\n#TribuneBreizh #Bretagne #VoileBretagne #RouteDuRhum2026 #Skipper",
+      "visuels": [
+        "rhum"
+      ]
     }
   ]
 }
